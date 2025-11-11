@@ -43,8 +43,10 @@ function editPin(side, currentLabel) {
 	renderPins(target, side);
 }
 
-//# Load pin data from JSON file
-async function loadPinData() {
+
+//# Initialize when the page loads
+document.addEventListener('DOMContentLoaded', async function() {
+	//# Load pin data from JSON file
 	try {
 		const pinData = await fetch('pins.json').then(response => response.json());
 		leftPins = pinData.left_pins;
@@ -54,12 +56,6 @@ async function loadPinData() {
 	} catch (error) {
 		console.error('Error loading pin data:', error);
 	}
-}
-
-//# Initialize when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-	loadPinData();
-
 
     const tabs = document.querySelectorAll('#chipTabs .tab-item');
     const modalContent = document.getElementById('modalContent');
@@ -74,15 +70,40 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add active class to clicked tab
             this.classList.add('active');
             
-            // Update modal content
-            const targetId = this.getAttribute('data-target') + '-content';
-            const targetContent = document.getElementById(targetId);
-            
-            if (targetContent) {
-                modalContent.innerHTML = targetContent.innerHTML;
-            }
+			// Get the display name from the tab text
+			const displayName = this.textContent.trim();
+
+			const target = this.getAttribute('data-target');
+
+			// Generate content dynamically
+			modalContent.innerHTML = `
+				<p>Content for ${displayName} microcontrollers.</p>
+				<div class="form-group">
+					<label class="form-label">Select ${displayName} Model</label>
+					<select class="form-select" id="${target}-model">
+						<option>Select a model</option>
+						<!-- You could dynamically populate this too -->
+					</select>
+				</div>
+				<div class="form-group">
+					<label class="form-label">Package Type</label>
+					<select class="form-select" id="${target}-package">
+						<option>QFN</option>
+						<option>TSSOP</option>
+						<option>LQFP</option>
+					</select>
+				</div>
+			`;
         });
     });
+
+	// // Activate the first tab
+    // const firstTab = tabs[0];
+    // firstTab.classList.add('active');
+    
+    // // Load the first tab's content
+    // const target = firstTab.getAttribute('data-target');
+    // modalContent.innerHTML = contentMap[target] || contentMap.default;
 });
 
 

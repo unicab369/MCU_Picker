@@ -1,0 +1,220 @@
+{
+	"CH32_MCUs": {
+		"description": "",
+		"list": [
+			{
+				"name": "CH32V003",
+				"part_no": "J4M6",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "CH32V003",
+				"part_no": "A4M6",
+				"package": "SOP16",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 14,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "CH32V003",
+				"part_no": "F4P6",
+				"package": "TSSOP20",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 18,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+				
+			},
+			{
+				"name": "CH32V003",
+				"part_no": "F4U6",
+				"package": "QFN20",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 18,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			}
+		]
+	},
+
+	"PY32_MCUs": {
+		"description": "",
+		"list": [
+			{
+				"name": "PY32F002A",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "PY32F002B",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "PY32F003",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "PY32F07x",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "PY32F030",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			}
+		]
+	},
+
+	"ESP32_MCUs": {
+		"description": "",
+		"list": [
+			{
+				"name": "ESP32",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "ESP32-S2",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "ESP32-S3",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "ESP32-C3",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "ESP32-C5",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			}
+		]
+	},
+
+	"STM32_MCUs": {
+		"description": "",
+		"list": [
+			{
+				"name": "STM32C0",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "STM32G0",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "STM32F0",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "STM32F1",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			},
+			{
+				"name": "STM32F3",
+				"package": "SOP8",
+				"frequency_MHz": 48,
+				"Flash_KB": 32,
+				"SRAM_KB": 2,
+				"GPIO": 6,
+				"V_Max": 5.0,
+				"V_Min": 3.3
+			}
+		]
+	}
+}
