@@ -9,56 +9,59 @@ body {
 .mcu-outline {
 	display: flex;
 	align-items: flex-start;  /* Changed from center to flex-start */
-	gap: 30px;
+	gap: 20px;
 }
 
 .mcu {
-	width: 100px;
+	width: 120px;
 	/* height: 220px; REMOVE fixed height */
-	background: #333;
+	background: #888;
 	color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+    flex-direction: column;
 	font-weight: bold;
 	border-radius: 5px;
 	position: relative;
 	align-self: stretch; /* Added to match container height */
 }
 
-.FlexColumnGap5 {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
-	/* Add these to ensure pins define the height */
-	min-height: 100%;
+
+.pins-outline {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: fit-content; /* Adjust width to fit content */
 }
 
 .pin {
-	width: 180px;
-	height: 30px;
-	color: white;
-	font-size: 12px;
-	font-weight: bold;
-	display: flex;
-	align-items: center;
-	padding: 0 5px;
-	border-radius: 3px;
-	cursor: pointer;
-	position: relative;
+    width: auto; /* Change from 180px to auto */
+    min-width: 180px; /* Keep minimum width */
+    height: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    justify-content: space-between;
 }
 
+.pin:hover { filter: brightness(1.2); }
 
-.pin-subpins {
+.subpins-outline {
 	display: flex;
-	flex-wrap: wrap;
 	gap: 2px;
 	margin-left: 8px;
 	align-items: center;
 	flex-grow: 1;
 }
 
-.pin-subpin {
+.subpin {
 	font-size: 10px;
 	font-weight: normal;
 	background: rgba(255, 255, 255, 0.2);
@@ -66,28 +69,4 @@ body {
 	border-radius: 2px;
 	text-align: center;
 	white-space: nowrap;
-}
-
-/* Left pins - main label on right, subpins on right */
-.left .pin {
-    justify-content: space-between;
-}
-
-.left .pin-subpins {
-	justify-content: flex-start;
-}
-
-.right .pin {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
-
-.right .pin-subpins {
-	justify-content: flex-end;
-	margin-left: 0;
-	margin-right: 8px;
-}
-
-.pin:hover {
-	filter: brightness(1.2);
 }

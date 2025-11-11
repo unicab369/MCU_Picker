@@ -1,106 +1,74 @@
 {
-	"leftPins": [
-		{
-			"label": "PD4",
-			"color": "#0099ff",
-			"subPins": ["A7", "ADC_IN7"]
-		},
-		{
-			"label": "PD5", 
-			"color": "#0099ff",
-			"subPins": ["A5", "URX", "ADC_IN5"]
-		},
-		{
-			"label": "PD6",
-			"color": "#0099ff", 
-			"subPins": ["A6", "UTX", "ADC_IN6"]
-		},
-		{
-			"label": "PD7",
-			"color": "#ffb300",
-			"subPins": ["NRST"]
-		},
-		{
-			"label": "PA1",
-			"color": "#0099ff",
-			"subPins": ["A1", "ADC_IN1"]
-		},
-		{
-			"label": "PA2",
-			"color": "#0099ff",
-			"subPins": ["A0", "ADC_IN0"]
-		},
-		{
-			"label": "VSS",
-			"color": "#000000",
-			"subPins": ["GND"]
-		},
-		{
-			"label": "PD0",
-			"color": "#0099ff",
-			"subPins": []
-		},
-		{
-			"label": "VDD",
-			"color": "#ff3333", 
-			"subPins": ["VCC", "3.3V"]
-		},
-		{
-			"label": "PC0",
-			"color": "#0099ff",
-			"subPins": []
-		}
-	],
-	"rightPins": [
-		{
-			"label": "PD3",
-			"color": "#0099ff",
-			"subPins": ["A4", "ADC_IN4"]
-		},
-		{
-			"label": "PD2",
-			"color": "#0099ff",
-			"subPins": ["A3", "ADC_IN3"]
-		},
-		{
-			"label": "PD1",
-			"color": "#ff66cc",
-			"subPins": ["SWIO"]
-		},
-		{
-			"label": "PC7",
-			"color": "#9933ff",
-			"subPins": ["MISO"]
-		},
-		{
-			"label": "PC6",
-			"color": "#9933ff",
-			"subPins": ["MOSI"]
-		},
-		{
-			"label": "PC5",
-			"color": "#9933ff", 
-			"subPins": ["SCK"]
-		},
-		{
-			"label": "PC4",
-			"color": "#0099ff",
-			"subPins": ["A2", "ADC_IN2"]
-		},
-		{
-			"label": "PC3",
-			"color": "#0099ff",
-			"subPins": []
-		},
-		{
-			"label": "PC2",
-			"color": "#00cc66",
-			"subPins": ["SCL"]
-		},
-		{
-			"label": "PC1",
-			"color": "#00cc66",
-			"subPins": ["SDA"]
-		}
-	]
+	"leftPins":{
+		"column_widths": [50, 30, 30, 30, 30],
+		"subpins_colors": ["#ff66cc", "#ff66cc", "#ff66cc", "#ff66cc", "#ff66cc"],
+		"list": [
+			{
+				"label": "PC1",
+				"color": "#0099ff",
+				"subPins": ["RX", "NSS", "BKIN", "SDA"]
+			},
+			{
+				"label": "PC2", 
+				"color": "#0099ff",
+				"subPins": ["RTS", "AETR", "BKIN", "", "SCL"]
+			},
+			{
+				"label": "PC3",
+				"color": "#0099ff", 
+				"subPins": ["CH1N", "", "CH3", ""]
+			},
+			{
+				"label": "PC4",
+				"color": "#ffb300",
+				"subPins": ["CH1CH2N", "MCO", "CH4", "A2"]
+			},
+			{
+				"label": "PC6",
+				"color": "#0099ff",
+				"subPins": ["SDA", "", "C1C3N", "MOSI"]
+			},
+			{
+				"label": "PC7",
+				"color": "#0099ff",
+				"subPins": ["SCL", "SWIO", "CH3N", "AETR2"]
+			}
+		]
+	},
+	"rightPins": {
+		"column_widths": [30, 30, 30, 30, 30],
+		"subpins_colors": ["#ff66cc", "#ff66cc", "#ff66cc", "#ff66cc", "#ff66cc"],
+		"list": [
+			{
+				"label": "PC0",
+				"color": "#0099ff",
+				"subPins": ["CH3", "CH3", "NSS", "TX"]
+			},
+			{
+				"label": "VDD",
+				"color": "#0099ff",
+				"subPins": []
+			},
+			{
+				"label": "VSS",
+				"color": "#ff66cc",
+				"subPins": []
+			},
+			{
+				"label": "PA2",
+				"color": "#9933ff",
+				"subPins": ["A0", "OSCO", "CH2N", "", "OPP0"]
+			},
+			{
+				"label": "PA1",
+				"color": "#9933ff",
+				"subPins": ["A1", "OSCI", "CH2", "", "OPN0"]
+			},
+			{
+				"label": "PD7",
+				"color": "#9933ff", 
+				"subPins": ["", "NRST", "CH4", "CK"]
+			}
+		]
+	}
 }

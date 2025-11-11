@@ -3,20 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>mcu Pinout Diagram</title>
+	<title>MCU Pinout Diagram</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 	<div class="mcu-outline">
 		<!-- Left Pins -->
-		<div class="FlexColumnGap5 left" id="leftPins"></div>
+		<div class="pins-outline left" id="leftPins"></div>
 
 		<!-- mcu Body -->
-		<div class="mcu">CH32V003</div>
+		<div class="mcu">
+			<div>CH32V003</div>
+			<div>TSSOP-20</div>
+		</div>
 
 		<!-- Right Pins -->
-		<div class="FlexColumnGap5 right" id="rightPins"></div>
+		<div class="pins-outline right" id="rightPins"></div>
 	</div>
 
 	<script src="script.js"></script>
