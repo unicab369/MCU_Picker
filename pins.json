@@ -9,6 +9,7 @@
 			{
 				"label": "PC1",
 				"pinMux": ["ETR", "CH1/4", "RX", "NSS", "BKIN", "SDA"],
+				"outline_color": "#FFB6C1",
 				"pinMux_colors": ["#AFE1AF", "#AFE1AF", "#FF66CC", "#AFE1AF", "#FFB6C1", "#FFB6C1"]
 			},
 			{

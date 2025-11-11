@@ -4,34 +4,34 @@ let rightPins = [];
 //# render pins dynamically with sub-pins on the right
 function renderPins(pinsModel, side) {
 	// html id: leftPins, rightPins
-    document.getElementById(side + '_pins').innerHTML = pinsModel.list.map(e => {        
+	document.getElementById(side + '_pins').innerHTML = pinsModel.list.map(e => {		
 		const pinMuxJustify = (side === 'left') ? 'flex-end' : 'flex-start';
 		
-        const pinMuxHTML =
-            `<div class="pinMux-outline" style="justify-content: ${pinMuxJustify}">
-                ${Array(pinsModel.pinMux_length).fill().map((_, index) => {
+		const pinMuxHTML =
+			`<div class="pinMux-outline" style="justify-content: ${pinMuxJustify}">
+				${Array(pinsModel.pinMux_length).fill().map((_, index) => {
 					const width = pinsModel.column_widths[index] || 30; // Use column_widths
 					const background = e.pinMux_colors[index] || '#888';
 					return `<div class="pinMux-style" style="width: ${width}px; background: ${background};">
 						${e.pinMux[index] || ''}
 					</div>`
 				}).join('')}
-            </div>`;
+			</div>`;
 
 		const labelStyleStr = `background: ${e.label_background || pinsModel.label_background || 'green'};
 								width: ${pinsModel.label_width || 40}px;
 								color: ${e.color || pinsModel.label_color || 'black'};
 								padding: 2px; margin: 0 5px;
 								text-align: center;`;
-        const labelHTML = `<div style="${labelStyleStr}">${e.label}</div>`;
+		const labelHTML = `<div style="${labelStyleStr}">${e.label}</div>`;
 
 		// change pin outline color by adding "outline_color" value in json
-        return `<div class="pin" style="background:${e.outline_color || 'white'};"
-            onclick="editPin('${side}', '${e.label}')">
-            ${(side === 'left') ? pinMuxHTML + labelHTML :
+		return `<div class="pin" style="background:${e.outline_color || 'white'};"
+			onclick="editPin('${side}', '${e.label}')">
+			${(side === 'left') ? pinMuxHTML + labelHTML :
 								labelHTML + pinMuxHTML}
-        </div>`;
-    }).join("");
+		</div>`;
+	}).join("");
 }
 
 function editPin(side, currentLabel) {
@@ -59,4 +59,39 @@ async function loadPinData() {
 //# Initialize when the page loads
 document.addEventListener('DOMContentLoaded', function() {
 	loadPinData();
+
+
+    const tabs = document.querySelectorAll('#chipTabs .tab-item');
+    const modalContent = document.getElementById('modalContent');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remove active class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Update modal content
+            const targetId = this.getAttribute('data-target') + '-content';
+            const targetContent = document.getElementById(targetId);
+            
+            if (targetContent) {
+                modalContent.innerHTML = targetContent.innerHTML;
+            }
+        });
+    });
 });
+
+
+function w3_open() {
+	document.getElementById("mySidebar").style.display = "block";
+	document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+	document.getElementById("mySidebar").style.display = "none";
+	document.getElementById("myOverlay").style.display = "none";
+}
