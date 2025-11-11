@@ -1,73 +1,101 @@
 {
-	"leftPins":{
-		"column_widths": [50, 30, 30, 30, 30],
-		"subpins_colors": ["#ff66cc", "#ff66cc", "#ff66cc", "#ff66cc", "#ff66cc"],
+	"left_pins":{
+		"label_color": "white",
+		"label_background": "#888",
+		"label_width": 30,
+		"pinMux_length": 6,
+		"column_widths": [25, 30, 45, 35, 35, 35],
 		"list": [
 			{
 				"label": "PC1",
-				"color": "#0099ff",
-				"subPins": ["RX", "NSS", "BKIN", "SDA"]
+				"pinMux": ["ETR", "CH1/4", "RX", "NSS", "BKIN", "SDA"],
+				"pinMux_colors": ["#AFE1AF", "#AFE1AF", "#FF66CC", "#AFE1AF", "#FFB6C1", "#FFB6C1"]
 			},
 			{
 				"label": "PC2", 
-				"color": "#0099ff",
-				"subPins": ["RTS", "AETR", "BKIN", "", "SCL"]
+				"pinMux": ["ETR", "CH2", "RTS", "AETR", "BKIN", "SCL"],
+				"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#ADD8E6", "#FFB6C1", "#FFB6C1"]
 			},
 			{
 				"label": "PC3",
-				"color": "#0099ff", 
-				"subPins": ["CH1N", "", "CH3", ""]
+				"pinMux": ["", "CTS","CH1N", "", "CH3", ""],
+				"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#FFB6C1"]
 			},
 			{
 				"label": "PC4",
-				"color": "#ffb300",
-				"subPins": ["CH1CH2N", "MCO", "CH4", "A2"]
+				"pinMux": ["", "", "Ch1Ch2N", "MCO", "CH4", "A2"],
+				"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
 			},
 			{
 				"label": "PC6",
-				"color": "#0099ff",
-				"subPins": ["SDA", "", "C1C3N", "MOSI"]
+				"pinMux": ["", "UCTS", "SDA", "", "C1C3N", "MOSI"],
+				"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#AFE1AF"]
 			},
 			{
 				"label": "PC7",
-				"color": "#0099ff",
-				"subPins": ["SCL", "SWIO", "CH3N", "AETR2"]
+				"pinMux": ["CH2", "URTS", "", "", "CH2", "MISO"],
+				"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#AFE1AF"]
+			},
+			{
+				"label": "PD1",
+				"pinMux": ["", "URX", "SCL", "SWIO", "CH3N", "AETR2"],
+				"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
+			},
+			{
+				"label": "PD4",
+				"pinMux": ["", "UCK", "C4ETR", "OPA", "C1ETR", "A7"],
+				"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#FF66CC", "#AFE1AF", "#ADD8E6"]
 			}
 		]
 	},
-	"rightPins": {
-		"column_widths": [30, 30, 30, 30, 30],
-		"subpins_colors": ["#ff66cc", "#ff66cc", "#ff66cc", "#ff66cc", "#ff66cc"],
+	"right_pins": {
+		"label_color": "white",
+		"label_background": "#888",
+		"label_width": 30,
+		"pinMux_length": 6,
+		"column_widths": [30, 30, 30, 30, 30, 35],
 		"list": [
 			{
 				"label": "PC0",
-				"color": "#0099ff",
-				"subPins": ["CH3", "CH3", "NSS", "TX"]
+				"pinMux": ["CH3", "CH3", "NSS", "TX"],
+				"pinMux_colors": ["#AFE1AF", "#ADD8E6", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
 			},
 			{
 				"label": "VDD",
-				"color": "#0099ff",
-				"subPins": []
+				"label_background": "red",
+				"pinMux": [],
+				"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
 			},
 			{
 				"label": "VSS",
-				"color": "#ff66cc",
-				"subPins": []
+				"label_background": "black",
+				"pinMux": [],
+				"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
 			},
 			{
 				"label": "PA2",
-				"color": "#9933ff",
-				"subPins": ["A0", "OSCO", "CH2N", "", "OPP0"]
+				"pinMux": ["A0", "OSCO", "CH2N", "", "OPP0", "AETR2"],
+				"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#ADD8E6", "#FF66CC", "#CF9FFF", "#FFB6C1"]
 			},
 			{
 				"label": "PA1",
-				"color": "#9933ff",
-				"subPins": ["A1", "OSCI", "CH2", "", "OPN0"]
+				"pinMux": ["A1", "OSCI", "CH2", "", "OPN0"],
+				"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#ADD8E6", "#FF66CC", "#CF9FFF", "#FFB6C1"]
 			},
 			{
 				"label": "PD7",
-				"color": "#9933ff", 
-				"subPins": ["", "NRST", "CH4", "CK"]
+				"pinMux": ["", "NRST", "CH4", "CK", "OPP1"],
+				"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+			},
+			{
+				"label": "PD6",
+				"pinMux": ["A6", "CH3", "URX", "UTX"],
+				"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+			},
+			{
+				"label": "PD5",
+				"pinMux": ["A5", "CH4", "UTX", "URX"],
+				"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#FF66CC", "#CF9FFF", "#FFB6C1"]
 			}
 		]
 	}

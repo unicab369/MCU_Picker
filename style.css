@@ -9,7 +9,7 @@ body {
 .mcu-outline {
 	display: flex;
 	align-items: flex-start;  /* Changed from center to flex-start */
-	gap: 20px;
+	gap: 15px;
 }
 
 .mcu {
@@ -39,7 +39,7 @@ body {
     width: auto; /* Change from 180px to auto */
     min-width: 180px; /* Keep minimum width */
     height: 20px;
-    color: white;
+    color: black;
     font-size: 12px;
     font-weight: bold;
     display: flex;
@@ -53,20 +53,18 @@ body {
 
 .pin:hover { filter: brightness(1.2); }
 
-.subpins-outline {
+.pinMux-outline {
 	display: flex;
 	gap: 2px;
-	margin-left: 8px;
 	align-items: center;
 	flex-grow: 1;
 }
 
-.subpin {
-	font-size: 10px;
-	font-weight: normal;
-	background: rgba(255, 255, 255, 0.2);
-	padding: 1px 4px;
-	border-radius: 2px;
-	text-align: center;
-	white-space: nowrap;
+.pinMux-style {
+    font-size: 10px;
+    font-weight: normal;
+    padding: 1px 4px;
+    border-radius: 2px;
+    text-align: center;
+    white-space: nowrap;
 }
