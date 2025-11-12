@@ -43,8 +43,13 @@ function editPin(side, currentLabel) {
 	renderPins(target, side);
 }
 
+// Store selected options globally
+const selectedOptions = {};
+let currentActiveTarget = 'CH32'; // Set default
+let mcu_models = {};
+const tabs_items = document.querySelectorAll('#mcuTabs .tab-item');
 
-//# Initialize when the page loads
+//! START_POINT: Initialize when the page loads
 document.addEventListener('DOMContentLoaded', async function() {
 	//# Load pin data from JSON file
 	try {
@@ -57,54 +62,65 @@ document.addEventListener('DOMContentLoaded', async function() {
 		console.error('Error loading pin data:', error);
 	}
 
-    const tabs = document.querySelectorAll('#chipTabs .tab-item');
-    const modalContent = document.getElementById('modalContent');
-    
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all tabs
-            tabs.forEach(t => t.classList.remove('active'));
-            
-            // Add active class to clicked tab
-            this.classList.add('active');
-            
-			// Get the display name from the tab text
-			const displayName = this.textContent.trim();
+	//# load MCUs json
+	try {
+		mcu_models = await fetch('mcu_jsons/model_MCUs.json').then(response => response.json());
+		console.log("mcu_models: ", mcu_models);
 
-			const target = this.getAttribute('data-target');
+		// Set first tab as active manually
+		tabs_items[0].classList.add('active');
 
-			// Generate content dynamically
-			modalContent.innerHTML = `
-				<p>Content for ${displayName} microcontrollers.</p>
-				<div class="form-group">
-					<label class="form-label">Select ${displayName} Model</label>
-					<select class="form-select" id="${target}-model">
-						<option>Select a model</option>
-						<!-- You could dynamically populate this too -->
-					</select>
-				</div>
-				<div class="form-group">
-					<label class="form-label">Package Type</label>
-					<select class="form-select" id="${target}-package">
-						<option>QFN</option>
-						<option>TSSOP</option>
-						<option>LQFP</option>
-					</select>
-				</div>
-			`;
-        });
-    });
+		// Then call the function
+		onSwitch_tab({ 
+			preventDefault: () => {},
+			currentTarget: tabs_items[0].querySelector('a') // select <a>
+		}, 'CH32');
 
-	// // Activate the first tab
-    // const firstTab = tabs[0];
-    // firstTab.classList.add('active');
-    
-    // // Load the first tab's content
-    // const target = firstTab.getAttribute('data-target');
-    // modalContent.innerHTML = contentMap[target] || contentMap.default;
+	} catch (error) {
+		console.error('Error loading mcu_models data:', error);
+	}
 });
+
+function onApply_mcuSelections() {
+    // Save the current tab one last time
+    if (currentActiveTarget) {
+        const checkboxes = document.querySelectorAll(`input[name="${currentActiveTarget}_nameId"]:checked`);
+        selectedOptions[currentActiveTarget] = Array.from(checkboxes).map(cbox => cbox.value);
+    }
+
+    console.log("selectedOptions: ", selectedOptions);
+}
+
+function onSwitch_tab(event, target_str) {
+    event?.preventDefault();
+    
+    // 1. Save CURRENT tab's selections
+    if (currentActiveTarget !== target_str) onApply_mcuSelections();
+    
+    // 2. Switch tabs and update current target
+    tabs_items.forEach(t => t.classList.remove('active'));
+    event?.currentTarget?.parentElement.classList.add('active');
+    currentActiveTarget = target_str; // Update the current target
+
+    // 3. Generate content for the NEW tab
+    const options = mcu_models[target_str+'_MCUs'].list.map(e2 => {
+        const isChecked = selectedOptions[target_str]?.includes(e2.part_no || e2.name) ? 'checked' : '';
+        return `
+            <label class="form-checkbox">
+                <input type="checkbox" name="${target_str}_nameId" value="${e2.part_no || e2.name}" ${isChecked}>
+                <i class="form-icon"></i> ${e2.name}${e2.part_no ? `-${e2.part_no}` : ''}
+            </label>`;
+    }).join('');
+
+    document.getElementById('modalContent').innerHTML = `
+        <p>Content for ${target_str} microcontrollers.</p>
+        <div class="form-group">
+            <label class="form-label">Select Models:</label>
+            <div class="checkbox-group">
+                ${options}
+            </div>
+        </div>`;
+}
 
 
 function w3_open() {

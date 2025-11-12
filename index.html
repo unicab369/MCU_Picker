@@ -38,11 +38,11 @@
 						<!-- picker -->
 						<div>
 							<div class="horizontal-scroll-tabs" >
-								<ul class="tab horizontal-scroll-tabs" id="chipTabs">
-									<li class="tab-item active" data-target="CH32"><a href="#tabs">CH32xx</a></li>
-									<li class="tab-item" data-target="PY32"><a href="#tabs">PY32xx</a></li>
-									<li class="tab-item" data-target="ESP32"><a href="#tabs">ESP32xx</a></li>
-									<li class="tab-item" data-target="STM32"><a href="#tabs">STM32xx</a></li>
+								<ul class="tab horizontal-scroll-tabs" id="mcuTabs">
+									<li class="tab-item active"><a href="#tabs" onclick="onSwitch_tab(event, 'CH32')">CH32xx</a></li>
+									<li class="tab-item"><a href="#tabs" onclick="onSwitch_tab(event, 'PY32')">PY32xx</a></li>
+									<li class="tab-item"><a href="#tabs" onclick="onSwitch_tab(event, 'ESP32')">ESP32xx</a></li>
+									<li class="tab-item"><a href="#tabs" onclick="onSwitch_tab(event, 'STM32')">STM32xx</a></li>
 								</ul>
 							</div>
 						</div>
@@ -50,9 +50,7 @@
 						<!-- Modal Body -->
 						<div class="modal-body">
 							<div class="content" id="modalContent">
-								Default content will be replaced
-								<h4>CH32xx Series</h4>
-								<p>WCH CH32 RISC-V and ARM Cortex-M microcontrollers.</p>
+								<p>Default.</p>
 								<div class="form-group">
 									<label class="form-label">Select Model</label>
 									<select class="form-select">
@@ -66,7 +64,8 @@
 
 						<!-- modal footer -->
 						<div class="modal-footer">
-							<button class="btn btn-primary">Apply</button><a class="btn btn-link" href="#modals">Close</a>
+							<a class="btn btn-primary" href="#modals" onclick="onApply_mcuSelections(event)">Apply</a>
+							<a class="btn btn-link" href="#modals">Close</a>
 						</div>
 					</div>
 				</div>
