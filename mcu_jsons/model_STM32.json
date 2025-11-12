@@ -12,7 +12,7 @@
 					{
 						"label": "PD6",
 						"pinMux": ["A6", "CH3", "URX", "UTX"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PA1",
@@ -26,7 +26,7 @@
 					{
 						"label": "PA2",
 						"pinMux": ["", "", "Ch1Ch2N", "MCO", "CH4", "A2"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "VDD",
@@ -44,33 +44,33 @@
 					{
 						"label": "PD1",
 						"pinMux": ["", "URX", "SCL", "SWIO", "CH3N", "AETR2"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD5",
 						"pinMux": ["A5", "CH4", "UTX", "URX"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD4",
 						"pinMux": ["", "UCK", "C4ETR", "OPA", "C1ETR", "A7"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#FF66CC", "#AFE1AF", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC4",
 						"pinMux": ["", "", "Ch1Ch2N", "MCO", "CH4", "A2"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC2", 
 						"pinMux": ["ETR", "CH2", "RTS", "AETR", "BKIN", "SCL"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#ADD8E6", "#FFB6C1", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC1",
 						"pinMux": ["ETR", "CH1/4", "RX", "NSS", "BKIN", "SDA"],
 						"outline_color": "#FFB6C1",
-						"pinMux_colors": ["#AFE1AF", "#AFE1AF", "#FF66CC", "#AFE1AF", "#FFB6C1", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					}
 				]
 			}
@@ -90,42 +90,42 @@
 					{
 						"label": "PC1",
 						"pinMux": ["ETR", "CH1/4", "RX", "NSS", "BKIN", "SDA"],
-						"pinMux_colors": ["#AFE1AF", "#AFE1AF", "#FF66CC", "#AFE1AF", "#FFB6C1", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC2", 
 						"pinMux": ["ETR", "CH2", "RTS", "AETR", "BKIN", "SCL"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#ADD8E6", "#FFB6C1", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC3",
 						"pinMux": ["", "CTS","CH1N", "", "CH3", ""],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC4",
 						"pinMux": ["", "", "Ch1Ch2N", "MCO", "CH4", "A2"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC6",
 						"pinMux": ["", "UCTS", "SDA", "", "C1C3N", "MOSI"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#AFE1AF"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC7",
 						"pinMux": ["CH2", "URTS", "", "", "CH2", "MISO"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#AFE1AF"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD1",
 						"pinMux": ["", "URX", "SCL", "SWIO", "CH3N", "AETR2"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD4",
 						"pinMux": ["", "UCK", "C4ETR", "OPA", "C1ETR", "A7"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#FF66CC", "#AFE1AF", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					}
 				]
 			},
@@ -139,19 +139,19 @@
 					{
 						"label": "PC0",
 						"pinMux": ["CH3", "CH3", "NSS", "TX"],
-						"pinMux_colors": ["#AFE1AF", "#ADD8E6", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "VDD",
 						"label_background": "red",
 						"pinMux": [],
-						"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "VSS",
 						"label_background": "black",
 						"pinMux": [],
-						"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PA2",
@@ -166,17 +166,17 @@
 					{
 						"label": "PD7",
 						"pinMux": ["", "NRST", "CH4", "CK", "OPP1"],
-						"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD6",
 						"pinMux": ["A6", "CH3", "URX", "UTX"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD5",
 						"pinMux": ["A5", "CH4", "UTX", "URX"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					}
 				]
 			}
@@ -196,22 +196,22 @@
 					{
 						"label": "PD4",
 						"pinMux": ["", "UCK", "C4ETR", "OPA", "C1ETR", "A7"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#FF66CC", "#AFE1AF", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD5",
 						"pinMux": ["A5", "CH4", "UTX", "URX"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD6",
 						"pinMux": ["A6", "CH3", "URX", "UTX"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD7",
 						"pinMux": ["", "NRST", "CH4", "CK", "OPP1"],
-						"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PA1",
@@ -230,7 +230,7 @@
 					{
 						"label": "PD0",
 						"pinMux": ["", "UCK", "C4ETR", "OPA", "C1ETR", "A7"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#FF66CC", "#AFE1AF", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "VDD",
@@ -239,7 +239,7 @@
 					{
 						"label": "PC0",
 						"pinMux": ["CH3", "CH3", "NSS", "TX"],
-						"pinMux_colors": ["#AFE1AF", "#ADD8E6", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					}
 				]
 			},
@@ -253,54 +253,54 @@
 					{
 						"label": "PD3",
 						"pinMux": ["CH3", "CH3", "NSS", "TX"],
-						"pinMux_colors": ["#AFE1AF", "#ADD8E6", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD2",
 						"label_background": "red",
 						"pinMux": [],
-						"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD1",
 						"pinMux": ["", "URX", "SCL", "SWIO", "CH3N", "AETR2"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC7",
 						"pinMux": ["CH2", "URTS", "", "", "CH2", "MISO"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#AFE1AF"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC6",
 						"pinMux": ["", "UCTS", "SDA", "", "C1C3N", "MOSI"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#AFE1AF"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC5",
 						"pinMux": ["", "NRST", "CH4", "CK", "OPP1"],
-						"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC4",
 						"pinMux": ["", "", "Ch1Ch2N", "MCO", "CH4", "A2"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC3",
 						"pinMux": ["", "CTS","CH1N", "", "CH3", ""],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC2", 
 						"pinMux": ["ETR", "CH2", "RTS", "AETR", "BKIN", "SCL"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#ADD8E6", "#FFB6C1", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC1",
 						"pinMux": ["ETR", "CH1/4", "RX", "NSS", "BKIN", "SDA"],
 						"outline_color": "#FFB6C1",
-						"pinMux_colors": ["#AFE1AF", "#AFE1AF", "#FF66CC", "#AFE1AF", "#FFB6C1", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					}
 				]
 			}
@@ -320,7 +320,7 @@
 					{
 						"label": "PD7",
 						"pinMux": ["", "NRST", "CH4", "CK", "OPP1"],
-						"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PA1",
@@ -339,7 +339,7 @@
 					{
 						"label": "PD0",
 						"pinMux": ["", "UCTS", "SDA", "", "C1C3N", "MOSI"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#AFE1AF"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "VDD",
@@ -348,23 +348,23 @@
 					{
 						"label": "PC0",
 						"pinMux": ["", "URX", "SCL", "SWIO", "CH3N", "AETR2"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC1",
 						"pinMux": ["ETR", "CH1/4", "RX", "NSS", "BKIN", "SDA"],
 						"outline_color": "#FFB6C1",
-						"pinMux_colors": ["#AFE1AF", "#AFE1AF", "#FF66CC", "#AFE1AF", "#FFB6C1", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC2", 
 						"pinMux": ["ETR", "CH2", "RTS", "AETR", "BKIN", "SCL"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#ADD8E6", "#FFB6C1", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC3",
 						"pinMux": ["", "CTS","CH1N", "", "CH3", ""],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					}
 				]
 			},
@@ -378,53 +378,53 @@
 					{
 						"label": "PC4",
 						"pinMux": ["", "", "Ch1Ch2N", "MCO", "CH4", "A2"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC5",
 						"label_background": "red",
 						"pinMux": [],
-						"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC6",
 						"pinMux": ["", "UCTS", "SDA", "", "C1C3N", "MOSI"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#AFE1AF"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PC7",
 						"pinMux": ["CH2", "URTS", "", "", "CH2", "MISO"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#AFE1AF"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD1",
 						"pinMux": ["", "URX", "SCL", "SWIO", "CH3N", "AETR2"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#C9CC3F", "#FFB6C1", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD2",
 						"pinMux": ["", "NRST", "CH4", "CK", "OPP1"],
-						"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD3",
 						"pinMux": ["A6", "CH3", "URX", "UTX"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD4",
 						"pinMux": ["", "UCK", "C4ETR", "OPA", "C1ETR", "A7"],
-						"pinMux_colors": ["#AFE1AF", "#FF66CC", "#ADD8E6", "#FF66CC", "#AFE1AF", "#ADD8E6"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD5",
 						"pinMux": ["A5", "CH4", "UTX", "URX"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					},
 					{
 						"label": "PD6",
 						"pinMux": ["A6", "CH3", "URX", "UTX"],
-						"pinMux_colors": ["#ADD8E6", "#AFE1AF", "#FF66CC", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+						"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
 					}
 				]
 			}

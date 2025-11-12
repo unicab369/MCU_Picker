@@ -1,0 +1,12 @@
+{
+	"pin_functions": {
+		"UART": "#FF66CC",
+		"I2C" : "#FFB6C1",
+		"SPI" : "#AFE1AF",
+		"ADC" : "#ADD8E6",
+		"SYS": "#C9CC3F",
+		"TIM1": "#9AEFE6",
+		"TIM2": "#AFE1AF",
+		"OPA": "#CF9FFF"
+	}
+}

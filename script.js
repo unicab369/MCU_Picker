@@ -10,13 +10,8 @@ function onSelectPin(side, currentLabel) {
 	// renderPins(target, side);
 }
 
-// Store selected options globally
-const selectedOptions = {'CH32': ['CH32V003-J4M6', 'CH32V003-A4M6']};
-let currentActiveTarget = 'CH32'; // Set default
-let mcu_models = {};
-const tabs_items = document.querySelectorAll('#mcuTabs .tab-item');
 
-function renderPinList(model, side) {
+function renderPinList(model, side, pin_functions) {
 	const pinMuxJustify = (side === 'left') ? 'flex-end' : 'flex-start';
 	
 	return model.pin_list.map(e => {
@@ -24,9 +19,12 @@ function renderPinList(model, side) {
 		`<div class="pinMux-outline" style="justify-content: ${pinMuxJustify}">
 			${Array(model.pinMux_length).fill().map((_, index) => {
 				const width = model.column_widths[index] || 30; // Use column_widths
-				const background = e.pinMux_colors ? e.pinMux_colors[index] : '#888';
-				return `<div class="pinMux-style" style="width: ${width}px; background: ${background};">
-					${(e.pinMux && e.pinMux[index]) ? e.pinMux[index] : ''}
+				const pinLabel = (e.pinMux && e.pinMux[index]) ? e.pinMux[index] : '';
+				const pinFunc = e.pin_functions ? e.pin_functions[index] : '';
+				const pinBackground = pin_functions[pinFunc] || '#888';
+
+				return `<div class="pinMux-style" style="width: ${width}px; background: ${pinBackground};">
+					${pinLabel}
 				</div>`
 			}).join('')}
 		</div>`;
@@ -47,35 +45,58 @@ function renderPinList(model, side) {
 	}).join("");
 }
 
+
+// Store selected options globally
+const selectedOptions = {'CH32': ['CH32V003-J4M6', 'CH32V003-A4M6', 'CH32V003-F4P6', 'CH32V003-F4U6']};
+let currentActiveTarget = 'CH32'; // Set default
+let mcu_models = {};
+const tabs_items = document.querySelectorAll('#mcuTabs .tab-item');
+let app_config = {};
+
 async function reloadData() {
 	//# Load pin data from JSON file
 	try {
-		const selectedArr = Object.values(selectedOptions).flat();
-		const keys = Object.keys(selectedOptions);
-		const models = await Promise.all(
-			Object.keys(selectedOptions).map(async (key) => {
-				return (await fetch(`mcu_jsons/model_${key}.json`)).json();
-			})
-		)
-		console.log("models: ", models);
-		let targets = models.flat().filter(e => selectedArr.includes(e.part_no));
-		
-		document.getElementById('MCUs-display-area').innerHTML = targets.map(e => {
-			console.log("modelName: ", e);
+		const data_models = {};
+		for (const key of Object.keys(selectedOptions)) {
+			const response = await fetch(`mcu_jsons/model_${key}.json`);
+			data_models[key] = await response.json();
+		}
+		console.log("data_models: ", data_models);
 
-			return `
-				<div style="width: 100%; overflow-x: auto;">
-					<div class="mcu-outline">
-						<div class="pins-outline">${renderPinList(e.left_pins, 'left')}</div>
-						<div class="mcu" style="width: 400px;">
-							<div>${e.part_no}</div>
-							<div>TSSOP-20</div>
-						</div>
-						<div class="pins-outline">${renderPinList(e.right_pins, 'right')}</div>
-					</div>
-				</div>
-			`;
-		}).join('');
+		var htmlOutput = "";
+
+		Object.keys(selectedOptions).forEach((key, index) => {
+			const target = data_models[key];
+			console.log("target: ", target);
+
+			htmlOutput += `<div style="font-weight: bold; width: 100%; height: 50px; background: lightgray;
+				display: flex; align-items: center; justify-content: center;">${key}</div>`;
+
+			selectedOptions[key].forEach(e => {
+				const model = data_models[key][e];
+				console.log(`key: ${e}`);
+				console.log("model: ", model);
+
+				if (model && model.left_pins && model.right_pins) {
+					htmlOutput += `
+						<div style="width: 100%; overflow-x: auto;">
+							<div class="mcu-outline">
+								<div class="pins-outline">${renderPinList(model.left_pins, 'left', app_config.pin_functions)}</div>
+								<div class="mcu" style="width: 400px;">
+									<div>${e}</div>
+									<div>(${model.package})</div>
+								</div>
+								<div class="pins-outline">${renderPinList(model.right_pins, 'right', app_config.pin_functions)}</div>
+							</div>
+						</div><br>`;
+				}
+				else {
+					htmlOutput += `<div">No pins data found for ${e}</div><br>`;
+				}
+			})	
+		});
+
+		document.getElementById('MCUs-display-area').innerHTML = htmlOutput;
 
 	} catch (error) {
 		console.error('Error loading JSON files:', error);
@@ -86,8 +107,13 @@ async function reloadData() {
 document.addEventListener('DOMContentLoaded', async function() {
 	//# load MCUs json
 	try {
-		mcu_models = await fetch('mcu_jsons/model_MCUs.json').then(response => response.json());
+		[mcu_models, app_config] = await Promise.all([
+			fetch('mcu_jsons/model_MCUs.json').then(response => response.json()),
+			fetch('app_config.json').then(response => response.json())
+		])
+		// mcu_models = await fetch('mcu_jsons/model_MCUs.json').then(response => response.json());
 		console.log("mcu_models: ", mcu_models);
+		console.log("app_config: ", app_config);
 
 		// Set first tab as active manually
 		tabs_items[0].classList.add('active');
@@ -128,7 +154,7 @@ async function onSwitch_tab(event, target_str) {
     currentActiveTarget = target_str; // Update the current target
 
     // 3. Generate content for the NEW tab
-    const options = mcu_models[target_str+'_MCUs'].list.map(e2 => {
+    const options = mcu_models[target_str].list.map(e2 => {
         const isChecked = selectedOptions[target_str]?.includes(e2.part_no || e2.name) ? 'checked' : '';
         return `
             <label class="form-checkbox">

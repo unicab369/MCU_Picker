@@ -1,5 +1,5 @@
 {
-	"CH32_MCUs": {
+	"CH32": {
 		"description": "",
 		"list": [
 			{
@@ -46,8 +46,18 @@
 		]
 	},
 
-	"PY32_MCUs": {
+	"PY32": {
 		"description": "",
+		"pin_function": {
+			"UART": "#FF66CC",
+			"I2C" : "#FFB6C1",
+			"SPI" : "#AFE1AF",
+			"ADC" : "#ADD8E6",
+			"SYSTEM": "#C9CC3F",
+			"TIMER1": "#FFB6C1",
+			"TIMER2": "#AFE1AF",
+			"OPA": "#CF9FFF"
+		},
 		"list": [
 			{
 				"name": "PY32F002A",
@@ -102,7 +112,7 @@
 		]
 	},
 
-	"ESP32_MCUs": {
+	"ESP32": {
 		"description": "",
 		"list": [
 			{
@@ -158,7 +168,7 @@
 		]
 	},
 
-	"STM32_MCUs": {
+	"STM32": {
 		"description": "",
 		"list": [
 			{
