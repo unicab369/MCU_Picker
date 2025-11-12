@@ -3,8 +3,7 @@
 		"description": "",
 		"list": [
 			{
-				"name": "CH32V003",
-				"part_no": "J4M6",
+				"name": "CH32V003-J4M6",
 				"package": "SOP8",
 				"frequency_MHz": 48,
 				"Flash_KB": 32,
@@ -14,8 +13,7 @@
 				"V_Min": 3.3
 			},
 			{
-				"name": "CH32V003",
-				"part_no": "A4M6",
+				"name": "CH32V003-A4M6",
 				"package": "SOP16",
 				"frequency_MHz": 48,
 				"Flash_KB": 32,
@@ -25,8 +23,7 @@
 				"V_Min": 3.3
 			},
 			{
-				"name": "CH32V003",
-				"part_no": "F4P6",
+				"name": "CH32V003-F4P6",
 				"package": "TSSOP20",
 				"frequency_MHz": 48,
 				"Flash_KB": 32,
@@ -37,8 +34,7 @@
 				
 			},
 			{
-				"name": "CH32V003",
-				"part_no": "F4U6",
+				"name": "CH32V003-F4U6",
 				"package": "QFN20",
 				"frequency_MHz": 48,
 				"Flash_KB": 32,

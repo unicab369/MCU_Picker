@@ -27,27 +27,92 @@ function renderPins(pinsModel, side) {
 
 		// change pin outline color by adding "outline_color" value in json
 		return `<div class="pin" style="background:${e.outline_color || 'white'};"
-			onclick="editPin('${side}', '${e.label}')">
+			onclick="onSelectPin('${side}', '${e.label}')">
 			${(side === 'left') ? pinMuxHTML + labelHTML :
 								labelHTML + pinMuxHTML}
 		</div>`;
 	}).join("");
 }
 
-function editPin(side, currentLabel) {
+function onSelectPin(side, currentLabel) {
 	const newLabel = prompt("Enter new label for " + currentLabel + ":");
 	if (!newLabel) return;
-	const target = (side === 'left') ? leftPins : rightPins;
-	const element = target.list.find(p => p.label === currentLabel);
-	if (element) element.label = newLabel;
-	renderPins(target, side);
+	// const target = (side === 'left') ? leftPins : rightPins;
+	// const element = target.list.find(p => p.label === currentLabel);
+	// if (element) element.label = newLabel;
+	// renderPins(target, side);
 }
 
 // Store selected options globally
-const selectedOptions = {};
+const selectedOptions = {'CH32': ['J4M6']};
 let currentActiveTarget = 'CH32'; // Set default
 let mcu_models = {};
 const tabs_items = document.querySelectorAll('#mcuTabs .tab-item');
+
+function renderPinList(model, side) {
+	const pinMuxJustify = (side === 'left') ? 'flex-end' : 'flex-start';
+	
+	return model.pin_list.map(e => {
+		const pinMuxHTML =
+		`<div class="pinMux-outline" style="justify-content: ${pinMuxJustify}">
+			${Array(model.pinMux_length).fill().map((_, index) => {
+				const width = model.column_widths[index] || 30; // Use column_widths
+				const background = e.pinMux_colors ? e.pinMux_colors[index] : '#888';
+				return `<div class="pinMux-style" style="width: ${width}px; background: ${background};">
+					${(e.pinMux && e.pinMux[index]) ? e.pinMux[index] : ''}
+				</div>`
+			}).join('')}
+		</div>`;
+
+		const labelStyleStr = `background: ${e.label_background || model.label_background || 'green'};
+								width: ${model.label_width || 40}px;
+								color: ${e.color || model.label_color || 'black'};
+								padding: 2px; margin: 0 5px;
+								text-align: center;`;
+		const labelHTML = `<div style="${labelStyleStr}">${e.label}</div>`;
+
+		// change pin outline color by adding "outline_color" value in json
+		return `<div class="pin" style="background:${e.outline_color || 'white'};"
+			onclick="onSelectPin('${side}', '${e.label}')">
+			${(side === 'left') ? pinMuxHTML + labelHTML :
+								labelHTML + pinMuxHTML}
+		</div>`;
+	}).join("");
+}
+
+async function reloadData() {
+	try {
+		const selectedArr = Object.values(selectedOptions).flat();
+		const keys = Object.keys(selectedOptions);
+		const models = await Promise.all(
+			Object.keys(selectedOptions).map(async (key) => {
+				return (await fetch(`mcu_jsons/model_${key}.json`)).json();
+			})
+		)
+		console.log("models: ", models);
+		let targets = models.flat().filter(e => selectedArr.includes(e.part_no));
+		
+		document.getElementById('MCUs-display-area').innerHTML = targets.map(e => {
+			console.log("modelName: ", e);
+
+			return `
+				<div style="width: 100%; overflow-x: auto;">
+					<div class="mcu-outline">
+						<div class="pins-outline">${renderPinList(e.left_pins, 'left')}</div>
+						<div class="mcu" style="width: 400px;">
+							<div>${e.part_no}</div>
+							<div>TSSOP-20</div>
+						</div>
+						<div class="pins-outline">${renderPinList(e.right_pins, 'right')}</div>
+					</div>
+				</div>
+			`;
+		}).join('');
+
+	} catch (error) {
+		console.error('Error loading JSON files:', error);
+	}
+}
 
 //! START_POINT: Initialize when the page loads
 document.addEventListener('DOMContentLoaded', async function() {
@@ -81,17 +146,19 @@ document.addEventListener('DOMContentLoaded', async function() {
 	}
 });
 
-function onApply_mcuSelections() {
+async function onApply_mcuSelections() {
     // Save the current tab one last time
     if (currentActiveTarget) {
         const checkboxes = document.querySelectorAll(`input[name="${currentActiveTarget}_nameId"]:checked`);
         selectedOptions[currentActiveTarget] = Array.from(checkboxes).map(cbox => cbox.value);
     }
 
+	await reloadData();
+
     console.log("selectedOptions: ", selectedOptions);
 }
 
-function onSwitch_tab(event, target_str) {
+async function onSwitch_tab(event, target_str) {
     event?.preventDefault();
     
     // 1. Save CURRENT tab's selections
