@@ -1,5 +1,5 @@
 {
-	"pin_functions": {
+	"pin_func_colors": {
 		"UART": "#FF66CC",
 		"I2C" : "#FFB6C1",
 		"SPI" : "#AFE1AF",
@@ -7,6 +7,25 @@
 		"SYS": "#C9CC3F",
 		"TIM1": "#9AEFE6",
 		"TIM2": "#AFE1AF",
-		"OPA": "#CF9FFF"
+		"OPA": "#CF9FFF",
+		"PIN": "#888",
+		"SWIO": "#C9CC3F",
+		"VSS": "black",
+		"VDD": "red"
+	},
+
+	"pin_func_names": {
+		"UART": "UART",
+		"I2C" : "I2C",
+		"SPI" : "SPI",
+		"ADC" : "ADC",
+		"SYS": "SYSTEM",
+		"TIM1": "TIMER1",
+		"TIM2": "TIMER2",
+		"OPA": "OP AMP",
+		"PIN": "PIN NAME",
+		"SWIO": "SWIO",
+		"VSS": "GND",
+		"VDD": "3.3V/5V"
 	}
 }

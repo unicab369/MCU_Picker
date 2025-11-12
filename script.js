@@ -10,8 +10,8 @@ function onSelectPin(side, currentLabel) {
 	// renderPins(target, side);
 }
 
-
-function renderPinList(model, side, pin_functions) {
+//# Render the left and right pins for a given model
+function renderPinList(model, side, pin_func_colors) {
 	const pinMuxJustify = (side === 'left') ? 'flex-end' : 'flex-start';
 	
 	return model.pin_list.map(e => {
@@ -21,7 +21,7 @@ function renderPinList(model, side, pin_functions) {
 				const width = model.column_widths[index] || 30; // Use column_widths
 				const pinLabel = (e.pinMux && e.pinMux[index]) ? e.pinMux[index] : '';
 				const pinFunc = e.pin_functions ? e.pin_functions[index] : '';
-				const pinBackground = pin_functions[pinFunc] || '#888';
+				const pinBackground = pin_func_colors[pinFunc] || '#888';
 
 				return `<div class="pinMux-style" style="width: ${width}px; background: ${pinBackground};">
 					${pinLabel}
@@ -53,8 +53,8 @@ let mcu_models = {};
 const tabs_items = document.querySelectorAll('#mcuTabs .tab-item');
 let app_config = {};
 
-async function reloadData() {
-	//# Load pin data from JSON file
+//# Load pin data from JSON file
+async function load_MCUsContainer() {
 	try {
 		const data_models = {};
 		for (const key of Object.keys(selectedOptions)) {
@@ -65,13 +65,18 @@ async function reloadData() {
 
 		var htmlOutput = "";
 
+		//# Loop through and make diagram for each targeted MCU
 		Object.keys(selectedOptions).forEach((key, index) => {
 			const target = data_models[key];
 			console.log("target: ", target);
 
-			htmlOutput += `<div style="font-weight: bold; width: 100%; height: 50px; background: lightgray;
-				display: flex; align-items: center; justify-content: center;">${key}</div>`;
+			if (selectedOptions[key].length > 0) {
+				// Add header
+				htmlOutput += `<div style="font-weight: bold; width: 100%; height: 50px; background: lightgray;
+					display: flex; align-items: center; justify-content: center;">${key}</div>`;
+			}
 
+			// Add Diagram
 			selectedOptions[key].forEach(e => {
 				const model = data_models[key][e];
 				console.log(`key: ${e}`);
@@ -79,16 +84,17 @@ async function reloadData() {
 
 				if (model && model.left_pins && model.right_pins) {
 					htmlOutput += `
+						<br>
 						<div style="width: 100%; overflow-x: auto;">
+							<div style="width: 100%; text-align: center; font-weight: bold; height: 20px;">${e}</div>
 							<div class="mcu-outline">
-								<div class="pins-outline">${renderPinList(model.left_pins, 'left', app_config.pin_functions)}</div>
+								<div class="pins-outline">${renderPinList(model.left_pins, 'left', app_config.pin_func_colors)}</div>
 								<div class="mcu" style="width: 400px;">
-									<div>${e}</div>
 									<div>(${model.package})</div>
 								</div>
-								<div class="pins-outline">${renderPinList(model.right_pins, 'right', app_config.pin_functions)}</div>
+								<div class="pins-outline">${renderPinList(model.right_pins, 'right', app_config.pin_func_colors)}</div>
 							</div>
-						</div><br>`;
+						</div>`;
 				}
 				else {
 					htmlOutput += `<div">No pins data found for ${e}</div><br>`;
@@ -96,11 +102,38 @@ async function reloadData() {
 			})	
 		});
 
-		document.getElementById('MCUs-display-area').innerHTML = htmlOutput;
+		document.getElementById('MCUsContainer').innerHTML = htmlOutput + `<br>`;
 
 	} catch (error) {
 		console.error('Error loading JSON files:', error);
 	}
+}
+
+function loadLegendContainer() {
+	const columns = [];
+	const groups = [];
+
+	Object.keys(app_config.pin_func_names).forEach((key, index) => {
+		const name = app_config.pin_func_names[key];
+		const color = app_config.pin_func_colors[key];
+
+		groups.push(
+				`<div style="display: flex; align-items: center; gap: 0.75rem;">
+				<div style="background: ${color}; padding: 0 5px;">${key}</div>
+				<div style="font-weight: bold">${name}</div>
+			</div>`
+		);
+		if (groups.length === 4) {
+			columns.push(
+				`<section style="display: flex; flex-direction: column; gap: 0.5rem; width: 150px;">
+					${groups.join('')}
+				</section>`
+			);
+			groups.length = 0;
+		}
+	})
+
+	document.getElementById('legendContainer').innerHTML = columns.join('');
 }
 
 //! START_POINT: Initialize when the page loads
@@ -124,8 +157,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 			currentTarget: tabs_items[0].querySelector('a') // select <a>
 		}, 'CH32');
 
-		reloadData();
+		load_MCUsContainer();
 
+		loadLegendContainer();
+		
 	} catch (error) {
 		console.error('Error loading mcu_models data:', error);
 	}
@@ -138,7 +173,7 @@ async function onApply_mcuSelections() {
         selectedOptions[currentActiveTarget] = Array.from(checkboxes).map(cbox => cbox.value);
     }
 
-	await reloadData();
+	await load_MCUsContainer();
     console.log("selectedOptions: ", selectedOptions);
 }
 

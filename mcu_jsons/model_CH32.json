@@ -293,7 +293,6 @@
 				},
 				{
 					"label": "PC1",
-					"outline_color": "lightgray",
 					"pinMux": ["SDA", "BKIN", "NSS", "RX", "CH1/4", "ETR"],
 					"pin_functions": ["I2C", "TIM1", "SPI", "UART", "TIM2", "TIM2"]
 				}

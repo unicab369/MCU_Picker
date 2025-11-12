@@ -88,3 +88,22 @@
 	display: inline-block !important;
 	flex-wrap: nowrap !important;
 }
+
+
+
+.wrap {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	flex-wrap: wrap;
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	width: 200px; /* set desired column width */
+}
+
