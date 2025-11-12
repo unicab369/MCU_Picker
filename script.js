@@ -1,6 +1,14 @@
 let leftPins = [];
 let rightPins = [];
 
+// Store selected options globally
+const selectedOptions = {'CH32': ['CH32V003-J4M6', 'CH32V003-F4U6']};
+let currentActiveTarget = 'CH32'; // Set default
+let mcu_models = {};
+const tabs_items = document.querySelectorAll('#mcuTabs .tab-item');
+let app_config = {};
+
+
 function onSelectPin(side, currentLabel) {
 	const newLabel = prompt("Enter new label for " + currentLabel + ":");
 	if (!newLabel) return;
@@ -44,14 +52,6 @@ function renderPinList(model, side, pin_func_colors) {
 		</div>`;
 	}).join("");
 }
-
-
-// Store selected options globally
-const selectedOptions = {'CH32': ['CH32V003-J4M6', 'CH32V003-A4M6', 'CH32V003-F4P6', 'CH32V003-F4U6']};
-let currentActiveTarget = 'CH32'; // Set default
-let mcu_models = {};
-const tabs_items = document.querySelectorAll('#mcuTabs .tab-item');
-let app_config = {};
 
 //# Load pin data from JSON file
 async function load_MCUsContainer() {
