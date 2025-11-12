@@ -1,39 +1,6 @@
 let leftPins = [];
 let rightPins = [];
 
-//# render pins dynamically with sub-pins on the right
-function renderPins(pinsModel, side) {
-	// html id: leftPins, rightPins
-	document.getElementById(side + '_pins').innerHTML = pinsModel.list.map(e => {		
-		const pinMuxJustify = (side === 'left') ? 'flex-end' : 'flex-start';
-		
-		const pinMuxHTML =
-			`<div class="pinMux-outline" style="justify-content: ${pinMuxJustify}">
-				${Array(pinsModel.pinMux_length).fill().map((_, index) => {
-					const width = pinsModel.column_widths[index] || 30; // Use column_widths
-					const background = e.pinMux_colors ? e.pinMux_colors[index] : '#888';
-					return `<div class="pinMux-style" style="width: ${width}px; background: ${background};">
-						${(e.pinMux && e.pinMux[index]) ? e.pinMux[index] : ''}
-					</div>`
-				}).join('')}
-			</div>`;
-
-		const labelStyleStr = `background: ${e.label_background || pinsModel.label_background || 'green'};
-								width: ${pinsModel.label_width || 40}px;
-								color: ${e.color || pinsModel.label_color || 'black'};
-								padding: 2px; margin: 0 5px;
-								text-align: center;`;
-		const labelHTML = `<div style="${labelStyleStr}">${e.label}</div>`;
-
-		// change pin outline color by adding "outline_color" value in json
-		return `<div class="pin" style="background:${e.outline_color || 'white'};"
-			onclick="onSelectPin('${side}', '${e.label}')">
-			${(side === 'left') ? pinMuxHTML + labelHTML :
-								labelHTML + pinMuxHTML}
-		</div>`;
-	}).join("");
-}
-
 function onSelectPin(side, currentLabel) {
 	const newLabel = prompt("Enter new label for " + currentLabel + ":");
 	if (!newLabel) return;
@@ -44,7 +11,7 @@ function onSelectPin(side, currentLabel) {
 }
 
 // Store selected options globally
-const selectedOptions = {'CH32': ['J4M6']};
+const selectedOptions = {'CH32': ['CH32V003-J4M6', 'CH32V003-A4M6']};
 let currentActiveTarget = 'CH32'; // Set default
 let mcu_models = {};
 const tabs_items = document.querySelectorAll('#mcuTabs .tab-item');
@@ -81,6 +48,7 @@ function renderPinList(model, side) {
 }
 
 async function reloadData() {
+	//# Load pin data from JSON file
 	try {
 		const selectedArr = Object.values(selectedOptions).flat();
 		const keys = Object.keys(selectedOptions);
@@ -116,17 +84,6 @@ async function reloadData() {
 
 //! START_POINT: Initialize when the page loads
 document.addEventListener('DOMContentLoaded', async function() {
-	//# Load pin data from JSON file
-	try {
-		const pinData = await fetch('pins.json').then(response => response.json());
-		leftPins = pinData.left_pins;
-		rightPins = pinData.right_pins;
-		renderPins(leftPins, 'left');
-		renderPins(rightPins, 'right');
-	} catch (error) {
-		console.error('Error loading pin data:', error);
-	}
-
 	//# load MCUs json
 	try {
 		mcu_models = await fetch('mcu_jsons/model_MCUs.json').then(response => response.json());
@@ -141,6 +98,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 			currentTarget: tabs_items[0].querySelector('a') // select <a>
 		}, 'CH32');
 
+		reloadData();
+
 	} catch (error) {
 		console.error('Error loading mcu_models data:', error);
 	}
@@ -154,7 +113,6 @@ async function onApply_mcuSelections() {
     }
 
 	await reloadData();
-
     console.log("selectedOptions: ", selectedOptions);
 }
 
