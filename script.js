@@ -11,9 +11,9 @@ function renderPins(pinsModel, side) {
 			`<div class="pinMux-outline" style="justify-content: ${pinMuxJustify}">
 				${Array(pinsModel.pinMux_length).fill().map((_, index) => {
 					const width = pinsModel.column_widths[index] || 30; // Use column_widths
-					const background = e.pinMux_colors[index] || '#888';
+					const background = e.pinMux_colors ? e.pinMux_colors[index] : '#888';
 					return `<div class="pinMux-style" style="width: ${width}px; background: ${background};">
-						${e.pinMux[index] || ''}
+						${(e.pinMux && e.pinMux[index]) ? e.pinMux[index] : ''}
 					</div>`
 				}).join('')}
 			</div>`;

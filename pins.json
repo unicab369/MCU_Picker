@@ -63,15 +63,11 @@
 			},
 			{
 				"label": "VDD",
-				"label_background": "red",
-				"pinMux": [],
-				"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+				"label_background": "red"
 			},
 			{
 				"label": "VSS",
-				"label_background": "black",
-				"pinMux": [],
-				"pinMux_colors": ["#ADD8E6", "#C9CC3F", "#AFE1AF", "#FF66CC", "#CF9FFF", "#FFB6C1"]
+				"label_background": "black"
 			},
 			{
 				"label": "PA2",
