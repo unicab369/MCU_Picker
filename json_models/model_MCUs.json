@@ -1,6 +1,40 @@
 {
 	"CH32": {
 		"description": "",
+		"legends": {
+			"UART": "UART",
+			"I2C" : "I2C1",
+			"SPI" : "SPI",
+			"ADC" : "ADC",
+			"SYS": "SYSTEM",
+			"TIM1": "TIMER1",
+			"TIM2": "TIMER2",
+			"OPA": "OP AMP",
+			"VSS": "GND",
+			"VDD": "3.3V/5V"
+		},
+	
+		"pin_list": {
+			"PC0": { "TIM1": ["CH1"], "UART": ["TX_"] },
+			"PC1": { "TIM2": ["CH1_", "CH4_"], "UART": ["RX_"], "I2C": ["SDA"] },
+			"PC2": { "I2C": ["SCL"], "TIM2": ["CH2_"] },
+			"PC3": { "TIM1": ["CH1N_", "CH3"] },
+			"PC4": { "TIM1": ["CH4"], "ADC": ["A2"], "MCO": ["MCO"] },
+			"PC5": { "I2C": ["SCL_"] },
+			"PC6": { "I2C": ["SDA_"], "TIM1": ["CH4N"], "SPI": ["MOSI"] },
+			"PC7": { "TIM1": ["CH2_"], "TIM2": ["CH2_"], "SPI": ["MISO"] },
+			"PD0": { "UART": ["TX_"], "I2C": ["SDA_"], "TIM1": ["CH1N"] },
+			"PD1": { "UART": ["RX_"], "I2C": ["SCL_"], "TIM1": ["CH3N"] },
+			"PD2": { "TIM1": ["CH1", "CH2N_"], "TIM2": ["CH3_"], "ADC": ["A3"] },
+			"PD3": { "TIM2": ["CH2"], "ADC": ["A4"] },
+			"PD4": { "TIM2": ["CH1"], "ADC": ["A7"], "OPA": ["OPA"] },
+			"PD5": { "UART": ["TX", "RX_"], "TIM2": ["CH4_"], "ADC": ["A5"] },
+			"PD6": { "UART": ["RX", "TX_"], "TIM2": ["CH3_"], "ADC": ["A6"] },
+			"PD7": { "TIM2": ["CH4"], "OPA": ["OPP1"], "SYS": ["NRST"] },
+			"PA1": { "SYS": ["OSCI"], "OPA": ["OPN0"], "ADC": ["A1"] },
+			"PA2": { "SYS": ["OSCO"], "OPA": ["OPN0"], "ADC": ["A0"], "TIM1": ["CH2N"] }
+		},
+
 		"mcu_list": [
 			{
 				"name": "CH32V002-J4M6",
@@ -329,9 +363,13 @@
 				"Flash_K": 62, "SRAM_K": 20,
 				"GPIO": 37, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
-			},
+			}
+		]
+	},
 
-
+	"CH32_": {
+		"description": "",
+		"mcu_list": [
 			{
 				"separator": true,
 				"name": "CH32V203-F6P6",

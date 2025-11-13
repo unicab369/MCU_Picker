@@ -2,6 +2,7 @@
 	"legend_colors": {
 		"UART": "#F4BB44",
 		"I2C" : "#FFB6C1",
+		"I2C2": "#FFB6C1",
 		"SPI" : "#FF66CC",
 		"ADC" : "#ADD8E6",
 		"SYS": "#C9CC3F",
@@ -24,45 +25,53 @@
 		"VSS": "GND",
 		"VDD": "3.3V/5V"
 	},
-
-	"CH32V003_Pins": {
-		"PC0": { "TIM1": ["CH1"], "UART": ["TX_"] },
-		"PC1": { "TIM2": ["CH1_", "CH4_"], "UART": ["RX_"], "I2C": ["SDA"] },
-		"PC2": { "I2C": ["SCL"], "TIM2": ["CH2_"] },
-		"PC3": { "TIM1": ["CH1N_", "CH3"] },
-		"PC4": { "TIM1": ["CH4"], "ADC": ["A2"], "MCO": ["MCO"] },
-		"PC5": { "I2C": ["SCL_"] },
-		"PC6": { "I2C": ["SDA_"], "TIM1": ["CH4N"], "SPI": ["MOSI"] },
-		"PC7": { "TIM1": ["CH2_"], "TIM2": ["CH2_"], "SPI": ["MISO"] },
-		"PD0": { "UART": ["TX_"], "I2C": ["SDA_"], "TIM1": ["CH1N"] },
-		"PD1": { "UART": ["RX_"], "I2C": ["SCL_"], "TIM1": ["CH3N"] },
-		"PD2": { "TIM1": ["CH1", "CH2N_"], "TIM2": ["CH3_"], "ADC": ["A3"] },
-		"PD3": { "TIM2": ["CH2"], "ADC": ["A4"] },
-		"PD4": { "TIM2": ["CH1"], "ADC": ["A7"], "OPA": ["OPA"] },
-		"PD5": { "UART": ["TX", "RX_"], "TIM2": ["CH4_"], "ADC": ["A5"] },
-		"PD6": { "UART": ["RX", "TX_"], "TIM2": ["CH3_"], "ADC": ["A6"] },
-		"PD7": { "TIM2": ["CH4"], "OPA": ["OPP1"], "SYS": ["NRST"] },
-		"PA1": { "SYS": ["OSCI"], "OPA": ["OPN0"], "ADC": ["A1"] },
-		"PA2": { "SYS": ["OSCO"], "OPA": ["OPN0"], "ADC": ["A0"], "TIM1": ["CH2N"] }
+	
+	"CH32V203_legends": {
+		"UART": "UART",
+		"I2C" : "I2C1",
+		"I2C2": "I2C2",
+		"SPI" : "SPI",
+		"ADC" : "ADC",
+		"SYS": "SYSTEM",
+		"TIM1": "TIMER1",
+		"TIM2": "TIMER2",
+		"OPA": "OP AMP",
+		"VSS": "GND",
+		"VDD": "3.3V/5V"
 	},
 
 	"CH32V203_DMA": {
-		"CH1": { "ADC": ["A1"], "TIM2": ["CH3"], "TIM4": ["CH1"], "TIM5": ["CH4", "TRIG"],
-					"TIM8": ["CH3", "UP"], "SPI": ["SPI"], "I2S3": ["TX"] },
-		"CH2": { "SPI1": ["RX"], "UART": ["TX3", "RX5"], "TIM1": ["CH1"], "TIM2": ["UP"], 
-					"TIM3": ["CH3"], "TIM5": ["CH3", "UP"], "TIM8": ["CH4", "TRIG", "COM"], 
-					"SPI": ["SPI"], "I2S3": ["TX"] },
-		"CH3": { "SPI1": ["TX"], "UART": ["RX3", "RX4"], "TIM1": ["CH2"], "TIM3": ["CH4", "UP"],
-					"TIM6": ["UP"], "TIM8": ["CH1"], "DAC1": ["DAC1"] },
-		"CH4": { "SPI": ["SPI"], "I2S2": ["RX"], "UART": ["TX1", "TX5"], "I2C2": ["TX"], 
-					"TIM1": ["CH4", "TRIG", "COM"], "TIM4": ["CH2"], "TIM5": "CH2", 
-					"TIM7": ["UP"], "SDIO": ["SDIO"], "DAC2": ["DAC2"] },
-		"CH5": { "SPI": ["SPI"], "I2S2": ["TX"], "UART": ["RX1", "TX4"], "I2C2": ["RX"],
-					"TIM1": ["UP"], "TIM2": ["CH1"], "TIM4": ["CH3"], "TIM5": ["CH1"],
-					"TIM8": ["CH2"], "DAC2": ["DAC2"] },
-		"CH6": { "UART": ["RX2", "TX6"], "I2C1": ["TX"], "TIM1": ["CH3"],
-					"TIM3": ["CH1", "TRIG"], "TIM9": ["UP"], "TIM10": ["CH4"] },
-		"CH7": { "UART": ["TX2", "RX6"], "I2C1": ["RX"], "TIM2": ["CH2", "CH4"],
-					"TIM4": ["UP"], "TIM9": ["CH1"], "TIM10": ["TRIG", "COM"] }
+		"CH1": {
+			"ADC": ["A1"], "SPI": ["SPI"], "I2S3": ["TX"], "TIM2": ["CH3"],
+			"TIM4": ["CH1"], "TIM5": ["CH4", "TRIG"], "TIM8": ["CH3", "UP"]
+		},
+		"CH2": {
+			"UART": ["TX3", "RX5"], "SPI": ["SPI"], "SPI1": ["RX"],
+			"I2S3": ["TX"], "TIM1": ["CH1"], "TIM2": ["UP"], "TIM3": ["CH3"],
+			"TIM5": ["CH3", "UP"], "TIM8": ["CH4", "TRIG", "COM"]
+		},
+		"CH3": {
+			"SPI1": ["TX"], "UART": ["RX3", "RX4"], "TIM1": ["CH2"], "TIM3": ["CH4", "UP"],
+			"TIM6": ["UP"], "TIM8": ["CH1"], "DAC1": ["DAC1"]
+		},
+		"CH4": {
+			"SPI": ["SPI"], "I2S2": ["RX"], "UART": ["TX1", "TX5"],
+			"I2C2": ["TX"], "DAC2": ["DAC2"],
+			"TIM1": ["CH4", "TRIG", "COM"], "TIM4": ["CH2"], "TIM5": "CH2", 
+			"TIM7": ["UP"], "SDIO": ["SDIO"]
+		},
+		"CH5": {
+			"SPI": ["SPI"], "I2S2": ["TX"], "UART": ["RX1", "TX4"], "I2C2": ["RX"],
+			"TIM1": ["UP"], "TIM2": ["CH1"], "TIM4": ["CH3"], "TIM5": ["CH1"],
+			"TIM8": ["CH2"], "DAC2": ["DAC2"]
+		},
+		"CH6": {
+			"UART": ["RX2", "TX6"], "I2C1": ["TX"], "TIM1": ["CH3"],
+			"TIM3": ["CH1", "TRIG"], "TIM9": ["UP"], "TIM10": ["CH4"]
+		},
+		"CH7": {
+			"UART": ["TX2", "RX6"], "I2C1": ["RX"], "TIM2": ["CH2", "CH4"],
+			"TIM4": ["UP"], "TIM9": ["CH1"], "TIM10": ["TRIG", "COM"]
+		}
 	}
 }

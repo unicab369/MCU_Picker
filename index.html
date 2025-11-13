@@ -12,7 +12,7 @@
 </head>
 
 <body style="font-family: Arial, sans-serif; background: #f7f7f7;">
-	<!-- Sidebar -->
+	<!--# Sidebar -->
 	<div class="w3-sidebar w3-bar-block" style="display:none;z-index:5" id="mySidebar">
 		<button class="w3-bar-item w3-button w3-xxlarge" onclick="w3_close()">Close &times;</button>
 		<a href="#" class="w3-bar-item w3-button">Link 1</a>
@@ -20,23 +20,26 @@
 		<a href="#" class="w3-bar-item w3-button">Link 3</a>
 	</div>
 
-	<!-- Page Content -->
+	<!--# Page Content -->
 	<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
 	<div>
 		<button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
 
-		<div class="w3-container">
-			<!-- picker button -->
+		<div class="w3-container" style="font-size: 1.2rem;">
+			<!--# Picker button -->
 			<div class="column" style="margin: 10px;"><a class="btn btn-primary" href="#mcus_modal">Select MCUs</a>
-				<div class="modal" id="mcus_modal"><a class="modal-overlay" href="#modals" aria-label="Close"></a>
-					<div class="modal-container" role="document">
-						<!-- modal header -->
-						<div class="modal-header"><a class="btn btn-clear float-right" href="#modals" aria-label="Close"></a>
-							<div class="modal-title h5">MCUs List</div>
+				<div class="modal" id="mcus_modal">
+					<!-- Modal backdrop -->
+					<a class="modal-overlay" href="#modals" aria-label="Close"></a>
+
+					<div class="modal-container" role="document" style="height: 90%;">
+						<!-- Modal header -->
+						<div class="modal-header" style="background-color: #f7f7f7;">
+							<div style="font-weight: bold; text-align: center;">MCUs List</div>
 						</div>
 
-						<!-- picker -->
+						<!-- Modal picker -->
 						<div><div class="horizontal-scroll-tabs">
 							<ul class="tab" id="mcuTabs"></ul>
 						</div></div>
@@ -46,10 +49,10 @@
 							<div class="content" id="modalContent"></div>
 						</div>
 
-						<!-- modal footer -->
+						<!-- Modal footer -->
 						<div class="modal-footer">
-							<a class="btn btn-primary" href="#modals" onclick="onApply_mcuSelections(event)">Apply</a>
-							<a class="btn btn-link" href="#modals">Close</a>
+							<a class="btn btn-primary app-button" href="#modals" onclick="onApply_mcuSelections(event)">Apply</a>
+							<a class="btn btn-link app-button" href="#modals">Close</a>
 						</div>
 					</div>
 				</div>
@@ -59,7 +62,7 @@
 			<div id="MCUsContainer"></div>
 
 			<!--# Legend Container -->
-			<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;" id="legendContainer"></div>
+			<!-- <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;" id="legendContainer"></div> -->
 			<br>
 
 			<!--# Table Container -->

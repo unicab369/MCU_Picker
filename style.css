@@ -63,7 +63,7 @@
 
 .horizontal-scroll-tabs {
 	width: 100%;
-	height: 40px; /* Fixed height */
+	height: 60px; /* Fixed height */
 	overflow-x: auto;
 	overflow-y: hidden;
 	border-bottom: 2px solid #f1f1f1;
@@ -87,4 +87,10 @@
 .horizontal-scroll-tabs .tab {
 	display: inline-block !important;
 	flex-wrap: nowrap !important;
+}
+
+.app-button {
+	font-size: 1.5rem !important;
+	height: 2.5rem !important;
+	padding: .5rem 1rem !important;
 }
