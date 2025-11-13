@@ -5,18 +5,12 @@
 			"label_color": "white",
 			"label_background": "#888",
 			"label_width": 30,
-			"pinMux_length": 6,
-			"column_widths": [40, 35, 45, 35, 35, 35],
 			"pin_list": [
 				{
-					"label": "PD6",
-					"pinMux": ["", "", "UTX", "URX", "CH3", "A6"],
-					"pin_functions": ["", "", "UART", "UART", "TIM2", "ADC"]
+					"label": "PD6"
 				},
 				{
-					"label": "PA1",
-					"pinMux": ["", "OPN0", "", "CH2", "OSCI", "A1"],
-					"pin_functions": ["", "OPA", "", "TIM1", "SYS", "ADC"]
+					"label": "PA1"
 				},
 				{
 					"label": ""
@@ -26,9 +20,7 @@
 					"label_background": "black"
 				},
 				{
-					"label": "PA2",
-					"pinMux": ["AETR2", "OPP0", "", "CH2N", "OSCO", "A0"],
-					"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
+					"label": "PA2"
 				},
 				{
 					"label": "VDD",
@@ -40,38 +32,24 @@
 			"label_color": "white",
 			"label_background": "#888",
 			"label_width": 30,
-			"pinMux_length": 6,
-			"column_widths": [40, 35, 35, 55, 40, 35],
 			"pin_list": [
 				{
-					"label": "PD1",
-					"pinMux": ["AETR2", "CH3N", "SWIO", "SCL", "URX"],
-					"pin_functions": ["ADC", "TIM2", "SYS", "I2C", "UART"]
+					"label": "PD1"
 				},
 				{
-					"label": "PD5",
-					"pinMux": ["A5", "CH4", "UTX", "URX"],
-					"pin_functions": ["ADC", "TIM2", "UART", "UART", "", ""]
+					"label": "PD5"
 				},
 				{
-					"label": "PD4",
-					"pinMux": ["A7", "C1ETR", "OPA", "C4ETR", "UCK"],
-					"pin_functions": ["ADC", "TIM2", "OPA", "TIM1", "UART"]
+					"label": "PD4"
 				},
 				{
-					"label": "PC4",
-					"pinMux": ["A2", "CH4", "MCO", "Ch1Ch2N"],
-					"pin_functions": ["ADC", "TIM1", "SYS", "TIM1"]
+					"label": "PC4"
 				},
 				{
-					"label": "PC2", 
-					"pinMux": ["SCL", "BKIN", "AETR", "RTS", "CH2", "ETR"],
-					"pin_functions": ["I2C", "TIM1", "ADC", "UART", "TIM2", "TIM1"]
+					"label": "PC2"
 				},
 				{
-					"label": "PC1",
-					"pinMux": ["SDA", "BKIN", "NSS", "RX", "CH1/4", "ETR"],
-					"pin_functions": ["I2C", "TIM1", "PSI", "UART", "TIM2", "TIM2"]
+					"label": "PC1"
 				}
 			]
 		}
@@ -83,49 +61,31 @@
 			"label_color": "white",
 			"label_background": "#888",
 			"label_width": 30,
-			"pinMux_length": 6,
-			"column_widths": [25, 30, 45, 35, 35, 35],
 			"pin_list": [
 				{
 					"label": "PC1",
-					"outline_color": "lightgray",
-					"pinMux": ["ETR", "CH1/4", "RX", "NSS", "BKIN", "SDA"],
-					"pin_functions": ["TIM2", "TIM2", "UART", "SPI", "TIM1", "I2C"]
+					"outline_color": "lightgray"
 				},
 				{
-					"label": "PC2", 
-					"pinMux": ["ETR", "CH2", "RTS", "AETR", "BKIN", "SCL"],
-					"pin_functions": ["TIM1", "TIM2", "UART", "ADC", "TIM1", "I2C"]
+					"label": "PC2"
 				},
 				{
-					"label": "PC3",
-					"pinMux": ["", "CTS","CH1N", "", "CH3", ""],
-					"pin_functions": ["", "UART", "TIM1", "", "TIM1", ""]
+					"label": "PC3"
 				},
 				{
-					"label": "PC4",
-					"pinMux": ["", "", "CH1N/2N", "MCO", "CH4", "A2"],
-					"pin_functions": ["", "", "TIM1", "SYS", "TIM1", "ADC"]
+					"label": "PC4"
 				},
 				{
-					"label": "PC6",
-					"pinMux": ["", "UCTS", "SDA", "", "C1C3N", "MOSI"],
-					"pin_functions": ["", "UART", "TIM1", "", "TIM1", "SPI"]
+					"label": "PC6"
 				},
 				{
-					"label": "PC7",
-					"pinMux": ["CH2", "URTS", "", "", "CH2", "MISO"],
-					"pin_functions": ["TIM1", "UART", "", "", "TIM1", "SPI"]
+					"label": "PC7"
 				},
 				{
-					"label": "PD1",
-					"pinMux": ["", "URX", "SCL", "SWIO", "CH3N", "AETR2"],
-					"pin_functions": ["", "UART", "I2C", "SYS", "TIM1", "ADC"]
+					"label": "PD1"
 				},
 				{
-					"label": "PD4",
-					"pinMux": ["", "UCK", "C4ETR", "OPA", "C1ETR", "A7"],
-					"pin_functions": ["", "UART", "TIM1", "OPA", "TIM2", "ADC"]
+					"label": "PD4"
 				}
 			]
 		},
@@ -133,13 +93,9 @@
 			"label_color": "white",
 			"label_background": "#888",
 			"label_width": 30,
-			"pinMux_length": 6,
-			"column_widths": [30, 30, 30, 30, 30, 35],
 			"pin_list": [
 				{
-					"label": "PC0",
-					"pinMux": ["CH3", "CH3", "NSS", "TX"],
-					"pin_functions": ["TIM2", "TIM1", "SPI", "UART"]
+					"label": "PC0"
 				},
 				{
 					"label": "VDD",
@@ -152,29 +108,19 @@
 					"pinMux": []
 				},
 				{
-					"label": "PA2",
-					"pinMux": ["A0", "OSCO", "CH2N", "", "OPP0", "AETR2"],
-					"pin_functions": ["ADC", "SYS", "TIM1", "", "OPA"]
+					"label": "PA2"
 				},
 				{
-					"label": "PA1",
-					"pinMux": ["A1", "OSCI", "CH2", "", "OPN0"],
-					"pin_functions": ["ADC", "SYS", "TIM1", "", "OPA"]
+					"label": "PA1"
 				},
 				{
-					"label": "PD7",
-					"pinMux": ["", "NRST", "CH4", "CK", "OPP1"],
-					"pin_functions": ["ADC", "SYS", "TIM2", "UART", "OPA"]
+					"label": "PD7"
 				},
 				{
-					"label": "PD6",
-					"pinMux": ["A6", "CH3", "URX", "UTX"],
-					"pin_functions": ["ADC", "TIM2", "UART", "UART"]
+					"label": "PD6"
 				},
 				{
-					"label": "PD5",
-					"pinMux": ["A5", "CH4", "UTX", "URX"],
-					"pin_functions": ["ADC", "TIM2", "UART", "UART"]
+					"label": "PD5"
 				}
 			]
 		}
@@ -186,56 +132,38 @@
 			"label_color": "white",
 			"label_background": "#888",
 			"label_width": 30,
-			"pinMux_length": 6,
-			"column_widths": [45, 30, 45, 35, 35, 35],
 			"pin_list": [
 				{
-					"label": "PD4",
-					"pinMux": ["", "UCK", "C4ETR", "OPA", "C1ETR", "A7"],
-					"pin_functions": ["", "UART", "TIM1", "OPA", "TIM2", "ADC"]
+					"label": "PD4"
 				},
 				{
-					"label": "PD5",
-					"pinMux": ["", "", "URX", "UTX", "CH4", "A5"],
-					"pin_functions": ["", "", "UART", "UART", "TIM2", "ADC"]
+					"label": "PD5"
 				},
 				{
-					"label": "PD6",
-					"pinMux": ["", "", "UTX", "URX", "CH3", "A6"],
-					"pin_functions": ["", "", "UART", "UART", "TIM2", "ADC"]
+					"label": "PD6"
 				},
 				{
-					"label": "PD7",
-					"pinMux": ["", "OPP1", "CK", "CH4", "NRST", ""],
-					"pin_functions": ["", "OPA", "UART", "TIM2", "SYS"]
+					"label": "PD7"
 				},
 				{
-					"label": "PA1",
-					"pinMux": ["", "OPN0", "", "CH2", "OSCI", "A1"],
-					"pin_functions": ["", "OPA", "", "TIM2", "SYS", "ADC"]
+					"label": "PA1"
 				},
 				{
-					"label": "PA2",
-					"pinMux": ["AETR2", "OPP0", "", "CH2N", "OSCO", "A0"],
-					"pin_functions": ["ADC", "OPA", "", "TIM2", "SYS", "ADC"]
+					"label": "PA2"
 				},
 				{
 					"label": "VSS",
 					"label_background": "black"
 				},
 				{
-					"label": "PD0",
-					"pinMux": ["SDA", "OPN1", "TXD", "CH1N", "", ""],
-					"pin_functions": ["I2C", "OPA", "UART", "TIM2", "", ""]
+					"label": "PD0"
 				},
 				{
 					"label": "VDD",
 					"label_background": "red"
 				},
 				{
-					"label": "PC0",
-					"pinMux": ["", "", "TX", "NSS", "CH3", "CH3"],
-					"pin_functions": ["", "", "UART", "SPI", "TIM1", "TIM2"]
+					"label": "PC0"
 				}
 			]
 		},
@@ -243,58 +171,36 @@
 			"label_color": "white",
 			"label_background": "#888",
 			"label_width": 30,
-			"pinMux_length": 6,
-			"column_widths": [30, 45, 30, 45, 45, 35],
 			"pin_list": [
 				{
-					"label": "PD3",
-					"pinMux": ["A4", "CH2", "CH4", "AETR"],
-					"pin_functions": ["ADC", "TIM2", "TIM1", "ADC"]
+					"label": "PD3"
 				},
 				{
-					"label": "PD2",
-					"pinMux": ["A3", "CH1", "CH3", "", "CH2N"],
-					"pin_functions": ["ADC", "TIM1", "TIM2", "", "TIM1"]
+					"label": "PD2"
 				},
 				{
-					"label": "PD1",
-					"pinMux": ["AETR2", "CH3N", "SWIO", "SCL", "URX"],
-					"pin_functions": ["ADC", "TIM1", "SYS", "I2C", "UART"]
+					"label": "PD1"
 				},
 				{
-					"label": "PC7",
-					"pinMux": ["MISO", "CH2", "", "", "URTS", "CH2"],
-					"pin_functions": ["SPI", "TIM1", "", "", "UART", "TIM2"]
+					"label": "PC7"
 				},
 				{
-					"label": "PC6",
-					"pinMux": ["MOSI", "C1C3N", "", "SDA", "UCTS"],
-					"pin_functions": ["SPI", "TIM1", "", "I2C", "UART"]
+					"label": "PC6"
 				},
 				{
-					"label": "PC5",
-					"pinMux": ["SCK", "T1ETR", "CH3", "SCL", "UCK"],
-					"pin_functions": ["SPI", "TIM1", "TIM1", "I2C", "UART"]
+					"label": "PC5"
 				},
 				{
-					"label": "PC4",
-					"pinMux": ["A2", "CH4", "MCO", "CH1N/2N"],
-					"pin_functions": ["ADC", "TIM1", "SYS", "TIM1"]
+					"label": "PC4"
 				},
 				{
-					"label": "PC3",
-					"pinMux": ["", "CH3", "", "CH1N", "CTS"],
-					"pin_functions": ["", "TIM1", "", "TIM1", "UART"]
+					"label": "PC3"
 				},
 				{
-					"label": "PC2", 
-					"pinMux": ["SCL", "BKIN", "AETR", "RTS", "CH2", "ETR"],
-					"pin_functions": ["I2C", "TIM1", "ADC", "UART", "TIM2", "TIM1"]
+					"label": "PC2"
 				},
 				{
-					"label": "PC1",
-					"pinMux": ["SDA", "BKIN", "NSS", "RX", "CH1/4", "ETR"],
-					"pin_functions": ["I2C", "TIM1", "SPI", "UART", "TIM2", "TIM2"]
+					"label": "PC1"
 				}
 			]
 		}
@@ -306,56 +212,38 @@
 			"label_color": "white",
 			"label_background": "#888",
 			"label_width": 30,
-			"pinMux_length": 6,
-			"column_widths": [45, 30, 45, 35, 35, 35],
 			"pin_list": [
 				{
-					"label": "PD7",
-					"pinMux": ["", "OPP1", "CK", "CH4", "NRST"],
-					"pin_functions": ["", "OPA", "UART", "TIM2", "SYS", "ADC"]
+					"label": "PD7"
 				},
 				{
-					"label": "PA1",
-					"pinMux": ["", "OPN0", "", "CH2", "OSCI", "A1"],
-					"pin_functions": ["", "OPA", "", "TIM1", "SYS", "ADC"]
+					"label": "PA1"
 				},
 				{
-					"label": "PA2",
-					"pinMux": ["AETR2", "OPN0", "", "CH2N", "OSCO", "A0"],
-					"pin_functions": ["ADC", "OPA", "", "TIM1", "SYS", "ADC"]
+					"label": "PA2"
 				},
 				{
 					"label": "VSS",
 					"label_background": "black"
 				},
 				{
-					"label": "PD0",
-					"pinMux": ["SDA", "OPN1", "TXD", "CH1N", "", ""],
-					"pin_functions": ["I2C", "OPA", "UART", "TIM2", "", ""]
+					"label": "PD0"
 				},
 				{
 					"label": "VDD",
 					"label_background": "red"
 				},
 				{
-					"label": "PC0",
-					"pinMux": ["", "", "TX", "NSS", "CH3", "CH3"],
-					"pin_functions": ["", "", "UART", "SPI", "TIM1", "TIM2"]
+					"label": "PC0"
 				},
 				{
-					"label": "PC1",
-					"pinMux": ["ETR", "CH1/4", "RX", "NSS", "BKIN", "SDA"],
-					"pin_functions": ["TIM2", "TIM2", "UART", "SPI", "TIM1", "I2C"]
+					"label": "PC1"
 				},
 				{
-					"label": "PC2", 
-					"pinMux": ["ETR", "CH2", "RTS", "AETR", "BKIN", "SCL"],
-					"pin_functions": ["TIM1", "TIM2", "UART", "ADC", "TIM1", "I2C"]
+					"label": "PC2"
 				},
 				{
-					"label": "PC3",
-					"pinMux": ["", "CTS","CH1N", "", "CH3", ""],
-					"pin_functions": ["", "UART", "TIM1", "", "TIM1", ""]
+					"label": "PC3"
 				}
 			]
 		},
@@ -363,58 +251,36 @@
 			"label_color": "white",
 			"label_background": "#888",
 			"label_width": 30,
-			"pinMux_length": 6,
-			"column_widths": [30, 45, 30, 30, 30, 35],
 			"pin_list": [
 				{
-					"label": "PD6",
-					"pinMux": ["A6", "CH3", "URX", "UTX"],
-					"pin_functions": ["ADC", "TIM2", "UART", "UART"]
+					"label": "PD6"
 				},
 				{
-					"label": "PD5",
-					"pinMux": ["A5", "CH4", "UTX", "URX"],
-					"pin_functions": ["ADC", "TIM2", "UART", "UART"]
+					"label": "PD5"
 				},
 				{
-					"label": "PD4",
-					"pinMux": ["A7", "C1ETR", "OPA", "C4ETR", "UCK"],
-					"pin_functions": ["ADC", "TIM2", "OPA", "TIM1", "UART"]
+					"label": "PD4"
 				},
 				{
-					"label": "PD3",
-					"pinMux": ["A4", "CH2", "CH4", "AETR"],
-					"pin_functions": ["ADC", "TIM2", "TIM1", "ADC"]
+					"label": "PD3"
 				},
 				{
-					"label": "PD2",
-					"pinMux": ["A3", "CH1", "CH3", "", "CH2N"],
-					"pin_functions": ["ADC", "TIM1", "TIM2", "", "TIM1"]
+					"label": "PD2"
 				},
 				{
-					"label": "PD1",
-					"pinMux": ["AETR2", "CH3N", "SWIO", "SCL", "URX"],
-					"pin_functions": ["ADC", "TIM1", "SYS", "I2C", "UART"]
+					"label": "PD1"
 				},
 				{
-					"label": "PC7",
-					"pinMux": ["MISO", "CH2", "", "", "URTS", "CH2"],
-					"pin_functions": ["SPI", "TIM1", "", "", "UART", "TIM2"]
+					"label": "PC7"
 				},
 				{
-					"label": "PC6",
-					"pinMux": ["MOSI", "C1C3N", "", "SDA", "UCTS"],
-					"pin_functions": ["SPI", "TIM1", "", "I2C", "UART"]
+					"label": "PC6"
 				},
 				{
-					"label": "PC5",
-					"pinMux": ["SCK", "T1ETR", "CH3", "SCL", "UCK"],
-					"pin_functions": ["SPI", "TIM1", "TIM1", "I2C", "UART"]
+					"label": "PC5"
 				},
 				{
-					"label": "PC4",
-					"pinMux": ["A2", "CH4", "MCO", "CH1N/2N"],
-					"pin_functions": ["ADC", "TIM1", "SYS", "TIM1"]
+					"label": "PC4"
 				}
 			]
 		}

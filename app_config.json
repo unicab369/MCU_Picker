@@ -1,20 +1,18 @@
 {
-	"pin_func_colors": {
-		"UART": "#FF66CC",
+	"legend_colors": {
+		"UART": "#F4BB44",
 		"I2C" : "#FFB6C1",
-		"SPI" : "#AFE1AF",
+		"SPI" : "#FF66CC",
 		"ADC" : "#ADD8E6",
 		"SYS": "#C9CC3F",
 		"TIM1": "#9AEFE6",
 		"TIM2": "#AFE1AF",
 		"OPA": "#CF9FFF",
-		"PIN": "#888",
-		"SWIO": "#C9CC3F",
 		"VSS": "black",
 		"VDD": "red"
 	},
 
-	"pin_func_names": {
+	"legend_names": {
 		"UART": "UART",
 		"I2C" : "I2C",
 		"SPI" : "SPI",
@@ -23,9 +21,28 @@
 		"TIM1": "TIMER1",
 		"TIM2": "TIMER2",
 		"OPA": "OP AMP",
-		"PIN": "PIN NAME",
-		"SWIO": "SWIO",
 		"VSS": "GND",
 		"VDD": "3.3V/5V"
+	},
+
+	"CH32V003_Pins": {
+		"PC0": { "TIM1": ["CH1"], "UART": ["TX_"] },
+		"PC1": { "TIM2": ["CH1_", "CH4_"], "UART": ["RX_"], "I2C": ["SDA"] },
+		"PC2": { "I2C": ["SCL"], "TIM2": ["CH2_"] },
+		"PC3": { "TIM1": ["CH1N_", "CH3"] },
+		"PC4": { "TIM1": ["CH4"], "ADC": ["A2"], "MCO": ["MCO"] },
+		"PC5": { "I2C": ["SCL_"] },
+		"PC6": { "I2C": ["SDA_"], "TIM1": ["CH4N"], "SPI": ["MOSI"] },
+		"PC7": { "TIM1": ["CH2_"], "TIM2": ["CH2_"], "SPI": ["MISO"] },
+		"PD0": { "UART": ["TX_"], "I2C": ["SDA_"], "TIM1": ["CH1N"] },
+		"PD1": { "UART": ["RX_"], "I2C": ["SCL_"], "TIM1": ["CH3N"] },
+		"PD2": { "TIM1": ["CH1", "CH2N_"], "TIM2": ["CH3_"], "ADC": ["A3"] },
+		"PD3": { "TIM2": ["CH2"], "ADC": ["A4"] },
+		"PD4": { "TIM2": ["CH1"], "ADC": ["A7"], "OPA": ["OPA"] },
+		"PD5": { "UART": ["TX", "RX_"], "TIM2": ["CH4_"], "ADC": ["A5"] },
+		"PD6": { "UART": ["RX", "TX_"], "TIM2": ["CH3_"], "ADC": ["A6"] },
+		"PD7": { "TIM2": ["CH4"], "OPA": ["OPP1"], "SYS": ["NRST"] },
+		"PA1": { "SYS": ["OSCI"], "OPA": ["OPN0"], "ADC": ["A1"] },
+		"PA2": { "SYS": ["OSCO"], "OPA": ["OPN0"], "ADC": ["A0"], "TIM1": ["CH2N"] }
 	}
 }
