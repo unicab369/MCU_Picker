@@ -2,6 +2,7 @@
 	"legend_colors": {
 		"UART": "#F4BB44",
 		"I2C" : "#FFB6C1",
+		"I2C1" : "#FFB6C1",
 		"I2C2": "#FFB6C1",
 		"SPI" : "#FF66CC",
 		"ADC" : "#ADD8E6",

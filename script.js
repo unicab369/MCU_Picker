@@ -2,16 +2,16 @@ let leftPins = [];
 let rightPins = [];
 
 // Store selected options globally
-const selectedOptions = {'CH32': ['CH32V003-J4M6', 'CH32V003-F4U6']};
+const selectedOptions = {'CH32': ['CH32V003-J4M6', 'CH32V003-F4U6'], 'CH32_': ['CH32V203-F6P6']}
 
 
-let currentActiveTarget = 'CH32'; // Set default
-let mcu_models = {};
-let pins_config = {};
-let selectedLegends = [];
+let currentActiveTarget = 'CH32' // Set default
+let mcu_models = {}
+let pins_config = {}
+let selectedLegends = {}
 
 function onSelectPin(side, currentLabel) {
-	const newLabel = prompt("Enter new label for " + currentLabel + ":");
+	const newLabel = prompt("Enter new label for " + currentLabel + ":")
 	if (!newLabel) return;
 	// const target = (side === 'left') ? leftPins : rightPins;
 	// const element = target.list.find(p => p.label === currentLabel);
@@ -21,7 +21,7 @@ function onSelectPin(side, currentLabel) {
 
 //# Render the left and right pins for a given model
 function renderPinList(pinsMap, model, side) {
-	const pinStackSide = (side === 'left') ? 'flex-end' : 'flex-start';
+	const pinStackSide = (side === 'left') ? 'flex-end' : 'flex-start'
 	
 	return model.pin_list.map(item => {
 		const target = pinsMap[item.label]
@@ -53,21 +53,24 @@ function renderPinList(pinsMap, model, side) {
 //# Load pin data from JSON file
 async function reload_MCUsContainer() {
 	try {
+		// selectedLegends = Object.keys(pins_config.legend_names)
+		// console.log("selectedLegends: ", selectedLegends)
+
 		var htmlOutput = ""
 
 		//# Loop through and make diagram for each targeted MCU
-		for (const family_key of Object.keys(selectedOptions)) {
-			const target = await fetch(`json_models/model_${family_key}.json`).then(response => response.json())
+		for (const family of Object.keys(selectedOptions)) {
+			const target = await fetch(`json_models/model_${family}.json`).then(response => response.json())
 			console.log("target: ", target)
 
 			const pinsMap = {}
 
-			const obj = mcu_models[family_key].pin_list
+			const obj = mcu_models[family].pin_list
 			console.log("Obj: ", obj)
 
 			if (obj) {
 				for (const pin_key of Object.keys(obj)) {
-					for (func_key of selectedLegends) {
+					for (func_key of selectedLegends[family]) {
 						const label = obj[pin_key][func_key]
 						if (!label) continue
 						const color = pins_config.legend_colors[func_key]
@@ -84,16 +87,16 @@ async function reload_MCUsContainer() {
 			console.log("pinsMap: ", pinsMap)
 
 			// Add header
-			if (selectedOptions[family_key].length > 0) {
+			if (selectedOptions[family].length > 0) {
 				htmlOutput += `<br><div style="font-weight: bold; width: 100%; height: 50px; background: lightgray;
-					display: flex; align-items: center; justify-content: center;">${family_key}</div>`;
+					display: flex; align-items: center; justify-content: center;">${family}</div>`
 			}
 
 			// Add Diagram
-			selectedOptions[family_key].forEach(e => {
-				const model = target[e];
-				console.log(`key: ${e}`);
-				console.log("model: ", model);
+			selectedOptions[family].forEach(e => {
+				const model = target[e]
+				console.log(`key: ${e}`)
+				console.log("model: ", model)
 
 				if (model && model.left_pins && model.right_pins) {
 					htmlOutput += `
@@ -115,47 +118,47 @@ async function reload_MCUsContainer() {
 			})
 
 			// Add Legend
-			if (selectedOptions[family_key].length > 0) {
+			if (selectedOptions[family].length > 0) {
 				htmlOutput += `<br><div style="display: flex; flex-wrap: wrap; justify-content: center;
-									gap: 2rem;" id="legendContainer_${family_key}"></div>`
+									gap: 2rem;" id="legendContainer_${family}"></div>`
 			}
 		}
 		
-		document.getElementById('MCUsContainer').innerHTML = htmlOutput + `<br>`;
+		document.getElementById('MCUsContainer').innerHTML = htmlOutput + `<br>`
 
 		//# Reload legend
-		for (const family_key of Object.keys(selectedOptions)) {
-			reload_legendContainer(family_key)
+		for (const family of Object.keys(selectedOptions)) {
+			reload_legendContainer(family)
 		}
 
 	} catch (error) {
-		console.error('Error loading JSON files:', error);
+		console.error('Error loading JSON files:', error)
 	}
 }
 
 
-function onSelectLegend(func_key) {
+function onSelectLegend(family, func_key) {
 	if (func_key == "VDD" || func_key == "VSS") return;
 	
-	const idx = selectedLegends.indexOf(func_key);
-	if (idx === -1) selectedLegends.push(func_key)
-	else selectedLegends.splice(idx, 1)
+	const idx = selectedLegends[family].indexOf(func_key)
+	if (idx === -1) selectedLegends[family].push(func_key)
+	else selectedLegends[family].splice(idx, 1)
 
 	reload_MCUsContainer()
 }
 
 //# load legend
 function reload_legendContainer(family) {
-	const sections = [];
-	const columns = [];
+	const sections = []
+	const columns = []
 
 	for (key in mcu_models[family].legends) {
-		const color = selectedLegends.includes(key) ? pins_config.legend_colors[key] : '#888'
+		const color = selectedLegends[family].includes(key) ? pins_config.legend_colors[key] : '#888'
 
 		sections.push(
 			`<div style="display: flex; align-items: center; gap: 0.75rem;">
 				<div style="background: ${color}; padding: 0 5px; width: 60px; text-align: center" 
-					onclick="onSelectLegend('${key}')">
+					onclick="onSelectLegend('${family}', '${key}')">
 					${key}
 				</div>
 				<div">${ mcu_models[family].legends[key] }</div>
@@ -196,7 +199,7 @@ function reload_tableContainer(key) {
 	
 	const recordHTML = mcu_models[key].mcu_list.map((e, record_idx) => {
 		const backgroundColor = record_idx % 2 === 0 ? 'lightgray' : '#f7f7f7'
-		const topBorder = e.separator ? 'border-top: 3px solid gray;' : '';
+		const topBorder = e.separator ? 'border-top: 3px solid gray;' : ''
 
 		return `
 			<tr style="background-color: ${backgroundColor}; ${topBorder}">${
@@ -268,14 +271,18 @@ document.addEventListener('DOMContentLoaded', async function() {
 		console.log("pins_config: ", pins_config);
 		console.log("tabItems: ", tabs_items);
 
-		document.getElementById('mcuTabs').innerHTML = Object.keys(mcu_models).map(e => `
-			<li class="tab-item">
-				<a href="#" onclick="onSwitch_tab(event, '${e}')">${e}xx</a>
-			</li>
-		`).join('');
+		let mcuTabsHTML = ''
 
-		selectedLegends = Object.keys(pins_config.legend_names)
-		console.log("selectedLegends: ", selectedLegends)
+		for (model in mcu_models) {
+			console.log("model3: ", model);
+			selectedLegends[model] = Object.keys(mcu_models[model].legends || [])
+			mcuTabsHTML += 
+				`<li class="tab-item">
+					<a href="#" onclick="onSwitch_tab(event, '${model}')">${model}xx</a>
+				</li>`
+		}
+
+		document.getElementById('mcuTabs').innerHTML = mcuTabsHTML
 
 		await reload_MCUsContainer()
 		reload_tableContainer('CH32')
@@ -297,28 +304,28 @@ document.addEventListener('DOMContentLoaded', async function() {
 async function onApply_mcuSelections() {
     // Save the current tab one last time
     if (currentActiveTarget) {
-        const checkboxes = document.querySelectorAll(`input[name="${currentActiveTarget}_nameId"]:checked`);
-        selectedOptions[currentActiveTarget] = Array.from(checkboxes).map(cbox => cbox.value);
+        const checkboxes = document.querySelectorAll(`input[name="${currentActiveTarget}_nameId"]:checked`)
+        selectedOptions[currentActiveTarget] = Array.from(checkboxes).map(cbox => cbox.value)
     }
 
-	await reload_MCUsContainer();
-    console.log("selectedOptions: ", selectedOptions);
+	await reload_MCUsContainer()
+    console.log("selectedOptions: ", selectedOptions)
 }
 
 async function onSwitch_tab(event, target_str) {
-    event?.preventDefault();
+    event?.preventDefault()
     
     // 1. Save CURRENT tab's selections
-    if (currentActiveTarget !== target_str) onApply_mcuSelections();
+    if (currentActiveTarget !== target_str) onApply_mcuSelections()
     
     // 2. Switch tabs and update current target
-    tabs_items().forEach(t => t.classList.remove('active'));
-    event?.currentTarget?.parentElement.classList.add('active');
+    tabs_items().forEach(t => t.classList.remove('active'))
+    event?.currentTarget?.parentElement.classList.add('active')
     currentActiveTarget = target_str; // Update the current target
 
     // 3. Generate content for the NEW tab
     const options = mcu_models[target_str].mcu_list.map(e2 => {
-        const isChecked = selectedOptions[target_str]?.includes(e2.part_no || e2.name) ? 'checked' : '';
+        const isChecked = selectedOptions[target_str]?.includes(e2.part_no || e2.name) ? 'checked' : ''
         return `<div>
 					<input type="checkbox"
 						style="width: 22px; height: 22px;"
@@ -334,16 +341,16 @@ async function onSwitch_tab(event, target_str) {
             <div class="checkbox-group">
                 ${options}
             </div>
-        </div>`;
+        </div>`
 }
 
 
 function w3_open() {
-	document.getElementById("mySidebar").style.display = "block";
-	document.getElementById("myOverlay").style.display = "block";
+	document.getElementById("mySidebar").style.display = "block"
+	document.getElementById("myOverlay").style.display = "block"
 }
 
 function w3_close() {
-	document.getElementById("mySidebar").style.display = "none";
-	document.getElementById("myOverlay").style.display = "none";
+	document.getElementById("mySidebar").style.display = "none"
+	document.getElementById("myOverlay").style.display = "none"
 }

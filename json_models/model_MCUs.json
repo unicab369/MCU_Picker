@@ -369,6 +369,20 @@
 
 	"CH32_": {
 		"description": "",
+		"legends": {
+			"UART": "UART",
+			"I2C1" : "I2C1",
+			"I2C2" : "I2C2",
+			"SPI" : "SPI",
+			"ADC" : "ADC",
+			"SYS": "SYSTEM",
+			"TIM1": "TIMER1",
+			"TIM2": "TIMER2",
+			"OPA": "OP AMP",
+			"VSS": "GND",
+			"VDD": "3.3V/5V"
+		},
+
 		"mcu_list": [
 			{
 				"separator": true,
