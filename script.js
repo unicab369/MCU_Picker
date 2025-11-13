@@ -3,9 +3,10 @@ let rightPins = [];
 
 // Store selected options globally
 const selectedOptions = {'CH32': ['CH32V003-J4M6', 'CH32V003-F4U6']};
+const tabs_items = document.querySelectorAll('#mcuTabs .tab-item');
+
 let currentActiveTarget = 'CH32'; // Set default
 let mcu_models = {};
-const tabs_items = document.querySelectorAll('#mcuTabs .tab-item');
 let app_config = {};
 
 
@@ -109,7 +110,9 @@ async function load_MCUsContainer() {
 	}
 }
 
-function loadLegendContainer() {
+
+//# load legend
+function load_legendContainer() {
 	const columns = [];
 	const groups = [];
 
@@ -136,6 +139,73 @@ function loadLegendContainer() {
 	document.getElementById('legendContainer').innerHTML = columns.join('');
 }
 
+
+//# load table
+function load_tableContainer() {
+	const headers = ["#", "Part No.", "Freq.", "Flash", "RAM", "GPIO", "V-Min", "V-Max",
+						"UART", "I2C", "SPI", "RTC", "I2S", "CAN", "USB2.0", "Package"]
+	
+	const headerKeys = ["idx", "name", "frequency_MHz", "Flash_K", "SRAM_K", "GPIO", "Min_V", "Max_V",
+						"UART", "I2C", "SPI", , "RTC", "I2S", "CAN", "USB2", "package"]
+	const heardersHTML = headers.map(e => `<th>${e}</th>`).join('')
+	
+	const recordHTML = mcu_models['CH32'].mcu_list.map((e, record_idx) => {
+		const backgroundColor = record_idx % 2 === 0 ? 'lightgray' : 'transparent'
+		const topBorder = e.separator ? 'border-top: 3px solid gray;' : '';
+
+		return `
+			<tr style="background-color: ${backgroundColor}; ${topBorder}">${
+				headerKeys.map((key, key_idx) => {
+					if (key_idx === 0) { return `<td>${record_idx + 1}</td>` }
+
+					// add subfix
+					const subfix = key.includes('_') ? `${key.split('_')[1]}` : ''
+					const value = e[key] || '';
+					return `<td>${value + subfix}</td>`
+				}).join('')}
+			</tr>`
+	})
+
+	document.getElementById('tableContainer').innerHTML = `
+		<div style="overflow-x: auto; border: 1px solid #dee2e6; height: 700px;">
+			<table style="border-collapse: collapse; width: 100%;">
+				<thead><tr>${heardersHTML}</tr></thead>
+				<tbody>${recordHTML}</tbody>
+			</table>
+		</div>
+		
+		<style>
+		    /* Sticky header */
+			table th {
+				position: sticky;
+				top: 0;
+				background: #f8f9fa;
+				z-index: 20;
+				border-bottom: 2px solid #dee2e6;
+				padding: 12px;
+			}
+
+			table th, table td {
+				border: 1px solid #dee2e6;
+				padding: 8px 8px;
+				white-space: nowrap;
+			}
+			
+			/* Freeze first two columns with auto positioning */
+			table th:first-child, table td:first-child {
+				position: sticky;
+				left: 0;
+				background: inherit;
+			}
+			
+			table th:nth-child(2), table td:nth-child(2) {
+				position: sticky;
+				left: 30px;
+				background: inherit;
+			}
+		</style>`
+}
+
 //! START_POINT: Initialize when the page loads
 document.addEventListener('DOMContentLoaded', async function() {
 	//# load MCUs json
@@ -159,8 +229,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 		load_MCUsContainer();
 
-		loadLegendContainer();
+		load_legendContainer();
 		
+		load_tableContainer();
+
 	} catch (error) {
 		console.error('Error loading mcu_models data:', error);
 	}
@@ -189,7 +261,7 @@ async function onSwitch_tab(event, target_str) {
     currentActiveTarget = target_str; // Update the current target
 
     // 3. Generate content for the NEW tab
-    const options = mcu_models[target_str].list.map(e2 => {
+    const options = mcu_models[target_str].mcu_list.map(e2 => {
         const isChecked = selectedOptions[target_str]?.includes(e2.part_no || e2.name) ? 'checked' : '';
         return `
             <label class="form-checkbox">
