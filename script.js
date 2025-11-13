@@ -3,11 +3,11 @@ let rightPins = [];
 
 // Store selected options globally
 const selectedOptions = {'CH32': ['CH32V003-J4M6', 'CH32V003-F4U6']};
-const tabs_items = document.querySelectorAll('#mcuTabs .tab-item');
+
 
 let currentActiveTarget = 'CH32'; // Set default
 let mcu_models = {};
-let app_config = {};
+let pins_config = {};
 let selectedLegends = [];
 
 function onSelectPin(side, currentLabel) {
@@ -56,11 +56,11 @@ async function reload_MCUsContainer() {
 		var htmlOutput = ""
 		const pinsMap = {}
 
-		for (const pin_key of Object.keys(app_config.CH32V003_Pins)) {
+		for (const pin_key of Object.keys(pins_config.CH32V003_Pins)) {
 			selectedLegends.forEach(func_key => {
-				const label = app_config.CH32V003_Pins[pin_key][func_key]
+				const label = pins_config.CH32V003_Pins[pin_key][func_key]
 				if (label) {
-					const color = app_config.legend_colors[func_key]
+					const color = pins_config.legend_colors[func_key]
 					
 					if (pin_key in pinsMap) {
 						pinsMap[pin_key].push({label, color})
@@ -76,7 +76,7 @@ async function reload_MCUsContainer() {
 
 		//# Loop through and make diagram for each targeted MCU
 		for (const key of Object.keys(selectedOptions)) {
-			const target = await fetch(`mcu_jsons/model_${key}.json`).then(response => response.json())
+			const target = await fetch(`json_models/model_${key}.json`).then(response => response.json())
 			console.log("target: ", target)
 
 			if (selectedOptions[key].length > 0) {
@@ -136,9 +136,9 @@ function reload_legendContainer() {
 	const sections = [];
 	const columns = [];
 
-	Object.keys(app_config.legend_names).forEach((key, index) => {
-		const name = app_config.legend_names[key];
-		const color = selectedLegends.includes(key) ? app_config.legend_colors[key] : '#888';
+	Object.keys(pins_config.legend_names).forEach((key, index) => {
+		const name = pins_config.legend_names[key];
+		const color = selectedLegends.includes(key) ? pins_config.legend_colors[key] : '#888';
 
 		sections.push(
 			`<div style="display: flex; align-items: center; gap: 0.75rem;">
@@ -238,27 +238,39 @@ function reload_tableContainer() {
 		</style>`
 }
 
+
+function tabs_items() {
+	return document.querySelectorAll('#mcuTabs .tab-item');
+}
+
 //! START_POINT: Initialize when the page loads
 document.addEventListener('DOMContentLoaded', async function() {
 	//# load MCUs json
 	try {
-		[mcu_models, app_config] = await Promise.all([
-			fetch('mcu_jsons/model_MCUs.json').then(response => response.json()),
-			fetch('app_config.json').then(response => response.json())
+		[mcu_models, pins_config] = await Promise.all([
+			fetch('json_models/model_MCUs.json').then(response => response.json()),
+			fetch('pins_config.json').then(response => response.json())
 		])
 		console.log("mcu_models: ", mcu_models);
-		console.log("app_config: ", app_config);
+		console.log("pins_config: ", pins_config);
+		console.log("tabItems: ", tabs_items);
+
+		document.getElementById('mcuTabs').innerHTML = Object.keys(mcu_models).map(e => `
+			<li class="tab-item">
+				<a href="#" onclick="onSwitch_tab(event, '${e}')">${e}xx</a>
+			</li>
+		`).join('');
 
 		// Set first tab as active manually
-		tabs_items[0].classList.add('active');
+		tabs_items()[0].classList.add('active');
 
 		// Then call the function
 		onSwitch_tab({ 
 			preventDefault: () => {},
-			currentTarget: tabs_items[0].querySelector('a') // select <a>
+			currentTarget: tabs_items()[0].querySelector('a') // select <a>
 		}, 'CH32');
 
-		selectedLegends = Object.keys(app_config.legend_names)
+		selectedLegends = Object.keys(pins_config.legend_names)
 
 		console.log("selectedLegends: ", selectedLegends);
 
@@ -291,7 +303,7 @@ async function onSwitch_tab(event, target_str) {
     if (currentActiveTarget !== target_str) onApply_mcuSelections();
     
     // 2. Switch tabs and update current target
-    tabs_items.forEach(t => t.classList.remove('active'));
+    tabs_items().forEach(t => t.classList.remove('active'));
     event?.currentTarget?.parentElement.classList.add('active');
     currentActiveTarget = target_str; // Update the current target
 

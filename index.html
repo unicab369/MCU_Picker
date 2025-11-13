@@ -37,16 +37,9 @@
 						</div>
 
 						<!-- picker -->
-						<div>
-							<div class="horizontal-scroll-tabs" >
-								<ul class="tab horizontal-scroll-tabs" id="mcuTabs">
-									<li class="tab-item active"><a href="#tabs" onclick="onSwitch_tab(event, 'CH32')">CH32xx</a></li>
-									<li class="tab-item"><a href="#tabs" onclick="onSwitch_tab(event, 'PY32')">PY32xx</a></li>
-									<li class="tab-item"><a href="#tabs" onclick="onSwitch_tab(event, 'ESP32')">ESP32xx</a></li>
-									<li class="tab-item"><a href="#tabs" onclick="onSwitch_tab(event, 'STM32')">STM32xx</a></li>
-								</ul>
-							</div>
-						</div>
+						<div><div class="horizontal-scroll-tabs">
+							<ul class="tab" id="mcuTabs"></ul>
+						</div></div>
 
 						<!-- Modal Body -->
 						<div class="modal-body">
@@ -62,14 +55,14 @@
 				</div>
 			</div>
 
-			<!-- Mcus Container -->
+			<!--# Mcus Container -->
 			<div id="MCUsContainer"></div>
 
-			<!-- Legend Container -->
+			<!--# Legend Container -->
 			<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;" id="legendContainer"></div>
 			<br>
 
-			<!-- Table Container -->
+			<!--# Table Container -->
 			<div id="tableContainer"></div>
 
 			<button class="btn btn-link" style="margin: 20px;">

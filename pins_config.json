@@ -44,5 +44,25 @@
 		"PD7": { "TIM2": ["CH4"], "OPA": ["OPP1"], "SYS": ["NRST"] },
 		"PA1": { "SYS": ["OSCI"], "OPA": ["OPN0"], "ADC": ["A1"] },
 		"PA2": { "SYS": ["OSCO"], "OPA": ["OPN0"], "ADC": ["A0"], "TIM1": ["CH2N"] }
+	},
+
+	"CH32V203_DMA": {
+		"CH1": { "ADC": ["A1"], "TIM2": ["CH3"], "TIM4": ["CH1"], "TIM5": ["CH4", "TRIG"],
+					"TIM8": ["CH3", "UP"], "SPI": ["SPI"], "I2S3": ["TX"] },
+		"CH2": { "SPI1": ["RX"], "UART": ["TX3", "RX5"], "TIM1": ["CH1"], "TIM2": ["UP"], 
+					"TIM3": ["CH3"], "TIM5": ["CH3", "UP"], "TIM8": ["CH4", "TRIG", "COM"], 
+					"SPI": ["SPI"], "I2S3": ["TX"] },
+		"CH3": { "SPI1": ["TX"], "UART": ["RX3", "RX4"], "TIM1": ["CH2"], "TIM3": ["CH4", "UP"],
+					"TIM6": ["UP"], "TIM8": ["CH1"], "DAC1": ["DAC1"] },
+		"CH4": { "SPI": ["SPI"], "I2S2": ["RX"], "UART": ["TX1", "TX5"], "I2C2": ["TX"], 
+					"TIM1": ["CH4", "TRIG", "COM"], "TIM4": ["CH2"], "TIM5": "CH2", 
+					"TIM7": ["UP"], "SDIO": ["SDIO"], "DAC2": ["DAC2"] },
+		"CH5": { "SPI": ["SPI"], "I2S2": ["TX"], "UART": ["RX1", "TX4"], "I2C2": ["RX"],
+					"TIM1": ["UP"], "TIM2": ["CH1"], "TIM4": ["CH3"], "TIM5": ["CH1"],
+					"TIM8": ["CH2"], "DAC2": ["DAC2"] },
+		"CH6": { "UART": ["RX2", "TX6"], "I2C1": ["TX"], "TIM1": ["CH3"],
+					"TIM3": ["CH1", "TRIG"], "TIM9": ["UP"], "TIM10": ["CH4"] },
+		"CH7": { "UART": ["TX2", "RX6"], "I2C1": ["RX"], "TIM2": ["CH2", "CH4"],
+					"TIM4": ["UP"], "TIM9": ["CH1"], "TIM10": ["TRIG", "COM"] }
 	}
 }

@@ -544,9 +544,13 @@
 				"Flash_K": 128, "SRAM_K": 64,
 				"GPIO": 53, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
-			},
+			}
+		]
+	},
 
-
+	"CH5": {
+		"description": "",
+		"mcu_list": [
 			{
 				"separator": true,
 				"name": "CH570-D",
