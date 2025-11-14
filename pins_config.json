@@ -5,74 +5,27 @@
 		"I2C1" : "#FFB6C1",
 		"I2C2": "#FFB6C1",
 		"SPI" : "#FF66CC",
+		"SPI1" : "#FF66CC",
 		"ADC" : "#ADD8E6",
+		"ADC1" : "#ADD8E6",
+		"ADC2" : "#ADD8E6",
+		"DAC1": "#ADD8E6",
+		"DAC2": "#ADD8E6",
 		"SYS": "#C9CC3F",
-		"TIM1": "#9AEFE6",
+		"TIM1": "#AFE1AF",
 		"TIM2": "#AFE1AF",
+		"TIM3": "#AFE1AF",
+		"TIM4": "#AFE1AF",
+		"TIM5": "#AFE1AF",
+		"TIM6": "#AFE1AF",
+		"TIM7": "#AFE1AF",
+		"TIM8": "#AFE1AF",
+		"TIM9": "#AFE1AF",
+		"TIM10": "#AFE1AF",
 		"OPA": "#CF9FFF",
+		"I2S2": "#9AEFE6",
+		"I2S3": "#9AEFE6",
 		"VSS": "black",
 		"VDD": "red"
-	},
-
-	"legend_names": {
-		"UART": "UART",
-		"I2C" : "I2C",
-		"SPI" : "SPI",
-		"ADC" : "ADC",
-		"SYS": "SYSTEM",
-		"TIM1": "TIMER1",
-		"TIM2": "TIMER2",
-		"OPA": "OP AMP",
-		"VSS": "GND",
-		"VDD": "3.3V/5V"
-	},
-	
-	"CH32V203_legends": {
-		"UART": "UART",
-		"I2C" : "I2C1",
-		"I2C2": "I2C2",
-		"SPI" : "SPI",
-		"ADC" : "ADC",
-		"SYS": "SYSTEM",
-		"TIM1": "TIMER1",
-		"TIM2": "TIMER2",
-		"OPA": "OP AMP",
-		"VSS": "GND",
-		"VDD": "3.3V/5V"
-	},
-
-	"CH32V203_DMA": {
-		"CH1": {
-			"ADC": ["A1"], "SPI": ["SPI"], "I2S3": ["TX"], "TIM2": ["CH3"],
-			"TIM4": ["CH1"], "TIM5": ["CH4", "TRIG"], "TIM8": ["CH3", "UP"]
-		},
-		"CH2": {
-			"UART": ["TX3", "RX5"], "SPI": ["SPI"], "SPI1": ["RX"],
-			"I2S3": ["TX"], "TIM1": ["CH1"], "TIM2": ["UP"], "TIM3": ["CH3"],
-			"TIM5": ["CH3", "UP"], "TIM8": ["CH4", "TRIG", "COM"]
-		},
-		"CH3": {
-			"SPI1": ["TX"], "UART": ["RX3", "RX4"], "TIM1": ["CH2"], "TIM3": ["CH4", "UP"],
-			"TIM6": ["UP"], "TIM8": ["CH1"], "DAC1": ["DAC1"]
-		},
-		"CH4": {
-			"SPI": ["SPI"], "I2S2": ["RX"], "UART": ["TX1", "TX5"],
-			"I2C2": ["TX"], "DAC2": ["DAC2"],
-			"TIM1": ["CH4", "TRIG", "COM"], "TIM4": ["CH2"], "TIM5": "CH2", 
-			"TIM7": ["UP"], "SDIO": ["SDIO"]
-		},
-		"CH5": {
-			"SPI": ["SPI"], "I2S2": ["TX"], "UART": ["RX1", "TX4"], "I2C2": ["RX"],
-			"TIM1": ["UP"], "TIM2": ["CH1"], "TIM4": ["CH3"], "TIM5": ["CH1"],
-			"TIM8": ["CH2"], "DAC2": ["DAC2"]
-		},
-		"CH6": {
-			"UART": ["RX2", "TX6"], "I2C1": ["TX"], "TIM1": ["CH3"],
-			"TIM3": ["CH1", "TRIG"], "TIM9": ["UP"], "TIM10": ["CH4"]
-		},
-		"CH7": {
-			"UART": ["TX2", "RX6"], "I2C1": ["RX"], "TIM2": ["CH2", "CH4"],
-			"TIM4": ["UP"], "TIM9": ["CH1"], "TIM10": ["TRIG", "COM"]
-		}
 	}
 }

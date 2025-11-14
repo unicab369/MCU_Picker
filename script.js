@@ -29,10 +29,10 @@ function renderPinList(pinsMap, model, side) {
 		const pinStackHTML =
 			`<div class="pinMux-outline" style="justify-content: ${ pinStackSide }">
 				${ !target ? '' : target?.map(e=> {
-					return `<div class="pinMux-style" style="width: 60px; background: ${e.color};">
+					return `<div class="pinMux-style" style="width: 70px; background: ${e.color};">
 						${e.label}
 					</div>`
-				}) }
+				}).join('') }
 			</div>`
 			
 		const labelStyleStr = `background: ${item.label_background || model.label_background || 'green'};
@@ -53,9 +53,6 @@ function renderPinList(pinsMap, model, side) {
 //# Load pin data from JSON file
 async function reload_MCUsContainer() {
 	try {
-		// selectedLegends = Object.keys(pins_config.legend_names)
-		// console.log("selectedLegends: ", selectedLegends)
-
 		var htmlOutput = ""
 
 		//# Loop through and make diagram for each targeted MCU
@@ -63,23 +60,23 @@ async function reload_MCUsContainer() {
 			const target = await fetch(`json_models/model_${family}.json`).then(response => response.json())
 			console.log("target: ", target)
 
+			const p_list = mcu_models[family].pin_list
+			const selected_legends = selectedLegends[family]
+			const dma_chans= mcu_models[family].dma_channels
 			const pinsMap = {}
 
-			const obj = mcu_models[family].pin_list
-			console.log("Obj: ", obj)
+			console.log("selected_legends: ", selected_legends)
 
-			if (obj) {
-				for (const pin_key of Object.keys(obj)) {
-					for (func_key of selectedLegends[family]) {
-						const label = obj[pin_key][func_key]
-						if (!label) continue
-						const color = pins_config.legend_colors[func_key]
-						
-						if (pin_key in pinsMap) {
-							pinsMap[pin_key].push({label, color})
-						} else {
-							pinsMap[pin_key] = [{label, color}]
-						}
+			for (const pin_key in p_list) {
+				for (func_key of selected_legends) {
+					const label = p_list[pin_key][func_key]
+					if (!label) continue
+					const color = pins_config.legend_colors[func_key]
+					
+					if (pin_key in pinsMap) {
+						pinsMap[pin_key].push({label, color})
+					} else {
+						pinsMap[pin_key] = [{label, color}]
 					}
 				}
 			}
@@ -93,16 +90,19 @@ async function reload_MCUsContainer() {
 			}
 
 			// Add Diagram
-			selectedOptions[family].forEach(e => {
-				const model = target[e]
-				console.log(`key: ${e}`)
+			selectedOptions[family].forEach(name => {
+				const model = target[name]
+				console.log(`name: ${name}`)
 				console.log("model: ", model)
+				if (!model) return
 
-				if (model && model.left_pins && model.right_pins) {
+				if (model.left_pins && model.right_pins) {
 					htmlOutput += `
 						<br>
 						<div style="width: 100%; overflow-x: auto;">
-							<div style="width: 100%; text-align: center; font-weight: bold; height: 20px;">${e}</div>
+							<div style="width: 100%; text-align: center; font-weight: bold; height: 20px;">
+								${name}
+							</div>
 							<div class="mcu-outline">
 								<div class="pins-outline">${renderPinList(pinsMap, model.left_pins, 'left')}</div>
 								<div class="mcu" style="min-width: 120px;">
@@ -113,7 +113,7 @@ async function reload_MCUsContainer() {
 						</div>`;
 				}
 				else {
-					htmlOutput += `<div">No pins data found for ${e}</div><br>`;
+					htmlOutput += `<br><div style="text-align: center;">No pins data found for ${name}</div><br>`;
 				}
 			})
 
@@ -122,6 +122,41 @@ async function reload_MCUsContainer() {
 				htmlOutput += `<br><div style="display: flex; flex-wrap: wrap; justify-content: center;
 									gap: 2rem;" id="legendContainer_${family}"></div>`
 			}
+
+			let dma_HTML = ''
+
+			for (const chan in dma_chans) {
+				const targets = dma_chans[chan]
+
+				let subHtml = Object.keys(targets).map(func_key => {
+					const color = pins_config.legend_colors[func_key]
+					return `<div class="pinMux-style" style="width: 70px; background: ${color}; flex-shrink: 0;">
+						${targets[func_key]}
+					</div>`
+				}).join('')
+
+				dma_HTML += `<div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+					<div style="min-width: 50px; font-weight: bold;">${chan}</div>
+
+					<div style="display: flex; gap: 5px; flex-wrap: nowrap; padding: 5px;">
+						${
+							Object.keys(targets).map(func_key => {
+								const color = pins_config.legend_colors[func_key]
+								if (!selectedLegends[family].includes(func_key)) return ''
+								return `<div class="pinMux-style" style="width: 70px; background: ${color}; flex-shrink: 0;">
+											${targets[func_key]}
+										</div>`
+							}).join('')
+						}
+					</div>
+				</div>`
+			}
+
+			// add DMA channels
+			htmlOutput += `<br><div style="overflow-x: auto; padding: 10px;">
+								${ dma_HTML }
+							</div>`
+
 		}
 		
 		document.getElementById('MCUsContainer').innerHTML = htmlOutput + `<br>`
@@ -151,23 +186,27 @@ function onSelectLegend(family, func_key) {
 function reload_legendContainer(family) {
 	const sections = []
 	const columns = []
+	const legend_models = mcu_models[family].legends
 
-	for (key in mcu_models[family].legends) {
+	// show different number or rows depending of the number of legends
+	const row_count = Object.keys(legend_models).length > 16 ? 6 : 4
+
+	for (key in legend_models) {
 		const color = selectedLegends[family].includes(key) ? pins_config.legend_colors[key] : '#888'
 
 		sections.push(
 			`<div style="display: flex; align-items: center; gap: 0.75rem;">
-				<div style="background: ${color}; padding: 0 5px; width: 60px; text-align: center" 
+				<div style="background: ${color}; padding: 0 5px; width: 60px; text-align: center; cursor: pointer;" 
 					onclick="onSelectLegend('${family}', '${key}')">
 					${key}
 				</div>
-				<div">${ mcu_models[family].legends[key] }</div>
+				<div>${ legend_models[key] }</div>
 			</div>`
 		)
 
-		if (sections.length === 4) {
+		if (sections.length === row_count) {
 			columns.push(
-				`<section style="display: flex; flex-direction: column; gap: 0.5rem; width: 200px;">
+				`<section style="display: flex; flex-direction: column; gap: 0.5rem; min-width: 200px; flex-shrink: 0;">
 					${sections.join('')}
 				</section>`
 			)
@@ -175,17 +214,22 @@ function reload_legendContainer(family) {
 		}		
 	}
 
-	// get the remaining columns incase there are less than 4
+	// get the remaining columns in case there are less than 4
 	if (sections.length > 0) {
 		columns.push(
-			`<section style="display: flex; flex-direction: column; gap: 0.5rem; width: 200px;">
+			`<section style="display: flex; flex-direction: column; gap: 0.5rem; min-width: 200px; flex-shrink: 0;">
 				${sections.join('')}
 			</section>`
 		)
 	}
 
 	const legendContainer = document.getElementById('legendContainer_' + family)
-	if (legendContainer) legendContainer.innerHTML = columns.join('')
+	if (legendContainer) {
+		legendContainer.innerHTML = `
+			<div style="display: flex; gap: 1rem; overflow-x: auto; padding: 2px 0;">
+				${columns.join('')}
+			</div>`
+	}
 }
 
 
@@ -274,7 +318,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 		let mcuTabsHTML = ''
 
 		for (model in mcu_models) {
-			console.log("model3: ", model);
 			selectedLegends[model] = Object.keys(mcu_models[model].legends || [])
 			mcuTabsHTML += 
 				`<li class="tab-item">
