@@ -40,7 +40,7 @@
 				"name": "CH32V002-J4M6",
 				"package": "SOP-8",
 				"frequency_MHz": 48,
-				"Flash_K": 16, "SRAM_K": 4,
+				"flash_K": 16, "sram_K": 4,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -48,7 +48,7 @@
 				"name": "CH32V002-D4U6",
 				"package": "QFN-12",
 				"frequency_MHz": 48,
-				"Flash_K": 16, "SRAM_K": 4,
+				"flash_K": 16, "sram_K": 4,
 				"GPIO": 11, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -56,7 +56,7 @@
 				"name": "CH32V002-A4M6",
 				"package": "SOP-16",
 				"frequency_MHz": 48,
-				"Flash_K": 16, "SRAM_K": 4,
+				"flash_K": 16, "sram_K": 4,
 				"GPIO": 14, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -64,7 +64,7 @@
 				"name": "CH32V002-F4U6",
 				"package": "QFN-20",
 				"frequency_MHz": 48,
-				"Flash_K": 16, "SRAM_K": 4,
+				"flash_K": 16, "sram_K": 4,
 				"GPIO": 18, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -72,7 +72,7 @@
 				"name": "CH32V002-F4P6",
 				"package": "TSSOP-20",
 				"frequency_MHz": 48,
-				"Flash_K": 16, "SRAM_K": 4,
+				"flash_K": 16, "sram_K": 4,
 				"GPIO": 18, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -82,24 +82,24 @@
 				"name": "CH32V003-J4M6",
 				"package": "SOP-8",
 				"frequency_MHz": 48,
-				"Flash_K": 16, "SRAM_K": 2,
-				"GPIO": 6, "Max_V": 3.3, "Min_V": 2.5,
+				"flash_K": 16, "sram_K": 2,
+				"GPIO": 6, "Max_V": 3.3, "Min_V": 5.0,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
 			{
 				"name": "CH32V003-A4M6",
 				"package": "SOP-16",
 				"frequency_MHz": 48,
-				"Flash_K": 16, "SRAM_K": 2,
-				"GPIO": 14, "Max_V": 3.3, "Min_V": 2.5,
+				"flash_K": 16, "sram_K": 2,
+				"GPIO": 14, "Max_V": 3.3, "Min_V": 5.0,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
 			{
 				"name": "CH32V003-F4P6",
 				"package": "TSSOP-20",
 				"frequency_MHz": 48,
-				"Flash_K": 16, "SRAM_K": 2,
-				"GPIO": 18, "Max_V": 3.3, "Min_V": 2.5,
+				"flash_K": 16, "sram_K": 2,
+				"GPIO": 18, "Max_V": 3.3, "Min_V": 5.0,
 				"UART": 1, "I2C": 1, "SPI": 1
 				
 			},
@@ -107,8 +107,8 @@
 				"name": "CH32V003-F4U6",
 				"package": "QFN-20",
 				"frequency_MHz": 48,
-				"Flash_K": 16, "SRAM_K": 2,
-				"GPIO": 18, "Max_V": 3.3, "Min_V": 2.5,
+				"flash_K": 16, "sram_K": 2,
+				"GPIO": 18, "Max_V": 3.3, "Min_V": 5.0,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
 
@@ -118,7 +118,7 @@
 				"name": "CH32V004-F6P1",
 				"package": "TSSOP-20",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 6,
+				"flash_K": 32, "sram_K": 6,
 				"GPIO": 18, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -126,7 +126,7 @@
 				"name": "CH32V004-F6U1",
 				"package": "QFN-20",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 6,
+				"flash_K": 32, "sram_K": 6,
 				"GPIO": 18, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -137,7 +137,7 @@
 				"name": "CH32V005-D6U6",
 				"package": "QFN-12",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 6,
+				"flash_K": 32, "sram_K": 6,
 				"GPIO": 11, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -145,7 +145,7 @@
 				"name": "CH32V005-F6P6",
 				"package": "TSSOP-20",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 6,
+				"flash_K": 32, "sram_K": 6,
 				"GPIO": 18, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -153,7 +153,7 @@
 				"name": "CH32V005-F6U6",
 				"package": "QFN-20",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 6,
+				"flash_K": 32, "sram_K": 6,
 				"GPIO": 18, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -161,7 +161,7 @@
 				"name": "CH32V005-E6R6",
 				"package": "QSOP-24",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 6,
+				"flash_K": 32, "sram_K": 6,
 				"GPIO": 22, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -172,7 +172,7 @@
 				"name": "CH32V006-F8P6",
 				"package": "TSSOP-20",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 8,
+				"flash_K": 62, "sram_K": 8,
 				"GPIO": 18, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -180,7 +180,7 @@
 				"name": "CH32V006-F8P6",
 				"package": "QFN-20",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 8,
+				"flash_K": 62, "sram_K": 8,
 				"GPIO": 18, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -188,7 +188,7 @@
 				"name": "CH32V006-F4U6",
 				"package": "QFN-20",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 8,
+				"flash_K": 62, "sram_K": 8,
 				"GPIO": 18, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -196,7 +196,7 @@
 				"name": "CH32V006-E8R6",
 				"package": "QSOP-24",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 8,
+				"flash_K": 62, "sram_K": 8,
 				"GPIO": 22, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -204,7 +204,7 @@
 				"name": "CH32V006-K8U6",
 				"package": "QFN-32",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 8,
+				"flash_K": 62, "sram_K": 8,
 				"GPIO": 21, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -215,7 +215,7 @@
 				"name": "CH32V007-E8R6",
 				"package": "QSOP-24",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 8,
+				"flash_K": 62, "sram_K": 8,
 				"GPIO": 22, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -223,7 +223,7 @@
 				"name": "CH32V007-K8U6",
 				"package": "QFN-32",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 8,
+				"flash_K": 62, "sram_K": 8,
 				"GPIO": 31, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -234,7 +234,7 @@
 				"name": "CH32X033-F8P6",
 				"package": "TSSOP-20",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 18, "Max_V": 5.0, "Min_V": 3.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -242,7 +242,7 @@
 				"name": "CH32X035-R8T6",
 				"package": "QFN-32",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 60, "Max_V": 5.0, "Min_V": 3.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -250,7 +250,7 @@
 				"name": "CH32X035-C8T6",
 				"package": "QFN-32",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 46, "Max_V": 5.0, "Min_V": 3.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -258,7 +258,7 @@
 				"name": "CH32X035-G8U6",
 				"package": "QFN-32",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 27, "Max_V": 5.0, "Min_V": 3.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -266,7 +266,7 @@
 				"name": "CH32X035-G8R6",
 				"package": "QFN-32",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 26, "Max_V": 5.0, "Min_V": 3.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -274,7 +274,7 @@
 				"name": "CH32X035-F8U6",
 				"package": "QFN-32",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 19, "Max_V": 5.0, "Min_V": 3.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -282,7 +282,7 @@
 				"name": "CH32X035-F7P6",
 				"package": "QFN-32",
 				"frequency_MHz": 48,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 18, "Max_V": 5.0, "Min_V": 3.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -293,15 +293,15 @@
 				"name": "CH32V103-C6T6",
 				"package": "LQFP-48",
 				"frequency_MHz": 80,
-				"Flash_K": 32, "SRAM_K": 10,
+				"flash_K": 32, "sram_K": 10,
 				"GPIO": 37, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
 			{
 				"name": "CH32V103-C8U6",
-				"package": "QQFN-48x7",
+				"package": "QFN-48x7",
 				"frequency_MHz": 80,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 37, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -309,7 +309,7 @@
 				"name": "CH32V103-C8T6",
 				"package": "LQFP-48",
 				"frequency_MHz": 80,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 37, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -317,7 +317,7 @@
 				"name": "CH32V103-R8T6",
 				"package": "LQFP-48",
 				"frequency_MHz": 96,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 51, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -328,7 +328,7 @@
 				"name": "CH32L103-F8P6",
 				"package": "TSSOP-20",
 				"frequency_MHz": 96,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 16, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -336,7 +336,7 @@
 				"name": "CH32L103-F8U6",
 				"package": "QFN-20",
 				"frequency_MHz": 96,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 19, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -344,7 +344,7 @@
 				"name": "CH32L103-G8R6",
 				"package": "QSOP-28",
 				"frequency_MHz": 96,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 26, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -352,7 +352,7 @@
 				"name": "CH32L103-K8U6",
 				"package": "QFN-32",
 				"frequency_MHz": 96,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 31, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -360,7 +360,7 @@
 				"name": "CH32L103-C8T6",
 				"package": "LQFP-48",
 				"frequency_MHz": 96,
-				"Flash_K": 62, "SRAM_K": 20,
+				"flash_K": 62, "sram_K": 20,
 				"GPIO": 37, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			}
@@ -437,7 +437,7 @@
 				"name": "CH32V203-F6P6",
 				"package": "TSSOP-20",
 				"frequency_MHz": 144,
-				"Flash_K": 32, "SRAM_K": 10,
+				"flash_K": 32, "sram_K": 10,
 				"GPIO": 16, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -445,7 +445,7 @@
 				"name": "CH32V203-G6U6",
 				"package": "QFN-28",
 				"frequency_MHz": 144,
-				"Flash_K": 32, "SRAM_K": 10,
+				"flash_K": 32, "sram_K": 10,
 				"GPIO": 24, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -453,7 +453,7 @@
 				"name": "CH32V203-K6T6",
 				"package": "LQFP-32",
 				"frequency_MHz": 144,
-				"Flash_K": 32, "SRAM_K": 10,
+				"flash_K": 32, "sram_K": 10,
 				"GPIO": 26, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -461,7 +461,7 @@
 				"name": "CH32V203-C6T6",
 				"package": "LQFP-48",
 				"frequency_MHz": 144,
-				"Flash_K": 32, "SRAM_K": 10,
+				"flash_K": 32, "sram_K": 10,
 				"GPIO": 37, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -469,7 +469,7 @@
 				"name": "CH32V203-F8P6",
 				"package": "TSSOP-20",
 				"frequency_MHz": 144,
-				"Flash_K": 64, "SRAM_K": 20,
+				"flash_K": 64, "sram_K": 20,
 				"GPIO": 17, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -477,7 +477,7 @@
 				"name": "CH32V203-F8U6",
 				"package": "QFN-20",
 				"frequency_MHz": 144,
-				"Flash_K": 64, "SRAM_K": 20,
+				"flash_K": 64, "sram_K": 20,
 				"GPIO": 19, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -485,7 +485,7 @@
 				"name": "CH32V203-G8R6",
 				"package": "QSOP-28",
 				"frequency_MHz": 144,
-				"Flash_K": 64, "SRAM_K": 20,
+				"flash_K": 64, "sram_K": 20,
 				"GPIO": 24, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -493,7 +493,7 @@
 				"name": "CH32V203-K8T6",
 				"package": "LQFP-32",
 				"frequency_MHz": 144,
-				"Flash_K": 64, "SRAM_K": 20,
+				"flash_K": 64, "sram_K": 20,
 				"GPIO": 26, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -501,7 +501,7 @@
 				"name": "CH32V203-C8T6",
 				"package": "LQFP-48",
 				"frequency_MHz": 144,
-				"Flash_K": 64, "SRAM_K": 20,
+				"flash_K": 64, "sram_K": 20,
 				"GPIO": 37, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -509,7 +509,7 @@
 				"name": "CH32V203-C8U6",
 				"package": "QFN-48x7",
 				"frequency_MHz": 144,
-				"Flash_K": 64, "SRAM_K": 20,
+				"flash_K": 64, "sram_K": 20,
 				"GPIO": 37, "Max_V": 5.0, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -517,7 +517,7 @@
 				"name": "CH32V203-RBT6",
 				"package": "LQFP-64M",
 				"frequency_MHz": 144,
-				"Flash_K": 128, "SRAM_K": 64,
+				"flash_K": 128, "sram_K": 64,
 				"GPIO": 51, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -528,7 +528,7 @@
 				"name": "CH32V303-CBT6",
 				"package": "LQFP-48",
 				"frequency_MHz": 144,
-				"Flash_K": 128, "SRAM_K": 32,
+				"flash_K": 128, "sram_K": 32,
 				"GPIO": 37, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -536,7 +536,7 @@
 				"name": "CH32V303-RBT6",
 				"package": "LQFP-64M",
 				"frequency_MHz": 144,
-				"Flash_K": 128, "SRAM_K": 32,
+				"flash_K": 128, "sram_K": 32,
 				"GPIO": 51, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -544,7 +544,7 @@
 				"name": "CH32V303-RCT6",
 				"package": "LQFP-64M",
 				"frequency_MHz": 144,
-				"Flash_K": 256, "SRAM_K": 64,
+				"flash_K": 256, "sram_K": 64,
 				"GPIO": 51, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -552,7 +552,7 @@
 				"name": "CH32V303-VCT6",
 				"package": "LQFP-100",
 				"frequency_MHz": 144,
-				"Flash_K": 256, "SRAM_K": 64,
+				"flash_K": 256, "sram_K": 64,
 				"GPIO": 80, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -563,7 +563,7 @@
 				"name": "CH32V305-FBP6",
 				"package": "QFN-28",
 				"frequency_MHz": 144,
-				"Flash_K": 128, "SRAM_K": 32,
+				"flash_K": 128, "sram_K": 32,
 				"GPIO": 24, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -571,7 +571,7 @@
 				"name": "CH32V305-GBU6",
 				"package": "LQFP-64M",
 				"frequency_MHz": 144,
-				"Flash_K": 256, "SRAM_K": 64,
+				"flash_K": 256, "sram_K": 64,
 				"GPIO": 51, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -579,7 +579,7 @@
 				"name": "CH32V305-RBT6",
 				"package": "LQFP-64M",
 				"frequency_MHz": 144,
-				"Flash_K": 256, "SRAM_K": 64,
+				"flash_K": 256, "sram_K": 64,
 				"GPIO": 51, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -590,7 +590,7 @@
 				"name": "CH32V307-RCT6",
 				"package": "LQFP-64M",
 				"frequency_MHz": 144,
-				"Flash_K": 256, "SRAM_K": 64,
+				"flash_K": 256, "sram_K": 64,
 				"GPIO": 51, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -598,7 +598,7 @@
 				"name": "CH32V307-WCU6",
 				"package": "QFN-68",
 				"frequency_MHz": 144,
-				"Flash_K": 256, "SRAM_K": 64,
+				"flash_K": 256, "sram_K": 64,
 				"GPIO": 54, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -606,7 +606,7 @@
 				"name": "CH32V307-VCT6",
 				"package": "LQFP-100",
 				"frequency_MHz": 144,
-				"Flash_K": 256, "SRAM_K": 64,
+				"flash_K": 256, "sram_K": 64,
 				"GPIO": 80, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -617,7 +617,7 @@
 				"name": "CH32V208-GBU6",
 				"package": "QFN-68",
 				"frequency_MHz": 144,
-				"Flash_K": 128, "SRAM_K": 64,
+				"flash_K": 128, "sram_K": 64,
 				"GPIO": 21, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -625,7 +625,7 @@
 				"name": "CH32V208-CBU6",
 				"package": "QFN-68",
 				"frequency_MHz": 144,
-				"Flash_K": 128, "SRAM_K": 64,
+				"flash_K": 128, "sram_K": 64,
 				"GPIO": 37, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -633,7 +633,7 @@
 				"name": "CH32V208-RBT6",
 				"package": "QFN-68",
 				"frequency_MHz": 144,
-				"Flash_K": 128, "SRAM_K": 64,
+				"flash_K": 128, "sram_K": 64,
 				"GPIO": 49, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -641,7 +641,7 @@
 				"name": "CH32V208-WBU6",
 				"package": "QFN-68",
 				"frequency_MHz": 144,
-				"Flash_K": 128, "SRAM_K": 64,
+				"flash_K": 128, "sram_K": 64,
 				"GPIO": 53, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			}
@@ -656,7 +656,7 @@
 				"name": "CH570-D",
 				"package": "QFN-20",
 				"frequency_MHz": 20,
-				"Flash_K": "280+8", "SRAM_K": 12,
+				"flash_K": "280+8", "sram_K": 12,
 				"GPIO": 12, "Max_V": 3.6, "Min_V": 2.0,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -664,7 +664,7 @@
 				"name": "CH570-Q",
 				"package": "DFN-10x3",
 				"frequency_MHz": 20,
-				"Flash_K": "280+8", "SRAM_K": 12,
+				"flash_K": "280+8", "sram_K": 12,
 				"GPIO": 3, "Max_V": 3.6, "Min_V": 2.0,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -672,7 +672,7 @@
 				"name": "CH570-E",
 				"package": "SOP-8",
 				"frequency_MHz": 20,
-				"Flash_K": "280+8", "SRAM_K": 12,
+				"flash_K": "280+8", "sram_K": 12,
 				"GPIO": 5, "Max_V": 3.6, "Min_V": 2.0,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -681,7 +681,7 @@
 				"name": "CH572-D",
 				"package": "QFN-20",
 				"frequency_MHz": 20,
-				"Flash_K": "240+8", "SRAM_K": 12,
+				"flash_K": "240+8", "sram_K": 12,
 				"GPIO": 12, "Max_V": 3.6, "Min_V": 2.0,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -689,7 +689,7 @@
 				"name": "CH572-Q",
 				"package": "DFN-10x3",
 				"frequency_MHz": 20,
-				"Flash_K": "240+8", "SRAM_K": 12,
+				"flash_K": "240+8", "sram_K": 12,
 				"GPIO": 5, "Max_V": 3.6, "Min_V": 2.0,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -697,7 +697,7 @@
 				"name": "CH572-R",
 				"package": "TSSOP-16",
 				"frequency_MHz": 20,
-				"Flash_K": "240+8", "SRAM_K": 12,
+				"flash_K": "240+8", "sram_K": 12,
 				"GPIO": 10, "Max_V": 3.6, "Min_V": 2.0,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -708,7 +708,7 @@
 				"name": "CH571-F",
 				"package": "QFN-28",
 				"frequency_MHz": 20,
-				"Flash_K": "192+24+32", "SRAM_K": "16+2",
+				"flash_K": "192+24+32", "sram_K": "16+2",
 				"GPIO": 20, "Max_V": 3.3, "Min_V": 2.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -716,7 +716,7 @@
 				"name": "CH571-D",
 				"package": "QFN-20",
 				"frequency_MHz": 20,
-				"Flash_K": "192+24+32", "SRAM_K": "16+2",
+				"flash_K": "192+24+32", "sram_K": "16+2",
 				"GPIO": 15, "Max_V": 3.3, "Min_V": 2.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -724,7 +724,7 @@
 				"name": "CH571-K",
 				"package": "ESSOP-10",
 				"frequency_MHz": 20,
-				"Flash_K": "192+24+32", "SRAM_K": "16+2",
+				"flash_K": "192+24+32", "sram_K": "16+2",
 				"GPIO": 4, "Max_V": 3.3, "Min_V": 2.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -733,7 +733,7 @@
 				"name": "CH573-X",
 				"package": "QFN-32",
 				"frequency_MHz": 22,
-				"Flash_K": "448+24+32", "SRAM_K": "16+2",
+				"flash_K": "448+24+32", "sram_K": "16+2",
 				"GPIO": 53, "Max_V": 3.3, "Min_V": 1.7,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -741,7 +741,7 @@
 				"name": "CH573-F",
 				"package": "QFN-28",
 				"frequency_MHz": 20,
-				"Flash_K": "448+24+32", "SRAM_K": "16+2",
+				"flash_K": "448+24+32", "sram_K": "16+2",
 				"GPIO": 53, "Max_V": 3.3, "Min_V": 2.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -749,7 +749,7 @@
 				"name": "CH573-Q",
 				"package": "LQFP32",
 				"frequency_MHz": 22,
-				"Flash_K": "192+24+32", "SRAM_K": "16+2",
+				"flash_K": "192+24+32", "sram_K": "16+2",
 				"GPIO": 53, "Max_V": 3.3, "Min_V": 2.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -760,7 +760,7 @@
 				"name": "CH582-F",
 				"package": "QFN-28",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": "30+2",
+				"flash_K": 480, "sram_K": "30+2",
 				"GPIO": 20, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -768,7 +768,7 @@
 				"name": "CH582-M",
 				"package": "QFN-48",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": "30+2",
+				"flash_K": 480, "sram_K": "30+2",
 				"GPIO": 40, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -776,7 +776,7 @@
 				"name": "CH583-M",
 				"package": "QFN-48",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": "30+2",
+				"flash_K": 480, "sram_K": "30+2",
 				"GPIO": 40, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -784,7 +784,7 @@
 				"name": "CH584-F",
 				"package": "QFN-32",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": 96,
+				"flash_K": 480, "sram_K": 96,
 				"GPIO": 24, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -792,7 +792,7 @@
 				"name": "CH584-M",
 				"package": "QFN-48",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": 96,
+				"flash_K": 480, "sram_K": 96,
 				"GPIO": 40, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -800,7 +800,7 @@
 				"name": "CH585-C",
 				"package": "QFN-26C3",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": 128,
+				"flash_K": 480, "sram_K": 128,
 				"GPIO": 17, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -808,7 +808,7 @@
 				"name": "CH585-C",
 				"package": "QFN-48",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": 128,
+				"flash_K": 480, "sram_K": 128,
 				"GPIO": 40, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -816,7 +816,7 @@
 				"name": "CH585-D",
 				"package": "QFN-20",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": 128,
+				"flash_K": 480, "sram_K": 128,
 				"GPIO": 12, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -824,7 +824,7 @@
 				"name": "CH585-F",
 				"package": "QFN-32",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": 128,
+				"flash_K": 480, "sram_K": 128,
 				"GPIO": 24, "Max_V": 3.3, "Min_V": 2.5,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -834,7 +834,7 @@
 				"name": "CH591-F",
 				"package": "QFN-28",
 				"frequency_MHz": 20,
-				"Flash_K": 129, "SRAM_K": "24+2",
+				"flash_K": 129, "sram_K": "24+2",
 				"GPIO": 20, "Max_V": 3.3, "Min_V": 1.7,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -843,7 +843,7 @@
 				"name": "CH591-D",
 				"package": "QFN-20",
 				"frequency_MHz": 20,
-				"Flash_K": 129, "SRAM_K": "24+2",
+				"flash_K": 129, "sram_K": "24+2",
 				"GPIO": 12, "Max_V": 3.3, "Min_V": 2.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -851,7 +851,7 @@
 				"name": "CH591-R",
 				"package": "TSSOP-16",
 				"frequency_MHz": 20,
-				"Flash_K": 129, "SRAM_K": "24+2",
+				"flash_K": 129, "sram_K": "24+2",
 				"GPIO": 10, "Max_V": 3.3, "Min_V": 2.3,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -861,7 +861,7 @@
 				"name": "CH592-X",
 				"package": "QFN-32",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": "24+2",
+				"flash_K": 480, "sram_K": "24+2",
 				"GPIO": 24, "Max_V": 3.3, "Min_V": 1.7,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -869,7 +869,7 @@
 				"name": "CH592-F",
 				"package": "QFN-28",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": "24+2",
+				"flash_K": 480, "sram_K": "24+2",
 				"GPIO": 20, "Max_V": 3.3, "Min_V": 1.7,
 				"UART": 1, "I2C": 1, "SPI": 1
 			},
@@ -877,7 +877,7 @@
 				"name": "CH592-D",
 				"package": "QFN-20",
 				"frequency_MHz": 20,
-				"Flash_K": 480, "SRAM_K": "24+2",
+				"flash_K": 480, "sram_K": "24+2",
 				"GPIO": 12, "Max_V": 3.3, "Min_V": 1.7,
 				"UART": 1, "I2C": 1, "SPI": 1
 			}
@@ -891,35 +891,35 @@
 				"name": "PY32F002A",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "PY32F002B",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "PY32F003",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "PY32F07x",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "PY32F030",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			}
 		]
@@ -932,35 +932,35 @@
 				"name": "ESP32",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "ESP32-S2",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "ESP32-S3",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "ESP32-C3",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "ESP32-C5",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			}
 		]
@@ -973,35 +973,35 @@
 				"name": "STM32C0",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "STM32G0",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "STM32F0",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "STM32F1",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			},
 			{
 				"name": "STM32F3",
 				"package": "SOP8",
 				"frequency_MHz": 48,
-				"Flash_K": 32, "SRAM_K": 2,
+				"flash_K": 32, "sram_K": 2,
 				"GPIO": 6, "Max_V": 5.0, "Min_V": 3.3
 			}
 		]

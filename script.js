@@ -241,7 +241,7 @@ function reload_legendContainer(family) {
 function reload_tableContainer(key) {
 	const headers = ["#", "Part No.", "Freq.", "Flash", "RAM", "GPIO", "V-Min", "V-Max",
 						"UART", "I2C", "SPI", "RTC", "I2S", "CAN", "USB2.0", "Package"]
-	const headerKeys = ["idx", "name", "frequency_MHz", "Flash_K", "SRAM_K", "GPIO", "Min_V", "Max_V",
+	const headerKeys = ["idx", "name", "frequency_MHz", "flash_K", "sram_K", "GPIO", "Min_V", "Max_V",
 						"UART", "I2C", "SPI", , "RTC", "I2S", "CAN", "USB2", "package"]
 	const heardersHTML = headers.map(e => `<th>${e}</th>`).join('')
 	
@@ -263,7 +263,7 @@ function reload_tableContainer(key) {
 	})
 
 	document.getElementById('tableContainer').innerHTML = `
-		<div style="overflow-x: auto; border: 1px solid #dee2e6; height: 700px;">
+		<div style="overflow-x: auto; border: 1px solid #demcue6; height: 700px;">
 			<table style="border-collapse: collapse; width: 100%;">
 				<thead><tr>${heardersHTML}</tr></thead>
 				<tbody>${recordHTML}</tbody>
@@ -271,18 +271,18 @@ function reload_tableContainer(key) {
 		</div>
 		
 		<style>
-		    /* Sticky header */
+			/* Sticky header */
 			table th {
 				position: sticky;
 				top: 0;
 				background: #f8f9fa;
 				z-index: 20;
-				border-bottom: 2px solid #dee2e6;
+				border-bottom: 2px solid #demcue6;
 				padding: 12px;
 			}
 
 			table th, table td {
-				border: 1px solid #dee2e6;
+				border: 1px solid #demcue6;
 				padding: 8px 8px;
 				white-space: nowrap;
 			}
@@ -349,46 +349,57 @@ document.addEventListener('DOMContentLoaded', async function() {
 });
 
 async function onApply_mcuSelections() {
-    // Save the current tab one last time
-    if (currentActiveTarget) {
-        const checkboxes = document.querySelectorAll(`input[name="${currentActiveTarget}_nameId"]:checked`)
-        selectedOptions[currentActiveTarget] = Array.from(checkboxes).map(cbox => cbox.value)
-    }
+	// Save the current tab one last time
+	if (currentActiveTarget) {
+		const checkboxes = document.querySelectorAll(`input[name="${currentActiveTarget}_nameId"]:checked`)
+		selectedOptions[currentActiveTarget] = Array.from(checkboxes).map(cbox => cbox.value)
+	}
 
 	await reload_MCUsContainer()
-    console.log("selectedOptions: ", selectedOptions)
+	console.log("selectedOptions: ", selectedOptions)
 }
 
+//# Render the content for a specific tab
 async function onSwitch_tab(event, target_str) {
-    event?.preventDefault()
-    
-    // 1. Save CURRENT tab's selections
-    if (currentActiveTarget !== target_str) onApply_mcuSelections()
-    
-    // 2. Switch tabs and update current target
-    tabs_items().forEach(t => t.classList.remove('active'))
-    event?.currentTarget?.parentElement.classList.add('active')
-    currentActiveTarget = target_str; // Update the current target
+	event?.preventDefault()
+	
+	// 1. Save CURRENT tab's selections
+	if (currentActiveTarget !== target_str) onApply_mcuSelections()
+	
+	// 2. Switch tabs and update current target
+	tabs_items().forEach(t => t.classList.remove('active'))
+	event?.currentTarget?.parentElement.classList.add('active')
+	currentActiveTarget = target_str; // Update the current target
 
-    // 3. Generate content for the NEW tab
-    const options = mcu_models[target_str].mcu_list.map(e2 => {
-        const isChecked = selectedOptions[target_str]?.includes(e2.part_no || e2.name) ? 'checked' : ''
-        return `<div>
-					<input type="checkbox"
-						style="width: 22px; height: 22px;"
+	// 3. Generate content for the NEW tab
+	const options = mcu_models[target_str].mcu_list.map(mcu => {
+		const isChecked = selectedOptions[target_str]?.includes(mcu.name) ? 'checked' : ''
+		const inputId = `${ target_str }_${ mcu.name }` // Unique ID for each checkbox
+		const description = `(${ mcu.frequency_MHz}MHz, ${mcu.flash_K}K Flash, 
+							${mcu.sram_K}K RAM, ${mcu.package })`
+
+		// return each of the mcu in the list
+		return `<div style="height: 35px; display: flex; align-items: center; gap: 10px;">
+					<input type="checkbox" style="width: 22px; height: 22px;"
+						id="${ inputId }"
 						name="${ target_str }_nameId"
-						value="${ e2.part_no || e2.name }" ${ isChecked }>
-					<i class="form-icon"></i> ${ e2.name }${ e2.part_no ? `-${ e2.part_no }` : ''}
+						value="${ mcu.name }" ${ isChecked }>
+					<label for="${ inputId }" style="cursor: pointer; flex-shrink: 0;">
+						${ mcu.name }
+					</label>
+					<div style="color: gray; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+						${ description }
+					</div>
 				</div>`;
-			}).join('');
+	}).join('');
 
-    document.getElementById('modalContent').innerHTML = `
-        <p>Content for ${target_str} microcontrollers.</p>
-        <div class="form-group">
-            <div class="checkbox-group">
-                ${options}
-            </div>
-        </div>`
+	document.getElementById('modalContent').innerHTML = `
+		<p>Content for ${target_str} microcontrollers.</p>
+		<div class="form-group">
+			<div class="checkbox-group">
+				${options}
+			</div>
+		</div>`
 }
 
 
