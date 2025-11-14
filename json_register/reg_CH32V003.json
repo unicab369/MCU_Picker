@@ -1,0 +1,205 @@
+{
+	"PWR": {
+		"info": "Power related registers",
+		"table": "2-2",
+		
+		"registers": {
+			"R32_PWR_CTLR": {
+				"address": "0x40007000",
+				"info": "Power control register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"bits": "[31:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					},
+					{
+						"bits": "[7:5]",
+						"name": "PLS[2:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "PVD voltage monitoring threshold setting. See the Electrical Characteristics section of the datasheet for detailed instructions.",
+						"info2": [
+							"000: 2.85V rising edge/2.7V falling edge.",
+							"001: 3.05V rising edge/2.9V falling edge.",
+							"010: 3.3V rising edge/3.15V falling edge.",
+							"011: 3.5V rising edge/3.3V falling edge.",
+							"100: 3.7V rising edge/3.5V falling edge.",
+							"101: 3.9V rising edge/3.7V falling edge.",
+							"110: 4.1V rising edge/3.9V falling edge.",
+							"111: 4.4V rising edge/4.2V falling edge."
+						]
+					},
+					{
+						"bits": "4",
+						"name": "PVDE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "PVD enable",
+						"info2": [
+							"1: PVD is enabled.",
+							"0: PVD is disabled."
+						]
+					},
+					{
+						"bits": "[3:2]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					},
+					{
+						"bits": "1",
+						"name": "PDDS",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Standby/ Sleep mode selection bit in power-down deep sleep scenario.",
+						"info2": [
+							"1: Enter Standby mode.",
+							"0: Enter Sleep mode."
+						]
+					},
+					{
+						"bits": "0",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					}
+				]
+			},
+
+			"R32_PWR_CSR": {
+				"address": "0x40007004", 
+				"info": "Power control/status register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"bits": "[31:3]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					},
+					{
+						"bits": "2",
+						"name": "PVD0",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "PVD output status flag bit. This bit is valid when PVDE=1 of PWR_CTLR register.",
+						"info2": [
+							"1: VDD and VDDA are below the PVD threshold set by PLS[2:0].",
+							"0: VDD and VDDA are above the PVD threshold set by PLS[2:0]."
+						]
+					},
+					{
+						"bits": "[1:0]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					}
+				]
+			},
+
+			"R32_PWR_AWUCSR": {
+				"address": "0x40007008",
+				"info": "Auto-wakeup control/status register", 
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"bits": "[31:2]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					},
+					{
+						"bits": "1",
+						"name": "AWUEN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Enable Automatic wake-up.",
+						"info2": [
+							"1: Turn on auto-wakeup.",
+							"0: Invalid."
+						]
+					},
+					{
+						"bits": "0",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					}
+				]
+			},
+
+			"R32_PWR_AWUWR": {
+				"address": "0x4000700C",
+				"info": "Auto-wakeup window comparison value register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"bits": "[31:16]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					},
+					{
+						"bits": "[5:0]",
+						"name": "AWUWR[5:0]",
+						"access": "RW",
+						"reset_value": "0x3F",
+						"info": "AWU window value: The AWU window value is equal to the input value of the AWU window value + 1; \nThe AWU window value is used to compare with the up counter value. When the counter value is equal to the window value, a wake-up signal is generated."
+					}
+				]
+			},
+
+			"R32_PWR_AWUPSC": {
+				"address": "0x40007010",
+				"info": "Auto-wakeup crossover factor register",
+				"reset_value": "0x0000003F",
+				"bits_fields": [
+					{
+						"bits": "[31:4]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					},
+					{
+						"bits": "[3:0]",
+						"name": "AWUPSC[3:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Counting time base.",
+						"info2": [
+							"0000: Prescaler off.",
+							"0001: Prescaler off.",
+							"0010: Divided by 2.",
+							"0011: Divided by 4.",
+							"0100: Divided by 8.",
+							"0101: Divided by 16.",
+							"0110: Divided by 32.",
+							"0111: Divided by 64.",
+							"1000: Divided by 128.",
+							"1001: Divided by 256.",
+							"1010: Divided by 512.",
+							"1011: Divided by 1024.",
+							"1100: Divided by 2048.",
+							"1101: Divided by 4096.",
+							"1110: Divided by 10240.",
+							"1111: Divided by 61440."
+						]
+					}
+				]
+			}
+		}
+	}
+
+}

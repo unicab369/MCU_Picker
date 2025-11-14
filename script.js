@@ -57,7 +57,7 @@ async function reload_MCUsContainer() {
 
 		//# Loop through and make diagram for each targeted MCU
 		for (const family of Object.keys(selectedOptions)) {
-			const target = await fetch(`json_models/model_${family}.json`).then(response => response.json())
+			const target = await fetch(`json_mcu/model_${family}.json`).then(response => response.json())
 			console.log("target: ", target)
 
 			const p_list = mcu_models[family].pin_list
@@ -163,7 +163,7 @@ async function reload_MCUsContainer() {
 							</div>`
 		}
 		
-		document.getElementById('MCUsContainer').innerHTML = htmlOutput + `<br>`
+		document.getElementById('MCUs_container').innerHTML = htmlOutput + `<br>`
 
 		//# Reload legend
 		for (const family of Object.keys(selectedOptions)) {
@@ -262,8 +262,8 @@ function reload_tableContainer(key) {
 			</tr>`
 	})
 
-	document.getElementById('tableContainer').innerHTML = `
-		<div style="overflow-x: auto; border: 1px solid #demcue6; height: 700px;">
+	document.getElementById('table_container').innerHTML = `
+		<div style="overflow-x: auto; border: 1px solid black; height: 700px;">
 			<table style="border-collapse: collapse; width: 100%;">
 				<thead><tr>${heardersHTML}</tr></thead>
 				<tbody>${recordHTML}</tbody>
@@ -277,12 +277,12 @@ function reload_tableContainer(key) {
 				top: 0;
 				background: #f8f9fa;
 				z-index: 20;
-				border-bottom: 2px solid #demcue6;
+				border-bottom: 2px solid black;
 				padding: 12px;
 			}
 
 			table th, table td {
-				border: 1px solid #demcue6;
+				border: 1px solid black;
 				padding: 8px 8px;
 				white-space: nowrap;
 			}
@@ -307,17 +307,51 @@ function tabs_items() {
 	return document.querySelectorAll('#mcuTabs .tab-item')
 }
 
+
+let ch32_regs = {}
+
+function handle_regClick(key) {
+	console.log("key:", key)
+	const reg = ch32_regs.PWR.registers[key]
+
+	const headers = ["Bit", "Name", "Access", "Description", "Reset Value"]
+	
+
+	document.getElementById('regContent_container').innerHTML = `
+		<br>
+		<div style="overflow-x: auto;">
+			<table>
+				<thead>
+					<tr>${ headers.map(e => 
+						`<th style="background-color: lightgray !important;">${e}</th>`).join('') 
+					}</tr>
+				</thead>
+				<tbody>
+					${ reg.bits_fields.map(e => `
+						<tr>
+							<td style="text-align: center;">${ e.bits }</td>
+							<td>${ e.name }</td>
+							<td>${ e.access }</td>
+							<td style="white-space: pre-wrap;">${ e.info }</td>
+							<td>${ e.reset_value }</td>
+						</tr>`).join('')
+					}
+				</tbody>
+			</table>
+		</div>`
+}
+
 //! START_POINT: Initialize when the page loads
 document.addEventListener('DOMContentLoaded', async function() {
 	//# load MCUs json
 	try {
 		[mcu_models, pins_config] = await Promise.all([
-			fetch('json_models/model_MCUs.json').then(response => response.json()),
+			fetch('json_mcu/model_MCUs.json').then(response => response.json()),
 			fetch('pins_config.json').then(response => response.json())
 		])
-		console.log("mcu_models: ", mcu_models);
-		console.log("pins_config: ", pins_config);
-		console.log("tabItems: ", tabs_items);
+		console.log("mcu_models: ", mcu_models)
+		console.log("pins_config: ", pins_config)
+		console.log("tabItems: ", tabs_items)
 
 		let mcuTabsHTML = ''
 
@@ -342,6 +376,34 @@ document.addEventListener('DOMContentLoaded', async function() {
 			preventDefault: () => {},
 			currentTarget: tabs_items()[0].querySelector('a') // select <a>
 		}, 'CH32')
+
+
+		const reg_headerKeys = ["Name", "Access Address", "Description", "Reset Value"]
+		ch32_regs = await fetch('json_register/reg_CH32V003.json').then(response => response.json())
+
+		document.getElementById('registers_container').innerHTML = `
+			<br>
+			<div style="overflow-x: auto;">
+				<table>
+					<thead>
+						<tr>${ reg_headerKeys.map(e => 
+							`<th style="background-color: lightgray !important;">${e}</th>`).join('') 
+						}</tr>
+					</thead>
+					<tbody>
+						${ Object.entries(ch32_regs.PWR.registers).map(([key, value]) => `
+							<tr>
+								<td>
+									<a style="color: blue;" onclick="handle_regClick('${key}')">${ key }</a>
+								</td>
+								<td>${ value.address }</td>
+								<td>${ value.info }</td>
+								<td>${ value.reset_value }</td>
+							</tr>`).join('')
+						}
+					</tbody>
+				</table>
+			</div>`
 
 	} catch (error) {
 		console.error('Error loading data:', error)

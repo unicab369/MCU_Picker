@@ -28,43 +28,51 @@
 
 		<div class="w3-container" style="font-size: 1.2rem;">
 			<!--# Picker button -->
-			<div class="column" style="margin: 10px;"><a class="btn btn-primary" href="#mcus_modal">Select MCUs</a>
-				<div class="modal" id="mcus_modal">
-					<!-- Modal backdrop -->
-					<a class="modal-overlay" href="#modals" aria-label="Close"></a>
+			<div class="column" style="margin: 10px;">
+				<a class="btn btn-primary" href="#mcus_modal">Select MCUs</a>
+			</div>
 
-					<div class="modal-container" role="document" style="height: 90%;">
-						<!-- Modal header -->
-						<div class="modal-header" style="background-color: #f7f7f7;">
-							<div style="font-weight: bold; text-align: center;">MCUs List</div>
-						</div>
+			<!--# Modal -->
+			<div class="modal" id="mcus_modal">
+				<!-- Modal backdrop -->
+				<a class="modal-overlay" href="#modals" aria-label="Close"></a>
 
-						<!-- Modal picker -->
-						<div><div class="horizontal-scroll-tabs">
-							<ul class="tab" id="mcuTabs"></ul>
-						</div></div>
+				<div class="modal-container" role="document" style="height: 90%;">
+					<!-- Modal header -->
+					<div class="modal-header" style="background-color: #f7f7f7;">
+						<div style="font-weight: bold; text-align: center;">MCUs List</div>
+					</div>
 
-						<!-- Modal Body -->
-						<div class="modal-body">
-							<div class="content" id="modalContent"></div>
-						</div>
+					<!-- Modal picker -->
+					<div><div class="horizontal-scroll-tabs">
+						<ul class="tab" id="mcuTabs"></ul>
+					</div></div>
 
-						<!-- Modal footer -->
-						<div class="modal-footer">
-							<a class="btn btn-primary app-button" href="#modals"
-								onclick="onApply_mcuSelections(event)">Apply</a>
-							<a class="btn btn-link app-button" href="#modals">Close</a>
-						</div>
+					<!-- Modal Body -->
+					<div class="modal-body">
+						<div class="content" id="modalContent"></div>
+					</div>
+
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<a class="btn btn-primary app-button" href="#modals"
+							onclick="onApply_mcuSelections(event)">Apply</a>
+						<a class="btn btn-link app-button" href="#modals">Close</a>
 					</div>
 				</div>
 			</div>
 
 			<!--# Mcus Container -->
-			<div id="MCUsContainer"></div>
+			<div id="MCUs_container"></div>
 			<br>
 
 			<!--# Table Container -->
-			<div id="tableContainer"></div>
+			<div id="table_container"></div>
+
+			<!--# Registers Container -->
+			<div id="registers_container"></div>
+
+			<div id="regContent_container"></div>
 
 			<button class="btn btn-link" style="margin: 20px;">
 				<a style="font-size: 18px;" href="https://github.com/unicab369/MCU_Picker">MCU_Picker</a>
