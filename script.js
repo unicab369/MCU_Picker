@@ -92,8 +92,6 @@ async function reload_MCUsContainer() {
 			// Add Diagram
 			selectedOptions[family].forEach(name => {
 				const model = target[name]
-				console.log(`name: ${name}`)
-				console.log("model: ", model)
 				if (!model) return
 
 				if (model.left_pins && model.right_pins) {
@@ -124,39 +122,45 @@ async function reload_MCUsContainer() {
 			}
 
 			let dma_HTML = ''
+			const dma_map = {}
 
 			for (const chan in dma_chans) {
 				const targets = dma_chans[chan]
 
-				let subHtml = Object.keys(targets).map(func_key => {
+				for (func_key of selected_legends) {
+					const label = dma_chans[chan][func_key]
+					if (!label) continue
 					const color = pins_config.legend_colors[func_key]
-					return `<div class="pinMux-style" style="width: 70px; background: ${color}; flex-shrink: 0;">
-						${targets[func_key]}
-					</div>`
-				}).join('')
 
+					if (chan in dma_map) {
+						dma_map[chan].push({label, color})
+					} else {
+						dma_map[chan] = [{label, color}]
+					}
+				}
+			}
+
+			console.log("dma_map: ", dma_map)
+
+			Object.keys(dma_map).map(e => {
 				dma_HTML += `<div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
-					<div style="min-width: 50px; font-weight: bold;">${chan}</div>
-
-					<div style="display: flex; gap: 5px; flex-wrap: nowrap; padding: 5px;">
+						<div style="min-width: 50px; font-weight: bold;">${e}</div>
+						<div style="display: flex; gap: 5px; flex-wrap: nowrap; padding: 5px;">
 						${
-							Object.keys(targets).map(func_key => {
-								const color = pins_config.legend_colors[func_key]
-								if (!selectedLegends[family].includes(func_key)) return ''
-								return `<div class="pinMux-style" style="width: 70px; background: ${color}; flex-shrink: 0;">
-											${targets[func_key]}
-										</div>`
+							dma_map[e].map(t => {
+								return `<div class="pinMux-style" style="width: 70px; background: ${t.color}; flex-shrink: 0;">
+									${t.label}
+								</div>`
 							}).join('')
 						}
 					</div>
 				</div>`
-			}
+			})
 
 			// add DMA channels
 			htmlOutput += `<br><div style="overflow-x: auto; padding: 10px;">
 								${ dma_HTML }
 							</div>`
-
 		}
 		
 		document.getElementById('MCUsContainer').innerHTML = htmlOutput + `<br>`
