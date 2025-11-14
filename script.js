@@ -264,42 +264,11 @@ function reload_tableContainer(key) {
 
 	document.getElementById('table_container').innerHTML = `
 		<div style="overflow-x: auto; border: 1px solid black; height: 700px;">
-			<table style="border-collapse: collapse; width: 100%;">
+			<table class="sticky-rows" style="border-collapse: collapse; width: 100%;">
 				<thead><tr>${heardersHTML}</tr></thead>
 				<tbody>${recordHTML}</tbody>
 			</table>
-		</div>
-		
-		<style>
-			/* Sticky header */
-			table th {
-				position: sticky;
-				top: 0;
-				background: #f8f9fa;
-				z-index: 20;
-				border-bottom: 2px solid black;
-				padding: 12px;
-			}
-
-			table th, table td {
-				border: 1px solid black;
-				padding: 8px 8px;
-				white-space: nowrap;
-			}
-			
-			/* Freeze first two columns with auto positioning */
-			table th:first-child, table td:first-child {
-				position: sticky;
-				left: 0;
-				background: inherit;
-			}
-			
-			table th:nth-child(2), table td:nth-child(2) {
-				position: sticky;
-				left: 30px;
-				background: inherit;
-			}
-		</style>`
+		</div>`
 }
 
 
@@ -310,35 +279,38 @@ function tabs_items() {
 
 let ch32_regs = {}
 
-function handle_regClick(key) {
-	console.log("key:", key)
-	const reg = ch32_regs.PWR.registers[key]
-
+function handle_regClick(key, subkey) {
+	const reg = ch32_regs[key].registers[subkey]
 	const headers = ["Bit", "Name", "Access", "Description", "Reset Value"]
-	
+	const keys = ["range", "name", "access", "info", "reset_value"]
 
-	document.getElementById('regContent_container').innerHTML = `
+	const generateRow = (row) => 
+		`<tr>${keys.map((key, idx) => {
+			let style = (idx === 0) ? 'text-align: center;' : ''
+			if(key === 'info') style = 'white-space: normal; word-wrap: break-word;'
+			return `<td style="${style}">${row[key]}</td>`;
+		}).join('')}</tr>`;
+
+	document.getElementById(`${key}_reg_container`).innerHTML = `
 		<br>
+		<input type="checkbox" style="width: 22px; height: 22px;" id="aa" name="aa_nameId" value="aa">
+		<label for="aa" style="cursor: pointer;">View All</label>
+		
+		<br>
+		<div style="font-weight: bold; font-size: 25px;">${reg.name}</div>
+
 		<div style="overflow-x: auto;">
-			<table>
-				<thead>
-					<tr>${ headers.map(e => 
-						`<th style="background-color: lightgray !important;">${e}</th>`).join('') 
-					}</tr>
-				</thead>
-				<tbody>
-					${ reg.bits_fields.map(e => `
-						<tr>
-							<td style="text-align: center;">${ e.bits }</td>
-							<td>${ e.name }</td>
-							<td>${ e.access }</td>
-							<td style="white-space: pre-wrap;">${ e.info }</td>
-							<td>${ e.reset_value }</td>
-						</tr>`).join('')
-					}
-				</tbody>
+			<table style="border-collapse: collapse;">
+				<thead><tr>${
+					headers.map(h => `<th style="background-color: lightgray !important;">
+										${h}
+									</th>`).join('')
+				}</tr></thead>
+				<tbody>${
+					reg.bits_fields.map(generateRow).join('')
+				}</tbody>
 			</table>
-		</div>`
+		</div>`;
 }
 
 //! START_POINT: Initialize when the page loads
@@ -359,7 +331,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 			selectedLegends[model] = Object.keys(mcu_models[model].legends || [])
 			mcuTabsHTML += 
 				`<li class="tab-item">
-					<a href="#" onclick="onSwitch_tab(event, '${model}')">${model}xx</a>
+					<a href="#" onclick="onSwitch_tab(event, '${ model }')">${ model }xx</a>
 				</li>`
 		}
 
@@ -378,32 +350,42 @@ document.addEventListener('DOMContentLoaded', async function() {
 		}, 'CH32')
 
 
-		const reg_headerKeys = ["Name", "Access Address", "Description", "Reset Value"]
+		const reg_headerKeys = ["Name", "Access Addr.", "Description", "Reset Value"]
 		ch32_regs = await fetch('json_register/reg_CH32V003.json').then(response => response.json())
+		let regTableHTML = ''
 
-		document.getElementById('registers_container').innerHTML = `
-			<br>
-			<div style="overflow-x: auto;">
-				<table>
-					<thead>
-						<tr>${ reg_headerKeys.map(e => 
-							`<th style="background-color: lightgray !important;">${e}</th>`).join('') 
-						}</tr>
-					</thead>
-					<tbody>
-						${ Object.entries(ch32_regs.PWR.registers).map(([key, value]) => `
-							<tr>
-								<td>
-									<a style="color: blue;" onclick="handle_regClick('${key}')">${ key }</a>
-								</td>
-								<td>${ value.address }</td>
-								<td>${ value.info }</td>
-								<td>${ value.reset_value }</td>
-							</tr>`).join('')
-						}
-					</tbody>
-				</table>
-			</div>`
+		for (const [key, value] of Object.entries(ch32_regs)) {
+			regTableHTML += `
+				<br>
+				<div style="overflow-x: auto;">
+					<table>
+						<thead>
+							<tr>${ reg_headerKeys.map(e => 
+								`<th style="background-color: lightgray !important;">${e}</th>`).join('') 
+							}</tr>
+						</thead>
+						<tbody>
+							${ Object.entries(value.registers).map(([subkey, value]) => `
+								<tr>
+									<td>
+										<a style="color: blue;" onclick="handle_regClick('${ key }', '${ subkey }')">
+											${ subkey }
+										</a>
+									</td>
+									<td>${ value.address }</td>
+									<td>${ value.info }</td>
+									<td>${ value.reset_value }</td>
+								</tr>`).join('')
+							}
+						</tbody>
+					</table>
+				</div>
+				
+				<div id="${key}_reg_container"></div>
+				`
+		}
+
+		document.getElementById('registers_container').innerHTML = regTableHTML
 
 	} catch (error) {
 		console.error('Error loading data:', error)

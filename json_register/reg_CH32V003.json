@@ -5,19 +5,20 @@
 		
 		"registers": {
 			"R32_PWR_CTLR": {
+				"name": "R32_PWR_CTLR",
 				"address": "0x40007000",
 				"info": "Power control register",
 				"reset_value": "0x00000000",
 				"bits_fields": [
 					{
-						"bits": "[31:8]",
+						"range": "[31:8]",
 						"name": "Reserved",
 						"access": "RO",
 						"reset_value": "0",
 						"info": "Reserved"
 					},
 					{
-						"bits": "[7:5]",
+						"range": "[7:5]",
 						"name": "PLS[2:0]",
 						"access": "RW",
 						"reset_value": "0",
@@ -34,7 +35,7 @@
 						]
 					},
 					{
-						"bits": "4",
+						"range": "4",
 						"name": "PVDE",
 						"access": "RW",
 						"reset_value": "0",
@@ -45,14 +46,14 @@
 						]
 					},
 					{
-						"bits": "[3:2]",
+						"range": "[3:2]",
 						"name": "Reserved",
 						"access": "RO",
 						"reset_value": "0",
 						"info": "Reserved"
 					},
 					{
-						"bits": "1",
+						"range": "1",
 						"name": "PDDS",
 						"access": "RW",
 						"reset_value": "0",
@@ -63,7 +64,7 @@
 						]
 					},
 					{
-						"bits": "0",
+						"range": "0",
 						"name": "Reserved",
 						"access": "RO",
 						"reset_value": "0",
@@ -73,19 +74,20 @@
 			},
 
 			"R32_PWR_CSR": {
+				"name": "R32_PWR_CSR",
 				"address": "0x40007004", 
 				"info": "Power control/status register",
 				"reset_value": "0x00000000",
 				"bits_fields": [
 					{
-						"bits": "[31:3]",
+						"range": "[31:3]",
 						"name": "Reserved",
 						"access": "RO",
 						"reset_value": "0",
 						"info": "Reserved"
 					},
 					{
-						"bits": "2",
+						"range": "2",
 						"name": "PVD0",
 						"access": "RO",
 						"reset_value": "0",
@@ -96,7 +98,7 @@
 						]
 					},
 					{
-						"bits": "[1:0]",
+						"range": "[1:0]",
 						"name": "Reserved",
 						"access": "RO",
 						"reset_value": "0",
@@ -106,19 +108,20 @@
 			},
 
 			"R32_PWR_AWUCSR": {
+				"name": "R32_PWR_AWUCSR",
 				"address": "0x40007008",
 				"info": "Auto-wakeup control/status register", 
 				"reset_value": "0x00000000",
 				"bits_fields": [
 					{
-						"bits": "[31:2]",
+						"range": "[31:2]",
 						"name": "Reserved",
 						"access": "RO",
 						"reset_value": "0",
 						"info": "Reserved"
 					},
 					{
-						"bits": "1",
+						"range": "1",
 						"name": "AWUEN",
 						"access": "RW",
 						"reset_value": "0",
@@ -129,7 +132,7 @@
 						]
 					},
 					{
-						"bits": "0",
+						"range": "0",
 						"name": "Reserved",
 						"access": "RO",
 						"reset_value": "0",
@@ -139,19 +142,20 @@
 			},
 
 			"R32_PWR_AWUWR": {
+				"name": "R32_PWR_AWUWR",
 				"address": "0x4000700C",
 				"info": "Auto-wakeup window comparison value register",
 				"reset_value": "0x00000000",
 				"bits_fields": [
 					{
-						"bits": "[31:16]",
+						"range": "[31:16]",
 						"name": "Reserved",
 						"access": "RO",
 						"reset_value": "0",
 						"info": "Reserved"
 					},
 					{
-						"bits": "[5:0]",
+						"range": "[5:0]",
 						"name": "AWUWR[5:0]",
 						"access": "RW",
 						"reset_value": "0x3F",
@@ -161,19 +165,20 @@
 			},
 
 			"R32_PWR_AWUPSC": {
+				"name": "R32_PWR_AWUPSC",
 				"address": "0x40007010",
 				"info": "Auto-wakeup crossover factor register",
 				"reset_value": "0x0000003F",
 				"bits_fields": [
 					{
-						"bits": "[31:4]",
+						"range": "[31:4]",
 						"name": "Reserved",
 						"access": "RO",
 						"reset_value": "0",
 						"info": "Reserved"
 					},
 					{
-						"bits": "[3:0]",
+						"range": "[3:0]",
 						"name": "AWUPSC[3:0]",
 						"access": "RW",
 						"reset_value": "0",
@@ -200,6 +205,804 @@
 				]
 			}
 		}
-	}
+	},
 
+	"RCC": {
+		"info": "Reset and Clock Control",
+		"table": "2-2",
+		
+		"registers": {
+			"R32_RCC_CTLR": {
+				"name": "R32_RCC_CTLR",
+				"address": "0x40021000",
+				"info": "Clock control register",
+				"reset_value": "0x0000xx83",
+				"bits_fields": [
+					{
+						"range": "[31:26]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": 25,
+						"name": "PLLRDY",
+						"access": "RO",
+						"info": "PLL clock-ready lock flag bit.\n1: PLL clock lock.\n0: PLL clock is not locked.",
+						"reset_value": "0"
+					},
+					{
+						"range": 24,
+						"name": "PLLON",
+						"access": "RW",
+						"info": "PLL clock enable control bit.\n1: Enables the PLL clock.\n0: Turn off the PLL clock.\nNote: After entering Standby low-power mode, this bit is cleared by hardware to 0.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[23:20]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": 19,
+						"name": "CSSON",
+						"access": "RW",
+						"info": "Clock security system enable control bit.\n1: Enable the clock security system. When HSE is ready (HSERDY set to 1), the hardware turns on the clock monitoring function of HSE and triggers CSSF flag and NMI interrupt when HSE is found to be abnormal; when HSE is not ready, the hardware turns off the clock monitoring function of HSE.\n0: Turns off the clock security system.",
+						"reset_value": "0"
+					},
+					{
+						"range": 18,
+						"name": "HSEBYP",
+						"access": "RW",
+						"info": "External high-speed crystal bypass control bit.\n1: Bypass external high-speed crystal/ceramic resonators (using an external clock source).\n0: No bypass of high-speed external crystal/ceramic resonators.\nNote: This bit needs to be written with HSEON at 0.",
+						"reset_value": "0"
+					},
+					{
+						"range": 17,
+						"name": "HSERDY",
+						"access": "RO",
+						"info": "External high-speed crystal oscillation stabilization ready flag bit (set by hardware).\n1: Stable external high-speed crystal oscillation.\n0: External high-speed crystal oscillation is not stabilized.\nNote: After the HSEON bit is cleared to 0, it takes 6 HSE cycles for this bit to clear to 0.",
+						"reset_value": "0"
+					},
+					{
+						"range": 16,
+						"name": "HSEON",
+						"access": "RW",
+						"info": "External high-speed crystal oscillation enable control bit.\n1: Enables the HSE oscillator.\n0: Turn off the HSE oscillator.\nNote: This bit is cleared to 0 by hardware after entering Standby low-power mode.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:8]",
+						"name": "HSICAL",
+						"access": "RO",
+						"info": "Internal high-speed clock calibration values, which are automatically initialized at system startup.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:3]",
+						"name": "HSITRIM",
+						"access": "RW",
+						"info": "Internal high-speed clock adjustment value.\nThe user can enter an adjustment value to superimpose on the HSICAL[7:0] value to adjust the frequency of the internal HSI RC oscillator based on voltage and temperature variations.\nThe default value is 16, which can adjust the HSI to 24MHz ±1%; the change of HSICAL is adjusted about 60kHz per step.",
+						"reset_value": "10000b"
+					},
+					{
+						"range": 2,
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": 1,
+						"name": "HSIRDY",
+						"access": "RO",
+						"info": "Internal high-speed clock (24MHz) Stable Ready flag bit (set by hardware).\n1: The internal high-speed clock (24MHz) is stable;\n0: The internal high-speed clock (24MHz) is not stable.\nNote: After the HSION bit is cleared to 0, it takes 6 HSI cycles for the bit to be cleared to 0.",
+						"reset_value": "1"
+					},
+					{
+						"range": 0,
+						"name": "HSION",
+						"access": "RW",
+						"info": "Internal high-speed clock (24MHz) enable control bit.\n1: Enable the HSI oscillator.\n0: Disable the HSI oscillator.\nNote: This bit is set to 1 by hardware to start the internal 24MHz RC oscillator when returning from standby mode or when the external oscillator HSE used as the system clock fails.",
+						"reset_value": "0"
+					}
+				]
+			},
+
+			"R32_RCC_CFGR0": {
+				"name": "R32_RCC_CFGR0",
+				"address": "0x40021004",
+				"info": "Clock configuration register 0",
+				"reset_value": "0x00000020", 
+				"bits_fields": [
+					{
+						"range": "[31:27]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[26:24]",
+						"name": "MCO[2:0]",
+						"access": "RW",
+						"info": "Microcontroller MCO pin clock output control.\n0xx: no clock output.\n100: System clock (SYSCLK) output.\n101: Internal 24 MHz RC oscillator clock (HSI) output.\n110: External oscillator clock (HSE) output.\n111: PLL clock output.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[23:17]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 16,
+						"name": "PLLSRC",
+						"access": "RW",
+						"info": "Input clock source for PLL (write only when PLL is off).\n1: HSE is fed into PLL without dividing the frequency.\n0: HSI is not divided and sent to PLL.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:11]",
+						"name": "ADCPRE[4:0]",
+						"access": "RW",
+						"info": "ADC clock source prescaler control {13:11,15:14}.\n000xx: HBCLK divided by 2 as ADC clock.\n010xx: HBCLK divided by 4 as ADC clock.\n100xx: HBCLK divided by 6 as ADC clock.\n110xx: HBCLK divided by 8 as ADC clock.\n00100: HBCLK divided by 4 as ADC clock.\n01100: HBCLK divided by 8 as ADC clock.\n10100: HBCLK divided by 12 as ADC clock.\n11100: HBCLK divided by 16 as ADC clock.\n00101: HBCLK divided by 8 as ADC clock.\n01101: HBCLK divided by 16 as ADC clock.\n10101: HBCLK divided by 24 as ADC clock.\n11101: HBCLK divided by 32 as ADC clock.\n00110: HBCLK divided by 16 as ADC clock.\n01110: HBCLK divided by 32 as ADC clock.\n10110: HBCLK divided by 48 as ADC clock.\n11110: HBCLK divided by 64 as ADC clock.\n00111: HBCLK divided by 32 as ADC clock.\n01111: HBCLK divided by 64 as ADC clock.\n10111: HBCLK divided by 96 as ADC clock.\n11111: HBCLK divided by 128 as ADC clock.\nNote: The ADC clock should not exceed a maximum of 24MHz.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[10:8]",
+						"name": "Reserved",
+						"access": "RW",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:4]",
+						"name": "HPRE[3:0]",
+						"access": "RW",
+						"info": "HB clock source prescaler control.\n0000: Prescaler off.\n0001: SYSCLK divided by 2.\n0010: SYSCLK divided by 3.\n0011: SYSCLK divided by 4.\n0100: SYSCLK divided by 5.\n0101: SYSCLK divided by 6.\n0110: SYSCLK divided by 7.\n0111: SYSCLK divided by 8.\n1000: SYSCLK divided by 2.\n1001: SYSCLK divided by 4.\n1010: SYSCLK divided by 8.\n1011: SYSCLK divided by 16.\n1100: SYSCLK divided by 32.\n1101: SYSCLK divided by 64.\n1110: SYSCLK divided by 128.\n1111: SYSCLK divided by 256.",
+						"reset_value": "0010b"
+					},
+					{
+						"range": "[3:2]",
+						"name": "SWS[1:0]",
+						"access": "RO",
+						"info": "System clock (SYSCLK) status (hardware set).\n00: The system clock source is HSI.\n01: The system clock source is HSE.\n10: The system clock source is a PLL.\n11: Not available.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[1:0]",
+						"name": "SW[1:0]",
+						"access": "RW",
+						"info": "Select the system clock source.\n00: HSI as system clock.\n01: HSE as system clock.\n10: PLL output as system clock.\n11: Not available.\nNote: With Clock Safe enabled (CSSON=1), HSI is forced by hardware to be selected as the system clock when returning from Standby and Stop mode or when the external oscillator HSE used as the system clock fails.",
+						"reset_value": "0"
+					}
+				]
+			},
+
+			"R32_RCC_INTR": {
+				"name": "R32_RCC_INTR",
+				"address": "0x40021008",
+				"info": "Clock interrupt register",
+				"reset_value": "0x00000000", 
+				"bits_fields": [
+					{
+						"range": "[31:24]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 23,
+						"name": "CSSC",
+						"access": "WO",
+						"info": "Clear the clock security system interrupt flag bit (CSSF).\n1: Clear the CSSF interrupt flag.\n0: No action.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[22:21]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 20,
+						"name": "PLLRDYC",
+						"access": "WO",
+						"info": "Clear the PLL-ready interrupt flag bit.\n1: Clear the PLLRDYF interrupt flag.\n0: No action.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 19,
+						"name": "HSERDYC",
+						"access": "WO",
+						"info": "Clear the HSE oscillator ready interrupt flag bit.\n1: Clear the HSERDYF interrupt flag.\n0: No action.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 18,
+						"name": "HSIRDYC",
+						"access": "WO",
+						"info": "Clear the HSI oscillator ready interrupt flag bit.\n1: Clear the HSIRDYF interrupt flag.\n0: No action.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 17,
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 16,
+						"name": "LSIRDYC",
+						"access": "WO",
+						"info": "Clear the LSI oscillator ready interrupt flag bit.\n1: Clear the LSIRDYF interrupt flag.\n0: No action.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:13]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 12,
+						"name": "PLLRDYIE",
+						"access": "RW",
+						"info": "PLL-ready interrupt enable bit.\n1: Enable the PLL-ready interrupt.\n0: Disable the PLL-ready interrupt.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 11,
+						"name": "HSERDYIE",
+						"access": "RW",
+						"info": "HSE-ready interrupt enable bit.\n1: Enable HSE-ready interrupt.\n0: Disable HSE-ready interrupt.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 10,
+						"name": "HSIRDYIE",
+						"access": "RW",
+						"info": "HSI-ready interrupt enable bit.\n1: Enable HSI-ready interrupt.\n0: Disable HSI-ready interrupt.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 9,
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 8,
+						"name": "LSIRDYIE",
+						"access": "RW",
+						"info": "LSI-ready interrupt enable bit.\n1: Enable LSI-ready interrupt.\n0: Disable LSI-ready interrupt.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 7,
+						"name": "CSSF",
+						"access": "RO",
+						"info": "Clock security system interrupt flag bit.\n1: HSE clock failure, which generates a clock safety interrupt CSSI.\n0: No clock security system interrupt. Hardware set, software write CSSC bit 1 cleared.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[6:5]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 4,
+						"name": "PLLRDYF",
+						"access": "RO",
+						"info": "PLL clock-ready lockout interrupt flag.\n1: PLL clock lock generating interrupt.\n0: No PLL clock lock interrupt. Hardware set, software write PLLRDYC bit 1 cleared.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 3,
+						"name": "HSERDYF",
+						"access": "RO",
+						"info": "HSE clock-ready interrupt flag.\n1: HSE clock-ready interrupt generation.\n0: No HSE clock-ready interrupt. Hardware set, software write HSERDYC bit 1 cleared.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 2,
+						"name": "HSIRDYF",
+						"access": "RO",
+						"info": "HSI clock-ready interrupt flag.\n1: HSI clock-ready interrupt generation.\n0: No HSI clock-ready interrupt. Hardware set, software write HSIRDYC bit 1 cleared.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 1,
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 0,
+						"name": "LSIRDYF",
+						"access": "RO",
+						"info": "LSI clock-ready interrupt flag.\n1: LSI clock-ready interrupt generation.\n0: No LSI clock-ready interrupt. Hardware set, software write LSIRDYC bit 1 cleared.",
+						"reset_value": "0"
+					}
+				]
+			},
+
+			"R32_RCC_APB2PRSTR": {
+				"name": "R32_RCC_APB2PRSTR",
+				"address": "0x4002100C",
+				"info": "PB2 peripheral reset register",
+				"reset_value": "0x00000000", 
+				"bits_fields": [
+					{
+						"range": "[31:15]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 14,
+						"name": "USART1RST",
+						"access": "RW",
+						"info": "USART1 interface reset control.\n1: Reset module; 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 13,
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 12,
+						"name": "SPI1RST",
+						"access": "RW",
+						"info": "SPI1 interface reset control.\n1: Reset module; 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 11,
+						"name": "TIM1RST",
+						"access": "RW",
+						"info": "TIM1 module reset control.\n1: Reset module; 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 10,
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 9,
+						"name": "ADC1RST",
+						"access": "RW",
+						"info": "ADC1 module reset control.\n1: Reset module; 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[8:6]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 5,
+						"name": "IOPDRST",
+						"access": "RW",
+						"info": "PD port module reset control for I/O.\n1: Reset module; 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 4,
+						"name": "IOPCRST",
+						"access": "RW",
+						"info": "PC port module reset control for I/O.\n1: Reset module; 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 3,
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 2,
+						"name": "IOPARST",
+						"access": "RW",
+						"info": "PA port module reset control for I/O.\n1: Reset module; 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 1,
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 0,
+						"name": "AFIORST",
+						"access": "RW",
+						"info": "I/O auxiliary function module reset control.\n1: Reset module; 0: No effect.",
+						"reset_value": "0"
+					}
+				]
+			},
+
+			"R32_RCC_APB1PRSTR": {
+				"name": "R32_RCC_APB1PRSTR",
+				"address": "0x40021010",
+				"info": "PB1 peripheral reset register",
+				"reset_value": "0x00000000", 
+				"bits_fields": [
+					{
+						"range": "[31:29]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "28",
+						"name": "PWRRST",
+						"access": "RW",
+						"info": "Power interface module reset control. 1: Reset module; 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[27:22]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "21",
+						"name": "I2C1RST",
+						"access": "RW",
+						"info": "I2C 1 interface reset control. 1: Reset module; 0: No effect.",       
+						"reset_value": "0"
+					},
+					{
+						"range": "[20:12]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "11",
+						"name": "WWDGRST",
+						"access": "RW",
+						"info": "Window watchdog reset control. 1: Reset module; 0: No effect.",       
+						"reset_value": "0"
+					},
+					{
+						"range": "[10:1]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "TIM2RST",
+						"access": "RW",
+						"info": "Timer 2 module reset control. 1: Reset module; 0: No effect.",        
+						"reset_value": "0"
+					}
+				]
+			},
+
+			"R32_RCC_AHBPCENR": {
+				"name": "R32_RCC_AHBPCENR",
+				"address": "0x40021014",
+				"info": "HB peripheral clock enable register",
+				"reset_value": "0x00000004", 
+				"bits_fields": [
+					{
+						"range": "[31:3]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "SRAMEN",
+						"access": "RW",
+						"info": "SRAM interface module clock enable bit. 1: SRAM interface module clock on during Sleep mode. 0: The SRAM interface module clock is turned off",
+						"reset_value": "in"
+					},
+					{
+						"range": "1",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "DMA1EN",
+						"access": "RW",
+						"info": "DMA1 module clock enable bit. 0 1: Module clock is on; 0: Module clock is off.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_RCC_APB2PCENR": {
+				"name": "R32_RCC_APB2PCENR",
+				"address": "0x40021018",
+				"info": "PB2 peripheral clock enable register",
+				"reset_value": "0x00000000", 
+				"bits_fields": [
+					{
+						"range": "[31:15]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "USART1EN",
+						"access": "RW",
+						"info": "USART1 interface clock enable bit. 1: Module clock is on; 0: Module clock is off.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "12",
+						"name": "SPI1EN",
+						"access": "RW",
+						"info": "SPI1 interface clock enable bit. 1: Module clock is on; 0: Module clock is off.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11",
+						"name": "TIM1EN",
+						"access": "RW",
+						"info": "TIM1 module clock enable bit. 1: Module clock is on; 0: Module clock is off.",
+						"reset_value": "0"
+					},
+					{
+						"range": "10",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "9",
+						"name": "ADC1EN",
+						"access": "RW",
+						"info": "ADC1 module clock enable bit. 1: Module clock is on; 0: Module clock is off.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[8:6]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "5",
+						"name": "IOPDEN",
+						"access": "RW",
+						"info": "PD port module clock enable bit for I/O. 1: Module clock is on; 0: Module clock is off.",
+						"reset_value": "0"
+					},
+					{
+						"range": "4",
+						"name": "IOPCEN",
+						"access": "RW",
+						"info": "PC port module clock enable bit for I/O. 1: Module clock is on; 0: Module clock is off.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "IOPAEN",
+						"access": "RW",
+						"info": "PA port module clock enable bit for I/O. 1: Module clock is on; 0: Module clock is off.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "AFIOEN",
+						"access": "RW",
+						"info": "I/O auxiliary function module clock enable bit. 1: Module clock is on; 0: Module clock is off.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_RCC_APB1PCENR": {
+				"name": "R32_RCC_APB1PCENR",
+				"address": "0x4002101C",
+				"info": "PB1 peripheral clock enable register",
+				"reset_value": "0x00000000", 
+				"bits_fields": [
+					{
+						"range": "[31:29]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "28",
+						"name": "PWREN",
+						"access": "RW",
+						"info": "Power interface module clock enable bit. 1: Module clock is on; 0: Module clock is off.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[27:22]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "21",
+						"name": "I2C1EN",
+						"access": "RW",
+						"info": "I2C 1 interface clock enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[20:12]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved 0 1: Module clock is on; 0: Module clock is",
+						"reset_value": "off."
+					},
+					{
+						"range": "11",
+						"name": "WWDGEN",
+						"access": "RW",
+						"info": "Window watchdog clock enable bit. 1: Module clock is on; 0: Module clock is",
+						"reset_value": "off."
+					},
+					{
+						"range": "[10:1]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "TIM2EN",
+						"access": "RW",
+						"info": "Timer 2 module clock enable bit. 1: Module clock is on; 0: Module clock is off.",
+						"reset_value": "0"
+					}					
+				]
+			},
+			"R32_RCC_RSTSCKR": {
+				"name": "R32_RCC_RSTSCKR",
+				"address": "0x40021024",
+				"info": "Control/status register",
+				"reset_value": "0x0C000000", 
+				"bits_fields": [
+					{
+						"bit": 31,
+						"name": "LPWRRSTF",
+						"access": "RO",
+						"info": "Low-power reset flag.\n1: Occurrence of low-power resets.\n0: No low-power reset occurs.\nSet to 1 by hardware when a low-power management reset occurs; cleared by software writing of the RMVF bit.",
+						"reset_value": "Reset value"
+					},
+					{
+						"bit": 30,
+						"name": "WWDGRSTF",
+						"access": "RO",
+						"info": "Window watchdog reset flag.\n1: Occurrence of a window watchdog reset.\n0: No window watchdog reset occurs.\nSet to 1 by hardware when a window watchdog reset occurs; cleared by software writing of the RMVF bit.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 29,
+						"name": "IWDGRSTF",
+						"access": "RO",
+						"info": "Independent watchdog reset flag.\n1: Occurrence of an independent watchdog reset.\n0: No independent watchdog reset occurs.\nSet to 1 by hardware when an independent watchdog reset occurs; cleared by software writing of the RMVF bit.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 28,
+						"name": "SFTRSTF",
+						"access": "RO",
+						"info": "Software reset flag.\n1: Software reset occurs.\n0: No software reset occurs.\nSet to 1 by hardware when a software reset occurs; software write RMVF bit cleared.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 27,
+						"name": "PORRSTF",
+						"access": "RO",
+						"info": "Power-up/power-down reset flag.\n1: Power-up/power-down reset occurs.\n0: No power-up/power-down reset occurs.\nSet to 1 by hardware when power-up/power-down reset occurs; cleared by software writing of RMVF bit.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 26,
+						"name": "PINRSTF",
+						"access": "RO",
+						"info": "External manual reset (NRST pin) flag.\n1: Occurrence of NRST pin reset.\n0: No NRST pin reset occurs.\nSet to 1 by hardware when NRST pin reset occurs; cleared by software writing of RMVF bit.",
+						"reset_value": "1"
+					},
+					{
+						"bit": 25,
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"bit": 24,
+						"name": "RMVF",
+						"access": "RW",
+						"info": "Clear reset flag control.\n1: Clear the reset flag.\n0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[23:2]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved。",
+						"reset_value": "0"
+					},
+					{
+						"bit": 1,
+						"name": "LSIRDY",
+						"access": "RO",
+						"info": "Internal Low Speed Clock (LSI) Stable Ready flag bit (set by hardware).\n1: Stable internal low-speed clock (128kHz).\n0: The internal low-speed clock (128kHz) is not stable.\nNote: After the LSION bit is cleared to 0, the bit requires 3 LSI cycles to clear 0.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 0,
+						"name": "LSION",
+						"access": "RW",
+						"info": "Internal low-speed clock (LSI) enable control bit.\n1: Enable the LSI (128kHz) oscillator.\n0: Disable the LSI (128kHz) oscillator.\nNote: The Write Clear Reset flag can be cleared except for BIT1 which is cleared by a power-on reset.",
+						"reset_value": "0"
+					}
+				]
+			}
+		}
+	}
 }

@@ -1,0 +1,56 @@
+{
+  "R32_RCC_CTLR": {
+    "name": "R32_RCC_CTLR",
+    "address": "0x40021000",
+    "info": "Clock control register",
+    "reset_value": "0x0000xx83"
+  },
+  "R32_RCC_CFGR0": {
+    "name": "R32_RCC_CFGR0",
+    "address": "0x40021004",
+    "info": "Clock configuration register 0",
+    "reset_value": "0x00000020"
+  },
+  "R32_RCC_INTR": {
+    "name": "R32_RCC_INTR",
+    "address": "0x40021008",
+    "info": "Clock interrupt register",
+    "reset_value": "0x00000000"
+  },
+  "R32_RCC_APB2PRSTR": {
+    "name": "R32_RCC_APB2PRSTR",
+    "address": "0x4002100C",
+    "info": "PB2 peripheral reset register",
+    "reset_value": "0x00000000"
+  },
+  "R32_RCC_APB1PRSTR": {
+    "name": "R32_RCC_APB1PRSTR",
+    "address": "0x40021010",
+    "info": "PB1 peripheral reset register",
+    "reset_value": "0x00000000"
+  },
+  "R32_RCC_AHBPCENR": {
+    "name": "R32_RCC_AHBPCENR",
+    "address": "0x40021014",
+    "info": "HB peripheral clock enable register",
+    "reset_value": "0x00000004"
+  },
+  "R32_RCC_APB2PCENR": {
+    "name": "R32_RCC_APB2PCENR",
+    "address": "0x40021018",
+    "info": "PB2 peripheral clock enable register",
+    "reset_value": "0x00000000"
+  },
+  "R32_RCC_APB1PCENR": {
+    "name": "R32_RCC_APB1PCENR",
+    "address": "0x4002101C",
+    "info": "PB1 peripheral clock enable register",
+    "reset_value": "0x00000000"
+  },
+  "R32_RCC_RSTSCKR": {
+    "name": "R32_RCC_RSTSCKR",
+    "address": "0x40021024",
+    "info": "Control/status register",
+    "reset_value": "0x0C000000"
+  }
+}

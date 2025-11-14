@@ -94,3 +94,37 @@
 	height: 2.5rem !important;
 	padding: .5rem 1rem !important;
 }
+
+table th {
+	background: #f8f9fa;
+	z-index: 20;
+	border-bottom: 2px solid black;
+	padding: 12px;
+}
+
+table th, table td {
+	border: 1px solid black;
+	padding: 8px 8px;
+	white-space: nowrap;
+}
+
+.sticky-rows {
+	/* Sticky header */
+	th {
+		position: sticky;
+		top: 0;
+	}
+
+	/* Freeze first two columns with auto positioning */
+	th:first-child, td:first-child {
+		position: sticky;
+		left: 0;
+		background: inherit;
+	}
+	
+	th:nth-child(2), td:nth-child(2) {
+		position: sticky;
+		left: 30px;
+		background: inherit;
+	}
+}

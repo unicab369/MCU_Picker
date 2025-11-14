@@ -1,0 +1,170 @@
+[
+  {
+    "range": "30",
+    "name": "WWDGRSTF",
+    "access": "RO",
+    "info": "0 Window watchdog reset flag. 1: Occurrence of a window watchdog reset. 0: No window watchdog reset",
+    "reset_value": "occurs."
+  },
+  {
+    "range": "Set",
+    "name": "to",
+    "access": "1",
+    "info": "by hardware when a window watchdog",
+    "reset_value": "reset"
+  },
+  {
+    "range": "occurs;",
+    "name": "cleared",
+    "access": "by",
+    "info": "software writing of the RMVF",
+    "reset_value": "bit."
+  },
+  {
+    "range": "Independent",
+    "name": "watchdog",
+    "access": "reset",
+    "info": "flag. 1: Occurrence of an independent watchdog reset. 0: No independent watchdog reset",
+    "reset_value": "occurs."
+  },
+  {
+    "range": "Set",
+    "name": "to",
+    "access": "1",
+    "info": "by hardware when an independent watchdog",
+    "reset_value": "reset"
+  },
+  {
+    "range": "occurs;",
+    "name": "cleared",
+    "access": "by",
+    "info": "software writing of the RMVF",
+    "reset_value": "bit."
+  },
+  {
+    "range": "Software",
+    "name": "reset",
+    "access": "flag.",
+    "info": "1: Software reset occurs. 0: No software reset",
+    "reset_value": "occurs."
+  },
+  {
+    "range": "Set",
+    "name": "to",
+    "access": "1",
+    "info": "by hardware when a software reset",
+    "reset_value": "occurs;"
+  },
+  {
+    "range": "software",
+    "name": "write",
+    "access": "RMVF",
+    "info": "bit",
+    "reset_value": "cleared."
+  },
+  {
+    "range": "Power-up/power-down",
+    "name": "reset",
+    "access": "flag.",
+    "info": "1: Power-up/power-down reset occurs. 0: No power-up/power-down reset",
+    "reset_value": "occurs."
+  },
+  {
+    "range": "Set",
+    "name": "to",
+    "access": "1",
+    "info": "by hardware when power-up/power-down",
+    "reset_value": "reset"
+  },
+  {
+    "range": "occurs;",
+    "name": "cleared",
+    "access": "by",
+    "info": "software writing of RMVF",
+    "reset_value": "bit."
+  },
+  {
+    "range": "External",
+    "name": "manual",
+    "access": "reset",
+    "info": "(NRST pin) flag. 1: Occurrence of NRST pin reset. 0: No NRST pin reset",
+    "reset_value": "occurs."
+  },
+  {
+    "range": "Set",
+    "name": "to",
+    "access": "1",
+    "info": "by hardware when NRST pin reset occurs;",
+    "reset_value": "cleared"
+  },
+  {
+    "range": "by",
+    "name": "software",
+    "access": "writing",
+    "info": "of RMVF",
+    "reset_value": "bit."
+  },
+  {
+    "range": "25",
+    "name": "Reserved",
+    "access": "RO",
+    "info": "Reserved 0",
+    "reset_value": "0"
+  },
+  {
+    "range": "24",
+    "name": "RMVF",
+    "access": "RW",
+    "info": "Clear reset flag control. 1: Clear the reset flag. 0: No",
+    "reset_value": "effect."
+  },
+  {
+    "range": "[23:2]",
+    "name": "Reserved",
+    "access": "RO",
+    "info": "Reserved\u3002 0",
+    "reset_value": "0"
+  },
+  {
+    "range": "1",
+    "name": "LSIRDY",
+    "access": "RO",
+    "info": "Internal Low Speed Clock (LSI) Stable Ready flag bit",
+    "reset_value": "(set"
+  },
+  {
+    "range": "by",
+    "name": "hardware).",
+    "access": "1:",
+    "info": "Stable internal low-speed clock (128kHz). 0: The internal low-speed clock (128kHz) is not",
+    "reset_value": "stable."
+  },
+  {
+    "range": "Note",
+    "name": ":",
+    "access": "After",
+    "info": "the LSION bit is cleared to 0, the bit requires",
+    "reset_value": "3"
+  },
+  {
+    "range": "LSI",
+    "name": "cycles",
+    "access": "to",
+    "info": "clear 0.",
+    "reset_value": "0"
+  },
+  {
+    "range": "Internal",
+    "name": "low-speed",
+    "access": "clock",
+    "info": "(LSI) enable control bit. 1: Enable the LSI (128kHz) oscillator. 0: Disable the LSI (128kHz)",
+    "reset_value": "oscillator."
+  },
+  {
+    "range": "Note",
+    "name": ":",
+    "access": "The",
+    "info": "Write Clear Reset flag can be cleared except for BIT1 which is cleared by a power-on reset.",
+    "reset_value": "0"
+  }
+]
