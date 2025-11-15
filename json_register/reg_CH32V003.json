@@ -4649,5 +4649,2788 @@
 				]
 			}
 		}
+	},
+
+	"TIM2": {
+		"info": "TIM2-related registers list",
+		"table": "11-3",
+
+		"registers": {
+			"R16_TIM2_CTLR1": {
+				"name": "R16_TIM2_CTLR1",
+				"address": "0x40000000",
+				"info": "TIM2 control register1",
+				"reset_value": "0x0000",
+				"bits_fields":[
+					{
+						"range": "15",
+						"name": "CAPLVL",
+						"access": "RW",
+						"info": "Double-edge capture mode level indication enable. 1: Enable indication function; 0: Disable. When enabled, bit[16] of CHxCVR shows capture level.",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "CAPOV",
+						"access": "RW",
+						"info": "Capture value mode. 1: CHxCVR = 0xFFFF if counter overflow before capture; 0: CHxCVR = actual counter value.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13:10",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved bits.",
+						"reset_value": "0"
+					},
+					{
+						"range": "9:8",
+						"name": "CKD[1:0]",
+						"access": "RW",
+						"info": "Clock division ratio for timer clock (CK_INT), dead-time, and digital filter sampling clock. 00: Tdts=Tck_int; 01: Tdts=2×Tck_int; 10: Tdts=4×Tck_int; 11: Reserved.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "ARPE",
+						"access": "RW",
+						"info": "Auto-reload preload enable. 1: AR register preload enabled; 0: disabled.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6:5",
+						"name": "CMS[1:0]",
+						"access": "RW",
+						"info": "Center-alignment mode selection. 00: Edge-aligned; 01: Center mode 1; 10: Center mode 2; 11: Center mode 3. Transition not allowed once counter enabled.",
+						"reset_value": "0"
+					},
+					{
+						"range": "4",
+						"name": "DIR",
+						"access": "RW",
+						"info": "Counting direction. 1: decrementing; 0: incrementing. Not valid in center-alignment or encoder mode.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "OPM",
+						"access": "RW",
+						"info": "One-pulse mode. 1: counter stops on next update event; 0: continues.",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "URS",
+						"access": "RW",
+						"info": "Update request source. 1: generate interrupt/DMA only on overflow/underflow; 0: generate interrupt/DMA on all update events.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1",
+						"name": "UDIS",
+						"access": "RW",
+						"info": "Update disable. 1: disables update event generation; 0: enables it.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "CEN",
+						"access": "RW",
+						"info": "Counter enable. 1: enable counter; 0: disable counter. Required for external clock, gated, and encoder modes.",
+						"reset_value": "0"
+					}
+					]
+			},
+			"R16_TIM2_CTLR2": {
+				"name": "R16_TIM2_CTLR2",
+				"address": "0x40000004",
+				"info": "TIM2 control register2",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15:8",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved bits.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "TI1S",
+						"access": "RW",
+						"info": "TI1 selection. 1: TIMx_CH1, CH2, CH3 pins connected to TI1 after heterodyning. 0: TIMx_CH1 pin connected directly to TI1 input.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6:4",
+						"name": "MMS[2:0]",
+						"access": "RW",
+						"info": "Master mode selection for TRGO synchronization signal sent to slave timer. 000: UG bit of Reset-TIMx_EGR; 001: CNT_EN signal (counter enable); 010: Update event; 011: Compare pulse on CC1IF set; 100: OC1REF signal; 101: OC2REF signal; 110: OC3REF signal; 111: OC4REF signal.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "CCDS",
+						"access": "RW",
+						"info": "Capture/compare DMA selection. 1: DMA request for CHxCVR on update event. 0: DMA request on CHxCVR event.",
+						"reset_value": "1"
+					},
+					{
+						"range": "2:0",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved bits.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM2_SMCFGR": {
+				"name": "R16_TIM2_SMCFGR",
+				"address": "0x40000008",
+				"info": "TIM2 Slave mode control register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "ETP",
+						"access": "RO",
+						"info": "ETR trigger polarity selection. 1: Invert ETR, active low or falling edge; 0: ETR active high or rising edge. External clock mode 2 enable bit. 1: Enable; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "ECE",
+						"access": "RW",
+						"info": "External clock mode 2 enable. Slave mode can be used simultaneously with reset, gated and trigger mode; however, TRGI cannot be connected to ETRF when TS=111. If both external clock mode 1 and 2 enabled, external clock input is ETRF.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13:12",
+						"name": "ETPS[1:0]",
+						"access": "RW",
+						"info": "External trigger prescaler. Divides ETRP signal frequency; max frequency cannot exceed 1/4 of TIMxCLK. 00: No prescaler; 01: divide by 2; 10: divide by 4; 11: divide by 8.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11:8",
+						"name": "ETF[3:0]",
+						"access": "RW",
+						"info": "Externally triggered filtering. Digital filter uses sampling frequency to count events and output a jump after N events. See codes in query for detailed filter configurations.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "MSM",
+						"access": "RW",
+						"info": "Master/slave mode selection. 1: Delays trigger input event for perfect synchronization with slave timer; 0: Disabled.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6:4",
+						"name": "TS[2:0]",
+						"access": "RW",
+						"info": "Trigger selection. 000: ITR0; 001: ITR1; 010: ITR2; 011: ITR3; 100: TI1 edge detector; 101: filtered TI1; 110: filtered TI2; 111: external trigger input (ETRF). Only changes when SMS=0.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3:2",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved bits.",
+						"reset_value": "0"
+					},
+					{
+						"range": "2:0",
+						"name": "SMS[2:0]",
+						"access": "RW",
+						"info": "Slave mode selection. 000: Internal clock; 001: encoder mode 1; 010: encoder mode 2; 011: encoder mode 3; 100: reset mode; 101: gated mode; 110: trigger mode; 111: external clock mode 1.",
+						"reset_value": "0"
+					}
+					]
+			},
+			"R16_TIM2_DMAINTENR": {
+				"name": "R16_TIM2_DMAINTENR",
+				"address": "0x4000000C",
+				"info": "TIM2 DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "14",
+						"name": "TDE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Trigger DMA request enable bit. 1: Enable trigger DMA request; 0: Disable trigger DMA request."
+					},
+					{
+						"range": "13",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "12",
+						"name": "CC4DE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "DMA request enable bit of compare/capture channel 4. 1: Enable DMA request of compare/capture channel 4; 0: Disable DMA request of compare/capture channel 4."
+					},
+					{
+						"range": "11",
+						"name": "CC3DE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "DMA request enable bit of compare/capture channel 3. 1: Enable DMA request of compare/capture channel 3; 0: Disable DMA request of compare/capture channel 3."
+					},
+					{
+						"range": "10",
+						"name": "CC2DE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "DMA request enable bit of compare/capture channel 2. 1: Enable DMA request of compare/capture channel 2; 0: Disable DMA request of compare/capture channel 2."
+					},
+					{
+						"range": "9",
+						"name": "CC1DE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "DMA request enable bit of compare/capture channel 1. 1: Enable DMA request of compare/capture channel 1; 0: Disable DMA request of compare/capture channel 1."
+					},
+					{
+						"range": "8",
+						"name": "UDE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Updated DMA request enable bit. 1: Enable updated DMA request; 0: Disable updated DMA request."
+					},
+					{
+						"range": "7",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "6",
+						"name": "TIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Trigger interrupt enable bit. 1: Enable trigger interrupt; 0: Disable trigger interrupt."
+					},
+					{
+						"range": "5",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "4",
+						"name": "CC4IE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare/capture channel 4 interrupt enable bit. 1: Enable compare/capture channel 4 interrupt; 0: Disable compare/capture channel 4 interrupt."
+					},
+					{
+						"range": "3",
+						"name": "CC3IE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare/capture channel 3 interrupt enable bit. 1: Enable compare/capture channel 3 interrupt; 0: Disable compare/capture channel 3 interrupt."
+					},
+					{
+						"range": "2",
+						"name": "CC2IE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare/capture channel 2 interrupt enable bit. 1: Enable compare/capture channel 2 interrupt; 0: Disable compare/capture channel 2 interrupt."
+					},
+					{
+						"range": "1",
+						"name": "CC1IE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare/capture channel 1 interrupt enable bit. 1: Enable compare/capture channel 1 interrupt; 0: Disable compare/capture channel 1 interrupt."
+					},
+					{
+						"range": "0",
+						"name": "UIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Updated interrupt enable bit. 1: Enable updated interrupt; 0: Disable updated interrupt."
+					}
+				]
+			},
+			"R16_TIM2_INTFR": {
+				"name": "R16_TIM2_INTFR",
+				"address": "0x40000010",
+				"info": "TIM2 interrupt status register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:13]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "12",
+						"name": "CC4OF",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Compare capture channel 4 overcapture flag bit. 1: Compare capture channel 4 overcapture occurred; 0: No overcapture."
+					},
+					{
+						"range": "11",
+						"name": "CC3OF",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Compare capture channel 3 overcapture flag bit. 1: Compare capture channel 3 overcapture occurred; 0: No overcapture."
+					},
+					{
+						"range": "10",
+						"name": "CC2OF",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Compare capture channel 2 overcapture flag bit. 1: Compare capture channel 2 overcapture occurred; 0: No overcapture."
+					},
+					{
+						"range": "9",
+						"name": "CC1OF",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Compare capture channel 1 overcapture flag bit, used only in input capture mode. Set by hardware when a duplicate capture occurs and cleared by software. 1: Counter value captured again when CC1IF set; 0: No duplicate capture."
+					},
+					{
+						"range": "[8:7]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "6",
+						"name": "TIF",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Trigger interrupt flag bit. Set by hardware when a trigger event occurs, cleared by software. 1: Trigger event generated; 0: No trigger event. Trigger events include TRGI edge detection or gated mode events."
+					},
+					{
+						"range": "5",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "4",
+						"name": "CC4IF",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Compare capture channel 4 interrupt flag bit. 1: Channel 4 compare/capture event occurred; 0: No event."
+					},
+					{
+						"range": "3",
+						"name": "CC3IF",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Compare capture channel 3 interrupt flag bit. 1: Channel 3 compare/capture event occurred; 0: No event."
+					},
+					{
+						"range": "2",
+						"name": "CC2IF",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Compare capture channel 2 interrupt flag bit. 1: Channel 2 compare/capture event occurred; 0: No event."
+					},
+					{
+						"range": "1",
+						"name": "CC1IF",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Compare capture channel 1 interrupt flag bit. In output mode, set when counter equals compare value; in input mode, set when a capture occurs. Cleared by software or reading the capture register. 1: Match or capture occurred; 0: No event."
+					},
+					{
+						"range": "0",
+						"name": "UIF",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Update interrupt flag bit. Set by hardware on update event and cleared by software. 1: Update interrupt generated; 0: No update event. Update events occur when the counter overflows/underflows or is reinitialized by UG or trigger event (when UDIS=0)."
+					}
+				]
+			},
+			"R16_TIM2_SWEVGR": {
+				"name": "R16_TIM2_SWEVGR",
+				"address": "0x40000014",
+				"info": "TIM2 event generation register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:7]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "6",
+						"name": "TG",
+						"access": "WO",
+						"reset_value": "0",
+						"info": "Trigger event generation bit, set by software and cleared by hardware. Used to generate a trigger event. 1: Generate a trigger event, set TIF, and generate interrupts and DMA requests if enabled. 0: No action."
+					},
+					{
+						"range": "5",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "4",
+						"name": "CC4G",
+						"access": "WO",
+						"reset_value": "0",
+						"info": "Compare capture event generation bit for channel 4. 1: Generate a compare capture event on channel 4; 0: No action."
+					},
+					{
+						"range": "3",
+						"name": "CC3G",
+						"access": "WO",
+						"reset_value": "0",
+						"info": "Compare capture event generation bit for channel 3. 1: Generate a compare capture event on channel 3; 0: No action."
+					},
+					{
+						"range": "2",
+						"name": "CC2G",
+						"access": "WO",
+						"reset_value": "0",
+						"info": "Compare capture event generation bit for channel 2. 1: Generate a compare capture event on channel 2; 0: No action."
+					},
+					{
+						"range": "1",
+						"name": "CC1G",
+						"access": "WO",
+						"reset_value": "0",
+						"info": "Compare capture event generation bit for channel 1. Set by software, cleared by hardware. 1: Generate a compare capture event on channel 1. In output mode, sets CC1IF and triggers interrupts/DMA if enabled. In input mode, captures counter value into register, sets CC1IF, and triggers interrupts/DMA if enabled. If CC1IF already set, also sets CC1OF. 0: No action."
+					},
+					{
+						"range": "0",
+						"name": "UG",
+						"access": "WO",
+						"reset_value": "0",
+						"info": "Update event generation bit. Set by software, cleared by hardware. 1: Initialize counter and generate update event (prescaler counter cleared to zero, counter cleared or reloaded depending on mode); 0: No action."
+					}
+				]
+			},
+			"R16_TIM2_CHCTLR1": {
+				"name": "R16_TIM2_CHCTLR1",
+				"address": "0x40000018",
+				"info": "TIM2 compare/capture control register1",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "OC2CE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 2 clear enable bit. 1: Clear OC2REF when ETRF input is high; 0: OC2REF not affected by ETRF."
+					},
+					{
+						"range": "[14:12]",
+						"name": "OC2M[2:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 2 mode setting field. Defines OC2REF output behavior. 000: Freeze. 001: Force output high. 010: Force output low. 011: Toggle on match. 100: Force low. 101: Force high. 110: PWM mode 1 – active when counter < compare value (upcounting). 111: PWM mode 2 – active when counter > compare value (upcounting). OC2REF updates on compare result change or mode switch from freeze to PWM. Locked when LOCK=3 and CC2S=00."
+					},
+					{
+						"range": "11",
+						"name": "OC2PE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture register 2 preload enable bit. 1: Enable preload; writes update shadow register on update event. 0: Disable preload; writes take effect immediately. Locked when LOCK=3 and CC2S=00."
+					},
+					{
+						"range": "10",
+						"name": "OC2FE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 2 fast enable bit. 1: Accelerates OC2 output response to trigger events (3-cycle delay). 0: Normal compare timing (5-cycle delay). Works only in PWM1 or PWM2 modes."
+					},
+					{
+						"range": "[9:8]",
+						"name": "CC2S[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 2 input selection. 00: Output mode. 01: Input mapped on TI2. 10: Input mapped on TI1. 11: Input mapped on TRC (requires TS set). Writable only when CC2E=0."
+					},
+					{
+						"range": "7",
+						"name": "OC1CE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 1 clear enable bit. 1: Clear OC1REF when ETRF input is high; 0: OC1REF not affected by ETRF."
+					},
+					{
+						"range": "[6:4]",
+						"name": "OC1M[2:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 1 mode setting field. Similar to OC2M modes: defines OC1REF behavior (Freeze, Force High/Low, Toggle, PWM1, PWM2)."
+					},
+					{
+						"range": "3",
+						"name": "OC1PE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture register 1 preload enable bit. 1: Enable preload; 0: Disable preload. Locked when LOCK=3 and CC1S=00."
+					},
+					{
+						"range": "2",
+						"name": "OC1FE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 1 fast enable bit. 1: Reduces output delay to 3 cycles; 0: Standard 5-cycle delay. Effective in PWM1 or PWM2 modes only."
+					},
+					{
+						"range": "[1:0]",
+						"name": "CC1S[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 1 input selection. 00: Output mode. 01: Input mapped on TI1. 10: Input mapped on TI2. 11: Input mapped on TRC. Writable only when CC1E=0."
+					}
+				],
+
+				"bits_fields2": [
+					{
+						"range": "[15:12]",
+						"name": "IC2F[3:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Input capture filter 2 configuration field. Sets TI1 input sampling frequency and digital filter length. 0000: No filter, sampled at fDTS. 0001: Fsampling=Fck_int, N=2. 0010: Fsampling=Fck_int, N=4. 0011: Fsampling=Fck_int, N=8. 0100: Fsampling=Fdts/2, N=6. 0101: Fsampling=Fdts/2, N=8. 0110: Fsampling=Fdts/4, N=6. 0111: Fsampling=Fdts/4, N=8. 1000: Fsampling=Fdts/8, N=6. 1001: Fsampling=Fdts/8, N=8. 1010: Fsampling=Fdts/16, N=5. 1011: Fsampling=Fdts/16, N=6. 1100: Fsampling=Fdts/16, N=8. 1101: Fsampling=Fdts/32, N=5. 1110: Fsampling=Fdts/32, N=6. 1111: Fsampling=Fdts/32, N=8."
+					},
+					{
+						"range": "[11:10]",
+						"name": "IC2PSC[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 2 prescaler configuration field. Defines prescaler coefficient for capture channel 2. 00: No prescaler, capture on each edge. 01: Capture every 2 events. 10: Capture every 4 events. 11: Capture every 8 events. Prescaler resets when CC1E=0."
+					},
+					{
+						"range": "[9:8]",
+						"name": "CC2S[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 2 input selection. 00: Channel configured as output. 01: Input mapped on TI2. 10: Input mapped on TI1. 11: Input mapped on TRC. Works only when TS selects internal trigger. Writable only when CC2E=0."
+					},
+					{
+						"range": "[7:4]",
+						"name": "IC1F[3:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Input capture filter 1 configuration field. Sets sampling frequency and filter length for channel 1 input capture."
+					},
+					{
+						"range": "[3:2]",
+						"name": "IC1PSC[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 1 prescaler configuration field. Defines input capture prescaler for channel 1 (00=1x, 01=2x, 10=4x, 11=8x)."
+					},
+					{
+						"range": "[1:0]",
+						"name": "CC1S[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 1 input selection. 00: Output mode. 01: Input mapped on TI1. 10: Input mapped on TI2. 11: Input mapped on TRC. Writable only when CC1E=0."
+					}
+				]
+			},
+			"R16_TIM2_CHCTLR2": {
+				"name": "R16_TIM2_CHCTLR2",
+				"address": "0x4000001C",
+				"info": "TIM2 compare/capture control register2",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "OC4CE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 4 clear enable bit. 1: Clear OC4REF when ETRF input is high; 0: OC4REF not affected by ETRF."
+					},
+					{
+						"range": "[14:12]",
+						"name": "OC4M[2:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 4 mode setting field. Defines OC4REF output behavior. 000: Freeze. 001: Force output high. 010: Force output low. 011: Toggle on match. 100: Force low. 101: Force high. 110: PWM mode 1 – active when counter < compare value (upcounting). 111: PWM mode 2 – active when counter > compare value (upcounting)."
+					},
+					{
+						"range": "11",
+						"name": "OC4PE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture register 4 preload enable bit. 1: Enable preload (update on UG event); 0: Immediate write."
+					},
+					{
+						"range": "10",
+						"name": "OC4FE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 4 fast enable bit. 1: Activate fast response on match (3-cycle delay); 0: Normal mode (5-cycle delay)."
+					},
+					{
+						"range": "[9:8]",
+						"name": "CC4S[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 4 input selection field. 00: Output mode. 01: Input mapped on TI4. 10: Input mapped on TI3. 11: Input mapped on TRC. Writable only when CC4E=0."
+					},
+					{
+						"range": "7",
+						"name": "OC3CE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 3 clear enable bit. 1: Clear OC3REF when ETRF input is high; 0: OC3REF not affected by ETRF."
+					},
+					{
+						"range": "[6:4]",
+						"name": "OC3M[2:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 3 mode setting field. Defines OC3REF output behavior. 000: Freeze. 001: Force output high. 010: Force output low. 011: Toggle on match. 100: Force low. 101: Force high. 110: PWM mode 1 – active when counter < compare value (upcounting). 111: PWM mode 2 – active when counter > compare value (upcounting)."
+					},
+					{
+						"range": "3",
+						"name": "OC3PE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture register 3 preload enable bit. 1: Enable preload (update on UG event); 0: Immediate write."
+					},
+					{
+						"range": "2",
+						"name": "OC3FE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 3 fast enable bit. 1: Fast response on match (3-cycle delay); 0: Normal operation (5-cycle delay). Effective in PWM1 or PWM2 modes."
+					},
+					{
+						"range": "[1:0]",
+						"name": "CC3S[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 3 input selection field. 00: Output mode. 01: Input mapped on TI3. 10: Input mapped on TI4. 11: Input mapped on TRC. Writable only when CC3E=0."
+					}
+				],
+
+				"bits_fields2": [
+					{
+						"range": "[15:12]",
+						"name": "IC4F[3:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Input capture filter 4 configuration field. Defines TI input sampling frequency and digital filter length for capture channel 4. 0000: No filter, sampled at fDTS. 0001: Fsampling=Fck_int, N=2. 0010: Fsampling=Fck_int, N=4. 0011: Fsampling=Fck_int, N=8. 0100: Fsampling=Fdts/2, N=6. 0101: Fsampling=Fdts/2, N=8. 0110: Fsampling=Fdts/4, N=6. 0111: Fsampling=Fdts/4, N=8. 1000: Fsampling=Fdts/8, N=6. 1001: Fsampling=Fdts/8, N=8. 1010: Fsampling=Fdts/16, N=5. 1011: Fsampling=Fdts/16, N=6. 1100: Fsampling=Fdts/16, N=8. 1101: Fsampling=Fdts/32, N=5. 1110: Fsampling=Fdts/32, N=6. 1111: Fsampling=Fdts/32, N=8."
+					},
+					{
+						"range": "[11:10]",
+						"name": "IC4PSC[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 4 prescaler configuration field. Defines capture frequency divider. 00: Capture on each edge. 01: Capture every 2 events. 10: Capture every 4 events. 11: Capture every 8 events. Prescaler resets when CC4E=0."
+					},
+					{
+						"range": "[9:8]",
+						"name": "CC4S[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 4 input selection field. 00: Output mode. 01: Input mapped on TI4. 10: Input mapped on TI3. 11: Input mapped on TRC. Writable only when CC4E=0."
+					},
+					{
+						"range": "[7:4]",
+						"name": "IC3F[3:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Input capture filter 3 configuration field. Provides digital filtering for channel 3 input signal. Uses same sampling and N definitions as IC4F."
+					},
+					{
+						"range": "[3:2]",
+						"name": "IC3PSC[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 3 prescaler configuration field. Defines capture divider. 00: Capture on each edge. 01: Every 2 events. 10: Every 4 events. 11: Every 8 events."
+					},
+					{
+						"range": "[1:0]",
+						"name": "CC3S[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 3 input selection field. 00: Output mode. 01: Input mapped on TI3. 10: Input mapped on TI4. 11: Input mapped on TRC. Writable only when CC3E=0."
+					}
+				]
+			},
+			"R16_TIM2_CCER": {
+				"name": "R16_TIM2_CCER",
+				"address": "0x40000020",
+				"info": "TIM2 compare/capture enable register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:14]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "13",
+						"name": "CC4P",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 4 output polarity setting bit. 1: OC4 active low; 0: OC4 active high."
+					},
+					{
+						"range": "12",
+						"name": "CC4E",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 4 output enable bit. 1: Enables OC4 output according to MOE, OSSI, OSSR, and polarity bits; 0: Output disabled."
+					},
+					{
+						"range": "[11:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "9",
+						"name": "CC3P",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 3 output polarity setting bit. 1: OC3 active low; 0: OC3 active high."
+					},
+					{
+						"range": "8",
+						"name": "CC3E",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 3 output enable bit. 1: Enables OC3 output depending on mode configuration; 0: Disables output."
+					},
+					{
+						"range": "[7:6]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "5",
+						"name": "CC2P",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 2 output polarity setting bit. 1: OC2 active low; 0: OC2 active high."
+					},
+					{
+						"range": "4",
+						"name": "CC2E",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 2 output enable bit. 1: Enables OC2 output depending on configuration; 0: Output disabled."
+					},
+					{
+						"range": "[3:2]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "1",
+						"name": "CC1P",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 1 output polarity setting bit. When CC1 configured as output: 1: OC1 active low; 0: OC1 active high. When CC1 configured as input: 1: Capture on falling edge or inverted trigger; 0: Capture on rising edge or non-inverted trigger. Locked when LOCK level = 2 or 3 in BDTR register."
+					},
+					{
+						"range": "0",
+						"name": "CC1E",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Compare capture channel 1 output enable bit. Output mode: 1: Enable OC1 signal output; 0: Disable output. Input mode: 1: Enable capture into CCR1; 0: Disable capture."
+					}
+				]
+			},
+			"R16_TIM2_CNT": {
+				"name": "R16_TIM2_CNT",
+				"address": "0x40000024",
+				"info": "TIM2 counter",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:0]",
+						"name": "CNT[15:0]",
+						"access": "RW",
+						"info": "The real-time value of the timer's counter.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM2_PSC": {
+				"name": "R16_TIM2_PSC",
+				"address": "0x40000028",
+				"info": "TIM2 count clock prescaler",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:0]",
+						"name": "PSC[15:0]",
+						"access": "RW",
+						"info": "The dividing factor of the prescaler of the timer; the clock frequency of the counter is equal to the input frequency of the divider/(PSC+1).",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM2_ATRLR": {
+				"name": "R16_TIM2_ATRLR",
+				"address": "0x4000002C",
+				"info": "TIM2 auto-reload register",
+				"reset_value": "0xFFFF",
+				"bits_fields": [
+					{
+						"range": "[15:0]",
+						"name": "ATRLR[15:0]",
+						"access": "RW",
+						"info": "The value of ATRLR[15:0] will be loaded into the counter, read section 10.2.4 for when ATRLR acts and updates; the counter stops when ATRLR is empty.",
+						"reset_value": "0xFFFF"
+					}
+				]
+			},
+			"R32_TIM2_CH1CVR": {
+				"name": "R32_TIM2_CH1CVR",
+				"address": "0x40000034",
+				"info": "TIM2 compare/capture register1",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:17]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "16",
+						"name": "LEVEL1",
+						"access": "RO",
+						"info": "The level indication bit corresponding to the captured value",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:0]",
+						"name": "CH1CVR[15:0]",
+						"access": "RW",
+						"info": "The value compare/capture register channel 1.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_TIM2_CH2CVR": {
+				"name": "R32_TIM2_CH2CVR",
+				"address": "0x40000038",
+				"info": "TIM2 compare/capture register2",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:17]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "16",
+						"name": "LEVEL2",
+						"access": "RO",
+						"info": "The level indication bit corresponding to the captured value",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:0]",
+						"name": "CH2CVR[15:0]",
+						"access": "RW",
+						"info": "The value compare/capture register channel 2.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_TIM2_CH3CVR": {
+				"name": "R32_TIM2_CH3CVR",
+				"address": "0x4000003C",
+				"info": "TIM2 compare/capture register3",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:17]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "16",
+						"name": "LEVEL3",
+						"access": "RO",
+						"info": "The level indication bit corresponding to the captured value",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:0]",
+						"name": "CH3CVR[15:0]",
+						"access": "RW",
+						"info": "The value compare/capture register channel 3.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_TIM2_CH4CVR": {
+				"name": "R32_TIM2_CH4CVR",
+				"address": "0x40000040",
+				"info": "TIM2 compare/capture register4",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:17]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "16",
+						"name": "LEVEL4",
+						"access": "RO",
+						"info": "The level indication bit corresponding to the captured value",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:0]",
+						"name": "CH4CVR[15:0]",
+						"access": "RW",
+						"info": "The value compare/capture register channel 4.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM2_DMACFGR": {
+				"name": "R16_TIM2_DMACFGR",
+				"address": "0x40000048",
+				"info": "TIM2 DMA control register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:13]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[12:8]",
+						"name": "DBL[4:0]",
+						"access": "RW",
+						"info": "The length of the DMA continuous transmission, the actual value of which is the value of this field + 1.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:5]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[4:0]",
+						"name": "DBA[4:0]",
+						"access": "RW",
+						"info": "These bits define the offset of the DMA in continuous mode from the address where control register 1 is located.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM2_DMAADR": {
+				"name": "R16_TIM2_DMAADR",
+				"address": "0x4000004C",
+				"info": "TIM2 DMA address register in continuous mode",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:0]",
+						"name": "DMAADR[15:0]",
+						"access": "RW",
+						"info": "The DMA address in continuous mode.",
+						"reset_value": "0"
+					}
+				]
+			}
+		}
+	},
+
+	"UART": {
+		"info": "USART-related registers list",
+		"table": "12-2",
+
+		"registers": {
+			"R32_USART_STATR": {
+				"name": "R32_USART_STATR",
+				"address": "0x40013800",
+				"info": "UASRT status register",
+				"reset_value": "0x000000C0",
+				"bits_fields": [
+					{
+						"range": "[31:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "9",
+						"name": "CTS",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "CTS state change flag. Set by hardware when nCTS changes if CTSE is enabled. Cleared by software. Generates interrupt if CTSIE is enabled. 1: nCTS state changed. 0: No change."
+					},
+					{
+						"range": "8",
+						"name": "LBD",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "LIN break detection flag. Set by hardware when a LIN break is detected. Cleared by software. Generates interrupt if LBDIE is set. 1: LIN break detected. 0: No detection."
+					},
+					{
+						"range": "7",
+						"name": "TXE",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Transmit data register empty flag. Set by hardware when TDR content is moved to the shift register. Cleared when writing new data. Generates interrupt if TXEIE is set. 1: TDR empty, data transferred. 0: Data not yet transferred."
+					},
+					{
+						"range": "6",
+						"name": "TC",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Transmission complete flag. Set by hardware when frame fully sent and TXE=1. Cleared by read followed by write or by writing 0. Generates interrupt if TCIE is enabled. 1: Transmission complete. 0: Not complete."
+					},
+					{
+						"range": "5",
+						"name": "RXNE",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Receive data register not empty flag. Set when data moves from shift to data register. Cleared after reading data register or writing 0. Generates interrupt if RXNEIE is enabled. 1: Data ready to read. 0: No new data."
+					},
+					{
+						"range": "4",
+						"name": "IDLE",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Idle line detected flag. Set when the bus is idle; cleared after reading SR and then DR. Generates interrupt if IDLEIE is enabled. 1: Idle detected. 0: No idle detected."
+					},
+					{
+						"range": "3",
+						"name": "ORE",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Overrun error flag. Set when a new received byte overwrites unread data in DR. Cleared by reading SR then DR. Generates interrupt if EIE or RXNEIE are enabled. 1: Overrun occurred. 0: No overrun."
+					},
+					{
+						"range": "2",
+						"name": "NE",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Noise error flag. Set when noise is detected in received data. Cleared by reading SR then DR. Does not generate interrupt alone, but with EIE enables an error interrupt. 1: Noise detected. 0: No noise."
+					},
+					{
+						"range": "1",
+						"name": "FE",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Framing error flag. Set on frame or synchronization error. Cleared by reading SR then DR. Does not directly generate interrupts unless EIE is set. 1: Framing error detected. 0: No framing error."
+					},
+					{
+						"range": "0",
+						"name": "PE",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Parity error flag. Set on parity check error in received data. Cleared by reading SR then DR. Generates interrupt if PEIE is enabled. 1: Parity error occurred. 0: No error."
+					}
+				]
+			},
+			"R32_USART_DATAR": {
+				"name": "R32_USART_DATAR",
+				"address": "0x40013804",
+				"info": "UASRT data register",
+				"reset_value": "0x000000XX",
+				"bits_fields": [
+					{
+						"range": "[31:9]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[8:0]",
+						"name": "DR[8:0]",
+						"access": "RW",
+						"info": "Data register. This register is actually the receive data register (RDR) and send register (TDR) two registers composed of DR read and write operation start is read receive register (RDR) and write send register (TDR) respectively.",
+						"reset_value": "X"
+					}
+				]
+			},
+			"R32_USART_BRR": {
+				"name": "R32_USART_BRR",
+				"address": "0x40013808",
+				"info": "UASRT baud rate register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:4]",
+						"name": "DIV_",
+						"access": "Mantissa[11:0]",
+						"info": "RW These 12 bits define the integer part of the dividing factor of the frequency divider.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[3:0]",
+						"name": "DIV_",
+						"access": "Fraction[3:0]",
+						"info": "RW These 4 bits define the fractional part of the dividing factor of the frequency divider.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_USART_CTLR1": {
+				"name": "R32_USART_CTLR1",
+				"address": "0x4001380C",
+				"info": "UASRT control register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:14]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "13",
+						"name": "UE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "USART enable bit. When cleared, the USART divider and output stop after the current byte transfer. 1: Enable USART. 0: Disable USART (after ongoing transmission completes)."
+					},
+					{
+						"range": "12",
+						"name": "M",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Word length bit. 1: 9 data bits. 0: 8 data bits."
+					},
+					{
+						"range": "11",
+						"name": "WAKE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Wake-up method selection bit. Determines how the USART exits from mute mode. 1: Address mark. 0: Idle line."
+					},
+					{
+						"range": "10",
+						"name": "PCE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Parity control enable bit. 1: Enable parity generation/checking. 0: Disable parity. Takes effect after current transmission completes."
+					},
+					{
+						"range": "9",
+						"name": "PS",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Parity selection bit. 0: Even parity. 1: Odd parity. Takes effect after current transmission completes."
+					},
+					{
+						"range": "8",
+						"name": "PEIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Parity error interrupt enable bit. 1: Enable interrupt generation on parity error. 0: Disable interrupt."
+					},
+					{
+						"range": "7",
+						"name": "TXEIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Transmit data register empty interrupt enable bit. 1: Enable TXE interrupt when TXE=1. 0: Disable TXE interrupt."
+					},
+					{
+						"range": "6",
+						"name": "TCIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Transmission complete interrupt enable bit. 1: Enable interrupt on TC=1. 0: Disable interrupt."
+					},
+					{
+						"range": "5",
+						"name": "RXNEIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Receive data register not empty interrupt enable bit. 1: Enable interrupt when RXNE=1. 0: Disable interrupt."
+					},
+					{
+						"range": "4",
+						"name": "IDLEIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "IDLE interrupt enable bit. 1: Enable interrupt when IDLE=1. 0: Disable interrupt."
+					},
+					{
+						"range": "3",
+						"name": "TE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Transmitter enable bit. 1: Enable transmitter. 0: Disable transmitter."
+					},
+					{
+						"range": "2",
+						"name": "RE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Receiver enable bit. 1: Enable receiver and start detecting start bits on RX pin. 0: Disable receiver."
+					},
+					{
+						"range": "1",
+						"name": "RWU",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Receiver wake-up bit. Controls mute mode. 1: Receiver in mute mode. 0: Normal mode. Notes: USART must have received a byte before entering mute mode. In address-mark wake-up mode, this bit cannot be changed while RXNE is set."
+					},
+					{
+						"range": "0",
+						"name": "SBK",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Send break bit. 1: Send break character. Automatically cleared by hardware at stop bit of break frame. 0: Do not send."
+					}
+				]
+			},
+			"R32_USART_CTLR2": {
+				"name": "R32_USART_CTLR2",
+				"address": "0x40013810",
+				"info": "UASRT control register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:15]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "14",
+						"name": "LINEN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "LIN mode enable bit. 1: Enable LIN mode (allows sending LIN break using SBK and detecting LIN synch breaks). 0: Disable LIN mode."
+					},
+					{
+						"range": "[13:12]",
+						"name": "STOP[1:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Stop bits selection. 00: 1 stop bit. 01: 0.5 stop bit. 10: 2 stop bits. 11: 1.5 stop bit."
+					},
+					{
+						"range": "11",
+						"name": "CLKEN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Clock enable bit. 1: Enable CK pin output. 0: Disable CK pin."
+					},
+					{
+						"range": "10",
+						"name": "CPOL",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Clock polarity bit. Defines the idle state of CK in synchronous mode. 0: CK low when idle. 1: CK high when idle. Not writable after transmission enabled."
+					},
+					{
+						"range": "9",
+						"name": "CPHA",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Clock phase bit. Defines which CK transition is used for sampling data in synchronous mode. 0: First transition is capture edge. 1: Second transition is capture edge. Not modifiable after enabling transmission."
+					},
+					{
+						"range": "8",
+						"name": "LBCL",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Last bit clock pulse bit. 1: Output clock pulse for last data bit on CK pin. 0: Do not output last bit pulse. Not writable after enabling transmit."
+					},
+					{
+						"range": "7",
+						"name": "Reserved",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "6",
+						"name": "LBDIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "LIN break detection interrupt enable. 1: Enable interrupt on LBD flag. 0: Disable interrupt."
+					},
+					{
+						"range": "5",
+						"name": "LBDL",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "LIN break detection length. 1: Detect 11-bit break. 0: Detect 10-bit break."
+					},
+					{
+						"range": "4",
+						"name": "Reserved",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "[3:0]",
+						"name": "ADD[3:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Node address field used in multiprocessor mode for wake-up via address mark detection in mute mode."
+					}
+				]
+			},
+			"R32_USART_CTLR3": {
+				"name": "R32_USART_CTLR3",
+				"address": "0x40013814",
+				"info": "UASRT control register 3",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:11]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "10",
+						"name": "CTSIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "CTS interrupt enable bit. 1: Enable interrupt when CTS flag is set; 0: Disable CTS interrupt."
+					},
+					{
+						"range": "9",
+						"name": "CTSE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "CTS enable bit. 1: Enable CTS hardware flow control; 0: Disable CTS control."
+					},
+					{
+						"range": "8",
+						"name": "RTSE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "RTS enable bit. 1: Enable RTS hardware flow control; 0: Disable RTS control."
+					},
+					{
+						"range": "7",
+						"name": "DMAT",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "DMA transmit enable bit. 1: Enable DMA for transmission; 0: Use CPU for transmission."
+					},
+					{
+						"range": "6",
+						"name": "DMAR",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "DMA receive enable bit. 1: Enable DMA for reception; 0: Use CPU for reception."
+					},
+					{
+						"range": "5",
+						"name": "SCEN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Smartcard mode enable bit. 1: Enable Smartcard mode; 0: Disable Smartcard mode."
+					},
+					{
+						"range": "4",
+						"name": "NACK",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Smartcard NACK enable bit. 1: Send NACK on parity/check error; 0: NACK disabled."
+					},
+					{
+						"range": "3",
+						"name": "HDSEL",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Half-duplex selection bit. 1: Enable half-duplex mode; 0: Full-duplex mode."
+					},
+					{
+						"range": "2",
+						"name": "IRLP",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "IrDA low-power mode bit. 1: Enable low-power IrDA; 0: Normal IrDA mode."
+					},
+					{
+						"range": "1",
+						"name": "IREN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "IrDA mode enable bit. 1: Enable IrDA mode; 0: Disable IrDA mode."
+					},
+					{
+						"range": "0",
+						"name": "EIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Error interrupt enable bit. 1: Interrupt generated if FE, ORE, or NE flags set and DMAR enabled; 0: Disable error interrupt generation."
+					}
+				]
+			},
+			"R32_USART_GPR": {
+				"name": "R32_USART_GPR",
+				"address": "0x40013818",
+				"info": "UASRT protection time and prescaler register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "[15:8]",
+						"name": "GT[7:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Guard time value field. Defines the guard time duration in baud clock periods, used in Smartcard mode. Transmission Complete flag (TC) is set after this delay."
+					},
+					{
+						"range": "[7:0]",
+						"name": "PSC[7:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Prescaler value field. In IrDA low-power mode: source clock divided by this value (0 means unchanged). In normal IrDA mode: fixed to 1. In Smartcard mode: source clock divided by twice this value (lower 5 bits valid, 0 means unchanged)."
+					}
+				]
+			}
+		}
+	},
+
+	"I2C": {
+		"info": "I2C-related registers list",
+		"table": "13-1",
+
+		"registers": {
+			"R16_I2C_CTLR1": {
+				"name": "R16_I2C_CTLR1",
+				"address": "0x40005400",
+				"info": "I2C control register",
+				"reset_value": "1",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "SWRST",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Software reset bit. Setting this bit resets the I2C peripheral. Ensure the I2C bus is idle before resetting. The bit resets the module if no stop condition is detected while BUSY=1."
+					},
+					{
+						"range": "[14:13]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "12",
+						"name": "PEC",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Packet Error Checking enable bit. 1: Enable PEC. 0: Disable PEC. Cleared by hardware when PEC is transmitted, a start/stop signal is generated, or PE=0. Invalidated when arbitration is lost."
+					},
+					{
+						"range": "11",
+						"name": "POS",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "ACK and PEC position bit. Controls ACK/NAK sequencing position and PEC handling during 2-byte reception. 1: ACK controls next byte; 0: ACK controls current byte in shift register."
+					},
+					{
+						"range": "10",
+						"name": "ACK",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Acknowledge enable bit. 1: Send ACK after a received byte; 0: No ACK (NAK). Automatically cleared when PE=0."
+					},
+					{
+						"range": "9",
+						"name": "STOP",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Stop condition generation bit. Set/Cleared by software, cleared by hardware when stop detected. Master mode: 1 generates stop after current byte or start; 0: no stop. Slave mode: 1 releases SCL/SDA after byte transfer."
+					},
+					{
+						"range": "8",
+						"name": "START",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Start condition generation bit. Set/Cleared by software, cleared by hardware when start sent or PE=0. Master mode: 1 generates repeated start; 0: none. Slave mode: 1 starts transfer when bus free."
+					},
+					{
+						"range": "7",
+						"name": "NOSTRETCH",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Clock stretching disable bit (slave mode). 1: Disable clock stretching when ADDR or BTF set; 0: Enable clock stretching."
+					},
+					{
+						"range": "6",
+						"name": "ENGC",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "General call enable bit. 1: Enable response to general call address 0x00. 0: Ignore general call."
+					},
+					{
+						"range": "5",
+						"name": "ENPEC",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "PEC enable bit. Set this to enable PEC byte generation and checking."
+					},
+					{
+						"range": "[4:1]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "0",
+						"name": "PE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "I2C peripheral enable bit. 1: Enable I2C module; 0: Disable I2C module."
+					}
+				]
+			},
+			"R16_I2C_CTLR2": {
+				"name": "R16_I2C_CTLR2",
+				"address": "0x0000",
+				"info": "0x40005404 I2C control register",
+				"reset_value": "2",
+				"bits_fields": [
+					{
+						"range": "[15:13]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "12",
+						"name": "LAST",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "DMA last transfer bit. 1: Next DMA EOT corresponds to the last transfer. 0: Next DMA EOT not the last transfer. Used in master receiver mode to generate a NACK on the final received byte."
+					},
+					{
+						"range": "11",
+						"name": "DMAEN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "DMA requests enable bit. 1: Enable DMA requests when TxE or RxNE set. 0: Disable DMA requests."
+					},
+					{
+						"range": "10",
+						"name": "ITBUFEN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Buffer interrupt enable bit. 1: Generate interrupt when TxE or RxNE is set. 0: Disable buffer interrupts."
+					},
+					{
+						"range": "9",
+						"name": "ITEVTEN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Event interrupt enable bit. 1: Enable event interrupts for conditions such as SB=1, ADDR=1, ADDR10=1, STOPF=1, BTF=1, TxE=1 or RxNE=1 when ITBUFEN=1. 0: Disable event interrupts."
+					},
+					{
+						"range": "8",
+						"name": "ITERREN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Error interrupt enable bit. 1: Enable interrupt generation for errors (BERR, ARLO, AF, OVR, PECERR, TIMEOUT, SMBALERT). 0: Disable error interrupt."
+					},
+					{
+						"range": "[7:6]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "[5:0]",
+						"name": "FREQ[5:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Peripheral clock frequency field (in MHz). Must match I2C input clock for correct timing. Range: 8–48 MHz (001000b to 110000b)."
+					}
+				]
+			},
+			"R16_I2C_OADDR1": {
+				"name": "R16_I2C_OADDR1",
+				"address": "0x0000",
+				"info": "0x40005408 I2C address register",
+				"reset_value": "1",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "ADDMODE",
+						"access": "RW",
+						"info": "Address mode. 1: 10-bit slave address (does not respond to 7-bit addresses). 0: 7-bit slave address (does not respond to 10-bit address)",
+						"reset_value": "0"
+					},
+					{
+						"range": "[14:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[9:8]",
+						"name": "ADD[9:8]",
+						"access": "RW",
+						"info": "Interface address, bits 9-8 when using a 10-bit address, ignored when using a 7-bit address.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:1]",
+						"name": "ADD[7:1]",
+						"access": "RW",
+						"info": "Interface address, bits 7-1.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "ADD0",
+						"access": "RW",
+						"info": "Interface address, bit 0 when using a 10-bit address, ignored when using a 7-bit address.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_I2C_OADDR2": {
+				"name": "R16_I2C_OADDR2",
+				"address": "0x0000",
+				"info": "0x4000540C I2C address register",
+				"reset_value": "2",
+				"bits_fields": [
+					{
+						"range": "[15:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:1]",
+						"name": "ADD2[7:1]",
+						"access": "RW",
+						"info": "Interface address, bits 7-1 of the address in dual address mode.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "ENDUAL",
+						"access": "RW",
+						"info": "Dual address mode enable bit, set this bit to allow ADD2 to be recognized as well.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_I2C_DATAR": {
+				"name": "R16_I2C_DATAR",
+				"address": "0x0000",
+				"info": "0x40005410 I2C data",
+				"reset_value": "register",
+				"bits_fields": [
+					{
+						"range": "[15:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "[7:0]",
+						"name": "DR[7:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Data register. Holds the byte to be transmitted or the byte received from the I2C bus."
+					}
+				]
+			},
+			"R16_I2C_STAR1": {
+				"name": "R16_I2C_STAR1",
+				"address": "0x0000",
+				"info": "0x40005414 I2C status register",
+				"reset_value": "1",
+				"bits_fields": [
+					{
+						"range": "[15:13]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "12",
+						"name": "PECERR",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "PEC error flag. Set when a PEC error occurs upon reception. Cleared by writing 0 or when PE=0. 1: PEC error and NACK returned; 0: No error."
+					},
+					{
+						"range": "11",
+						"name": "OVR",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Overrun/underrun flag. 1: Overrun (new received byte lost) or underrun (same byte resent) occurred. 0: No overrun/underrun. Cleared by writing 0."
+					},
+					{
+						"range": "10",
+						"name": "AF",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Acknowledge failure flag. 1: Acknowledge failure occurred. 0: No failure. Cleared by writing 0 or when PE=0."
+					},
+					{
+						"range": "9",
+						"name": "ARLO",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Arbitration lost flag. 1: Arbitration lost detected. 0: No arbitration lost. Cleared by writing 0 or when PE=0."
+					},
+					{
+						"range": "8",
+						"name": "BERR",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Bus error flag. 1: Start or stop condition error. 0: Normal. Cleared by writing 0 or when PE=0."
+					},
+					{
+						"range": "7",
+						"name": "TxE",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Transmit data register empty flag. 1: Data register empty. 0: Data register not empty. Cleared by writing DR or by hardware after start/stop condition or when PE=0."
+					},
+					{
+						"range": "6",
+						"name": "RxNE",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Receive data register not empty flag. 1: Data available in DR. 0: Data register empty. Cleared by software on DR read/write or by hardware when PE=0."
+					},
+					{
+						"range": "5",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "4",
+						"name": "STOPF",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Stop detection flag. Set by hardware when Stop detected on bus (slave mode). Cleared by reading SR1 followed by writing CR1. 1: Stop detected. 0: No stop detected."
+					},
+					{
+						"range": "3",
+						"name": "ADD10",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "10-bit header sent flag (master mode). 1: First address byte sent. 0: No ADD10 event. Cleared by reading SR1 then writing second address byte to DR or when PE=0."
+					},
+					{
+						"range": "2",
+						"name": "BTF",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Byte transfer finished flag. 1: Data byte successfully transferred. 0: Transfer incomplete. Cleared by reading SR1 and then accessing DR, or by hardware after start/stop condition or when PE=0."
+					},
+					{
+						"range": "1",
+						"name": "ADDR",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "Address sent/matched flag. In master mode: 1 indicates end of address transmission (ACK received); 0 means not sent. In slave mode: 1 means address matched; 0 means mismatch. Cleared by reading SR1 followed by reading SR2 or when PE=0."
+					},
+					{
+						"range": "0",
+						"name": "SB",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Start bit flag. 1: Start condition generated. 0: No start. Cleared by reading SR1 followed by writing DR, or when PE=0."
+					}
+				]
+			},
+			"R16_I2C_STAR2": {
+				"name": "R16_I2C_STAR2",
+				"address": "0x0000",
+				"info": "0x40005418 I2C status register",
+				"reset_value": "2",
+				"bits_fields": [
+					{
+						"range": "[15:8]",
+						"name": "PEC[7:0]",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Packet error checking register. Contains the PEC value when PEC is enabled (ENPEC=1)."
+					},
+					{
+						"range": "7",
+						"name": "DUALF",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Dual flag. 1: Received address matched OAR2. 0: Received address matched OAR1. Cleared by hardware after Stop or repeated Start condition or when PE=0."
+					},
+					{
+						"range": "[6:5]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "4",
+						"name": "GENCALL",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "General call address flag. 1: General Call address (0x00) received when ENGC=1. 0: No general call. Cleared by hardware after Stop or repeated Start condition or when PE=0."
+					},
+					{
+						"range": "3",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "2",
+						"name": "TRA",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Transmitter/receiver mode flag. 1: Data bytes transmitted. 0: Data bytes received. Cleared by hardware on Stop, repeated Start, arbitration loss, or when PE=0."
+					},
+					{
+						"range": "1",
+						"name": "BUSY",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Bus busy flag. 1: Communication ongoing on the bus (SDA or SCL held low). 0: Bus idle. Automatically cleared when a Stop condition is detected."
+					},
+					{
+						"range": "0",
+						"name": "MSL",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Master/slave flag. 1: Interface operating in Master mode (SB=1). 0: Slave mode. Cleared after Stop condition, loss of arbitration, or when PE=0."
+					}
+				]
+			},
+			"R16_I2C_CKCFGR": {
+				"name": "R16_I2C_CKCFGR",
+				"address": "0x0000",
+				"info": "0x4000541C I2C clock register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "F/S",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "I2C mode selection bit. 1: Fast mode (Fm). 0: Standard mode (Sm)."
+					},
+					{
+						"range": "14",
+						"name": "DUTY",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Fast mode duty cycle bit. 1: Tlow/Thigh = 16/9. 0: Tlow/Thigh = 2."
+					},
+					{
+						"range": "[13:12]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "[11:0]",
+						"name": "CCR[11:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Clock control register. Defines SCL frequency. In Sm mode: SCL = Fpclk1 / (2 × CCR). In Fm mode (DUTY=0): SCL = Fpclk1 / (3 × CCR). If F/S=1 and DUTY=1: SCL = Fpclk1 / (25 × CCR). Value must be ≥4 in Sm mode."
+					}
+				]
+			}
+		}
+	},
+
+	"SPI": {
+		"info": "SPI-related registers list",
+		"table": "14-2",
+
+		"registers": {
+			"R16_SPI_CTLR1": {
+				"name": "R16_SPI_CTLR1",
+				"address": "0x40013000",
+				"info": "SPI Control register1",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "BIDIMODE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Bidirectional data mode enable bit. 1: Enable 1-line bidirectional mode. 0: Use 2-line unidirectional mode."
+					},
+					{
+						"range": "14",
+						"name": "BIDIOE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Output enable in bidirectional mode. 1: Transmit-only mode enabled. 0: Receive-only mode enabled. Used with BIDIMODE."
+					},
+					{
+						"range": "13",
+						"name": "CRCEN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Hardware CRC calculation enable bit. Writable only when SPE=0. Valid only in full-duplex mode. 1: Enable CRC generation and checking. 0: Disable CRC."
+					},
+					{
+						"range": "12",
+						"name": "CRCNEXT",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "CRC transfer next bit. Set after last data write to transmit CRC value next. 1: Next transfer sends CRC. 0: Send data normally."
+					},
+					{
+						"range": "11",
+						"name": "DFF",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Data frame format bit. Writable only when SPE=0. 1: 16-bit data frame format. 0: 8-bit data frame format."
+					},
+					{
+						"range": "10",
+						"name": "RXONLY",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Receive-only bit (2-line mode). 1: Simplex receive-only mode. 0: Full-duplex mode."
+					},
+					{
+						"range": "9",
+						"name": "SSM",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Software slave management enable bit. 1: Software control of NSS pin. 0: Hardware control of NSS pin level."
+					},
+					{
+						"range": "8",
+						"name": "SSI",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Internal slave select bit. Valid only when SSM=1. 1: NSS signal high. 0: NSS signal low."
+					},
+					{
+						"range": "7",
+						"name": "LSBFIRST",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Frame format bit. 1: Transmit LSB first. 0: Transmit MSB first. Cannot be changed during communication. LSB mode supported only in master mode."
+					},
+					{
+						"range": "6",
+						"name": "SPE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "SPI enable bit. 1: Enable SPI peripheral. 0: Disable SPI."
+					},
+					{
+						"range": "[5:3]",
+						"name": "BR[2:0]",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Baud rate control bits. Defines SPI clock prescaler. 000: fCLK/2. 001: fCLK/4. 010: fCLK/8. 011: fCLK/16. 100: fCLK/32. 101: fCLK/64. 110: fCLK/128. 111: fCLK/256. Cannot be changed during communication."
+					},
+					{
+						"range": "2",
+						"name": "MSTR",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Master selection bit. 1: Master mode. 0: Slave mode. Cannot be modified during communication."
+					},
+					{
+						"range": "1",
+						"name": "CPOL",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Clock polarity bit. Determines clock idle level. 1: SCK high when idle. 0: SCK low when idle. Cannot be modified during communication."
+					},
+					{
+						"range": "0",
+						"name": "CPHA",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Clock phase bit. Defines edge for data sampling. 1: Data captured on second clock edge. 0: Data captured on first clock edge. Cannot be modified during communication."
+					}
+				]
+			},
+			"R16_SPI_CTLR2": {
+				"name": "R16_SPI_CTLR2",
+				"address": "0x40013004",
+				"info": "SPI Control register2",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "7",
+						"name": "TXEIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Transmit buffer empty interrupt enable bit. 1: Generate interrupt when TXE is set. 0: Disable TXE interrupt."
+					},
+					{
+						"range": "6",
+						"name": "RXNEIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Receive buffer not empty interrupt enable bit. 1: Generate interrupt when RXNE flag is set. 0: Disable RXNE interrupt."
+					},
+					{
+						"range": "5",
+						"name": "ERRIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Error interrupt enable bit. 1: Generate interrupt on error flags (CRCERR, OVR, MODF). 0: Disable error interrupts."
+					},
+					{
+						"range": "[4:3]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "2",
+						"name": "SSOE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "SS output enable bit. 1: Enable SS output in Master mode. 0: Disable SS output (useful in multi-master configurations)."
+					},
+					{
+						"range": "1",
+						"name": "TXDMAEN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Tx buffer DMA enable bit. 1: Enable DMA requests for transmit. 0: Disable transmit DMA."
+					},
+					{
+						"range": "0",
+						"name": "RXDMAEN",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Rx buffer DMA enable bit. 1: Enable DMA requests for receive. 0: Disable receive DMA."
+					}
+				]
+			},
+			"R16_SPI_STATR": {
+				"name": "R16_SPI_STATR",
+				"address": "0x40013008",
+				"info": "SPI Status register",
+				"reset_value": "0x0002",
+				"bits_fields": [
+					{
+						"range": "[15:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "7",
+						"name": "BSY",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Busy flag. Set and cleared by hardware. 1: SPI is busy in communication or TX buffer not empty. 0: SPI/I2S not busy."
+					},
+					{
+						"range": "6",
+						"name": "OVR",
+						"access": "RWO",
+						"reset_value": "0",
+						"info": "Overrun flag. Set by hardware when data is received while the previous data is not yet read. Cleared by software reading DR then SR. 1: Overrun occurred. 0: No overrun."
+					},
+					{
+						"range": "5",
+						"name": "MODF",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Mode fault flag. Set by hardware when master mode conflict occurs. Cleared by a software read of SR followed by writing CR1. 1: Mode fault detected. 0: No fault."
+					},
+					{
+						"range": "4",
+						"name": "CRCERR",
+						"access": "RW0",
+						"reset_value": "0",
+						"info": "CRC error flag. Set when received CRC value does not match computed SPI_RXCRCR value. Cleared by writing 0. 1: CRC mismatch. 0: CRC valid."
+					},
+					{
+						"range": "[3:2]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "1",
+						"name": "TXE",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Transmit buffer empty flag. Set when TX buffer is ready for new data. 1: TX buffer empty. 0: TX buffer not empty."
+					},
+					{
+						"range": "0",
+						"name": "RXNE",
+						"access": "RO",
+						"reset_value": "1",
+						"info": "Receive buffer not empty flag. Set when data available in RX buffer. Cleared by reading the data register. 1: RX buffer not empty. 0: RX buffer empty."
+					}
+				]
+			},
+			"R16_SPI_DATAR": {
+				"name": "R16_SPI_DATAR",
+				"address": "0x4001300C",
+				"info": "SPI Data register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:0]",
+						"name": "DR[15:0]",
+						"access": "RW",
+						"info": "Data register. The data registers are used to store the received data or pre-store the data to be sent out, so the reading and writing of the data registers actually correspond to the operation of different areas, where the read pairs use the receive buffer and the write pairs correspond to the send buffer. Data can be received and sent in 8 or 16 bits, and it is necessary to determine how many bits of data to use before transmission. When using 8 bits for data transmission, only the lower 8 bits of the data registers are used, and the higher 8 bits are forced to 0 for reception. using a 16-bit data structure causes all 16 bits of the data registers to be used.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_SPI_CRCR": {
+				"name": "R16_SPI_CRCR",
+				"address": "0x40013010",
+				"info": "SPI Polynomial register",
+				"reset_value": "0x0007",
+				"bits_fields": [
+					{
+						"range": "[15:0]",
+						"name": "CRCPOLY[15:0]",
+						"access": "RW",
+						"info": "CRC polynomial. This register contains the polynomial for the CRC calculation.",
+						"reset_value": "7h"
+					}
+				]
+			},
+			"R16_SPI_RCRCR": {
+				"name": "R16_SPI_RCRCR",
+				"address": "0x40013014",
+				"info": "SPI Receive CRC register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:0]",
+						"name": "RXCRC[15:0]",
+						"access": "RO",
+						"info": "Rx CRC. Store the result of the calculated CRC checksum of the received byte. Setting CRCEN resets this register. The calculation method uses the polynomial used in CRCPOLY. 8-bit mode only the lower 8 bits are involved in the calculation, 16-bit mode all 16 bits are involved in the calculation. It is necessary to read this register when BSY is 0.",      
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_SPI_TCRCR": {
+				"name": "R16_SPI_TCRCR",
+				"address": "0x40013018",
+				"info": "SPI Transmit CRC register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:0]",
+						"name": "TXCRC[15:0]",
+						"access": "RO",
+						"info": "Tx CRC. Store the result of the calculated CRC checksum of the bytes that have been sent out. Setting CRCEN resets this register. The calculation method uses the polynomial used in CRCPOLY. 8-bit mode only the lower 8 bits are involved in the calculation, while in 16-bit mode all 16 bits are involved. It is necessary to read this register when BSY is 0.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_SPI_HSCR": {
+				"name": "R16_SPI_HSCR",
+				"address": "0x40013024",
+				"info": "SPI High-speed control register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:1]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "HSRXEN",
+						"access": "W0",
+						"info": "Read enable in SPI high-speed mode. 1: Enable high-speed read mode. 0: Disable high-speed read mode. The fifth digit of the chip lot number is less than 2. This mode is supported only when the clock is divided by 2 (i.e., BR = 000 in the CTLR1 register) and is valid for all other lots without restriction, and the bit is write-only.",
+						"reset_value": "0"
+					}
+				]
+			}
+		}
+	},
+
+	"ESIGN": {
+		"info": "ESIG-related registers list",
+		"table": "15-1",
+
+		"registers": {
+			"R16_ESIG_FLACAP": {
+				"name": "R16_ESIG_FLACAP",
+				"address": "0x1FFFF7E0",
+				"info": "Flash capacity register",
+				"reset_value": "0xXXXX",
+				"bits_fields": [
+					{
+						"range": "[15:0]",
+						"name": "F_SIZE[15:0]",
+						"access": "RO",
+						"info": "Flash capacity in Kbyte. Example : 0x0080 = 128K bytes",     
+						"reset_value": "X"
+					}
+				]
+			},
+			"R32_ESIG_UNIID1": {
+				"name": "R32_ESIG_UNIID1",
+				"address": "0x1FFFF7E8",
+				"info": "UID register 1",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": [
+					{
+						"range": "[31:0]",
+						"name": "U_ID[31:0]",
+						"access": "RO",
+						"info": "The 0-31 digits of UID.",
+						"reset_value": "X"
+					}
+				]
+			},
+			"R32_ESIG_UNIID2": {
+				"name": "R32_ESIG_UNIID2",
+				"address": "0x1FFFF7EC",
+				"info": "UID register 2",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": [
+					{
+						"range": "[31:0]",
+						"name": "U_ID[63:32]",
+						"access": "RO",
+						"info": "The 32-63 digits of UID.",
+						"reset_value": "X"
+					}
+				]
+			},
+			"R32_ESIG_UNIID3": {
+				"name": "R32_ESIG_UNIID3",
+				"address": "0x1FFFF7F0",
+				"info": "UID register 3",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": [
+					{
+						"range": "[31:0]",
+						"name": "U_ID[95:64]",
+						"access": "RO",
+						"info": "The 64-95 digits of UID.",
+						"reset_value": "X"
+					}
+				]
+			}
+		}
+	},
+
+	"FLASH": {
+		"info": "FLASH-related registers list",
+		"table": "16-2",
+
+		"registers": {
+			"R32_FLASH_ACTLR": {
+				"name": "R32_FLASH_ACTLR",
+				"address": "0x40022000",
+				"info": "Control register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:2]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[1:0]",
+						"name": "LATENCY[1:0]",
+						"access": "RW",
+						"info": "Number of FLASH wait states  00:0 wait (Recommended 0=<SYSCLK=<24MHz) 01:1 wait (Recommended 24=<SYSCLK=<48MHz) Other : Invalid",      
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_FLASH_KEYR": {
+				"name": "R32_FLASH_KEYR",
+				"address": "0x40022004",
+				"info": "FPEC key register",
+				"reset_value": "X",
+				"bits_fields":  [
+					{
+						"range": "[31:0]",
+						"name": "KEYR[31:0]",
+						"access": "WO",
+						"info": "FPEC keys for entering FPEC unlocking keys include. RDPRT key = 0x000000A5. KEY1 = 0x45670123. KEY2 = 0xCDEF89AB.",
+						"reset_value": "X"
+					}
+				]
+			},
+			"R32_FLASH_OBKEYR": {
+				"name": "R32_FLASH_OBKEYR",
+				"address": "0x40022008",
+				"info": "OBKEY register",
+				"reset_value": "X",
+				"bits_fields": [
+					{
+						"range": "[31:0]",
+						"name": "OBKEYR[31:0]",
+						"access": "WO",
+						"info": "Option bytes key for entering the option bytes key to release OPTWRE.",
+						"reset_value": "X"
+					}
+				]
+			},
+			"R32_FLASH_STATR": {
+				"name": "R32_FLASH_STATR",
+				"address": "0x4002200C",
+				"info": "Status register",
+				"reset_value": "0x00008000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "15",
+						"name": "LOCK",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "[translate:BOOT Lock] 1: Locked, cannot perform a write operation to the FLASH_STATA[14] field. 0: Unlocked, can perform write operation to FLASH_STATR[14] field. Note: Write 1 is set, write 0 is invalid."
+					},
+					{
+						"range": "14",
+						"name": "MODE",
+						"access": "RW",
+						"reset_value": "1",
+						"info": "Control the switch between user area and BOOT area. 1: After software reset, switch to the BOOT area. 0: After software reset, switch to the user area."
+					},
+					{
+						"range": "[13:6]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "5",
+						"name": "EOP",
+						"access": "RW",
+						"reset_value": "1",
+						"info": "Indicates end of operation, write 1 clears to 0. Set by hardware each time an erase or program operation is successfully completed."
+					},
+					{
+						"range": "4",
+						"name": "WRPRTERR",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Indicates write protection error, write 1 clears. Set by hardware when a write operation targets a protected address."
+					},
+					{
+						"range": "[3:1]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "0",
+						"name": "BUSY",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Indicates busy status. 1: Flash operation in progress. 0: No ongoing flash operation."
+					}
+				]
+			},
+			"R32_FLASH_CTLR": {
+				"name": "R32_FLASH_CTLR",
+				"address": "0x40022010",
+				"info": "Configuration register",
+				"reset_value": "0x00008080",
+				"bits_fields": [
+					{
+						"range": "[31:20]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "Reserved",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "19",
+						"name": "BUFRST",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "BUF reset operation."
+					},
+					{
+						"range": "18",
+						"name": "BUFLOAD",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Cache data into BUF."
+					},
+					{
+						"range": "17",
+						"name": "FTER",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Performs a fast page (64Byte) erase operation."
+					},
+					{
+						"range": "16",
+						"name": "FTPG",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Performs quick page programming operations."
+					},
+					{
+						"range": "15",
+						"name": "FLOCK",
+						"access": "RW",
+						"reset_value": "1",
+						"info": "Fast programming lock. Write '1' only. When set, fast programming/erase mode is disabled. Hardware clears this bit after correct unlock sequence."
+					},
+					{
+						"range": "[14:13]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "1",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "12",
+						"name": "EOPIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Operation completion interrupt enable. 1: Allow interrupts on EOP flag. 0: Disable interrupts."
+					},
+					{
+						"range": "11",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "10",
+						"name": "ERRIE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Error interrupt enable for PGERR/WRPRTERR flags. 1: Enable error interrupts. 0: Disable error interrupts."
+					},
+					{
+						"range": "9",
+						"name": "OBWRE",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "User word lock. 1: User option bytes programmable (set after correct unlock sequence). 0: User selection word re-locked."
+					},
+					{
+						"range": "8",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "7",
+						"name": "LOCK",
+						"access": "RW",
+						"reset_value": "1",
+						"info": "Lock. Write '1' only. When set, FPEC and FLASH_CTLR are locked. Cleared by hardware after unlock sequence. Remains locked if unlocking fails until system reset."
+					},
+					{
+						"range": "6",
+						"name": "STRT",
+						"access": "RW",
+						"reset_value": "1",
+						"info": "Start bit. Write '1' to initiate erase operation. Cleared automatically by hardware (BSY bit cleared)."
+					},
+					{
+						"range": "5",
+						"name": "OBER",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "User-option bytes erase operation."
+					},
+					{
+						"range": "4",
+						"name": "OBPG",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "User-option bytes programming."
+					},
+					{
+						"range": "3",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "2",
+						"name": "MER",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Mass erase operation. 1: Erase entire user area."
+					},
+					{
+						"range": "1",
+						"name": "PER",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Sector erase operation. 1: Erase one 1K sector."
+					},
+					{
+						"range": "0",
+						"name": "PG",
+						"access": "RW",
+						"reset_value": "0",
+						"info": "Programming operation. 1: Standard programming enabled."
+					}
+				]
+			},
+			"R32_FLASH_ADDR": {
+				"name": "R32_FLASH_ADDR",
+				"address": "0x40022014",
+				"info": "Address register",
+				"reset_value": "X",
+				"bits_fields": [
+					{
+						"range": "[31:0]",
+						"name": "FAR[31:0]",
+						"access": "WO",
+						"info": "The flash memory address, when programming, is the programmed address, and when erasing, is the start address of the erase. When the BSY bit in FLASH_STATR register is '1', this register cannot be written.",  
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_FLASH_OBR": {
+				"name": "R32_FLASH_OBR",
+				"address": "0x4002201C",
+				"info": "Option byte register",
+				"reset_value": "0x0XXXXXXX",
+				"bits_fields": [
+					{
+						"range": "[31:26]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved bits."
+					},
+					{
+						"range": "[25:18]",
+						"name": "DATA1[7:0]",
+						"access": "RO",
+						"reset_value": "X",
+						"info": "Data byte 1."
+					},
+					{
+						"range": "[17:10]",
+						"name": "DATA0[7:0]",
+						"access": "RO",
+						"reset_value": "X",
+						"info": "Data byte 0."
+					},
+					{
+						"range": "[9:8]",
+						"name": "RO",
+						"access": "RO",
+						"reset_value": "2'b11",
+						"info": ""
+					},
+					{
+						"range": "7",
+						"name": "USER_STATR_MODE",
+						"access": "RO",
+						"reset_value": "1",
+						"info": "[translate:Power-on startup mode] 1: Boot from BOOT area. 0: Boot from user area. Note: This does not apply to certain products."
+					},
+					{
+						"range": "[6:5]",
+						"name": "RST_MODE",
+						"access": "RO",
+						"reset_value": "X",
+						"info": "Configuration word reset delay time."
+					},
+					{
+						"range": "4",
+						"name": "STANDY_RST",
+						"access": "RO",
+						"reset_value": "X",
+						"info": "System reset control in Standby mode."
+					},
+					{
+						"range": "3",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "X",
+						"info": "Reserved bit."
+					},
+					{
+						"range": "2",
+						"name": "IWDG_SW",
+						"access": "RO",
+						"reset_value": "1",
+						"info": "[translate:Independent Watchdog (IWDG) hardware enable bit]"
+					},
+					{
+						"range": "1",
+						"name": "RDPRT",
+						"access": "RO",
+						"reset_value": "1",
+						"info": "Read protection status. 1: Flash memory is read protected."
+					},
+					{
+						"range": "0",
+						"name": "OBERR",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "[translate:Wrong choice of words] (likely an error flag). 1: Selection word and inverse code mismatch."
+					}
+				]
+			},
+			"R32_FLASH_WPR": {
+				"name": "R32_FLASH_WPR",
+				"address": "0x40022020",
+				"info": "Write protection register",
+				"reset_value": "0xFFFFFFF",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "X"
+					},
+					{
+						"range": "[15:0]",
+						"name": "WPR[15:0]",
+						"access": "RO",
+						"info": "Flash memory write protect state. 1: Write protection failure. 0: Write protection is valid. Each bit represents 1K bytes (16 pages) of storage write protection status.",
+						"reset_value": "X"
+					}
+				]
+			},
+			"R32_FLASH_MODEKEYR": {
+				"name": "R32_FLASH_MODEKEYR",
+				"address": "0x40022024",
+				"info": "Extended key register",
+				"reset_value": "X",
+				"bits_fields": [
+					{
+						"range": "[31:0]",
+						"name": "MODEKEYR[31:0]",
+						"access": "WO",
+						"info": "Enter the following sequence to unlock the fast programming/erase mode. KEY1 = 0x45670123. KEY2 = 0xCDEF89AB.",
+						"reset_value": "X"
+					}
+				]
+			},
+			"R32_FLASH_BOOT_MODEKEYR": {
+				"name": "R32_FLASH_BOOT_MODEKEYR",
+				"address": "0x40022028",
+				"info": "Unlock BOOT key register",
+				"reset_value": "X",
+				"bits_fields": [
+					{
+						"range": "[31:0]",
+						"name": "BOOTKEYR[31:0]",
+						"access": "WO",
+						"info": "Enter the following sequence to unlock the BOOT area KEY1 = 0x45670123. KEY2 = 0xCDEF89AB.",
+						"reset_value": "X"
+					}
+				]
+			}
+		}
 	}
 }

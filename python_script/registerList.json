@@ -1,142 +1,72 @@
 {
-  "R16_TIM1_CTLR1": {
-    "name": "R16_TIM1_CTLR1",
-    "address": "0x40012C00",
-    "info": "Control register 1",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_CTLR2": {
-    "name": "R16_TIM1_CTLR2",
-    "address": "0x40012C04",
-    "info": "Control register 2",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_SMCFGR": {
-    "name": "R16_TIM1_SMCFGR",
-    "address": "0x40012C08",
-    "info": "Slave mode control register",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_DMAINTENR": {
-    "name": "R16_TIM1_DMAINTENR",
-    "address": "0x40012C0C",
-    "info": "DMA/interrupt enable register",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_INTFR": {
-    "name": "R16_TIM1_INTFR",
-    "address": "0x40012C10",
-    "info": "Interrupt status register",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_SWEVGR": {
-    "name": "R16_TIM1_SWEVGR",
-    "address": "0x40012C14",
-    "info": "Event generation register",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_CHCTLR1": {
-    "name": "R16_TIM1_CHCTLR1",
-    "address": "0x40012C18",
-    "info": "Compare/capture control register 1",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_CHCTLR2": {
-    "name": "R16_TIM1_CHCTLR2",
-    "address": "0x40012C1C",
-    "info": "Compare/capture control register 2",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_CCER": {
-    "name": "R16_TIM1_CCER",
-    "address": "0x40012C20",
-    "info": "Compare/capture enable register",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_CNT": {
-    "name": "R16_TIM1_CNT",
-    "address": "0x40012C24",
-    "info": "Counters",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_PSC": {
-    "name": "R16_TIM1_PSC",
-    "address": "0x40012C28",
-    "info": "Counting clock prescaler",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_ATRLR": {
-    "name": "R16_TIM1_ATRLR",
-    "address": "0x40012C2C",
-    "info": "Auto-reload value register",
-    "reset_value": "0xFFFF",
-    "bits_fields": "[]"
-  },
-  "R16_TIM1_RPTCR": {
-    "name": "R16_TIM1_RPTCR",
-    "address": "0x40012C30",
-    "info": "Recurring count value register",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R32_TIM1_CH1CVR": {
-    "name": "R32_TIM1_CH1CVR",
-    "address": "0x40012C34",
-    "info": "Compare/capture register 1",
+  "R32_FLASH_ACTLR": {
+    "name": "R32_FLASH_ACTLR",
+    "address": "0x40022000",
+    "info": "Control register",
     "reset_value": "0x00000000",
     "bits_fields": "[]"
   },
-  "R32_TIM1_CH2CVR": {
-    "name": "R32_TIM1_CH2CVR",
-    "address": "0x40012C38",
-    "info": "Compare/capture register 2",
-    "reset_value": "0x00000000",
+  "R32_FLASH_KEYR": {
+    "name": "R32_FLASH_KEYR",
+    "address": "0x40022004",
+    "info": "FPEC key register",
+    "reset_value": "X",
     "bits_fields": "[]"
   },
-  "R32_TIM1_CH3CVR": {
-    "name": "R32_TIM1_CH3CVR",
-    "address": "0x40012C3C",
-    "info": "Compare/capture register 3",
-    "reset_value": "0x00000000",
+  "R32_FLASH_OBKEYR": {
+    "name": "R32_FLASH_OBKEYR",
+    "address": "0x40022008",
+    "info": "OBKEY register",
+    "reset_value": "X",
     "bits_fields": "[]"
   },
-  "R32_TIM1_CH4CVR": {
-    "name": "R32_TIM1_CH4CVR",
-    "address": "0x40012C40",
-    "info": "Compare/capture register 4",
-    "reset_value": "0x00000000",
+  "R32_FLASH_STATR": {
+    "name": "R32_FLASH_STATR",
+    "address": "0x4002200C",
+    "info": "Status register",
+    "reset_value": "0x00008000",
     "bits_fields": "[]"
   },
-  "R16_TIM1_BDTR": {
-    "name": "R16_TIM1_BDTR",
-    "address": "0x40012C44",
-    "info": "Brake and dead-time registers",
-    "reset_value": "0x0000",
+  "R32_FLASH_CTLR": {
+    "name": "R32_FLASH_CTLR",
+    "address": "0x40022010",
+    "info": "Configuration register",
+    "reset_value": "0x00008080",
     "bits_fields": "[]"
   },
-  "R16_TIM1_DMACFGR": {
-    "name": "R16_TIM1_DMACFGR",
-    "address": "0x40012C48",
-    "info": "DMA control register",
-    "reset_value": "0x0000",
+  "R32_FLASH_ADDR": {
+    "name": "R32_FLASH_ADDR",
+    "address": "0x40022014",
+    "info": "Address register",
+    "reset_value": "X",
     "bits_fields": "[]"
   },
-  "R16_TIM1_DMAADR": {
-    "name": "R16_TIM1_DMAADR",
-    "address": "0x40012C4C",
-    "info": "DMA address register for continuous mode",
-    "reset_value": "0x0000",
+  "R32_FLASH_OBR": {
+    "name": "R32_FLASH_OBR",
+    "address": "0x4002201C",
+    "info": "Option byte register",
+    "reset_value": "0x0XXXXXXX",
+    "bits_fields": "[]"
+  },
+  "R32_FLASH_WPR": {
+    "name": "R32_FLASH_WPR",
+    "address": "0x40022020",
+    "info": "Write protection register",
+    "reset_value": "0xFFFFFFF",
+    "bits_fields": "[]"
+  },
+  "R32_FLASH_MODEKEYR": {
+    "name": "R32_FLASH_MODEKEYR",
+    "address": "0x40022024",
+    "info": "Extended key register",
+    "reset_value": "X",
+    "bits_fields": "[]"
+  },
+  "R32_FLASH_BOOT_MODEKEYR": {
+    "name": "R32_FLASH_BOOT_MODEKEYR",
+    "address": "0x40022028",
+    "info": "Unlock BOOT key register",
+    "reset_value": "X",
     "bits_fields": "[]"
   }
 }

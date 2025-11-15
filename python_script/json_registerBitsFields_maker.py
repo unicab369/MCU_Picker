@@ -3,7 +3,7 @@ import register_parser
 def main():
 	# Input data
 	input_data = """
-15:0] DMAB[15:0] RW The DMA address in continuous mode. 0
+[31:0] BOOTKEYR[31:0] WO Enter the following sequence to unlock the BOOT area KEY1 = 0x45670123. KEY2 = 0xCDEF89AB. X 
 	"""
 
 

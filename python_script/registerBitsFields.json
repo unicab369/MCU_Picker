@@ -1,9 +1,9 @@
 [
   {
-    "range": "15:0]",
-    "name": "DMAB[15:0]",
-    "access": "RW",
-    "info": "The DMA address in continuous mode.",
-    "reset_value": "0"
+    "range": "[31:0]",
+    "name": "BOOTKEYR[31:0]",
+    "access": "WO",
+    "info": "Enter the following sequence to unlock the BOOT area KEY1 = 0x45670123. KEY2 = 0xCDEF89AB.",
+    "reset_value": "X"
   }
 ]
