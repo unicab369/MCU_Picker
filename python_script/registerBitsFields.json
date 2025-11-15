@@ -1,37 +1,9 @@
 [
   {
-    "range": "[31:15]",
-    "name": "Reserved",
-    "access": "RO",
-    "info": "Reserved",
-    "reset_value": "0"
-  },
-  {
-    "range": "14",
-    "name": "MEM2MEM",
+    "range": "15:0]",
+    "name": "DMAB[15:0]",
     "access": "RW",
-    "info": "Memory-to-memory mode enable. 1: Enable memory-to-memory data transfer mode. 0: Disable memory-to-memory data transfer mode.",
-    "reset_value": "0"
-  },
-  {
-    "range": "[13:12]",
-    "name": "PL",
-    "access": "RW",
-    "info": "Channel priority setting. 00: low; 01: medium. 10: High; 11:Very high.",
-    "reset_value": "0"
-  },
-  {
-    "range": "[11:10]",
-    "name": "MSIZE",
-    "access": "RW",
-    "info": "Memory address data width setting. 00: 8 bits; 01: 16 bits. 10: 32 bits; 11: Reserved.",
-    "reset_value": "0"
-  },
-  {
-    "range": "[9:8]",
-    "name": "PSIZE",
-    "access": "RW",
-    "info": "Peripheral address data width setting. 00: 8 bits; 01: 16 bits.",
+    "info": "The DMA address in continuous mode.",
     "reset_value": "0"
   }
 ]

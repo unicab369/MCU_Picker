@@ -1,212 +1,142 @@
 {
-  "R32_DMA_INTFR": {
-    "name": "R32_DMA_INTFR",
-    "address": "0x40020000",
-    "info": "DMA interrupt status",
-    "reset_value": "register",
+  "R16_TIM1_CTLR1": {
+    "name": "R16_TIM1_CTLR1",
+    "address": "0x40012C00",
+    "info": "Control register 1",
+    "reset_value": "0x0000",
     "bits_fields": "[]"
   },
-  "R32_DMA_INTFCR": {
-    "name": "R32_DMA_INTFCR",
-    "address": "0x00000000",
-    "info": "0x40020004 DMA interrupt flag clear",
-    "reset_value": "register",
+  "R16_TIM1_CTLR2": {
+    "name": "R16_TIM1_CTLR2",
+    "address": "0x40012C04",
+    "info": "Control register 2",
+    "reset_value": "0x0000",
     "bits_fields": "[]"
   },
-  "R32_DMA_CFGR1": {
-    "name": "R32_DMA_CFGR1",
-    "address": "0x00000000",
-    "info": "0x40020008 DMA channel 1 configuration",
-    "reset_value": "register",
+  "R16_TIM1_SMCFGR": {
+    "name": "R16_TIM1_SMCFGR",
+    "address": "0x40012C08",
+    "info": "Slave mode control register",
+    "reset_value": "0x0000",
     "bits_fields": "[]"
   },
-  "R32_DMA_CNTR1": {
-    "name": "R32_DMA_CNTR1",
-    "address": "0x00000000",
-    "info": "0x4002000C DMA channel 1 number of data register",
+  "R16_TIM1_DMAINTENR": {
+    "name": "R16_TIM1_DMAINTENR",
+    "address": "0x40012C0C",
+    "info": "DMA/interrupt enable register",
+    "reset_value": "0x0000",
+    "bits_fields": "[]"
+  },
+  "R16_TIM1_INTFR": {
+    "name": "R16_TIM1_INTFR",
+    "address": "0x40012C10",
+    "info": "Interrupt status register",
+    "reset_value": "0x0000",
+    "bits_fields": "[]"
+  },
+  "R16_TIM1_SWEVGR": {
+    "name": "R16_TIM1_SWEVGR",
+    "address": "0x40012C14",
+    "info": "Event generation register",
+    "reset_value": "0x0000",
+    "bits_fields": "[]"
+  },
+  "R16_TIM1_CHCTLR1": {
+    "name": "R16_TIM1_CHCTLR1",
+    "address": "0x40012C18",
+    "info": "Compare/capture control register 1",
+    "reset_value": "0x0000",
+    "bits_fields": "[]"
+  },
+  "R16_TIM1_CHCTLR2": {
+    "name": "R16_TIM1_CHCTLR2",
+    "address": "0x40012C1C",
+    "info": "Compare/capture control register 2",
+    "reset_value": "0x0000",
+    "bits_fields": "[]"
+  },
+  "R16_TIM1_CCER": {
+    "name": "R16_TIM1_CCER",
+    "address": "0x40012C20",
+    "info": "Compare/capture enable register",
+    "reset_value": "0x0000",
+    "bits_fields": "[]"
+  },
+  "R16_TIM1_CNT": {
+    "name": "R16_TIM1_CNT",
+    "address": "0x40012C24",
+    "info": "Counters",
+    "reset_value": "0x0000",
+    "bits_fields": "[]"
+  },
+  "R16_TIM1_PSC": {
+    "name": "R16_TIM1_PSC",
+    "address": "0x40012C28",
+    "info": "Counting clock prescaler",
+    "reset_value": "0x0000",
+    "bits_fields": "[]"
+  },
+  "R16_TIM1_ATRLR": {
+    "name": "R16_TIM1_ATRLR",
+    "address": "0x40012C2C",
+    "info": "Auto-reload value register",
+    "reset_value": "0xFFFF",
+    "bits_fields": "[]"
+  },
+  "R16_TIM1_RPTCR": {
+    "name": "R16_TIM1_RPTCR",
+    "address": "0x40012C30",
+    "info": "Recurring count value register",
+    "reset_value": "0x0000",
+    "bits_fields": "[]"
+  },
+  "R32_TIM1_CH1CVR": {
+    "name": "R32_TIM1_CH1CVR",
+    "address": "0x40012C34",
+    "info": "Compare/capture register 1",
     "reset_value": "0x00000000",
     "bits_fields": "[]"
   },
-  "R32_DMA_PADDR1": {
-    "name": "R32_DMA_PADDR1",
-    "address": "0x40020010",
-    "info": "DMA channel 1 peripheral address register",
+  "R32_TIM1_CH2CVR": {
+    "name": "R32_TIM1_CH2CVR",
+    "address": "0x40012C38",
+    "info": "Compare/capture register 2",
     "reset_value": "0x00000000",
     "bits_fields": "[]"
   },
-  "R32_DMA_MADDR1": {
-    "name": "R32_DMA_MADDR1",
-    "address": "0x40020014",
-    "info": "DMA channel 1 memory address register",
+  "R32_TIM1_CH3CVR": {
+    "name": "R32_TIM1_CH3CVR",
+    "address": "0x40012C3C",
+    "info": "Compare/capture register 3",
     "reset_value": "0x00000000",
     "bits_fields": "[]"
   },
-  "R32_DMA_CFGR2": {
-    "name": "R32_DMA_CFGR2",
-    "address": "0x4002001C",
-    "info": "DMA channel 2 configuration register",
+  "R32_TIM1_CH4CVR": {
+    "name": "R32_TIM1_CH4CVR",
+    "address": "0x40012C40",
+    "info": "Compare/capture register 4",
     "reset_value": "0x00000000",
     "bits_fields": "[]"
   },
-  "R32_DMA_CNTR2": {
-    "name": "R32_DMA_CNTR2",
-    "address": "0x40020020",
-    "info": "DMA channel 2 number of data register",
-    "reset_value": "0x00000000",
+  "R16_TIM1_BDTR": {
+    "name": "R16_TIM1_BDTR",
+    "address": "0x40012C44",
+    "info": "Brake and dead-time registers",
+    "reset_value": "0x0000",
     "bits_fields": "[]"
   },
-  "R32_DMA_PADDR2": {
-    "name": "R32_DMA_PADDR2",
-    "address": "0x40020024",
-    "info": "DMA channel 2 peripheral address register",
-    "reset_value": "0x00000000",
+  "R16_TIM1_DMACFGR": {
+    "name": "R16_TIM1_DMACFGR",
+    "address": "0x40012C48",
+    "info": "DMA control register",
+    "reset_value": "0x0000",
     "bits_fields": "[]"
   },
-  "R32_DMA_MADDR2": {
-    "name": "R32_DMA_MADDR2",
-    "address": "0x40020028",
-    "info": "DMA channel 2 memory address register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_CFGR3": {
-    "name": "R32_DMA_CFGR3",
-    "address": "0x40020030",
-    "info": "DMA channel 3 configuration register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_CNTR3": {
-    "name": "R32_DMA_CNTR3",
-    "address": "0x40020034",
-    "info": "DMA channel 3 number of data register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_PADDR3": {
-    "name": "R32_DMA_PADDR3",
-    "address": "0x40020038",
-    "info": "DMA channel 3 peripheral address register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_MADDR3": {
-    "name": "R32_DMA_MADDR3",
-    "address": "0x4002003C",
-    "info": "DMA channel 3 memory address register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_CFGR4": {
-    "name": "R32_DMA_CFGR4",
-    "address": "0x40020044",
-    "info": "DMA channel 4 configuration register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_CNTR4": {
-    "name": "R32_DMA_CNTR4",
-    "address": "0x40020048",
-    "info": "DMA channel 4 number of data register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_PADDR4": {
-    "name": "R32_DMA_PADDR4",
-    "address": "0x4002004C",
-    "info": "DMA channel 4 peripheral address register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_MADDR4": {
-    "name": "R32_DMA_MADDR4",
-    "address": "0x40020050",
-    "info": "DMA channel 4 memory address register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_CFGR5": {
-    "name": "R32_DMA_CFGR5",
-    "address": "0x40020058",
-    "info": "DMA channel 5 configuration register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_CNTR5": {
-    "name": "R32_DMA_CNTR5",
-    "address": "0x4002005C",
-    "info": "DMA channel 5 number of data register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_PADDR5": {
-    "name": "R32_DMA_PADDR5",
-    "address": "0x40020060",
-    "info": "DMA channel 5 peripheral address register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_MADDR5": {
-    "name": "R32_DMA_MADDR5",
-    "address": "0x40020064",
-    "info": "DMA channel 5 memory address register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_CFGR6": {
-    "name": "R32_DMA_CFGR6",
-    "address": "0x4002006C",
-    "info": "DMA channel 6 configuration register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_CNTR6": {
-    "name": "R32_DMA_CNTR6",
-    "address": "0x40020070",
-    "info": "DMA channel 6 number of data register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_PADDR6": {
-    "name": "R32_DMA_PADDR6",
-    "address": "0x40020074",
-    "info": "DMA channel 6 peripheral address register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_MADDR6": {
-    "name": "R32_DMA_MADDR6",
-    "address": "0x40020078",
-    "info": "DMA channel 6 memory address register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_CFGR7": {
-    "name": "R32_DMA_CFGR7",
-    "address": "0x40020080",
-    "info": "DMA channel 7 configuration register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_CNTR7": {
-    "name": "R32_DMA_CNTR7",
-    "address": "0x40020084",
-    "info": "DMA channel 7 number of data register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_PADDR7": {
-    "name": "R32_DMA_PADDR7",
-    "address": "0x40020088",
-    "info": "DMA channel 7 peripheral address register",
-    "reset_value": "0x00000000",
-    "bits_fields": "[]"
-  },
-  "R32_DMA_MADDR7": {
-    "name": "R32_DMA_MADDR7",
-    "address": "0x4002008C",
-    "info": "DMA channel 7 memory address register",
-    "reset_value": "0x00000000",
+  "R16_TIM1_DMAADR": {
+    "name": "R16_TIM1_DMAADR",
+    "address": "0x40012C4C",
+    "info": "DMA address register for continuous mode",
+    "reset_value": "0x0000",
     "bits_fields": "[]"
   }
 }

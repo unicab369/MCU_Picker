@@ -3006,5 +3006,1648 @@
 				"bits_fields": []
 			}		
 		}
+	},
+
+	"ADC": {
+		"info": "ADC-related registers list",
+		"table": "9-7",
+
+		"registers_map": {
+			"R32_ADC_IOFRx": {
+				"name": "R32_ADC_IOFR1",
+				"address": "0x40012414",
+				"info": "ADC injected channel data offset register 1",      
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "31:10",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "9:0",
+						"name": "JOFFSETx[11:0]",
+						"access": "RW",
+						"info": "Data offset value for injected channel x. When converting injected channels, this value is subtracted from the original conversion data. The result can be read in ADC_IDATARx register.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_IDATARx": {
+				"name": "R32_ADC_IDATAR1",
+				"address": "0x4001243C",
+				"info": "ADC injected data register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:0]",
+						"name": "JDATA[15:0]",
+						"access": "RO",
+						"info": "Injection channel conversion data (data left- aligned or right-aligned).",
+						"reset_value": "0"
+					}
+				]				
+			}
+		},
+
+		"registers": {
+			"R32_ADC_STATR": {
+				"name": "R32_ADC_STATR",
+				"address": "0x40012400",
+				"info": "ADC status register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "31:5",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "4",
+						"name": "STRT",
+						"access": "RW0",
+						"info": "Rule channel transition start state. 1: Rule channel conversion has started. 0: Rule channel conversion has not started. This bit is set to 1 by hardware and cleared to 0 by software (write 1 is not valid).",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "JSTRT",
+						"access": "RW0",
+						"info": "Injection channel conversion start state. 1: Injection channel conversion has started. 0: Injection channel conversion has not started. This bit is set to 1 by hardware and cleared to 0 by software (write 1 is not valid).",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "JEOC",
+						"access": "RW0",
+						"info": "End state of the injection channel group conversion. 1: Conversion complete. 0: Conversion not completed. This bit is set to 1 by hardware (all injected channels converted) and cleared to 0 by software (write 1 is invalid).",
+						"reset_value": "0"
+					},
+					{
+						"range": "1",
+						"name": "EOC",
+						"access": "RW0",
+						"info": "Conversion end state. 1: Conversion complete. 0: Conversion not completed. This bit is set to 1 by hardware (end of rule or injection channel group conversion), and cleared to 0 by software or when reading ADC_RDATAR.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "AWD",
+						"access": "RW0",
+						"info": "Analog watchdog flag bit. 1: Analog watchdog event occurred. 0: No analog watchdog event occurred. This bit is set to 1 by hardware (conversion value is out of range of ADC_WDHTR and ADC_WDLTR) and cleared to 0 by software (write 1 is invalid).",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_CTLR1": {
+				"name": "R32_ADC_CTLR1",
+				"address": "0x40012404",
+				"info": "ADC control register 1",
+				"reset_value": "0x02000000",
+				"bits_fields": [
+					{
+						"range": "31:27",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "26:25",
+						"name": "CALVOL[1:0]",
+						"access": "RW",
+						"info": "Calibration voltage selection. 01: Calibration voltage 2/4 AVDD. 10: Calibration voltage 3/4 AVDD. Other: Invalid.",
+						"reset_value": "-"
+					},
+					{
+						"range": "24",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "1"
+					},
+					{
+						"range": "23",
+						"name": "AWDEN",
+						"access": "RW",
+						"info": "Analog watchdog function enable bit on the rule channel. 1: Enable. 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "22",
+						"name": "JAWDEN",
+						"access": "RW",
+						"info": "Analog watchdog function enable bit on the injection channel. 1: Enable. 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "21:16",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "15:13",
+						"name": "DISCNUM[2:0]",
+						"access": "RW",
+						"info": "Number of rule channels to be converted after external triggering in intermittent mode. 000: 1 channel. ... 111: 8 channels.",
+						"reset_value": "-"
+					},
+					{
+						"range": "12",
+						"name": "JDISCEN",
+						"access": "RW",
+						"info": "Intermittent mode enable bit on the injection channel. 1: Enable; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11",
+						"name": "DISCEN",
+						"access": "RW",
+						"info": "Intermittent mode enable bit on the rule channel. 1: Enable; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "10",
+						"name": "JAUTO",
+						"access": "RW",
+						"info": "After opening of the rule channel is completed, the injection channel group enable bit is switched automatically. 1: Enable automatic group switching. 0: Disable automatic group switching.",
+						"reset_value": "0"
+					},
+					{
+						"range": "9",
+						"name": "AWDSGL",
+						"access": "RW",
+						"info": "In scan mode, use the analog watchdog on a single channel. 1: Use analog watchdog on a single channel (AWDCH[4:0] selection). 0: Use on all channels.",
+						"reset_value": "0"
+					},
+					{
+						"range": "8",
+						"name": "SCAN",
+						"access": "RW",
+						"info": "Scan mode enable bit. 1: Enable scan mode. 0: Disable scan mode.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "JEOCIE",
+						"access": "RW",
+						"info": "Inject the channel group end-of-conversion interrupt enable bit. 1: Enable group completion interrupt. 0: Disable group completion interrupt.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6",
+						"name": "AWDIE",
+						"access": "RW",
+						"info": "Analog watchdog interrupt enable bit. 1: Enable. 0: Disable. Note: In scan mode, this interrupt will abort the scan if it occurs.",
+						"reset_value": "0"
+					},
+					{
+						"range": "5",
+						"name": "EOCIE",
+						"access": "RW",
+						"info": "End of conversion (rule or injection channel group) interrupt enable bit. 1: Enable. 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "4:0",
+						"name": "AWDCH[4:0]",
+						"access": "RW",
+						"info": "Analog watchdog channel selection bits. 00000: channel 0; 00001: channel 1; ... 01001: channel 9.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_CTLR2": {
+				"name": "R32_ADC_CTLR2",
+				"address": "0x40012408",
+				"info": "ADC control register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "31:23",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "22",
+						"name": "SWSTART",
+						"access": "RW",
+						"info": "Software trigger to start rule channel conversion. 1: Initiate conversion. 0: Reset state. Set by software; cleared by hardware when conversion starts.",
+						"reset_value": "0"
+					},
+					{
+						"range": "21",
+						"name": "JSWSTART",
+						"access": "RW",
+						"info": "Software trigger to start injection channel conversion. 1: Initiate injection channel conversion. 0: Reset state. Set by software; cleared to 0 by hardware or software when conversion starts.",
+						"reset_value": "0"
+					},
+					{
+						"range": "20",
+						"name": "EXTTRIG",
+						"access": "RW",
+						"info": "External trigger mode enable for the rule channel. 1: Use external events to initiate conversions. 0: Disable external event activation.",
+						"reset_value": "0"
+					},
+					{
+						"range": "19:17",
+						"name": "EXTSEL[2:0]",
+						"access": "RW",
+						"info": "External trigger event selection for initiating rule channel conversion. 000: TRGO (Timer1). 001: CC1 (Timer1). 010: CC2 (Timer1). 011: TRGO (Timer2). 100: CC1 (Timer2). 101: CC2 (Timer2). 110: PD3/PC2. 111: SWSTART software trigger.",
+						"reset_value": "0"
+					},
+					{
+						"range": "16",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "15",
+						"name": "JEXTTRIG",
+						"access": "RW",
+						"info": "External trigger mode enable for the injected channel. 1: Use external events to initiate conversions. 0: Disable external event activation.",
+						"reset_value": "0"
+					},
+					{
+						"range": "14:12",
+						"name": "JEXTSEL[2:0]",
+						"access": "RW",
+						"info": "External trigger event selection for initiating injection channel conversion. 000: CC3 (Timer1); 001: CC4 (Timer1); 010: CC3 (Timer2); 011: CC4 (Timer2); 100–101: Reserved; 110: PD1/PA2; 111: JSWSTART software trigger.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11",
+						"name": "ALIGN",
+						"access": "RW",
+						"info": "Data alignment control. 1: Left-aligned. 0: Right-aligned.",
+						"reset_value": "0"
+					},
+					{
+						"range": "10:9",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "8",
+						"name": "DMA",
+						"access": "RW",
+						"info": "Direct Memory Access mode enable. 1: Enable DMA. 0: Disable DMA.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7:4",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "RSTCAL",
+						"access": "RW",
+						"info": "Reset calibration bit. Set by software; cleared by hardware after reset completes. 1: Initialize calibration registers. 0: Calibration register initialized. Note: Setting this while conversion is active may require extra cycles to clear.",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "CAL",
+						"access": "RW",
+						"info": "Start calibration. 1: Start calibration. 0: Calibration complete. Set by software; cleared by hardware at the end of calibration.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1",
+						"name": "CONT",
+						"access": "RW",
+						"info": "Continuous conversion enable. 1: Continuous conversion mode. 0: Single conversion mode. Conversion continues until cleared.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "ADON",
+						"access": "RW",
+						"info": "ADC enable and start control. 1: Turn on ADC and start conversion. 0: Power down ADC. Writing 1 when ADON=0 wakes ADC from power-down; writing 1 when ADON=1 starts conversion.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_SAMPTR1": {
+				"name": "R32_ADC_SAMPTR1",
+				"address": "0x4001240C",
+				"info": "ADC sample time register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "31:18",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "17:0",
+						"name": "SMPx[2:0]",
+						"access": "RW",
+						"info": "Sample time configuration for channel x. 000: 3 cycles; 001: 9 cycles; 010: 15 cycles; 011: 30 cycles; 100: 43 cycles; 101: 57 cycles; 110: 73 cycles; 111: 241 cycles. Used to independently select the sample time for each channel; the configuration value must remain constant during sampling.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_SAMPTR2": {
+				"name": "R32_ADC_SAMPTR2",
+				"address": "0x40012410",
+				"info": "ADC sample time register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "31:30",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "29:0",
+						"name": "SMPx[2:0]",
+						"access": "RW",
+						"info": "Sample time configuration for channel x. 000: 3 cycles; 001: 9 cycles; 010: 15 cycles; 011: 30 cycles; 100: 43 cycles; 101: 57 cycles; 110: 73 cycles; 111: 241 cycles. Used to independently select the sample time for each channel; the configuration value must remain constant during the sample cycle.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_IOFR1": {
+				"name": "R32_ADC_IOFR1",
+				"address": "0x40012414",
+				"info": "ADC injected channel data offset register 1",      
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_ADC_IOFR2": {
+				"name": "R32_ADC_IOFR2",
+				"address": "0x40012418",
+				"info": "ADC injected channel data offset register 2",      
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_ADC_IOFR3": {
+				"name": "R32_ADC_IOFR3",
+				"address": "0x4001241C",
+				"info": "ADC injected channel data offset register 3",      
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_ADC_IOFR4": {
+				"name": "R32_ADC_IOFR4",
+				"address": "0x40012420",
+				"info": "ADC injected channel data offset register 4",      
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_ADC_WDHTR": {
+				"name": "R32_ADC_WDHTR",
+				"address": "0x40012424",
+				"info": "ADC watchdog high threshold register",
+				"reset_value": "0x000003FF",
+				"bits_fields": [
+					{
+						"range": "31:10",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "9:0",
+						"name": "HT[9:0]",
+						"access": "RW",
+						"info": "Analog watchdog high threshold setting value.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_WDLTR": {
+				"name": "R32_ADC_WDLTR",
+				"address": "0x40012428",
+				"info": "ADC watchdog low threshold register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "31:10",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "9:0",
+						"name": "LT[9:0]",
+						"access": "RW",
+						"info": "Analog watchdog low threshold setting value.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_RSQR1": {
+				"name": "R32_ADC_RSQR1",
+				"address": "0x4001242C",
+				"info": "ADC regular sequence register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "31:24",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "23:20",
+						"name": "L[3:0]",
+						"access": "RW",
+						"info": "Number of channels to be converted in a regular channel conversion sequence. 0000–1111: 1–16 conversions.",
+						"reset_value": "0"
+					},
+					{
+						"range": "19:15",
+						"name": "SQ16[4:0]",
+						"access": "RW",
+						"info": "The number of the 16th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "14:10",
+						"name": "SQ15[4:0]",
+						"access": "RW",
+						"info": "The number of the 15th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "9:5",
+						"name": "SQ14[4:0]",
+						"access": "RW",
+						"info": "The number of the 14th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "4:0",
+						"name": "SQ13[4:0]",
+						"access": "RW",
+						"info": "The number of the 13th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_RSQR2": {
+				"name": "R32_ADC_RSQR2",
+				"address": "0x40012430",
+				"info": "ADC regular sequence register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "31:30",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "29:25",
+						"name": "SQ12[4:0]",
+						"access": "RW",
+						"info": "The number of the 12th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "24:20",
+						"name": "SQ11[4:0]",
+						"access": "RW",
+						"info": "The number of the 11th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "19:15",
+						"name": "SQ10[4:0]",
+						"access": "RW",
+						"info": "The number of the 10th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "14:10",
+						"name": "SQ9[4:0]",
+						"access": "RW",
+						"info": "The number of the 9th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "9:5",
+						"name": "SQ8[4:0]",
+						"access": "RW",
+						"info": "The number of the 8th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "4:0",
+						"name": "SQ7[4:0]",
+						"access": "RW",
+						"info": "The number of the 7th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_RSQR3": {
+				"name": "R32_ADC_RSQR3",
+				"address": "0x40012434",
+				"info": "ADC regular sequence register 3",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "31:30",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "29:25",
+						"name": "SQ6[4:0]",
+						"access": "RW",
+						"info": "The number of the 6th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "24:20",
+						"name": "SQ5[4:0]",
+						"access": "RW",
+						"info": "The number of the 5th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "19:15",
+						"name": "SQ4[4:0]",
+						"access": "RW",
+						"info": "The number of the 4th conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "14:10",
+						"name": "SQ3[4:0]",
+						"access": "RW",
+						"info": "The number of the 3rd conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "9:5",
+						"name": "SQ2[4:0]",
+						"access": "RW",
+						"info": "The number of the 2nd conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "4:0",
+						"name": "SQ1[4:0]",
+						"access": "RW",
+						"info": "The number of the 1st conversion channel in the rule sequence (0–9).",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_ISQR": {
+				"name": "R32_ADC_ISQR",
+				"address": "0x40012438",
+				"info": "ADC injected sequence register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:22]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[21:20]",
+						"name": "JL[1:0]",
+						"access": "RW",
+						"info": "Inject the number of channels to be converted in the channel conversion sequence. 00- 11: 1-4 conversions.",       
+						"reset_value": "0"
+					},
+					{
+						"range": "[19:15]",
+						"name": "JSQ4[4:0]",
+						"access": "RW",
+						"info": "The number of the 4th conversion channel in the injection sequence (0-9). Note : The software writes and assigns the channel number (0-9) as the 4th in the sequence to be converted.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[14:10]",
+						"name": "JSQ3[4:0]",
+						"access": "RW",
+						"info": "The number of the 3rd conversion channel in the injection sequence (0-9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "[9:5]",
+						"name": "JSQ2[4:0]",
+						"access": "RW",
+						"info": "The number of the 2nd conversion channel in the injection sequence (0-9).",
+						"reset_value": "0"
+					},
+					{
+						"range": "[4:0]",
+						"name": "JSQ1[4:0]",
+						"access": "RW",
+						"info": "The number of the 1st conversion channel in the injection sequence (0-9).",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_IDATAR1": {
+				"name": "R32_ADC_IDATAR1",
+				"address": "0x4001243C",
+				"info": "ADC injected data register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_ADC_IDATAR2": {
+				"name": "R32_ADC_IDATAR2",
+				"address": "0x40012440",
+				"info": "ADC injected data register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_ADC_IDATAR3": {
+				"name": "R32_ADC_IDATAR3",
+				"address": "0x40012444",
+				"info": "ADC injected data register 3",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_ADC_IDATAR4": {
+				"name": "R32_ADC_IDATAR4",
+				"address": "0x40012448",
+				"info": "ADC injected data register 4",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_ADC_RDATAR": {
+				"name": "R32_ADC_RDATAR",
+				"address": "0x4001244C",
+				"info": "ADC regular data register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:0]",
+						"name": "DATA[15:0]",
+						"access": "RO",
+						"info": "Rule channel conversion data (data left-aligned or right aligned)",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_ADC_DLYR": {
+				"name": "R32_ADC_DLYR",
+				"address": "0x40012450",
+				"info": "ADC delayed data register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "9",
+						"name": "DLYSRC",
+						"access": "RW",
+						"info": "External trigger source delay selection 1: Injection channel external trigger delay; 0: Rule channel external trigger delay.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[8:0]",
+						"name": "DLYVLU[8:0]",
+						"access": "RW",
+						"info": "External trigger delay data, delay time configuration, unit : ADC clock cycle",
+						"reset_value": "0"
+					}
+				]
+			}
+		}
+	},
+
+	"TIM1": {
+		"info": "TIM1-related registers list",
+		"table": "10-3",
+
+		"registers": {
+			"R16_TIM1_CTLR1": {
+				"name": "R16_TIM1_CTLR1",
+				"address": "0x40012C00",
+				"info": "Control register 1",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "CAPLVL",
+						"access": "RW",
+						"info": "In double-edge capture mode, enables capture level indication. 1: Enable the indication function; 0: Disable. When enabled, bit[16] of CHxCVR indicates the level corresponding to the capture value.",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "CAPOV",
+						"access": "RW",
+						"info": "Capture value mode configuration. 1: CHxCVR is 0xFFFF if counter overflow occurred before capture; 0: capture value reflects the actual counter.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13:10",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "9:8",
+						"name": "CKD[1:0]",
+						"access": "RW",
+						"info": "Division ratio for timer clock (CK_INT), dead-time, and digital filter clock. 00: Tdts=Tck_int; 01: Tdts=2xTck_int; 10: Tdts=4xTck_int; 11: Reserved.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "ARPE",
+						"access": "RW",
+						"info": "Auto-reload preload enable bit. 1: Enable Automatic Reload Value Register (ATRLR); 0: ATRLR disabled.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6:5",
+						"name": "CMS[1:0]",
+						"access": "RW",
+						"info": "Central alignment mode selection. 00: Edge-aligned; 01: Central alignment mode 1; 10: Central alignment mode 2; 11: Central alignment mode 3.",
+						"reset_value": "0"
+					},
+					{
+						"range": "4",
+						"name": "DIR",
+						"access": "RW",
+						"info": "Counting direction. 1: Down-counting; 0: Up-counting. Not valid in central alignment or encoder mode.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "OPM",
+						"access": "RW",
+						"info": "Single pulse mode. 1: Counter stops (clearing CEN) at next update event; 0: counter does not stop.",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "URS",
+						"access": "RW",
+						"info": "Update request source. 1: Only generate interrupt/DMA request on overflow/underflow; 0: Generate on overflow/underflow, UG bit set, or slave mode updates.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1",
+						"name": "UDIS",
+						"access": "RW",
+						"info": "Update disable. 1: UEV disabled, no update event generated, registers hold value; 0: UEV allowed, updates load register cache values.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "CEN",
+						"access": "RW",
+						"info": "Counter enable. 1: Enable counter; 0: Disable counter. Required for external clock, gated, and encoder modes.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM1_CTLR2": {
+				"name": "R16_TIM1_CTLR2",
+				"address": "0x40012C04",
+				"info": "Control register 2",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "OIS4",
+						"access": "RW",
+						"info": "Output idle state 4. 1: If MOE=0 and OC4N is implemented, OC4=1 after dead-time; 0: OC4=0 after dead-time. Cannot be modified after LOCK (TIMx_BDTR) level 1, 2 or 3.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13",
+						"name": "OIS3N",
+						"access": "RW",
+						"info": "Output idle state 3N. 1: If MOE=0, OC3N=1 after dead-time; 0: OC3N=0. Cannot be modified after LOCK set.",
+						"reset_value": "0"
+					},
+					{
+						"range": "12",
+						"name": "OIS3",
+						"access": "RW",
+						"info": "Output idle state 3. Same as OIS4.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11",
+						"name": "OIS2N",
+						"access": "RW",
+						"info": "Output idle state 2N. Same as OIS3N.",
+						"reset_value": "0"
+					},
+					{
+						"range": "10",
+						"name": "OIS2",
+						"access": "RW",
+						"info": "Output idle state 2. Same as OIS4.",
+						"reset_value": "0"
+					},
+					{
+						"range": "9",
+						"name": "OIS1N",
+						"access": "RW",
+						"info": "Output idle state 1N. Same as OIS3N.",
+						"reset_value": "0"
+					},
+					{
+						"range": "8",
+						"name": "OIS1",
+						"access": "RW",
+						"info": "Output idle state 1. Same as OIS4.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "TI1S",
+						"access": "RW",
+						"info": "TI1 input selection. 1: TIMx_CH1, CH2, CH3 pins connected to TI1 after heterodyning; 0: only CH1 connected to TI1.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6:4",
+						"name": "MMS[2:0]",
+						"access": "RW",
+						"info": "Master mode selection for TRGO signal. 000: Use UG bit from TIMx_EGR for TRGO. 001: Counter enable (CNT_EN) as TRGO. 010: Update event as TRGO. 011: Compare pulse on CC1IF for TRGO. 100: OC1REF signal as TRGO. 101: OC2REF as TRGO. 110: OC3REF as TRGO. 111: OC4REF as TRGO.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "CCDS",
+						"access": "RW",
+						"info": "Capture/compare DMA selection. 1: DMA request for CHxCVR on update event; 0: DMA on CHxCVR.",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "CCUS",
+						"access": "RW",
+						"info": "Compare/capture update selection. 1: If CCPC set, can update via COM bit or rising TRGI; 0: Only COM bit. Applies to channels with complementary outputs.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "CCPC",
+						"access": "RW",
+						"info": "Compare capture preload control. 1: CCxE, CCxNE, OCxM bits are preloaded and updated on COM bit set; 0: not preloaded. Applies to channels with complementary outputs.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM1_SMCFGR": {
+				"name": "R16_TIM1_SMCFGR",
+				"address": "0x40012C08",
+				"info": "Slave mode control register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "ETP",
+						"access": "RO",
+						"info": "ETR trigger polarity selection. 1: Invert ETR, low/falling edge active; 0: ETR active high/rising edge.",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "ECE",
+						"access": "RW",
+						"info": "External clock mode 2 enable. 1: Enable external clock mode 2. 0: Disable. Slave mode can be used simultaneously, but TRGI can't be connected to ETRF in this case (TS cannot be '111'). If both external clock modes enabled, the external clock input is ETRF.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13:12",
+						"name": "ETPS[1:0]",
+						"access": "RW",
+						"info": "External trigger prescaler. 00: Off; 01: ETRP÷2; 10: ETRP÷4; 11: ETRP÷8. ETRP frequency cannot exceed 1/4 TIM1CLK max.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11:8",
+						"name": "ETF[3:0]",
+						"access": "RW",
+						"info": "External trigger digital filter config: 0001: Fsampling=Fck_int, N=2; 0010: Fck_int, N=4; 0011: Fck_int, N=8; 0100: Fdts/2, N=6; 0101: Fdts/2, N=8; 0110: Fdts/4, N=6; 0111: Fdts/4, N=8; 1000: Fdts/8, N=6; 1001: Fdts/8, N=8; 1010: Fdts/16, N=5; 1011: Fdts/16, N=6; 1100: Fdts/16, N=8; 1101: Fdts/32, N=5; 1110: Fdts/32, N=6; 1111: Fdts/32, N=8.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "MSM",
+						"access": "RW",
+						"info": "Master/slave mode selection. 1: Event on TRGI is delayed for synchronization. 0: Disabled.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6:4",
+						"name": "TS[2:0]",
+						"access": "RW",
+						"info": "Trigger selection. 000: ITR0; 001: ITR1; 010: ITR2; 011: ITR3; 100: TI1F_ED; 101: TI1FP1; 110: TI2FP2; 111: ETRF. Only changes when SMS=0.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "2:0",
+						"name": "SMS[2:0]",
+						"access": "RW",
+						"info": "Slave mode selection. 000: Internal clock; 001: Encoder mode 1; 010: Encoder mode 2; 011: Encoder mode 3; 100: Reset mode; 101: Gated mode; 110: Trigger mode; 111: External clock mode 1.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM1_DMAINTENR": {
+				"name": "R16_TIM1_DMAINTENR",
+				"address": "0x40012C0C",
+				"info": "DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "TDE",
+						"access": "RW",
+						"info": "Trigger DMA request enable bit. 1: Enable trigger DMA request; 0: Disable trigger DMA request.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13",
+						"name": "COMDE",
+						"access": "RW",
+						"info": "COM's DMA request enable bit. 1: Enable COM DMA request; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "12",
+						"name": "CC4DE",
+						"access": "RW",
+						"info": "DMA request enable bit for compare/capture channel 4. 1: Enable; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11",
+						"name": "CC3DE",
+						"access": "RW",
+						"info": "DMA request enable bit for compare/capture channel 3. 1: Enable; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "10",
+						"name": "CC2DE",
+						"access": "RW",
+						"info": "DMA request enable bit for compare/capture channel 2. 1: Enable; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "9",
+						"name": "CC1DE",
+						"access": "RW",
+						"info": "DMA request enable bit for compare/capture channel 1. 1: Enable; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "8",
+						"name": "UDE",
+						"access": "RW",
+						"info": "Update DMA request enable bit. 1: Enable updated DMA request; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "BIE",
+						"access": "RW",
+						"info": "Brake interrupt enable bit. 1: Enable brake interrupt; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6",
+						"name": "TIE",
+						"access": "RW",
+						"info": "Trigger interrupt enable bit. 1: Enable trigger interrupt; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "5",
+						"name": "COMIE",
+						"access": "RW",
+						"info": "COM interrupt enable bit. 1: Enable COM interrupt; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "4",
+						"name": "CC4IE",
+						"access": "RW",
+						"info": "Compare/capture channel 4 interrupt enable bit. 1: Enable; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "CC3IE",
+						"access": "RW",
+						"info": "Compare/capture channel 3 interrupt enable bit. 1: Enable; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "CC2IE",
+						"access": "RW",
+						"info": "Compare/capture channel 2 interrupt enable bit. 1: Enable; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1",
+						"name": "CC1IE",
+						"access": "RW",
+						"info": "Compare/capture channel 1 interrupt enable bit. 1: Enable; 0: Disable.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "UIE",
+						"access": "RW",
+						"info": "Update interrupt enable bit. 1: Enable updated interrupt; 0: Disable.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM1_INTFR": {
+				"name": "R16_TIM1_INTFR",
+				"address": "0x40012C10",
+				"info": "Interrupt status register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15:13",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "12",
+						"name": "CC4OF",
+						"access": "RW0",
+						"info": "Compare/capture channel 4 overcapture flag. Set by hardware on overcapture (input capture mode). Cleared by software write 0.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11",
+						"name": "CC3OF",
+						"access": "RW0",
+						"info": "Compare/capture channel 3 overcapture flag. Set by hardware on overcapture (input capture mode). Cleared by software write 0.",
+						"reset_value": "0"
+					},
+					{
+						"range": "10",
+						"name": "CC2OF",
+						"access": "RW0",
+						"info": "Compare/capture channel 2 overcapture flag. Set by hardware on overcapture (input capture mode). Cleared by software write 0.",
+						"reset_value": "0"
+					},
+					{
+						"range": "9",
+						"name": "CC1OF",
+						"access": "RW0",
+						"info": "Compare/capture channel 1 overcapture flag. Set by hardware on overcapture (input capture mode). Cleared by software write 0. 1: Counter value captured when CC1IF set. 0: No duplicate capture.",
+						"reset_value": "0"
+					},
+					{
+						"range": "8",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "BIF",
+						"access": "RW0",
+						"info": "Brake interrupt flag. Set by hardware on valid brake input. Cleared by software.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6",
+						"name": "TIF",
+						"access": "RW0",
+						"info": "Trigger interrupt flag. Set by hardware on trigger event; cleared by software.",
+						"reset_value": "0"
+					},
+					{
+						"range": "5",
+						"name": "COMIF",
+						"access": "RW0",
+						"info": "COM event interrupt flag. Set by hardware on COM event; cleared by software.",
+						"reset_value": "0"
+					},
+					{
+						"range": "4",
+						"name": "CC4IF",
+						"access": "RW0",
+						"info": "Compare/capture channel 4 interrupt flag. Set by hardware; cleared by software.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "CC3IF",
+						"access": "RW0",
+						"info": "Compare/capture channel 3 interrupt flag. Set by hardware; cleared by software.",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "CC2IF",
+						"access": "RW0",
+						"info": "Compare/capture channel 2 interrupt flag. Set by hardware; cleared by software.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1",
+						"name": "CC1IF",
+						"access": "RW0",
+						"info": "Compare/capture channel 1 interrupt flag (output mode: set when counter matches compare value except center-aligned; input mode: set on input capture). Cleared by software.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "UIF",
+						"access": "RW0",
+						"info": "Update interrupt flag. Set by hardware when update event generated; cleared by software. 1: Update interrupt generation; 0: No update event.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM1_SWEVGR": {
+				"name": "R16_TIM1_SWEVGR",
+				"address": "0x40012C14",
+				"info": "Event generation register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15:8",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "BG",
+						"access": "WO",
+						"info": "Brake event generation bit. Set/cleared by software to generate a brake event. 1: Generate brake event (MOE=0, BIF=1, and corresponding interrupt/DMA generated if enabled); 0: No action.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6",
+						"name": "TG",
+						"access": "WO",
+						"info": "Trigger event generation bit. Set by software, cleared by hardware. 1: Generate trigger event; 0: No action.",
+						"reset_value": "0"
+					},
+					{
+						"range": "5",
+						"name": "COMG",
+						"access": "WO",
+						"info": "Compare capture control update generation bit. Set by software, cleared by hardware. 1: If CCPC=1, allows updating CCxE, CCxNE, OCxM bits; 0: No action. Valid only for channels with complementary outputs (channels 1–3).",
+						"reset_value": "0"
+					},
+					{
+						"range": "4",
+						"name": "CC4G",
+						"access": "WO",
+						"info": "Compare capture event generation bit 4. Set by software to generate compare capture event 4.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "CC3G",
+						"access": "WO",
+						"info": "Compare capture event generation bit 3. Set by software to generate compare capture event 3.",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "CC2G",
+						"access": "WO",
+						"info": "Compare capture event generation bit 2. Set by software to generate compare capture event 2.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1",
+						"name": "CC1G",
+						"access": "WO",
+						"info": "Compare capture event generation bit 1. Set by software to generate compare capture event 1. If output mode: Set CC1IF and generate interrupts/DMAs if enabled. If input mode: Counter value captured to compare capture register 1; CC1IF set; interrupts/DMAs if enabled; if CC1IF was already set, also set CC1OF. 0: No action.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "UG",
+						"access": "WO",
+						"info": "Update event generation bit. Set by software, cleared by hardware. 1: Initialize counter and generate update event (prescaler counter cleared, core counter cleared in edge/center mode, reload value in decremental mode); 0: No action.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM1_CHCTLR1": {
+				"name": "R16_TIM1_CHCTLR1",
+				"address": "0x40012C18",
+				"info": "Compare/capture control register 1",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "OC2CE",
+						"access": "RW",
+						"info": "Compare capture channel 2 clear enable bit. 1: Clear OC2REF bit zero once ETRF input is detected high; 0: OC2REF not affected by ETRF input.",
+						"reset_value": "0"
+					},
+					{
+						"range": "14:12",
+						"name": "OC2M[2:0]",
+						"access": "RW",
+						"info": "Compare capture channel 2 mode field. 000: Freeze. 001: Force set. 010: Force clear. 011: Toggle. 100: Forced clear. 101: Forced set. 110: PWM Mode 1. 111: PWM Mode 2. Defines OC2REF signal action at channel 2 output.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11",
+						"name": "OC2PE",
+						"access": "RW",
+						"info": "Compare capture register 2 preload enable. 1: Preload enabled, register loaded at update; 0: Register writable any time. Not mutable if LOCK=3 and CC2S=00; PWM only in OPM=1 without enabling preload.",
+						"reset_value": "0"
+					},
+					{
+						"range": "10",
+						"name": "OC2FE",
+						"access": "RW",
+						"info": "Compare capture channel 2 fast enable. 1: Reduced latency to 3 cycles for compare output on trigger, only in PWM1/PWM2; 0: Default latency (5 cycles).",
+						"reset_value": "0"
+					},
+					{
+						"range": "9:8",
+						"name": "CC2S[1:0]",
+						"access": "RW",
+						"info": "Channel 2 input selection. 00: Output; 01: Input (IC2 mapped to TI2); 10: Input (IC2 mapped to TI1); 11: Input (IC2 mapped to TRC; only with TS select).",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "OC1CE",
+						"access": "RW",
+						"info": "Compare capture channel 1 clear enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6:4",
+						"name": "OC1M[2:0]",
+						"access": "RW",
+						"info": "Compare capture channel 1 mode field. Same options as OC2M[2:0]: 000: Freeze; 001: Force set; 010: Force clear; 011: Toggle; 100: Forced clear; 101: Forced set; 110: PWM1; 111: PWM2.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "OC1PE",
+						"access": "RW",
+						"info": "Compare capture register 1 preload enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "OC1FE",
+						"access": "RW",
+						"info": "Compare capture channel 1 fast enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1:0",
+						"name": "CC1S[1:0]",
+						"access": "RW",
+						"info": "Compare capture channel 1 input selection.",
+						"reset_value": "0"
+					}
+				],
+
+				"bits_fields2": [
+					{
+						"range": "15:12",
+						"name": "IC2F[3:0]",
+						"access": "RW",
+						"info": "Input capture filter for channel 2. Sets the sampling frequency and filter length: 0000: no filter, sampled at fDTS; 0001: Fck_int, N=2; 0010: Fck_int, N=4; 0011: Fck_int, N=8; 0100: Fdts/2, N=6; 0101: Fdts/2, N=8; 0110: Fdts/4, N=6; 0111: Fdts/4, N=8; 1000: Fdts/8, N=6; 1001: Fdts/8, N=8; 1010: Fdts/16, N=5; 1011: Fdts/16, N=6; 1100: Fdts/16, N=8; 1101: Fdts/32, N=5; 1110: Fdts/32, N=6; 1111: Fdts/32, N=8.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11:10",
+						"name": "IC2PSC[1:0]",
+						"access": "RW",
+						"info": "Compare capture channel 2 prescaler. 00: no prescaler (capture every edge); 01: capture every 2 events; 10: every 4 events; 11: every 8 events. Reset when CC2E=0.",
+						"reset_value": "0"
+					},
+					{
+						"range": "9:8",
+						"name": "CC2S[1:0]",
+						"access": "RW",
+						"info": "Compare/capture channel 2 input selection. 00: output; 01: input, IC2 on TI2; 10: input, IC2 on TI1; 11: input, IC2 on TRC (works only with TS input selected). Writable only when CC2E=0.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7:4",
+						"name": "IC1F[3:0]",
+						"access": "RW",
+						"info": "Input capture filter for channel 1. Codes same as IC2F[3:0].",
+						"reset_value": "0"
+					},
+					{
+						"range": "3:2",
+						"name": "IC1PSC[1:0]",
+						"access": "RW",
+						"info": "Compare capture channel 1 prescaler. 00: no prescaler; 01: capture every 2 events; 10: every 4 events; 11: every 8 events.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1:0",
+						"name": "CC1S[1:0]",
+						"access": "RW",
+						"info": "Compare capture channel 1 input selection fields (same encoding as for CC2S[1:0]).",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R16_TIM1_CHCTLR2": {
+				"name": "R16_TIM1_CHCTLR2",
+				"address": "0x40012C1C",
+				"info": "Compare/capture control register 2",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15",
+						"name": "OC4CE",
+						"access": "RW",
+						"info": "Compare capture channel 4 clear enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "14:12",
+						"name": "OC4M[2:0]",
+						"access": "RW",
+						"info": "Compare capture channel 4 mode setting field. 000: Freeze; 001: Force set; 010: Force clear; 011: Toggle; 100: Force inactive; 101: Force active; 110: PWM1; 111: PWM2.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11",
+						"name": "OC4PE",
+						"access": "RW",
+						"info": "Compare Capture Register 4 preload enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "10",
+						"name": "OC4FE",
+						"access": "RW",
+						"info": "Compare capture channel 4 fast enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "9:8",
+						"name": "CC4S[1:0]",
+						"access": "RW",
+						"info": "Compare capture channel 4 input selection fields.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "OC3CE",
+						"access": "RW",
+						"info": "Compare capture channel 3 clear enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6:4",
+						"name": "OC3M[2:0]",
+						"access": "RW",
+						"info": "Compare capture channel 3 mode setting field. 000: Freeze; 001: Force set; 010: Force clear; 011: Toggle; 100: Force inactive; 101: Force active; 110: PWM1; 111: PWM2.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "OC3PE",
+						"access": "RW",
+						"info": "Compare Capture Register 3 preload enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "OC3FE",
+						"access": "RW",
+						"info": "Compare capture channel 3 fast enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1:0",
+						"name": "CC3S[1:0]",
+						"access": "RW",
+						"info": "Compare capture channel 3 input selection fields.",
+						"reset_value": "0"
+					}
+					]
+			},
+			"R16_TIM1_CCER": {
+				"name": "R16_TIM1_CCER",
+				"address": "0x40012C20",
+				"info": "Compare/capture enable register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "15:14",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "13",
+						"name": "CC4P",
+						"access": "RW",
+						"info": "Compare/capture channel 4 output polarity. 1: OC4 active low; 0: OC4 active high. With input: 1 = inverted trigger/capture; 0 = non-inverted.",
+						"reset_value": "0"
+					},
+					{
+						"range": "12",
+						"name": "CC4E",
+						"access": "RW",
+						"info": "Compare/capture channel 4 output enable bit. 1: OC4 enabled/capture enabled; 0: output/capture disabled.",
+						"reset_value": "0"
+					},
+					{
+						"range": "11",
+						"name": "CC3NP",
+						"access": "RW",
+						"info": "Compare/capture channel 3 complementary output polarity bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "10",
+						"name": "CC3NE",
+						"access": "RW",
+						"info": "Compare/capture channel 3 complementary output enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "9",
+						"name": "CC3P",
+						"access": "RW",
+						"info": "Compare/capture channel 3 output polarity. 1: OC3 active low; 0: OC3 active high. With input: 1 = inverted trigger/capture; 0 = non-inverted.",
+						"reset_value": "0"
+					},
+					{
+						"range": "8",
+						"name": "CC3E",
+						"access": "RW",
+						"info": "Compare/capture channel 3 output enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "CC2NP",
+						"access": "RW",
+						"info": "Compare/capture channel 2 complementary output polarity bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "6",
+						"name": "CC2NE",
+						"access": "RW",
+						"info": "Compare/capture channel 2 complementary output enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "5",
+						"name": "CC2P",
+						"access": "RW",
+						"info": "Compare/capture channel 2 output polarity. 1: OC2 active low; 0: OC2 active high. With input: 1 = inverted trigger/capture; 0 = non-inverted.",
+						"reset_value": "0"
+					},
+					{
+						"range": "4",
+						"name": "CC2E",
+						"access": "RW",
+						"info": "Compare/capture channel 2 output enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "3",
+						"name": "CC1NP",
+						"access": "RW",
+						"info": "Compare/capture channel 1 complementary output polarity bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "2",
+						"name": "CC1NE",
+						"access": "RW",
+						"info": "Compare/capture channel 1 complementary output enable bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "1",
+						"name": "CC1P",
+						"access": "RW",
+						"info": "Compare/capture channel 1 output polarity. Output: 1=active low, 0=active high. Input: 1=inverted/falling, 0=non-inverted/rising.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "CC1E",
+						"access": "RW",
+						"info": "Compare/capture channel 1 output or capture enable bit. Output: 1=OC1 enabled, 0=disabled. Input: 1=capture enabled, 0=disabled.",
+						"reset_value": "0"
+					}
+					]
+			},
+			"R16_TIM1_CNT": {
+				"name": "R16_TIM1_CNT",
+				"address": "0x40012C24",
+				"info": "Counters",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:0]",
+						"name": "CNT[15:0]",
+						"access": "RW",
+						"info": "The real-time value of the timer's counter.",
+						"reset_value": "0"
+					}
+				]
+			}
+		}
 	}
 }

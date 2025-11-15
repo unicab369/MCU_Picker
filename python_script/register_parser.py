@@ -2,7 +2,6 @@ import os
 import re
 import json
 
-
 def process_string(input_text):
 	def replace_optionNewLine(match):
 		cleaned = match.group().lstrip()
@@ -112,7 +111,7 @@ def parse_data(input_text, headers, long_str_columns=None, relative_path='', arr
 
 	# Print the JSON string
 	print(f"JSON Output: {json_string}")
-
+	
 	# Get current working directory
 	target_path = relative_path if relative_path else '/python_script/register_parser.json'
 	file_path = os.getcwd() + target_path
