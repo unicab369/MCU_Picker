@@ -4,15 +4,16 @@ import re
 def main():
 	# Input data
 	input_data = """
-R32_FLASH_ACTLR 0x40022000 Access control register 0x00000030 
-R32_FLASH_KEYR 0x40022004 FPEC key register X 
-R32_FLASH_OBKEYR 0x40022008 OBKEY register X 
-R32_FLASH_STATR 0x4002200C Status register 0x00000000 
-R32_FLASH_CTLR 0x40022010 Configuration register 0x00000080 
-R32_FLASH_ADDR 0x40022014 Address register X 
-R32_FLASH_OBR 0x4002201C Selection word register 0x03FFFFFC 
-R32_FLASH_WPR 0x40022020 Write protection register 0xFFFFFFF 
-R32_FLASH_MODEKEYR 0x40022024 Extension key register X
+R16_SPI3_CTLR1 0x40003C00 SPI3 control register1 0x0000 
+R16_SPI3_CTLR2 0x40003C04 SPI3 control register2 0x0000 
+R16_SPI3_STATR 0x40003C08 SPI3 status register 0x0002 
+R16_SPI3_DATAR 0x40003C0C SPI3 data register 0x0000 
+R16_SPI3_CRCR 0x40003C10 SPI3 polynomial register 0x0007 
+R16_SPI3_RCRCR 0x40003C14 SPI3 receive CRC register 0x0000 
+R16_SPI3_TCRCR 0x40003C18 SPI3 transmit CRC register 0x0000 
+R16_SPI3_I2S_CFGR 0x40003C1C SPI3 I2S configuration register 0x00 
+R16_SPI3_I2SPR 0x40003C20 SPI3 I2S prescaler register 0x00 
+R16_SPI3_HSCR 0x40003C24 SPI3 high-speed control register 0x00 
 	"""
 
 

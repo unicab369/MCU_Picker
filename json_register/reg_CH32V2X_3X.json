@@ -1,0 +1,4482 @@
+{
+	"PWR": {
+		"info": "Power related registers",
+		"table": "2-2",
+		
+		"registers": {
+			"R32_PWR_CTLR": {
+				"name": "R32_PWR_CTLR",
+				"address": "0x40007000",
+				"info": "Power control register",
+				"reset_value": "0x00000000"
+			},
+			"R32_PWR_CSR": {
+				"name": "R32_PWR_CSR",
+				"address": "0x40007004",
+				"info": "Power control/status register",
+				"reset_value": "0x00000000"
+			}
+		}
+	},
+
+	"RCC": {
+		"info": "Reset and Clock Control",
+		"table": "3-1",
+		
+		"registers": {
+			"R32_RCC_CTLR": {
+				"name": "R32_RCC_CTLR",
+				"address": "0x40021000",
+				"info": "Clock control register",
+				"reset_value": "0x0000xx83"
+			},
+			"R32_RCC_CFGR0": {
+				"name": "R32_RCC_CFGR0",
+				"address": "0x40021004",
+				"info": "Clock configuration register 0",
+				"reset_value": "0x00000000"
+			},
+			"R32_RCC_INTR": {
+				"name": "R32_RCC_INTR",
+				"address": "0x40021008",
+				"info": "Clock interrupt register",
+				"reset_value": "0x00000000"
+			},
+			"R32_RCC_APB2PRSTR": {
+				"name": "R32_RCC_APB2PRSTR",
+				"address": "0x4002100C",
+				"info": "PB2 peripheral reset register",
+				"reset_value": "0x00000000"
+			},
+			"R32_RCC_APB1PRSTR": {
+				"name": "R32_RCC_APB1PRSTR",
+				"address": "0x40021010",
+				"info": "PB1 peripheral reset register",
+				"reset_value": "0x00000000"
+			},
+			"R32_RCC_AHBPCENR": {
+				"name": "R32_RCC_AHBPCENR",
+				"address": "0x40021014",
+				"info": "HB peripheral clock enable register",
+				"reset_value": "0x00000014"
+			},
+			"R32_RCC_APB2PCENR": {
+				"name": "R32_RCC_APB2PCENR",
+				"address": "0x40021018",
+				"info": "PB2 peripheral clock enable register",
+				"reset_value": "0x00000000"
+			},
+			"R32_RCC_APB1PCENR": {
+				"name": "R32_RCC_APB1PCENR",
+				"address": "0x4002101C",
+				"info": "PB1 peripheral clock enable register",
+				"reset_value": "0x00000000"
+			},
+			"R32_RCC_BDCTLR": {
+				"name": "R32_RCC_BDCTLR",
+				"address": "0x40021020",
+				"info": "Backup domain control register",
+				"reset_value": "0x00000000"
+			},
+			"R32_RCC_RSTSCKR": {
+				"name": "R32_RCC_RSTSCKR",
+				"address": "0x40021024",
+				"info": "Control/status register",
+				"reset_value": "0x0C000000"
+			},
+			"R32_RCC_AHBRSTR": {
+				"name": "R32_RCC_AHBRSTR",
+				"address": "0x40021028",
+				"info": "HB peripheral reset register",
+				"reset_value": "0x00000000"
+			},
+			"R32_RCC_CFGR2": {
+				"name": "R32_RCC_CFGR2",
+				"address": "0x4002102C",
+				"info": "Clock configuration register 2",
+				"reset_value": "0x00000000"
+			}
+		}
+	},
+
+	"OSC": {
+		"info": "OSC-related registers list",
+		"table": "3-2",
+		
+		"registers": {
+			"R32_HSE_CAL_CTRL": {
+				"name": "R32_HSE_CAL_CTRL",
+				"address": "0x4002202C",
+				"info": "HSE crystal oscillator calibration control register",
+				"reset_value": "0x09000000"
+			},
+			"R16_LSI32K_TUNE": {
+				"name": "R16_LSI32K_TUNE",
+				"address": "0x40022036",
+				"info": "LSI crystal oscillator calibration tune register",
+				"reset_value": "0x1011"
+			},
+			"R8_LSI32K_CAL_CFG": {
+				"name": "R8_LSI32K_CAL_CFG",
+				"address": "0x40022049",
+				"info": "LSI crystal oscillator calibration configuration register",
+				"reset_value": "0x01"
+			},
+			"R16_LSI32K_CAL_STATR": {
+				"name": "R16_LSI32K_CAL_STATR",
+				"address": "0x4002204C",
+				"info": "LSI crystal oscillator calibration status register",
+				"reset_value": "0x0000"
+			},
+			"R8_LSI32K_CAL_OV_CNT": {
+				"name": "R8_LSI32K_CAL_OV_CNT",
+				"address": "0x4002204E",
+				"info": "LSI crystal oscillator calibration counter",
+				"reset_value": "0x00"
+			},
+			"R8_LSI32K_CAL_CTRL": {
+				"name": "R8_LSI32K_CAL_CTRL",
+				"address": "0x4002204F",
+				"info": "LSI crystal oscillator calibration control register",
+				"reset_value": "0x80"
+			}
+		}
+	},
+
+	"BKP": {
+		"info": "BKP-related registers list",
+		"table": "4-1",
+		
+		"registers": {
+			"R16_BKP_DATAR1": {
+				"name": "R16_BKP_DATAR1",
+				"address": "0x40006C04",
+				"info": "Backup data register 1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR2": {
+				"name": "R16_BKP_DATAR2",
+				"address": "0x40006C08",
+				"info": "Backup data register 2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR3": {
+				"name": "R16_BKP_DATAR3",
+				"address": "0x40006C0C",
+				"info": "Backup data register 3",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR4": {
+				"name": "R16_BKP_DATAR4",
+				"address": "0x40006C10",
+				"info": "Backup data register 4",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR5": {
+				"name": "R16_BKP_DATAR5",
+				"address": "0x40006C14",
+				"info": "Backup data register 5",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR6": {
+				"name": "R16_BKP_DATAR6",
+				"address": "0x40006C18",
+				"info": "Backup data register 6",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR7": {
+				"name": "R16_BKP_DATAR7",
+				"address": "0x40006C1C",
+				"info": "Backup data register 7",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR8": {
+				"name": "R16_BKP_DATAR8",
+				"address": "0x40006C20",
+				"info": "Backup data register 8",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR9": {
+				"name": "R16_BKP_DATAR9",
+				"address": "0x40006C24",
+				"info": "Backup data register 9",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR10": {
+				"name": "R16_BKP_DATAR10",
+				"address": "0x40006C28",
+				"info": "Backup data register 10",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_OCTLR": {
+				"name": "R16_BKP_OCTLR",
+				"address": "0x40006C2C",
+				"info": "RTC calibration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_TPCTLR": {
+				"name": "R16_BKP_TPCTLR",
+				"address": "0x40006C30",
+				"info": "Tamper detection control register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_TPCSR": {
+				"name": "R16_BKP_TPCSR",
+				"address": "0x40006C34",
+				"info": "Tamper detection status register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR11": {
+				"name": "R16_BKP_DATAR11",
+				"address": "0x40006C40",
+				"info": "Backup data register 11",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR12": {
+				"name": "R16_BKP_DATAR12",
+				"address": "0x40006C44",
+				"info": "Backup data register 12",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR13": {
+				"name": "R16_BKP_DATAR13",
+				"address": "0x40006C48",
+				"info": "Backup data register 13",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR14": {
+				"name": "R16_BKP_DATAR14",
+				"address": "0x40006C4C",
+				"info": "Backup data register 14",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR15": {
+				"name": "R16_BKP_DATAR15",
+				"address": "0x40006C50",
+				"info": "Backup data register 15",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR16": {
+				"name": "R16_BKP_DATAR16",
+				"address": "0x40006C54",
+				"info": "Backup data register 16",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR17": {
+				"name": "R16_BKP_DATAR17",
+				"address": "0x40006C58",
+				"info": "Backup data register 17",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR18": {
+				"name": "R16_BKP_DATAR18",
+				"address": "0x40006C5C",
+				"info": "Backup data register 18",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR19": {
+				"name": "R16_BKP_DATAR19",
+				"address": "0x40006C60",
+				"info": "Backup data register 19",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR20": {
+				"name": "R16_BKP_DATAR20",
+				"address": "0x40006C64",
+				"info": "Backup data register 20",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR21": {
+				"name": "R16_BKP_DATAR21",
+				"address": "0x40006C68",
+				"info": "Backup data register 21",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR22": {
+				"name": "R16_BKP_DATAR22",
+				"address": "0x40006C6C",
+				"info": "Backup data register 22",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR23": {
+				"name": "R16_BKP_DATAR23",
+				"address": "0x40006C70",
+				"info": "Backup data register 23",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR24": {
+				"name": "R16_BKP_DATAR24",
+				"address": "0x40006C74",
+				"info": "Backup data register 24",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR25": {
+				"name": "R16_BKP_DATAR25",
+				"address": "0x40006C78",
+				"info": "Backup data register 25",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR26": {
+				"name": "R16_BKP_DATAR26",
+				"address": "0x40006C7C",
+				"info": "Backup data register 26",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR27": {
+				"name": "R16_BKP_DATAR27",
+				"address": "0x40006C80",
+				"info": "Backup data register 27",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR28": {
+				"name": "R16_BKP_DATAR28",
+				"address": "0x40006C84",
+				"info": "Backup data register 28",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR29": {
+				"name": "R16_BKP_DATAR29",
+				"address": "0x40006C88",
+				"info": "Backup data register 29",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR30": {
+				"name": "R16_BKP_DATAR30",
+				"address": "0x40006C8C",
+				"info": "Backup data register 30",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR31": {
+				"name": "R16_BKP_DATAR31",
+				"address": "0x40006C90",
+				"info": "Backup data register 31",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR32": {
+				"name": "R16_BKP_DATAR32",
+				"address": "0x40006C94",
+				"info": "Backup data register 32",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR33": {
+				"name": "R16_BKP_DATAR33",
+				"address": "0x40006C98",
+				"info": "Backup data register 33",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR34": {
+				"name": "R16_BKP_DATAR34",
+				"address": "0x40006C9C",
+				"info": "Backup data register 34",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR35": {
+				"name": "R16_BKP_DATAR35",
+				"address": "0x40006CA0",
+				"info": "Backup data register 35",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR36": {
+				"name": "R16_BKP_DATAR36",
+				"address": "0x40006CA4",
+				"info": "Backup data register 36",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR37": {
+				"name": "R16_BKP_DATAR37",
+				"address": "0x40006CA8",
+				"info": "Backup data register 37",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR38": {
+				"name": "R16_BKP_DATAR38",
+				"address": "0x40006CAC",
+				"info": "Backup data register 38",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR39": {
+				"name": "R16_BKP_DATAR39",
+				"address": "0x40006CB0",
+				"info": "Backup data register 39",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR40": {
+				"name": "R16_BKP_DATAR40",
+				"address": "0x40006CB4",
+				"info": "Backup data register 40",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR41": {
+				"name": "R16_BKP_DATAR41",
+				"address": "0x40006CB8",
+				"info": "Backup data register 41",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_BKP_DATAR42": {
+				"name": "R16_BKP_DATAR42",
+				"address": "0x40006CBC",
+				"info": "Backup data register 42",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			}
+		}
+	},
+
+	"CRC": {
+		"info": "CRC-related registers list",
+		"table": "5-1",
+		
+		"registers": {
+			"R32_CRC_DATAR": {
+				"name": "R32_CRC_DATAR",
+				"address": "0x40023000",
+				"info": "Data register",
+				"reset_value": "0xFFFFFFFF",
+				"bits_fields": "[]"
+			},
+			"R8_CRC_IDATAR": {
+				"name": "R8_CRC_IDATAR",
+				"address": "0x40023004",
+				"info": "Independent data register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R32_CRC_CTLR": {
+				"name": "R32_CRC_CTLR",
+				"address": "0x40023008",
+				"info": "Control register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+		}
+	},
+
+	"RTC": {
+		"info": "RTC-related registers list",
+		"table": "6-1",
+		
+		"registers": {
+			"R16_RTC_CTLRH": {
+				"name": "R16_RTC_CTLRH",
+				"address": "0x40002800",
+				"info": "RTC control register high",
+				"reset_value": "0x0000"
+			},
+			"R16_RTC_CTLRL": {
+				"name": "R16_RTC_CTLRL",
+				"address": "0x40002804",
+				"info": "RTC control register low",
+				"reset_value": "0x0020"
+			},
+			"R16_RTC_PSCRH": {
+				"name": "R16_RTC_PSCRH",
+				"address": "0x40002808",
+				"info": "Prescaler reload register high",
+				"reset_value": "0x0000"
+			},
+			"R16_RTC_PSCRL": {
+				"name": "R16_RTC_PSCRL",
+				"address": "0x4000280C",
+				"info": "Prescaler reload register low",
+				"reset_value": "0xXXXX"
+			},
+			"R16_RTC_DIVH": {
+				"name": "R16_RTC_DIVH",
+				"address": "0x40002810",
+				"info": "Divider register high",
+				"reset_value": "0xXXXX"
+			},
+			"R16_RTC_DIVL": {
+				"name": "R16_RTC_DIVL",
+				"address": "0x40002814",
+				"info": "Divider register low",
+				"reset_value": "0xXXXX"
+			},
+			"R16_RTC_CNTH": {
+				"name": "R16_RTC_CNTH",
+				"address": "0x40002818",
+				"info": "RTC counter register high",
+				"reset_value": "0xXXXX"
+			},
+			"R16_RTC_CNTL": {
+				"name": "R16_RTC_CNTL",
+				"address": "0x4000281C",
+				"info": "RTC counter register low",
+				"reset_value": "0xXXXX"
+			},
+			"R16_RTC_ALRMH": {
+				"name": "R16_RTC_ALRMH",
+				"address": "0x40002820",
+				"info": "Alarm clock register high",
+				"reset_value": "0xXXXX"
+			},
+			"R16_RTC_ALRML": {
+				"name": "R16_RTC_ALRML",
+				"address": "0x40002824",
+				"info": "Alarm clock register low",
+				"reset_value": "0xXXXX"
+			}
+		}
+	},
+
+	"IWDG": {
+		"info": "IWDG-related registers list",
+		"table": "7-1",
+		
+		"registers": {
+			"R16_IWDG_CTLR": {
+				"name": "R16_IWDG_CTLR",
+				"address": "0x40003000",
+				"info": "Control register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_IWDG_PSCR": {
+				"name": "R16_IWDG_PSCR",
+				"address": "0x40003004",
+				"info": "Prescaler register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_IWDG_RLDR": {
+				"name": "R16_IWDG_RLDR",
+				"address": "0x40003008",
+				"info": "Reload register",
+				"reset_value": "0x0FFF",
+				"bits_fields": "[]"
+			},
+			"R16_IWDG_STATR": {
+				"name": "R16_IWDG_STATR",
+				"address": "0x4000300C",
+				"info": "Status register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			}
+		}		
+	},
+
+	"WWDG": {
+		"info": "WWDG-related registers list",
+		"table": "8-1",
+
+		"registers": {
+			"R16_WWDG_CTLR": {
+				"name": "R16_WWDG_CTLR",
+				"address": "0x40002C00",
+				"info": "Control register",
+				"reset_value": "0x007F",
+				"bits_fields": "[]"
+			},
+			"R16_WWDG_CFGR": {
+				"name": "R16_WWDG_CFGR",
+				"address": "0x40002C04",
+				"info": "Configuration register",
+				"reset_value": "0x007F",
+				"bits_fields": "[]"
+			},
+			"R16_WWDG_STATR": {
+				"name": "R16_WWDG_STATR",
+				"address": "0x40002C08",
+				"info": "Status register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			}
+		}
+	},
+
+	"EXTI": {
+		"info": "EXTI-related registers list",
+		"table": "9-4",
+
+		"registers": {
+			"R32_EXTI_INTENR": {
+				"name": "R32_EXTI_INTENR",
+				"address": "0x40010400",
+				"info": "Interrupt enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_EXTI_EVENR": {
+				"name": "R32_EXTI_EVENR",
+				"address": "0x40010404",
+				"info": "Event enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_EXTI_RTENR": {
+				"name": "R32_EXTI_RTENR",
+				"address": "0x40010408",
+				"info": "Rising edge trigger enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_EXTI_FTENR": {
+				"name": "R32_EXTI_FTENR",
+				"address": "0x4001040C",
+				"info": "Falling edge trigger enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_EXTI_SWIEVR": {
+				"name": "R32_EXTI_SWIEVR",
+				"address": "0x40010410",
+				"info": "Software interrupt event register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_EXTI_INTFR": {
+				"name": "R32_EXTI_INTFR",
+				"address": "0x40010414",
+				"info": "Interrupt flag register",
+				"reset_value": "0x0000XXXX",
+				"bits_fields": "[]"
+			}
+		}
+	},
+
+	"PFIC": {
+		"info": "List of PFIC-related registers",
+		"table": "9-5",
+
+        "registers": {
+			"R32_PFIC_ISR1": {
+				"name": "R32_PFIC_ISR1",
+				"address": "0xE000E000",
+				"info": "PFIC interrupt enable status register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_ISR2": {
+				"name": "R32_PFIC_ISR2",
+				"address": "0xE000E004",
+				"info": "PFIC interrupt enable status register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_ISR3": {
+				"name": "R32_PFIC_ISR3",
+				"address": "0xE000E008",
+				"info": "PFIC interrupt enable status register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_ISR4": {
+				"name": "R32_PFIC_ISR4",
+				"address": "0xE000E00C",
+				"info": "PFIC interrupt enable status register4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPR1": {
+				"name": "R32_PFIC_IPR1",
+				"address": "0xE000E020",
+				"info": "PFIC interrupt pending status register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPR2": {
+				"name": "R32_PFIC_IPR2",
+				"address": "0xE000E024",
+				"info": "PFIC interrupt pending status register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPR3": {
+				"name": "R32_PFIC_IPR3",
+				"address": "0xE000E028",
+				"info": "PFIC interrupt pending status register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPR4": {
+				"name": "R32_PFIC_IPR4",
+				"address": "0xE000E02C",
+				"info": "PFIC interrupt pending status register4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_ITHRESDR": {
+				"name": "R32_PFIC_ITHRESDR",
+				"address": "0xE000E040",
+				"info": "PFIC interrupt priority threshold configuration register",     
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_CFGR": {
+				"name": "R32_PFIC_CFGR",
+				"address": "0xE000E048",
+				"info": "PFIC interrupt configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_GISR": {
+				"name": "R32_PFIC_GISR",
+				"address": "0xE000E04C",
+				"info": "PFIC interrupt global status register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_VTFIDR": {
+				"name": "R32_PFIC_VTFIDR",
+				"address": "0xE000E050",
+				"info": "PFIC VTF interrupt ID configuration register",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_VTFADDRR0": {
+				"name": "R32_PFIC_VTFADDRR0",
+				"address": "0xE000E060",
+				"info": "PFIC VTF interrupt0 offset address register",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_VTFADDRR1": {
+				"name": "R32_PFIC_VTFADDRR1",
+				"address": "0xE000E064",
+				"info": "PFIC VTF interrupt1 offset address register",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_VTFADDRR2": {
+				"name": "R32_PFIC_VTFADDRR2",
+				"address": "0xE000E068",
+				"info": "PFIC VTF interrupt2 offset address register",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_VTFADDRR3": {
+				"name": "R32_PFIC_VTFADDRR3",
+				"address": "0xE000E06C",
+				"info": "PFIC VTF interrupt3 offset address register",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IENR1": {
+				"name": "R32_PFIC_IENR1",
+				"address": "0xE000E100",
+				"info": "PFIC interrupt enable set register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IENR2": {
+				"name": "R32_PFIC_IENR2",
+				"address": "0xE000E104",
+				"info": "PFIC interrupt enable set register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IENR3": {
+				"name": "R32_PFIC_IENR3",
+				"address": "0xE000E108",
+				"info": "PFIC interrupt enable set register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IENR4": {
+				"name": "R32_PFIC_IENR4",
+				"address": "0xE000E10C",
+				"info": "PFIC interrupt enable set register4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IRER1": {
+				"name": "R32_PFIC_IRER1",
+				"address": "0xE000E180",
+				"info": "PFIC interrupt enable clear register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IRER2": {
+				"name": "R32_PFIC_IRER2",
+				"address": "0xE000E184",
+				"info": "PFIC interrupt enable clear register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IRER3": {
+				"name": "R32_PFIC_IRER3",
+				"address": "0xE000E188",
+				"info": "PFIC interrupt enable clear register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IRER4": {
+				"name": "R32_PFIC_IRER4",
+				"address": "0xE000E18C",
+				"info": "PFIC interrupt enable clear register4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPSR1": {
+				"name": "R32_PFIC_IPSR1",
+				"address": "0xE000E200",
+				"info": "PFIC interrupt pending set register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPSR2": {
+				"name": "R32_PFIC_IPSR2",
+				"address": "0xE000E204",
+				"info": "PFIC interrupt pending set register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPSR3": {
+				"name": "R32_PFIC_IPSR3",
+				"address": "0xE000E208",
+				"info": "PFIC interrupt pending set register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPSR4": {
+				"name": "R32_PFIC_IPSR4",
+				"address": "0xE000E20C",
+				"info": "PFIC interrupt pending set register4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPRR1": {
+				"name": "R32_PFIC_IPRR1",
+				"address": "0xE000E280",
+				"info": "PFIC interrupt pending clear register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPRR2": {
+				"name": "R32_PFIC_IPRR2",
+				"address": "0xE000E284",
+				"info": "PFIC interrupt pending clear register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPRR3": {
+				"name": "R32_PFIC_IPRR3",
+				"address": "0xE000E288",
+				"info": "PFIC interrupt pending clear register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPRR4": {
+				"name": "R32_PFIC_IPRR4",
+				"address": "0xE000E28C",
+				"info": "PFIC interrupt pending clear register4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IACTR1": {
+				"name": "R32_PFIC_IACTR1",
+				"address": "0xE000E300",
+				"info": "PFIC interrupt activation register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IACTR2": {
+				"name": "R32_PFIC_IACTR2",
+				"address": "0xE000E304",
+				"info": "PFIC interrupt activation register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IACTR3": {
+				"name": "R32_PFIC_IACTR3",
+				"address": "0xE000E308",
+				"info": "PFIC interrupt activation register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IACTR4": {
+				"name": "R32_PFIC_IACTR4",
+				"address": "0xE000E30C",
+				"info": "PFIC interrupt activation register4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_IPRIORx": {
+				"name": "R32_PFIC_IPRIORx",
+				"address": "0xE000E400",
+				"info": "PFIC interrupt priority configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_PFIC_SCTLR": {
+				"name": "R32_PFIC_SCTLR",
+				"address": "0xE000ED10",
+				"info": "PFIC system control register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}            
+        }	
+	},
+
+	"GPIO": {
+		"info": "GPIO-related registers list",
+		"table": "10-47",
+
+		"registers": {
+			"R32_GPIOA_CFGLR": {
+				"name": "R32_GPIOA_CFGLR",
+				"address": "0x40010800",
+				"info": "PA port configuration register low",
+				"reset_value": "0x44444444",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOB_CFGLR": {
+				"name": "R32_GPIOB_CFGLR",
+				"address": "0x40010C00",
+				"info": "PB port configuration register low",
+				"reset_value": "0x44444444",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOC_CFGLR": {
+				"name": "R32_GPIOC_CFGLR",
+				"address": "0x40011000",
+				"info": "PC port configuration register low",
+				"reset_value": "0x44444444",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOD_CFGLR": {
+				"name": "R32_GPIOD_CFGLR",
+				"address": "0x40011400",
+				"info": "PD port configuration register low",
+				"reset_value": "0x44444444",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOE_CFGLR": {
+				"name": "R32_GPIOE_CFGLR",
+				"address": "0x40011800",
+				"info": "PE port configuration register low",
+				"reset_value": "0x44444444",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOA_CFGHR": {
+				"name": "R32_GPIOA_CFGHR",
+				"address": "0x40010804",
+				"info": "PA port configuration register high",
+				"reset_value": "0x44444444",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOB_CFGHR": {
+				"name": "R32_GPIOB_CFGHR",
+				"address": "0x40010C04",
+				"info": "PB port configuration register high",
+				"reset_value": "0x44444444",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOC_CFGHR": {
+				"name": "R32_GPIOC_CFGHR",
+				"address": "0x40011004",
+				"info": "PC port configuration register high",
+				"reset_value": "0x44444444",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOD_CFGHR": {
+				"name": "R32_GPIOD_CFGHR",
+				"address": "0x40011404",
+				"info": "PD port configuration register high",
+				"reset_value": "0x44444444",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOE_CFGHR": {
+				"name": "R32_GPIOE_CFGHR",
+				"address": "0x40011804",
+				"info": "PE port configuration register high",
+				"reset_value": "0x44444444",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOA_INDR": {
+				"name": "R32_GPIOA_INDR",
+				"address": "0x40010808",
+				"info": "PA port input data register",
+				"reset_value": "0x0000XXXX",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOB_INDR": {
+				"name": "R32_GPIOB_INDR",
+				"address": "0x40010C08",
+				"info": "PB port input data register",
+				"reset_value": "0x0000XXXX",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOC_INDR": {
+				"name": "R32_GPIOC_INDR",
+				"address": "0x40011008",
+				"info": "PC port input data register",
+				"reset_value": "0x0000XXXX",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOD_INDR": {
+				"name": "R32_GPIOD_INDR",
+				"address": "0x40011408",
+				"info": "PD port input data register",
+				"reset_value": "0x0000XXXX",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOE_INDR": {
+				"name": "R32_GPIOE_INDR",
+				"address": "0x40011808",
+				"info": "PE port input data register",
+				"reset_value": "0x0000XXXX",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOA_OUTDR": {
+				"name": "R32_GPIOA_OUTDR",
+				"address": "0x4001080C",
+				"info": "PA port output data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOB_OUTDR": {
+				"name": "R32_GPIOB_OUTDR",
+				"address": "0x40010C0C",
+				"info": "PB port output data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOC_OUTDR": {
+				"name": "R32_GPIOC_OUTDR",
+				"address": "0x4001100C",
+				"info": "PC port output data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOD_OUTDR": {
+				"name": "R32_GPIOD_OUTDR",
+				"address": "0x4001140C",
+				"info": "PD port output data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOE_OUTDR": {
+				"name": "R32_GPIOE_OUTDR",
+				"address": "0x4001180C",
+				"info": "PE port output data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOA_BSHR": {
+				"name": "R32_GPIOA_BSHR",
+				"address": "0x40010810",
+				"info": "PA port set/reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOB_BSHR": {
+				"name": "R32_GPIOB_BSHR",
+				"address": "0x40010C10",
+				"info": "PB port set/reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOC_BSHR": {
+				"name": "R32_GPIOC_BSHR",
+				"address": "0x40011010",
+				"info": "PC port set/reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOD_BSHR": {
+				"name": "R32_GPIOD_BSHR",
+				"address": "0x40011410",
+				"info": "PD port set/reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOE_BSHR": {
+				"name": "R32_GPIOE_BSHR",
+				"address": "0x40011810",
+				"info": "PE port set/reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOA_BCR": {
+				"name": "R32_GPIOA_BCR",
+				"address": "0x40010814",
+				"info": "PA port reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOB_BCR": {
+				"name": "R32_GPIOB_BCR",
+				"address": "0x40010C14",
+				"info": "PB port reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOC_BCR": {
+				"name": "R32_GPIOC_BCR",
+				"address": "0x40011014",
+				"info": "PC port reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOD_BCR": {
+				"name": "R32_GPIOD_BCR",
+				"address": "0x40011414",
+				"info": "PD port reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOE_BCR": {
+				"name": "R32_GPIOE_BCR",
+				"address": "0x40011814",
+				"info": "PE port reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOA_LCKR": {
+				"name": "R32_GPIOA_LCKR",
+				"address": "0x40010818",
+				"info": "PA port configuration lock register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOB_LCKR": {
+				"name": "R32_GPIOB_LCKR",
+				"address": "0x40010C18",
+				"info": "PB port configuration lock register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOC_LCKR": {
+				"name": "R32_GPIOC_LCKR",
+				"address": "0x40011018",
+				"info": "PC port configuration lock register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOD_LCKR": {
+				"name": "R32_GPIOD_LCKR",
+				"address": "0x40011418",
+				"info": "PD port configuration lock register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_GPIOE_LCKR": {
+				"name": "R32_GPIOE_LCKR",
+				"address": "0x40011818",
+				"info": "PE port configuration lock register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }	
+	},
+
+	"AFIO": {
+		"info": "List of AFIO-related registers",
+		"table": "10-48",
+
+		"registers": {
+			"R32_AFIO_ECR": {
+				"name": "R32_AFIO_ECR",
+				"address": "0x40010000",
+				"info": "Event control register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_AFIO_PCFR1": {
+				"name": "R32_AFIO_PCFR1",
+				"address": "0x40010004",
+				"info": "Remap register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_AFIO_EXTICR1": {
+				"name": "R32_AFIO_EXTICR1",
+				"address": "0x40010008",
+				"info": "External interrupt configuration register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_AFIO_EXTICR2": {
+				"name": "R32_AFIO_EXTICR2",
+				"address": "0x4001000C",
+				"info": "External interrupt configuration register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_AFIO_EXTICR3": {
+				"name": "R32_AFIO_EXTICR3",
+				"address": "0x40010010",
+				"info": "External interrupt configuration register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_AFIO_EXTICR4": {
+				"name": "R32_AFIO_EXTICR4",
+				"address": "0x40010014",
+				"info": "External interrupt configuration register4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_AFIO_PCFR2": {
+				"name": "R32_AFIO_PCFR2",
+				"address": "0x4001001C",
+				"info": "Remap register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"DMA": {
+		"info": "DMA-related registers list",
+		"table": "11-7",
+
+		"registers": {
+			"R32_DMA1_INTFR": {
+				"name": "R32_DMA1_INTFR",
+				"address": "0x40020000",
+				"info": "DMA1 interrupt flag register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_INTFCR": {
+				"name": "R32_DMA1_INTFCR",
+				"address": "0x40020004",
+				"info": "DMA1 interrupt flag clear register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CFGR1": {
+				"name": "R32_DMA1_CFGR1",
+				"address": "0x40020008",
+				"info": "DMA1 channel1 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CNTR1": {
+				"name": "R32_DMA1_CNTR1",
+				"address": "0x4002000C",
+				"info": "DMA1 channel1 transferred data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_PADDR1": {
+				"name": "R32_DMA1_PADDR1",
+				"address": "0x40020010",
+				"info": "DMA1 channel1 peripheral address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_MADDR1": {
+				"name": "R32_DMA1_MADDR1",
+				"address": "0x40020014",
+				"info": "DMA1 channel1 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CFGR2": {
+				"name": "R32_DMA1_CFGR2",
+				"address": "0x4002001C",
+				"info": "DMA1 channel2 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CNTR2": {
+				"name": "R32_DMA1_CNTR2",
+				"address": "0x40020020",
+				"info": "DMA1 channel2 transferred data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_PADDR2": {
+				"name": "R32_DMA1_PADDR2",
+				"address": "0x40020024",
+				"info": "DMA1 channel2 peripheral address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_MADDR2": {
+				"name": "R32_DMA1_MADDR2",
+				"address": "0x40020028",
+				"info": "DMA1 channel2 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CFGR3": {
+				"name": "R32_DMA1_CFGR3",
+				"address": "0x40020030",
+				"info": "DMA1 channel3 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CNTR3": {
+				"name": "R32_DMA1_CNTR3",
+				"address": "0x40020034",
+				"info": "DMA1 channel3 transferred data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_PADDR3": {
+				"name": "R32_DMA1_PADDR3",
+				"address": "0x40020038",
+				"info": "DMA1 channel3 peripheral address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_MADDR3": {
+				"name": "R32_DMA1_MADDR3",
+				"address": "0x4002003C",
+				"info": "DMA1 channel3 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CFGR4": {
+				"name": "R32_DMA1_CFGR4",
+				"address": "0x40020044",
+				"info": "DMA1 channel4 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CNTR4": {
+				"name": "R32_DMA1_CNTR4",
+				"address": "0x40020048",
+				"info": "DMA1 channel4 transferred data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_PADDR4": {
+				"name": "R32_DMA1_PADDR4",
+				"address": "0x4002004C",
+				"info": "DMA1 channel4 peripheral address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_MADDR4": {
+				"name": "R32_DMA1_MADDR4",
+				"address": "0x40020050",
+				"info": "DMA1 channel4 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CFGR5": {
+				"name": "R32_DMA1_CFGR5",
+				"address": "0x40020058",
+				"info": "DMA1 channel5 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CNTR5": {
+				"name": "R32_DMA1_CNTR5",
+				"address": "0x4002005C",
+				"info": "DMA1 channel5 transferred data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_PADDR5": {
+				"name": "R32_DMA1_PADDR5",
+				"address": "0x40020060",
+				"info": "DMA1 channel5 peripheral address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_MADDR5": {
+				"name": "R32_DMA1_MADDR5",
+				"address": "0x40020064",
+				"info": "DMA1 channel5 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CFGR6": {
+				"name": "R32_DMA1_CFGR6",
+				"address": "0x4002006C",
+				"info": "DMA1 channel6 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CNTR6": {
+				"name": "R32_DMA1_CNTR6",
+				"address": "0x40020070",
+				"info": "DMA1 channel6 transferred data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_PADDR6": {
+				"name": "R32_DMA1_PADDR6",
+				"address": "0x40020074",
+				"info": "DMA1 channel6 peripheral address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_MADDR6": {
+				"name": "R32_DMA1_MADDR6",
+				"address": "0x40020078",
+				"info": "DMA1 channel6 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CFGR7": {
+				"name": "R32_DMA1_CFGR7",
+				"address": "0x40020080",
+				"info": "DMA1 channel7 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CNTR7": {
+				"name": "R32_DMA1_CNTR7",
+				"address": "0x40020084",
+				"info": "DMA1 channel7 transferred data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_PADDR7": {
+				"name": "R32_DMA1_PADDR7",
+				"address": "0x40020088",
+				"info": "DMA1 channel7 peripheral address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_MADDR7": {
+				"name": "R32_DMA1_MADDR7",
+				"address": "0x4002008C",
+				"info": "DMA1 channel7 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CFGR8": {
+				"name": "R32_DMA1_CFGR8",
+				"address": "0x40020094",
+				"info": "DMA1 channel8 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_CNTR8": {
+				"name": "R32_DMA1_CNTR8",
+				"address": "0x40020098",
+				"info": "DMA1 channel8 transferred data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_PADDR8": {
+				"name": "R32_DMA1_PADDR8",
+				"address": "0x4002009C",
+				"info": "DMA1 channel8 peripheral address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_DMA1_MADDR8": {
+				"name": "R32_DMA1_MADDR8",
+				"address": "0x400200A0",
+				"info": "DMA1 channel8 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"DMA2": {
+		"info": "DMA2-related registers list",
+		"table": "11-8",
+
+		"registers": {
+			"R32_DMA2_INTFR": {
+				"name": "R32_DMA2_INTFR",
+				"address": "0x40020400",
+				"info": "DMA2 interrupt flag register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_INTFCR": {
+				"name": "R32_DMA2_INTFCR",
+				"address": "0x40020404",
+				"info": "DMA2 interrupt flag clear register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CFGR1": {
+				"name": "R32_DMA2_CFGR1",
+				"address": "0x40020408",
+				"info": "DMA2 channel1 configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CNTR1": {
+				"name": "R32_DMA2_CNTR1",
+				"address": "0x4002040C",
+				"info": "DMA2 channel1 transferred data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_PADDR1": {
+				"name": "R32_DMA2_PADDR1",
+				"address": "0x40020410",
+				"info": "DMA2 channel1 peripheral address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_MADDR1": {
+				"name": "R32_DMA2_MADDR1",
+				"address": "0x40020414",
+				"info": "DMA2 channel1 memory address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CFGR2": {
+				"name": "R32_DMA2_CFGR2",
+				"address": "0x4002041C",
+				"info": "DMA2 channel2 configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CNTR2": {
+				"name": "R32_DMA2_CNTR2",
+				"address": "0x40020420",
+				"info": "DMA2 channel2 transferred data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_PADDR2": {
+				"name": "R32_DMA2_PADDR2",
+				"address": "0x40020424",
+				"info": "DMA2 channel2 peripheral address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_MADDR2": {
+				"name": "R32_DMA2_MADDR2",
+				"address": "0x40020428",
+				"info": "DMA2 channel2 memory address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CFGR3": {
+				"name": "R32_DMA2_CFGR3",
+				"address": "0x40020430",
+				"info": "DMA2 channel3 configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CNTR3": {
+				"name": "R32_DMA2_CNTR3",
+				"address": "0x40020434",
+				"info": "DMA2 channel3 transferred data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_PADDR3": {
+				"name": "R32_DMA2_PADDR3",
+				"address": "0x40020438",
+				"info": "DMA2 channel3 peripheral address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_MADDR3": {
+				"name": "R32_DMA2_MADDR3",
+				"address": "0x4002043C",
+				"info": "DMA2 channel3 memory address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CFGR4": {
+				"name": "R32_DMA2_CFGR4",
+				"address": "0x40020444",
+				"info": "DMA2 channel4 configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CNTR4": {
+				"name": "R32_DMA2_CNTR4",
+				"address": "0x40020448",
+				"info": "DMA2 channel4 transferred data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_PADDR4": {
+				"name": "R32_DMA2_PADDR4",
+				"address": "0x4002044C",
+				"info": "DMA2 channel4 peripheral address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_MADDR4": {
+				"name": "R32_DMA2_MADDR4",
+				"address": "0x40020450",
+				"info": "DMA2 channel4 memory address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CFGR5": {
+				"name": "R32_DMA2_CFGR5",
+				"address": "0x40020458",
+				"info": "DMA2 channel5 configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CNTR5": {
+				"name": "R32_DMA2_CNTR5",
+				"address": "0x4002045C",
+				"info": "DMA2 channel5 transferred data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_PADDR5": {
+				"name": "R32_DMA2_PADDR5",
+				"address": "0x40020460",
+				"info": "DMA2 channel5 peripheral address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_MADDR5": {
+				"name": "R32_DMA2_MADDR5",
+				"address": "0x40020464",
+				"info": "DMA2 channel5 memory address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CFGR6": {
+				"name": "R32_DMA2_CFGR6",
+				"address": "0x4002046C",
+				"info": "DMA2 channel6 configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CNTR6": {
+				"name": "R32_DMA2_CNTR6",
+				"address": "0x40020470",
+				"info": "DMA2 channel6 transferred data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_PADDR6": {
+				"name": "R32_DMA2_PADDR6",
+				"address": "0x40020474",
+				"info": "DMA2 channel6 peripheral address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_MADDR6": {
+				"name": "R32_DMA2_MADDR6",
+				"address": "0x40020478",
+				"info": "DMA2 channel6 memory address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CFGR7": {
+				"name": "R32_DMA2_CFGR7",
+				"address": "0x40020480",
+				"info": "DMA2 channel7 configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CNTR7": {
+				"name": "R32_DMA2_CNTR7",
+				"address": "0x40020484",
+				"info": "DMA2 channel7 transferred data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_PADDR7": {
+				"name": "R32_DMA2_PADDR7",
+				"address": "0x40020488",
+				"info": "DMA2 channel7 peripheral address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_MADDR7": {
+				"name": "R32_DMA2_MADDR7",
+				"address": "0x4002048C",
+				"info": "DMA2 channel7 memory address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CFGR8": {
+				"name": "R32_DMA2_CFGR8",
+				"address": "0x40020490",
+				"info": "DMA2 channel8 configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CNTR8": {
+				"name": "R32_DMA2_CNTR8",
+				"address": "0x40020494",
+				"info": "DMA2 channel8 transferred data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_PADDR8": {
+				"name": "R32_DMA2_PADDR8",
+				"address": "0x40020498",
+				"info": "DMA2 channel8 peripheral address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_MADDR8": {
+				"name": "R32_DMA2_MADDR8",
+				"address": "0x4002049C",
+				"info": "DMA2 channel8 memory address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CFGR9": {
+				"name": "R32_DMA2_CFGR9",
+				"address": "0x400204A0",
+				"info": "DMA2 channel9 configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CNTR9": {
+				"name": "R32_DMA2_CNTR9",
+				"address": "0x400204A4",
+				"info": "DMA2 channel9 transferred data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_PADDR9": {
+				"name": "R32_DMA2_PADDR9",
+				"address": "0x400204A8",
+				"info": "DMA2 channel9 peripheral address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_MADDR9": {
+				"name": "R32_DMA2_MADDR9",
+				"address": "0x400204AC",
+				"info": "DMA2 channel9 memory address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CFGR10": {
+				"name": "R32_DMA2_CFGR10",
+				"address": "0x400204B0",
+				"info": "DMA2 channel10 configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CNTR10": {
+				"name": "R32_DMA2_CNTR10",
+				"address": "0x400204B4",
+				"info": "DMA2 channel10 transferred data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_PADDR10": {
+				"name": "R32_DMA2_PADDR10",
+				"address": "0x400204B8",
+				"info": "DMA2 channel10 peripheral address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_MADDR10": {
+				"name": "R32_DMA2_MADDR10",
+				"address": "0x400204BC",
+				"info": "DMA2 channel10 memory address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CFGR11": {
+				"name": "R32_DMA2_CFGR11",
+				"address": "0x400204C0",
+				"info": "DMA2 channel11 configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_CNTR11": {
+				"name": "R32_DMA2_CNTR11",
+				"address": "0x400204C4",
+				"info": "DMA2 channel11 transferred data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_PADDR11": {
+				"name": "R32_DMA2_PADDR11",
+				"address": "0x400204C8",
+				"info": "DMA2 channel11 peripheral address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_MADDR11": {
+				"name": "R32_DMA2_MADDR11",
+				"address": "0x400204CC",
+				"info": "DMA2 channel11 memory address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_EXTEM_INTFR": {
+				"name": "R32_DMA2_EXTEM_INTFR",
+				"address": "0x400204D0",
+				"info": "DMA2 extend interrupt flag register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DMA2_EXTEM_INTFCR": {
+				"name": "R32_DMA2_EXTEM_INTFCR",
+				"address": "0x400204D4",
+				"info": "DMA2 extend interrupt flag clear register",
+				"reset_value": "0x00000000"
+			}
+		}
+	},
+
+	"ADC": {
+		"info": "ADC-related registers list",
+		"table": "12-5",
+
+		"registers": {
+			"R32_ADC1_STATR": {
+				"name": "R32_ADC1_STATR",
+				"address": "0x40012400",
+				"info": "ADC1 status register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_CTLR1": {
+				"name": "R32_ADC1_CTLR1",
+				"address": "0x40012404",
+				"info": "ADC1 control register1",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_CTLR2": {
+				"name": "R32_ADC1_CTLR2",
+				"address": "0x40012408",
+				"info": "ADC1 control register 2",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_SAMPTR1": {
+				"name": "R32_ADC1_SAMPTR1",
+				"address": "0x4001240C",
+				"info": "ADC1 sample time configuration register1",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_SAMPTR2": {
+				"name": "R32_ADC1_SAMPTR2",
+				"address": "0x40012410",
+				"info": "ADC1 sample time configuration register2",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_IOFR1": {
+				"name": "R32_ADC1_IOFR1",
+				"address": "0x40012414",
+				"info": "ADC1 injected channel data offset register1",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_IOFR2": {
+				"name": "R32_ADC1_IOFR2",
+				"address": "0x40012418",
+				"info": "ADC1 injected channel data offset register2",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_IOFR3": {
+				"name": "R32_ADC1_IOFR3",
+				"address": "0x4001241C",
+				"info": "ADC1 injected channel data offset register3",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_IOFR4": {
+				"name": "R32_ADC1_IOFR4",
+				"address": "0x40012420",
+				"info": "ADC1 injected channel data offset register4",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_WDHTR": {
+				"name": "R32_ADC1_WDHTR",
+				"address": "0x40012424",
+				"info": "ADC1 watchdog high threshold register",
+				"reset_value": "0x00000FFF"
+			},
+			"R32_ADC1_WDLTR": {
+				"name": "R32_ADC1_WDLTR",
+				"address": "0x40012428",
+				"info": "ADC1 watchdog low threshold register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_RSQR1": {
+				"name": "R32_ADC1_RSQR1",
+				"address": "0x4001242C",
+				"info": "ADC1 regular channel sequence register1",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_RSQR2": {
+				"name": "R32_ADC1_RSQR2",
+				"address": "0x40012430",
+				"info": "ADC1 regular channel sequence register2",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_RSQR3": {
+				"name": "R32_ADC1_RSQR3",
+				"address": "0x40012434",
+				"info": "ADC1 regular channel sequence register3",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_ISQR": {
+				"name": "R32_ADC1_ISQR",
+				"address": "0x40012438",
+				"info": "ADC1 injected channel sequence register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_IDATAR1": {
+				"name": "R32_ADC1_IDATAR1",
+				"address": "0x4001243C",
+				"info": "ADC1 injected data register1",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_IDATAR2": {
+				"name": "R32_ADC1_IDATAR2",
+				"address": "0x40012440",
+				"info": "ADC1 injected data register2",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_IDATAR3": {
+				"name": "R32_ADC1_IDATAR3",
+				"address": "0x40012444",
+				"info": "ADC1 injected data register3",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_IDATAR4": {
+				"name": "R32_ADC1_IDATAR4",
+				"address": "0x40012448",
+				"info": "ADC1 injected data register4",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_RDATAR": {
+				"name": "R32_ADC1_RDATAR",
+				"address": "0x4001244C",
+				"info": "ADC1 regular data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ADC1_AUX": {
+				"name": "R32_ADC1_AUX",
+				"address": "0x40012454",
+				"info": "ADC1 sample time register",
+				"reset_value": "0x00000000"
+			}
+		}
+	},
+
+	"ADC2": {
+		"info": "ADC2-related registers list",
+		"table": "12-6",
+
+		"registers": {
+			"R32_ADC2_STATR": {
+				"name": "R32_ADC2_STATR",
+				"address": "0x40012800",
+				"info": "ADC2 status register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_CTLR1": {
+				"name": "R32_ADC2_CTLR1",
+				"address": "0x40012804",
+				"info": "ADC2 control register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_CTLR2": {
+				"name": "R32_ADC2_CTLR2",
+				"address": "0x40012808",
+				"info": "ADC2 control register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_SAMPTR1": {
+				"name": "R32_ADC2_SAMPTR1",
+				"address": "0x4001280C",
+				"info": "ADC2 sample time configuration register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_SAMPTR2": {
+				"name": "R32_ADC2_SAMPTR2",
+				"address": "0x40012810",
+				"info": "ADC2 sample time configuration register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_IOFR1": {
+				"name": "R32_ADC2_IOFR1",
+				"address": "0x40012814",
+				"info": "ADC2 injected channel data offset register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_IOFR2": {
+				"name": "R32_ADC2_IOFR2",
+				"address": "0x40012818",
+				"info": "ADC2 injected channel data offset register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_IOFR3": {
+				"name": "R32_ADC2_IOFR3",
+				"address": "0x4001281C",
+				"info": "ADC2 injected channel data offset register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_IOFR4": {
+				"name": "R32_ADC2_IOFR4",
+				"address": "0x40012820",
+				"info": "ADC2 injected channel data offset register4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_WDHTR": {
+				"name": "R32_ADC2_WDHTR",
+				"address": "0x40012824",
+				"info": "ADC2 watchdog high threshold register",
+				"reset_value": "0x00000FFF",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_WDLTR": {
+				"name": "R32_ADC2_WDLTR",
+				"address": "0x40012828",
+				"info": "ADC2 watchdog low threshold register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_RSQR1": {
+				"name": "R32_ADC2_RSQR1",
+				"address": "0x4001282C",
+				"info": "ADC2 regular channel sequence register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_RSQR2": {
+				"name": "R32_ADC2_RSQR2",
+				"address": "0x40012830",
+				"info": "ADC2 regular channel sequence register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_RSQR3": {
+				"name": "R32_ADC2_RSQR3",
+				"address": "0x40012834",
+				"info": "ADC2 regular channel sequence register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_ISQR": {
+				"name": "R32_ADC2_ISQR",
+				"address": "0x40012838",
+				"info": "ADC2 injected channel sequence register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_IDATAR1": {
+				"name": "R32_ADC2_IDATAR1",
+				"address": "0x4001283C",
+				"info": "ADC2 injected data register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_IDATAR2": {
+				"name": "R32_ADC2_IDATAR2",
+				"address": "0x40012840",
+				"info": "ADC2 injected data register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_IDATAR3": {
+				"name": "R32_ADC2_IDATAR3",
+				"address": "0x40012844",
+				"info": "ADC2 injected data register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_IDATAR4": {
+				"name": "R32_ADC2_IDATAR4",
+				"address": "0x40012848",
+				"info": "ADC2 injected data register4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_RDATAR": {
+				"name": "R32_ADC2_RDATAR",
+				"address": "0x4001284C",
+				"info": "ADC2 regular data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ADC2_AUX": {
+				"name": "R32_ADC2_AUX",
+				"address": "0x40012854",
+				"info": "ADC2 sample time register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"TKEY": {
+		"info": "TKEY-related registers list",
+		"table": "13-1",
+
+		"registers": {
+			"R32_TKEY1_CHARGE1": {
+				"name": "R32_TKEY1_CHARGE1",
+				"address": "0x4001240C",
+				"info": "TKEY charge sample time register1",
+				"reset_value": "0x00000000"
+			},
+			"R32_TKEY1_CHARGE2": {
+				"name": "R32_TKEY1_CHARGE2",
+				"address": "0x40012410",
+				"info": "TKEY charge sample time register2",
+				"reset_value": "0x00000000"
+			},
+			"R32_TKEY1_CHGOFFSET": {
+				"name": "R32_TKEY1_CHGOFFSET",
+				"address": "0x4001243C",
+				"info": "TKEY charge time offset register",
+				"reset_value": "0x00000000"
+			},
+			"R32_TKEY1_ACT_DCG": {
+				"name": "R32_TKEY1_ACT_DCG",
+				"address": "0x4001244C",
+				"info": "TKEY activate and discharge time register",
+				"reset_value": "X"
+			},
+			"R32_TKEY1_DR": {
+				"name": "R32_TKEY1_DR",
+				"address": "0x4001244C",
+				"info": "TKEY data register",
+				"reset_value": "X"
+			}
+			}
+	},
+
+	"TKEY2": {
+		"info": "TKEY2-related registers list",
+		"table": "13-2",
+
+		"registers": {
+			"R32_TKEY2_CHARGE1": {
+				"name": "R32_TKEY2_CHARGE1",
+				"address": "0x4001280C",
+				"info": "TKEY charge sample time register1",
+				"reset_value": "0x00000000"
+			},
+			"R32_TKEY2_CHARGE2": {
+				"name": "R32_TKEY2_CHARGE2",
+				"address": "0x40012810",
+				"info": "TKEY charge sample time register2",
+				"reset_value": "0x00000000"
+			},
+			"R32_TKEY2_CHGOFFSET": {
+				"name": "R32_TKEY2_CHGOFFSET",
+				"address": "0x4001283C",
+				"info": "TKEY charge time offset register",
+				"reset_value": "0x00000000"
+			},
+			"R32_TKEY2_ACT_DCG": {
+				"name": "R32_TKEY2_ACT_DCG",
+				"address": "0x4001284C",
+				"info": "TKEY activate and discharge time register",
+				"reset_value": "X"
+			},
+			"R32_TKEY2_DR": {
+				"name": "R32_TKEY2_DR",
+				"address": "0x4001284C",
+				"info": "TKEY data register",
+				"reset_value": "X"
+			}
+		}
+	},
+
+	"TIM1": {
+		"info": "TIM1-related registers list",
+		"table": "14-3",
+
+		"registers": {
+			"R16_TIM1_CTLR1": {
+				"name": "R16_TIM1_CTLR1",
+				"address": "0x40012C00",
+				"info": "Control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_CTLR2": {
+				"name": "R16_TIM1_CTLR2",
+				"address": "0x40012C04",
+				"info": "Control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_SMCFGR": {
+				"name": "R16_TIM1_SMCFGR",
+				"address": "0x40012C08",
+				"info": "Slave mode configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_DMAINTENR": {
+				"name": "R16_TIM1_DMAINTENR",
+				"address": "0x40012C0C",
+				"info": "DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_INTFR": {
+				"name": "R16_TIM1_INTFR",
+				"address": "0x40012C10",
+				"info": "Interrupt flag register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_SWEVGR": {
+				"name": "R16_TIM1_SWEVGR",
+				"address": "0x40012C14",
+				"info": "Event generation register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_CHCTLR1": {
+				"name": "R16_TIM1_CHCTLR1",
+				"address": "0x40012C18",
+				"info": "Compare/capture control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_CHCTLR2": {
+				"name": "R16_TIM1_CHCTLR2",
+				"address": "0x40012C1C",
+				"info": "Compare/capture control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_CCER": {
+				"name": "R16_TIM1_CCER",
+				"address": "0x40012C20",
+				"info": "Compare/capture enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_CNT": {
+				"name": "R16_TIM1_CNT",
+				"address": "0x40012C24",
+				"info": "Counter",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_PSC": {
+				"name": "R16_TIM1_PSC",
+				"address": "0x40012C28",
+				"info": "Prescaler",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_ATRLR": {
+				"name": "R16_TIM1_ATRLR",
+				"address": "0x40012C2C",
+				"info": "Auto-reload register",
+				"reset_value": "0xFFFF",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_RPTCR": {
+				"name": "R16_TIM1_RPTCR",
+				"address": "0x40012C30",
+				"info": "Repeat count register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_CH1CVR": {
+				"name": "R16_TIM1_CH1CVR",
+				"address": "0x40012C34",
+				"info": "Compare/capture register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_CH2CVR": {
+				"name": "R16_TIM1_CH2CVR",
+				"address": "0x40012C38",
+				"info": "Compare/capture register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_CH3CVR": {
+				"name": "R16_TIM1_CH3CVR",
+				"address": "0x40012C3C",
+				"info": "Compare/capture register3",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_CH4CVR": {
+				"name": "R16_TIM1_CH4CVR",
+				"address": "0x40012C40",
+				"info": "Compare/capture register4",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_BDTR": {
+				"name": "R16_TIM1_BDTR",
+				"address": "0x40012C44",
+				"info": "Break and deadband register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_DMACFGR": {
+				"name": "R16_TIM1_DMACFGR",
+				"address": "0x40012C48",
+				"info": "DMA configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_DMAADR": {
+				"name": "R16_TIM1_DMAADR",
+				"address": "0x40012C4C",
+				"info": "DMA address register in continuous mode",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM1_AUX": {
+				"name": "R16_TIM1_AUX",
+				"address": "0x40012C50",
+				"info": "Dual-edge capture register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"TIM8": {
+		"info": "TIM8-related registers list",
+		"table": "14-4",
+
+		"registers": {
+			"R16_TIM8_CTLR1": {
+				"name": "R16_TIM8_CTLR1",
+				"address": "0x40013400",
+				"info": "Control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_CTLR2": {
+				"name": "R16_TIM8_CTLR2",
+				"address": "0x40013404",
+				"info": "Control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_SMCFGR": {
+				"name": "R16_TIM8_SMCFGR",
+				"address": "0x40013408",
+				"info": "Slave mode configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_DMAINTENR": {
+				"name": "R16_TIM8_DMAINTENR",
+				"address": "0x4001340C",
+				"info": "DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_INTFR": {
+				"name": "R16_TIM8_INTFR",
+				"address": "0x40013410",
+				"info": "Interrupt flag register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_SWEVGR": {
+				"name": "R16_TIM8_SWEVGR",
+				"address": "0x40013414",
+				"info": "Event generation register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_CHCTLR1": {
+				"name": "R16_TIM8_CHCTLR1",
+				"address": "0x40013418",
+				"info": "Compare/capture control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_CHCTLR2": {
+				"name": "R16_TIM8_CHCTLR2",
+				"address": "0x4001341C",
+				"info": "Compare/capture control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_CCER": {
+				"name": "R16_TIM8_CCER",
+				"address": "0x40013420",
+				"info": "Compare/capture enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_CNT": {
+				"name": "R16_TIM8_CNT",
+				"address": "0x40013424",
+				"info": "Counter",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_PSC": {
+				"name": "R16_TIM8_PSC",
+				"address": "0x40013428",
+				"info": "Prescaler",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_ATRLR": {
+				"name": "R16_TIM8_ATRLR",
+				"address": "0x4001342C",
+				"info": "Auto-reload register",
+				"reset_value": "0xFFFF",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_RPTCR": {
+				"name": "R16_TIM8_RPTCR",
+				"address": "0x40013430",
+				"info": "Repeat count register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_CH1CVR": {
+				"name": "R16_TIM8_CH1CVR",
+				"address": "0x40013434",
+				"info": "Compare/capture register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_CH2CVR": {
+				"name": "R16_TIM8_CH2CVR",
+				"address": "0x40013438",
+				"info": "Compare/capture register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_CH3CVR": {
+				"name": "R16_TIM8_CH3CVR",
+				"address": "0x4001343C",
+				"info": "Compare/capture register3",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_CH4CVR": {
+				"name": "R16_TIM8_CH4CVR",
+				"address": "0x40013440",
+				"info": "Compare/capture register4",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_BDTR": {
+				"name": "R16_TIM8_BDTR",
+				"address": "0x40013444",
+				"info": "Break and deadband register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_DMACFGR": {
+				"name": "R16_TIM8_DMACFGR",
+				"address": "0x40013448",
+				"info": "DMA configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_DMAADR": {
+				"name": "R16_TIM8_DMAADR",
+				"address": "0x4001344C",
+				"info": "DMA address register in continuous mode",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM8_AUX": {
+				"name": "R16_TIM8_AUX",
+				"address": "0x40013450",
+				"info": "Dual-edge capture register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"TIM9": {
+		"info": "TIM9-related registers list",
+		"table": "14-5",
+
+		"registers": {
+			"R16_TIM9_CTLR1": {
+				"name": "R16_TIM9_CTLR1",
+				"address": "0x40014C00",
+				"info": "Control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_CTLR2": {
+				"name": "R16_TIM9_CTLR2",
+				"address": "0x40014C04",
+				"info": "Control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_SMCFGR": {
+				"name": "R16_TIM9_SMCFGR",
+				"address": "0x40014C08",
+				"info": "Slave mode configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_DMAINTENR": {
+				"name": "R16_TIM9_DMAINTENR",
+				"address": "0x40014C0C",
+				"info": "DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_INTFR": {
+				"name": "R16_TIM9_INTFR",
+				"address": "0x40014C10",
+				"info": "Interrupt flag register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_SWEVGR": {
+				"name": "R16_TIM9_SWEVGR",
+				"address": "0x40014C14",
+				"info": "Event generation register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_CHCTLR1": {
+				"name": "R16_TIM9_CHCTLR1",
+				"address": "0x40014C18",
+				"info": "Compare/capture control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_CHCTLR2": {
+				"name": "R16_TIM9_CHCTLR2",
+				"address": "0x40014C1C",
+				"info": "Compare/capture control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_CCER": {
+				"name": "R16_TIM9_CCER",
+				"address": "0x40014C20",
+				"info": "Compare/capture enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_CNT": {
+				"name": "R16_TIM9_CNT",
+				"address": "0x40014C24",
+				"info": "Counter",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_PSC": {
+				"name": "R16_TIM9_PSC",
+				"address": "0x40014C28",
+				"info": "Prescaler",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_ATRLR": {
+				"name": "R16_TIM9_ATRLR",
+				"address": "0x40014C2C",
+				"info": "Auto-reload register",
+				"reset_value": "0xFFFF",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_RPTCR": {
+				"name": "R16_TIM9_RPTCR",
+				"address": "0x40014C30",
+				"info": "Repeat count register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_CH1CVR": {
+				"name": "R16_TIM9_CH1CVR",
+				"address": "0x40014C34",
+				"info": "Compare/capture register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_CH2CVR": {
+				"name": "R16_TIM9_CH2CVR",
+				"address": "0x40014C38",
+				"info": "Compare/capture register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_CH3CVR": {
+				"name": "R16_TIM9_CH3CVR",
+				"address": "0x40014C3C",
+				"info": "Compare/capture register3",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_CH4CVR": {
+				"name": "R16_TIM9_CH4CVR",
+				"address": "0x40014C40",
+				"info": "Compare/capture register4",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_BDTR": {
+				"name": "R16_TIM9_BDTR",
+				"address": "0x40014C44",
+				"info": "Break and deadband register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_DMACFGR": {
+				"name": "R16_TIM9_DMACFGR",
+				"address": "0x40014C48",
+				"info": "DMA configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_DMAADR": {
+				"name": "R16_TIM9_DMAADR",
+				"address": "0x40014C4C",
+				"info": "DMA address register in continuous mode",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM9_AUX": {
+				"name": "R16_TIM9_AUX",
+				"address": "0x40014C50",
+				"info": "Dual-edge capture register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"TIM10": {
+		"info": "TIM10-related registers list",
+		"table": "14-6",
+
+		"registers": {
+			"R16_TIM10_CTLR1": {
+				"name": "R16_TIM10_CTLR1",
+				"address": "0x40015000",
+				"info": "Control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_CTLR2": {
+				"name": "R16_TIM10_CTLR2",
+				"address": "0x40015004",
+				"info": "Control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_SMCFGR": {
+				"name": "R16_TIM10_SMCFGR",
+				"address": "0x40015008",
+				"info": "Slave mode configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_DMAINTENR": {
+				"name": "R16_TIM10_DMAINTENR",
+				"address": "0x4001500C",
+				"info": "DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_INTFR": {
+				"name": "R16_TIM10_INTFR",
+				"address": "0x40015010",
+				"info": "Interrupt flag register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_SWEVGR": {
+				"name": "R16_TIM10_SWEVGR",
+				"address": "0x40015014",
+				"info": "Event generation register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_CHCTLR1": {
+				"name": "R16_TIM10_CHCTLR1",
+				"address": "0x40015018",
+				"info": "Compare/capture control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_CHCTLR2": {
+				"name": "R16_TIM10_CHCTLR2",
+				"address": "0x4001501C",
+				"info": "Compare/capture control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_CCER": {
+				"name": "R16_TIM10_CCER",
+				"address": "0x40015020",
+				"info": "Compare/capture enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_CNT": {
+				"name": "R16_TIM10_CNT",
+				"address": "0x40015024",
+				"info": "Counter",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_PSC": {
+				"name": "R16_TIM10_PSC",
+				"address": "0x40015028",
+				"info": "Prescaler",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_ATRLR": {
+				"name": "R16_TIM10_ATRLR",
+				"address": "0x4001502C",
+				"info": "Auto-reload register",
+				"reset_value": "0xFFFF",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_RPTCR": {
+				"name": "R16_TIM10_RPTCR",
+				"address": "0x40015030",
+				"info": "Repeat count register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_CH1CVR": {
+				"name": "R16_TIM10_CH1CVR",
+				"address": "0x40015034",
+				"info": "Compare/capture register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM10_CH2CVR": {
+				"name": "R16_TIM10_CH2CVR",
+				"address": "0x40015038",
+				"info": "Compare/capture register2",
+				"reset_value": "0x0000"
+			},
+			"R16_TIM10_CH3CVR": {
+				"name": "R16_TIM10_CH3CVR",
+				"address": "0x4001503C",
+				"info": "Compare/capture register3",
+				"reset_value": "0x0000"
+			},
+			"R16_TIM10_CH4CVR": {
+				"name": "R16_TIM10_CH4CVR",
+				"address": "0x40015040",
+				"info": "Compare/capture register4",
+				"reset_value": "0x0000"
+			},
+			"R16_TIM10_BDTR": {
+				"name": "R16_TIM10_BDTR",
+				"address": "0x40015044",
+				"info": "Break and deadband register",
+				"reset_value": "0x0000"
+			},
+			"R16_TIM10_DMACFGR": {
+				"name": "R16_TIM10_DMACFGR",
+				"address": "0x40015048",
+				"info": "DMA configuration register",
+				"reset_value": "0x0000"
+			},
+			"R16_TIM10_DMAADR": {
+				"name": "R16_TIM10_DMAADR",
+				"address": "0x4001504C",
+				"info": "DMA address register in continuous mode",
+				"reset_value": "0x0000"
+			},
+			"R16_TIM10_AUX": {
+				"name": "R16_TIM10_AUX",
+				"address": "0x40015050",
+				"info": "Dual-edge capture register",
+				"reset_value": "0x0000"
+			}
+        }
+	},
+
+	"TIM2": {
+		"info": "TIM2-related registers list",
+		"table": "15-3",
+
+		"registers": {
+			"R16_TIM2_CTLR1": {
+				"name": "R16_TIM2_CTLR1",
+				"address": "0x40000000",
+				"info": "TIM2 control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_CTLR2": {
+				"name": "R16_TIM2_CTLR2",
+				"address": "0x40000004",
+				"info": "TIM2 control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_SMCFGR": {
+				"name": "R16_TIM2_SMCFGR",
+				"address": "0x40000008",
+				"info": "TIM2 slave mode configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_DMAINTENR": {
+				"name": "R16_TIM2_DMAINTENR",
+				"address": "0x4000000C",
+				"info": "TIM2 DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_INTFR": {
+				"name": "R16_TIM2_INTFR",
+				"address": "0x40000010",
+				"info": "TIM2 interrupt flag register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_SWEVGR": {
+				"name": "R16_TIM2_SWEVGR",
+				"address": "0x40000014",
+				"info": "TIM2 event generation register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_CHCTLR1": {
+				"name": "R16_TIM2_CHCTLR1",
+				"address": "0x40000018",
+				"info": "TIM2 compare/capture control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_CHCTLR2": {
+				"name": "R16_TIM2_CHCTLR2",
+				"address": "0x4000001C",
+				"info": "TIM2 compare/capture control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_CCER": {
+				"name": "R16_TIM2_CCER",
+				"address": "0x40000020",
+				"info": "TIM2 compare/capture enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R32_TIM2_CNT": {
+				"name": "R32_TIM2_CNT",
+				"address": "0x40000024",
+				"info": "TIM2 counter",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_PSC": {
+				"name": "R16_TIM2_PSC",
+				"address": "0x40000028",
+				"info": "TIM2 prescaler",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R32_TIM2_ATRLR": {
+				"name": "R32_TIM2_ATRLR",
+				"address": "0x4000002C",
+				"info": "TIM2 auto-reload register",
+				"reset_value": "0xFFFF",
+				"bits_fields": "[]"
+			},
+			"R32_TIM2_CH1CVR": {
+				"name": "R32_TIM2_CH1CVR",
+				"address": "0x40000034",
+				"info": "TIM2 compare/capture register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R32_TIM2_CH2CVR": {
+				"name": "R32_TIM2_CH2CVR",
+				"address": "0x40000038",
+				"info": "TIM2 compare/capture register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R32_TIM2_CH3CVR": {
+				"name": "R32_TIM2_CH3CVR",
+				"address": "0x4000003C",
+				"info": "TIM2 compare/capture register3",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R32_TIM2_CH4CVR": {
+				"name": "R32_TIM2_CH4CVR",
+				"address": "0x40000040",
+				"info": "TIM2 compare/capture register4",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_DMACFGR": {
+				"name": "R16_TIM2_DMACFGR",
+				"address": "0x40000048",
+				"info": "TIM2 DMA configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_DMAADR": {
+				"name": "R16_TIM2_DMAADR",
+				"address": "0x4000004C",
+				"info": "TIM2 DMA address register in continuous mode",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM2_AUX": {
+				"name": "R16_TIM2_AUX",
+				"address": "0x40000050",
+				"info": "TIM2 dual-edge capture register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"TIM3": {
+		"info": "TIM3-related registers list",
+		"table": "15-4",
+
+		"registers": {
+			"R16_TIM3_CTLR1": {
+				"name": "R16_TIM3_CTLR1",
+				"address": "0x40000400",
+				"info": "TIM3 control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_CTLR2": {
+				"name": "R16_TIM3_CTLR2",
+				"address": "0x40000404",
+				"info": "TIM3 control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_SMCFGR": {
+				"name": "R16_TIM3_SMCFGR",
+				"address": "0x40000408",
+				"info": "TIM3 slave mode configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_DMAINTENR": {
+				"name": "R16_TIM3_DMAINTENR",
+				"address": "0x4000040C",
+				"info": "TIM3 DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_INTFR": {
+				"name": "R16_TIM3_INTFR",
+				"address": "0x40000410",
+				"info": "TIM3 interrupt flag register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_SWEVGR": {
+				"name": "R16_TIM3_SWEVGR",
+				"address": "0x40000414",
+				"info": "TIM3 event generation register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_CHCTLR1": {
+				"name": "R16_TIM3_CHCTLR1",
+				"address": "0x40000418",
+				"info": "TIM3 compare/capture control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_CHCTLR2": {
+				"name": "R16_TIM3_CHCTLR2",
+				"address": "0x4000041C",
+				"info": "TIM3 compare/capture control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_CCER": {
+				"name": "R16_TIM3_CCER",
+				"address": "0x40000420",
+				"info": "TIM3 compare/capture enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_CNT": {
+				"name": "R16_TIM3_CNT",
+				"address": "0x40000424",
+				"info": "TIM3 counter",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_PSC": {
+				"name": "R16_TIM3_PSC",
+				"address": "0x40000428",
+				"info": "TIM3 prescaler",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_ATRLR": {
+				"name": "R16_TIM3_ATRLR",
+				"address": "0x4000042C",
+				"info": "TIM3 auto reload register",
+				"reset_value": "0xFFFF",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_CH1CVR": {
+				"name": "R16_TIM3_CH1CVR",
+				"address": "0x40000434",
+				"info": "TIM3 compare/capture register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_CH2CVR": {
+				"name": "R16_TIM3_CH2CVR",
+				"address": "0x40000438",
+				"info": "TIM3 compare/capture register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_CH3CVR": {
+				"name": "R16_TIM3_CH3CVR",
+				"address": "0x4000043C",
+				"info": "TIM3 compare/capture register3",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_CH4CVR": {
+				"name": "R16_TIM3_CH4CVR",
+				"address": "0x40000440",
+				"info": "TIM3 compare/capture register4",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_DMACFGR": {
+				"name": "R16_TIM3_DMACFGR",
+				"address": "0x40000448",
+				"info": "TIM3 DMA configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_DMAADR": {
+				"name": "R16_TIM3_DMAADR",
+				"address": "0x4000044C",
+				"info": "TIM3 DMA address register in continuous mode",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM3_AUX": {
+				"name": "R16_TIM3_AUX",
+				"address": "0x40000450",
+				"info": "TIM3 dual-edge capture register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"TIM4": {
+		"info": "TIM4-related registers list",
+		"table": "15-5",
+
+		"registers": {
+			"R16_TIM4_CTLR1": {
+				"name": "R16_TIM4_CTLR1",
+				"address": "0x40000800",
+				"info": "TIM4 control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_CTLR2": {
+				"name": "R16_TIM4_CTLR2",
+				"address": "0x40000804",
+				"info": "TIM4 control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_SMCFGR": {
+				"name": "R16_TIM4_SMCFGR",
+				"address": "0x40000808",
+				"info": "TIM4 slave mode configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_DMAINTENR": {
+				"name": "R16_TIM4_DMAINTENR",
+				"address": "0x4000080C",
+				"info": "TIM4 DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_INTFR": {
+				"name": "R16_TIM4_INTFR",
+				"address": "0x40000810",
+				"info": "TIM4 interrupt flag register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_SWEVGR": {
+				"name": "R16_TIM4_SWEVGR",
+				"address": "0x40000814",
+				"info": "TIM4 event generation register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_CHCTLR1": {
+				"name": "R16_TIM4_CHCTLR1",
+				"address": "0x40000818",
+				"info": "TIM4 compare/capture control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_CHCTLR2": {
+				"name": "R16_TIM4_CHCTLR2",
+				"address": "0x4000081C",
+				"info": "TIM4 compare/capture control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_CCER": {
+				"name": "R16_TIM4_CCER",
+				"address": "0x40000820",
+				"info": "TIM4 compare/capture enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_CNT": {
+				"name": "R16_TIM4_CNT",
+				"address": "0x40000824",
+				"info": "TIM4 counter",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_PSC": {
+				"name": "R16_TIM4_PSC",
+				"address": "0x40000828",
+				"info": "TIM4 prescaler",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_ATRLR": {
+				"name": "R16_TIM4_ATRLR",
+				"address": "0x4000082C",
+				"info": "TIM4 auto-reload register",
+				"reset_value": "0xFFFF",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_CH1CVR": {
+				"name": "R16_TIM4_CH1CVR",
+				"address": "0x40000834",
+				"info": "TIM4 compare/capture register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_CH2CVR": {
+				"name": "R16_TIM4_CH2CVR",
+				"address": "0x40000838",
+				"info": "TIM4 compare/capture register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_CH3CVR": {
+				"name": "R16_TIM4_CH3CVR",
+				"address": "0x4000083C",
+				"info": "TIM4 compare/capture register3",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_CH4CVR": {
+				"name": "R16_TIM4_CH4CVR",
+				"address": "0x40000840",
+				"info": "TIM4 compare/capture register4",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_DMACFGR": {
+				"name": "R16_TIM4_DMACFGR",
+				"address": "0x40000848",
+				"info": "TIM4 DMA configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_DMAADR": {
+				"name": "R16_TIM4_DMAADR",
+				"address": "0x4000084C",
+				"info": "TIM4 DMA address register in continuous mode",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM4_AUX": {
+				"name": "R16_TIM4_AUX",
+				"address": "0x40000850",
+				"info": "TIM4 dual-edge capture register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"TIM5": {
+		"info": "TIM5-related registers list",
+		"table": "15-6",
+
+		"registers": {
+			"R16_TIM5_CTLR1": {
+				"name": "R16_TIM5_CTLR1",
+				"address": "0x40000C00",
+				"info": "TIM5 control register 1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_CTLR2": {
+				"name": "R16_TIM5_CTLR2",
+				"address": "0x40000C04",
+				"info": "TIM5 control register 2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_SMCFGR": {
+				"name": "R16_TIM5_SMCFGR",
+				"address": "0x40000C08",
+				"info": "TIM5 slave mode configuration register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_DMAINTENR": {
+				"name": "R16_TIM5_DMAINTENR",
+				"address": "0x40000C0C",
+				"info": "TIM5 DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_INTFR": {
+				"name": "R16_TIM5_INTFR",
+				"address": "0x40000C10",
+				"info": "TIM5 interrupt flag register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_SWEVGR": {
+				"name": "R16_TIM5_SWEVGR",
+				"address": "0x40000C14",
+				"info": "TIM5 event generation register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_CHCTLR1": {
+				"name": "R16_TIM5_CHCTLR1",
+				"address": "0x40000C18",
+				"info": "TIM5 compare/capture register 1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_CHCTLR2": {
+				"name": "R16_TIM5_CHCTLR2",
+				"address": "0x40000C1C",
+				"info": "TIM5 compare/capture control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_CCER": {
+				"name": "R16_TIM5_CCER",
+				"address": "0x40000C20",
+				"info": "TIM5 compare/capture enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_CNT": {
+				"name": "R16_TIM5_CNT",
+				"address": "0x40000C24",
+				"info": "TIM5 counter",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_PSC": {
+				"name": "R16_TIM5_PSC",
+				"address": "0x40000C28",
+				"info": "TIM5 prescaler",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_ATRLR": {
+				"name": "R16_TIM5_ATRLR",
+				"address": "0x40000C2C",
+				"info": "TIM5 auto-reload register",
+				"reset_value": "0x0000FFFF",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_CH1CVR": {
+				"name": "R16_TIM5_CH1CVR",
+				"address": "0x40000C34",
+				"info": "TIM5 compare/capture register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_CH2CVR": {
+				"name": "R16_TIM5_CH2CVR",
+				"address": "0x40000C38",
+				"info": "TIM5 compare/capture register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM5_CH3CVR": {
+				"name": "R16_TIM5_CH3CVR",
+				"address": "0x40000C3C",
+				"info": "TIM5 compare/capture register3",
+				"reset_value": "0x00000000"
+			},
+			"R16_TIM5_CH4CVR": {
+				"name": "R16_TIM5_CH4CVR",
+				"address": "0x40000C40",
+				"info": "TIM5 compare/capture register4",
+				"reset_value": "0x00000000"
+			},
+			"R16_TIM5_DMACFGR": {
+				"name": "R16_TIM5_DMACFGR",
+				"address": "0x40000C48",
+				"info": "TIM5 DMA configuration register",
+				"reset_value": "0x0000"
+			},
+			"R16_TIM5_DMAADR": {
+				"name": "R16_TIM5_DMAADR",
+				"address": "0x40000C4C",
+				"info": "TIM5 DMA address register in continuous mode",
+				"reset_value": "0x0000"
+			},
+			"R16_TIM5_AUX": {
+				"name": "R16_TIM5_AUX",
+				"address": "0x40000C50",
+				"info": "TIM5 dual-edge capture register",
+				"reset_value": "0x0000"
+			}
+        }
+	},
+
+	"TIM6": {
+		"info": "TIM6-related registers list",
+		"table": "16-1",
+
+		"registers": {
+			"R16_TIM6_CTLR1": {
+				"name": "R16_TIM6_CTLR1",
+				"address": "0x40001000",
+				"info": "TIM6 control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM6_CTLR2": {
+				"name": "R16_TIM6_CTLR2",
+				"address": "0x40001004",
+				"info": "TIM6 control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM6_DMAINTENR": {
+				"name": "R16_TIM6_DMAINTENR",
+				"address": "0x4000100C",
+				"info": "TIM6 DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM6_INTFR": {
+				"name": "R16_TIM6_INTFR",
+				"address": "0x40001010",
+				"info": "TIM6 interrupt flag register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM6_SWEVGR": {
+				"name": "R16_TIM6_SWEVGR",
+				"address": "0x40001014",
+				"info": "TIM6 event generation register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM6_CNT": {
+				"name": "R16_TIM6_CNT",
+				"address": "0x40001024",
+				"info": "TIM6 counter",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM6_PSC": {
+				"name": "R16_TIM6_PSC",
+				"address": "0x40001028",
+				"info": "TIM6 prescaler",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM6_ATRLR": {
+				"name": "R16_TIM6_ATRLR",
+				"address": "0x4000102C",
+				"info": "TIM6 auto-reload register",
+				"reset_value": "0xFFFF",
+				"bits_fields": "[]"
+			}
+		}
+	},
+
+	"TIM7": {
+		"info": "TIM7-related registers list",
+		"table": "16-2",
+
+		"registers": {
+			"R16_TIM7_CTLR1": {
+				"name": "R16_TIM7_CTLR1",
+				"address": "0x40001400",
+				"info": "TIM7 control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM7_CTLR2": {
+				"name": "R16_TIM7_CTLR2",
+				"address": "0x40001404",
+				"info": "TIM7 control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM7_DMAINTENR": {
+				"name": "R16_TIM7_DMAINTENR",
+				"address": "0x4000140C",
+				"info": "TIM7 DMA/interrupt enable register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM7_INTFR": {
+				"name": "R16_TIM7_INTFR",
+				"address": "0x40001410",
+				"info": "TIM7 interrupt flag register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM7_CNT": {
+				"name": "R16_TIM7_CNT",
+				"address": "0x40001424",
+				"info": "TIM7 counter",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM7_PSC": {
+				"name": "R16_TIM7_PSC",
+				"address": "0x40001428",
+				"info": "TIM7 prescaler",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_TIM7_ATRLR": {
+				"name": "R16_TIM7_ATRLR",
+				"address": "0x4000142C",
+				"info": "TIM7 auto-reload register",
+				"reset_value": "0xFFFF",
+				"bits_fields": "[]"
+			}
+		}
+	},
+
+	"DAC": {
+		"info": "DAC-related registers list",
+		"table": "17-2",
+
+		"registers": {
+			"R32_DAC_CTLR": {
+				"name": "R32_DAC_CTLR",
+				"address": "0x40007400",
+				"info": "DAC control register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_SWTR": {
+				"name": "R32_DAC_SWTR",
+				"address": "0x40007404",
+				"info": "DAC software trigger register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_R12BDHR1": {
+				"name": "R32_DAC_R12BDHR1",
+				"address": "0x40007408",
+				"info": "DAC channel1 right-aligned 12-bit data hold register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_L12BDHR1": {
+				"name": "R32_DAC_L12BDHR1",
+				"address": "0x4000740C",
+				"info": "DAC channel1 left-aligned 12-bit data hold register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_R8BDHR1": {
+				"name": "R32_DAC_R8BDHR1",
+				"address": "0x40007410",
+				"info": "DAC channel1 right-aligned 8-bit data hold register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_R12BDHR2": {
+				"name": "R32_DAC_R12BDHR2",
+				"address": "0x40007414",
+				"info": "DAC channel2 right-aligned 12-bit data hold register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_L12BDHR2": {
+				"name": "R32_DAC_L12BDHR2",
+				"address": "0x40007418",
+				"info": "DAC channel2 left-aligned 12-bit data hold register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_R8BDHR2": {
+				"name": "R32_DAC_R8BDHR2",
+				"address": "0x4000741C",
+				"info": "DAC channel2 right-aligned 8-bit data hold register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_RD12BDHR": {
+				"name": "R32_DAC_RD12BDHR",
+				"address": "0x40007420",
+				"info": "Dual channel right-aligned 12-bit data hold register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_LD12BDHR": {
+				"name": "R32_DAC_LD12BDHR",
+				"address": "0x40007424",
+				"info": "Dual channel left-aligned 12-bit data hold register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_RD8BDHR": {
+				"name": "R32_DAC_RD8BDHR",
+				"address": "0x40007428",
+				"info": "Dual channel right-aligned 8-bit data hold register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_DOR1": {
+				"name": "R32_DAC_DOR1",
+				"address": "0x4000742C",
+				"info": "DAC channel1 data output register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DAC_DOR2": {
+				"name": "R32_DAC_DOR2",
+				"address": "0x40007430",
+				"info": "DAC channel2 data output register",
+				"reset_value": "0x00000000"
+			}
+		}
+	},
+
+	"UART": {
+		"info": "USART-related registers list",
+		"table": "18-2",
+
+		"registers": {
+			"R32_USART1_STATR": {
+				"name": "R32_USART1_STATR",
+				"address": "0x40013800",
+				"info": "UASRT1 status register",
+				"reset_value": "0x000000C0",
+				"bits_fields": "[]"
+			},
+			"R32_USART1_DATAR": {
+				"name": "R32_USART1_DATAR",
+				"address": "0x40013804",
+				"info": "UASRT1 data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART1_BRR": {
+				"name": "R32_USART1_BRR",
+				"address": "0x40013808",
+				"info": "UASRT1 baud rate register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART1_CTLR1": {
+				"name": "R32_USART1_CTLR1",
+				"address": "0x4001380C",
+				"info": "UASRT1 control register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART1_CTLR2": {
+				"name": "R32_USART1_CTLR2",
+				"address": "0x40013810",
+				"info": "UASRT1 control register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART1_CTLR3": {
+				"name": "R32_USART1_CTLR3",
+				"address": "0x40013814",
+				"info": "UASRT1 control register 3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART1_GPR": {
+				"name": "R32_USART1_GPR",
+				"address": "0x40013818",
+				"info": "UASRT1 guard time and prescaler register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART1_CTRL4": {
+				"name": "R32_USART1_CTRL4",
+				"address": "0x4001381C",
+				"info": "UASRT1 control register 4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"UART2": {
+		"info": "USART2-related registers list",
+		"table": "18-3",
+
+		"registers": {
+			"R32_USART2_STATR": {
+				"name": "R32_USART2_STATR",
+				"address": "0x40004400",
+				"info": "UASRT2 status register",
+				"reset_value": "0x000000C0",
+				"bits_fields": "[]"
+			},
+			"R32_USART2_DATAR": {
+				"name": "R32_USART2_DATAR",
+				"address": "0x40004404",
+				"info": "UASRT2 data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART2_BRR": {
+				"name": "R32_USART2_BRR",
+				"address": "0x40004408",
+				"info": "UASRT2 baud rate register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART2_CTLR1": {
+				"name": "R32_USART2_CTLR1",
+				"address": "0x4000440C",
+				"info": "UASRT2 control register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART2_CTLR2": {
+				"name": "R32_USART2_CTLR2",
+				"address": "0x40004410",
+				"info": "UASRT2 control register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART2_CTLR3": {
+				"name": "R32_USART2_CTLR3",
+				"address": "0x40004414",
+				"info": "UASRT2 control register 3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART2_GPR": {
+				"name": "R32_USART2_GPR",
+				"address": "0x40004418",
+				"info": "UASRT2 guard time and prescaler register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART2_CTRL4": {
+				"name": "R32_USART2_CTRL4",
+				"address": "0x4000441C",
+				"info": "UASRT2 control register 4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"UART3": {
+		"info": "UART3-related registers list",
+		"table": "18-4",
+
+		"registers": {
+			"R32_USART3_STATR": {
+				"name": "R32_USART3_STATR",
+				"address": "0x40004800",
+				"info": "UASRT3 status register",
+				"reset_value": "0x000000C0",
+				"bits_fields": "[]"
+			},
+			"R32_USART3_DATAR": {
+				"name": "R32_USART3_DATAR",
+				"address": "0x40004804",
+				"info": "UASRT3 data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART3_BRR": {
+				"name": "R32_USART3_BRR",
+				"address": "0x40004808",
+				"info": "UASRT3 baud rate register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART3_CTLR1": {
+				"name": "R32_USART3_CTLR1",
+				"address": "0x4000480C",
+				"info": "UASRT3 control register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART3_CTLR2": {
+				"name": "R32_USART3_CTLR2",
+				"address": "0x40004810",
+				"info": "UASRT3 control register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART3_CTLR3": {
+				"name": "R32_USART3_CTLR3",
+				"address": "0x40004814",
+				"info": "UASRT3 control register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART3_GPR": {
+				"name": "R32_USART3_GPR",
+				"address": "0x40004818",
+				"info": "UASRT3 guard time and prescaler register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART3_CTRL4": {
+				"name": "R32_USART3_CTRL4",
+				"address": "0x4000481C",
+				"info": "UASRT3 control register 4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"UART4": {
+		"info": "UART4-related registers list",
+		"table": "18-5",
+
+		"registers": {
+			"R32_USART4_STATR": {
+				"name": "R32_USART4_STATR",
+				"address": "0x40004C00",
+				"info": "USART4 status register",
+				"reset_value": "0x000000C0",
+				"bits_fields": "[]"
+			},
+			"R32_USART4_DATAR": {
+				"name": "R32_USART4_DATAR",
+				"address": "0x40004C04",
+				"info": "USART4 data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART4_BRR": {
+				"name": "R32_USART4_BRR",
+				"address": "0x40004C08",
+				"info": "USART4 baud rate register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART4_CTLR1": {
+				"name": "R32_USART4_CTLR1",
+				"address": "0x40004C0C",
+				"info": "USART4 control register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART4_CTLR2": {
+				"name": "R32_USART4_CTLR2",
+				"address": "0x40004C10",
+				"info": "USART4 control register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART4_CTLR3": {
+				"name": "R32_USART4_CTLR3",
+				"address": "0x40004C14",
+				"info": "USART4 control register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART4_GPR": {
+				"name": "R32_USART4_GPR",
+				"address": "0x40004C18",
+				"info": "USART4 guard time and prescaler register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART4_CTRL4": {
+				"name": "R32_USART4_CTRL4",
+				"address": "0x40004C1C",
+				"info": "UASRT4 control register 4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"UART5": {
+		"info": "UART5-related registers list",
+		"table": "18-6",
+
+		"registers": {
+			"R32_USART5_STATR": {
+				"name": "R32_USART5_STATR",
+				"address": "0x40005000",
+				"info": "USART5 status register",
+				"reset_value": "0x000000C0",
+				"bits_fields": "[]"
+			},
+			"R32_USART5_DATAR": {
+				"name": "R32_USART5_DATAR",
+				"address": "0x40005004",
+				"info": "USART5 data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART5_BRR": {
+				"name": "R32_USART5_BRR",
+				"address": "0x40005008",
+				"info": "USART5 baud rate register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART5_CTLR1": {
+				"name": "R32_USART5_CTLR1",
+				"address": "0x4000500C",
+				"info": "USART5 control register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART5_CTLR2": {
+				"name": "R32_USART5_CTLR2",
+				"address": "0x40005010",
+				"info": "USART5 control register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART5_CTLR3": {
+				"name": "R32_USART5_CTLR3",
+				"address": "0x40005014",
+				"info": "USART5 control register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART5_GPR": {
+				"name": "R32_USART5_GPR",
+				"address": "0x40005018",
+				"info": "USART5 guard time and prescaler register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART5_CTRL4": {
+				"name": "R32_USART5_CTRL4",
+				"address": "0x4000501C",
+				"info": "UASRT5 control register 4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"UART6": {
+		"info": "UART6-related registers list",
+		"table": "18-7",
+
+		"registers": {
+			"R32_USART6_STATR": {
+				"name": "R32_USART6_STATR",
+				"address": "0x40001800",
+				"info": "USART6 status register",
+				"reset_value": "0x000000C0",
+				"bits_fields": "[]"
+			},
+			"R32_USART6_DATAR": {
+				"name": "R32_USART6_DATAR",
+				"address": "0x40001804",
+				"info": "USART6 data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART6_BRR": {
+				"name": "R32_USART6_BRR",
+				"address": "0x40001808",
+				"info": "USART6 baud rate register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART6_CTLR1": {
+				"name": "R32_USART6_CTLR1",
+				"address": "0x4000180C",
+				"info": "USART6 control register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART6_CTLR2": {
+				"name": "R32_USART6_CTLR2",
+				"address": "0x40001810",
+				"info": "USART6 control register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART6_CTLR3": {
+				"name": "R32_USART6_CTLR3",
+				"address": "0x40001814",
+				"info": "USART6 control register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART6_GPR": {
+				"name": "R32_USART6_GPR",
+				"address": "0x40001818",
+				"info": "USART6 guard time and prescaler register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART6_CTRL4": {
+				"name": "R32_USART6_CTRL4",
+				"address": "0x4000181C",
+				"info": "UASRT6 control register 4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"UART7": {
+		"info": "UART7-related registers list",
+		"table": "18-8",
+
+		"registers": {
+			"R32_USART7_STATR": {
+				"name": "R32_USART7_STATR",
+				"address": "0x40001C00",
+				"info": "USART7 status register",
+				"reset_value": "0x000000C0",
+				"bits_fields": "[]"
+			},
+			"R32_USART7_DATAR": {
+				"name": "R32_USART7_DATAR",
+				"address": "0x40001C04",
+				"info": "USART7 data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART7_BRR": {
+				"name": "R32_USART7_BRR",
+				"address": "0x40001C08",
+				"info": "USART7 baud rate register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART7_CTLR1": {
+				"name": "R32_USART7_CTLR1",
+				"address": "0x40001C0C",
+				"info": "USART7 control register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART7_CTLR2": {
+				"name": "R32_USART7_CTLR2",
+				"address": "0x40001C10",
+				"info": "USART7 control register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART7_CTLR3": {
+				"name": "R32_USART7_CTLR3",
+				"address": "0x40001C14",
+				"info": "USART7 control register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART7_GPR": {
+				"name": "R32_USART7_GPR",
+				"address": "0x40001C18",
+				"info": "USART7 guard time and prescaler register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART7_CTRL4": {
+				"name": "R32_USART7_CTRL4",
+				"address": "0x40001C1C",
+				"info": "UASRT7 control register 4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"UART8": {
+		"info": "UART8-related registers list",
+		"table": "18-9",
+
+		"registers": {
+			"R32_USART8_STATR": {
+				"name": "R32_USART8_STATR",
+				"address": "0x40002000",
+				"info": "USART8 status register",
+				"reset_value": "0x000000C0",
+				"bits_fields": "[]"
+			},
+			"R32_USSART8_DATAR": {
+				"name": "R32_USSART8_DATAR",
+				"address": "0x40002004",
+				"info": "USART8 data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_UART8_BRR": {
+				"name": "R32_UART8_BRR",
+				"address": "0x40002008",
+				"info": "USART8 baud rate register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART8_CTLR1": {
+				"name": "R32_USART8_CTLR1",
+				"address": "0x4000200C",
+				"info": "USART8 control register1",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART8_CTLR2": {
+				"name": "R32_USART8_CTLR2",
+				"address": "0x40002010",
+				"info": "USART8 control register2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART8_CTLR3": {
+				"name": "R32_USART8_CTLR3",
+				"address": "0x40002014",
+				"info": "USART8 control register3",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART8_GPR": {
+				"name": "R32_USART8_GPR",
+				"address": "0x40002018",
+				"info": "USART8 guard time and prescaler register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_USART8_CTRL4": {
+				"name": "R32_USART8_CTRL4",
+				"address": "0x4000201C",
+				"info": "UASRT8 control register 4",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"I2C": {
+		"info": "I2C-related registers list",
+		"table": "19-1",
+
+		"registers": {
+			"R16_I2C1_CTLR1": {
+				"name": "R16_I2C1_CTLR1",
+				"address": "0x40005400",
+				"info": "I2C1 control register1",
+				"reset_value": "0x0000"
+			},
+			"R16_I2C1_CTLR2": {
+				"name": "R16_I2C1_CTLR2",
+				"address": "0x40005404",
+				"info": "I2C1 control register2",
+				"reset_value": "0x0000"
+			},
+			"R16_I2C1_OADDR1": {
+				"name": "R16_I2C1_OADDR1",
+				"address": "0x40005408",
+				"info": "I2C1 address register1",
+				"reset_value": "0x0000"
+			},
+			"R16_I2C1_OADDR2": {
+				"name": "R16_I2C1_OADDR2",
+				"address": "0x4000540C",
+				"info": "I2C1 address register2",
+				"reset_value": "0x0000"
+			},
+			"R16_I2C1_DATAR": {
+				"name": "R16_I2C1_DATAR",
+				"address": "0x40005410",
+				"info": "I2C1 data register",
+				"reset_value": "0x0000"
+			},
+			"R16_I2C1_STAR1": {
+				"name": "R16_I2C1_STAR1",
+				"address": "0x40005414",
+				"info": "I2C1 status register1",
+				"reset_value": "0x0000"
+			},
+			"R16_I2C1_STAR2": {
+				"name": "R16_I2C1_STAR2",
+				"address": "0x40005418",
+				"info": "I2C1 status register2",
+				"reset_value": "0x0000"
+			},
+			"R16_I2C1_CKCFGR": {
+				"name": "R16_I2C1_CKCFGR",
+				"address": "0x4000541C",
+				"info": "I2C1 clock register",
+				"reset_value": "0x0000"
+			},
+			"R16_I2C1_RTR": {
+				"name": "R16_I2C1_RTR",
+				"address": "0x40005420",
+				"info": "I2C1 rise time register",
+				"reset_value": "0x0002"
+			}
+		}
+	},
+
+	"I2C2": {
+		"info": "I2C2-related registers list",
+		"table": "19-2",
+
+		"registers": {
+			"R16_I2C2_CTLR1": {
+				"name": "R16_I2C2_CTLR1",
+				"address": "0x40005800",
+				"info": "I2C2 control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_I2C2_CTLR2": {
+				"name": "R16_I2C2_CTLR2",
+				"address": "0x40005804",
+				"info": "I2C2 control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_I2C2_OADDR1": {
+				"name": "R16_I2C2_OADDR1",
+				"address": "0x40005808",
+				"info": "I2C2 address register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_I2C2_OADDR2": {
+				"name": "R16_I2C2_OADDR2",
+				"address": "0x4000580C",
+				"info": "I2C2 address register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_I2C2_DATAR": {
+				"name": "R16_I2C2_DATAR",
+				"address": "0x40005810",
+				"info": "I2C2 data register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_I2C2_STAR1": {
+				"name": "R16_I2C2_STAR1",
+				"address": "0x40005814",
+				"info": "I2C2 status register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_I2C2_STAR2": {
+				"name": "R16_I2C2_STAR2",
+				"address": "0x40005818",
+				"info": "I2C2 control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_I2C2_CKCFGR": {
+				"name": "R16_I2C2_CKCFGR",
+				"address": "0x4000581C",
+				"info": "I2C2 clock register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_I2C2_RTR": {
+				"name": "R16_I2C2_RTR",
+				"address": "0x40005820",
+				"info": "I2C2 rise time register",
+				"reset_value": "0x0002",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"SPI": {
+		"info": "SPI-related registers list",
+		"table": "20-1",
+
+		"registers": {
+			"R16_SPI1_CTLR1": {
+				"name": "R16_SPI1_CTLR1",
+				"address": "0x40013000",
+				"info": "SPI1 control register1",
+				"reset_value": "0x0000"
+			},
+			"R16_SPI1_CTLR2": {
+				"name": "R16_SPI1_CTLR2",
+				"address": "0x40013004",
+				"info": "SPI1 control register2",
+				"reset_value": "0x0000"
+			},
+			"R16_SPI1_STATR": {
+				"name": "R16_SPI1_STATR",
+				"address": "0x40013008",
+				"info": "SPI1 status register",
+				"reset_value": "0x0002"
+			},
+			"R16_SPI1_DATAR": {
+				"name": "R16_SPI1_DATAR",
+				"address": "0x4001300C",
+				"info": "SPI1 data register",
+				"reset_value": "0x0000"
+			},
+			"R16_SPI1_CRCR": {
+				"name": "R16_SPI1_CRCR",
+				"address": "0x40013010",
+				"info": "SPI1 polynomial register",
+				"reset_value": "0x0007"
+			},
+			"R16_SPI1_RCRCR": {
+				"name": "R16_SPI1_RCRCR",
+				"address": "0x40013014",
+				"info": "SPI1 receive CRC register",
+				"reset_value": "0x0000"
+			},
+			"R16_SPI1_TCRCR": {
+				"name": "R16_SPI1_TCRCR",
+				"address": "0x40013018",
+				"info": "SPI1 transmit CRC register",
+				"reset_value": "0x0000"
+			},
+			"R16_SPI1_I2S_CFGR": {
+				"name": "R16_SPI1_I2S_CFGR",
+				"address": "0x4001301C",
+				"info": "SPI1 I2S configuration register",
+				"reset_value": "0x00"
+			},
+			"R16_SPI1_HSCR": {
+				"name": "R16_SPI1_HSCR",
+				"address": "0x40013024",
+				"info": "SPI1 high-speed control register",
+				"reset_value": "0x00"
+			}
+		}
+	},
+
+	"SPI2": {
+		"info": "SPI2-related registers list",
+		"table": "20-2",
+
+		"registers": {
+			"R16_SPI2_CTLR1": {
+				"name": "R16_SPI2_CTLR1",
+				"address": "0x40003800",
+				"info": "SPI2 control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_SPI2_CTLR2": {
+				"name": "R16_SPI2_CTLR2",
+				"address": "0x40003804",
+				"info": "SPI2 control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_SPI2_STATR": {
+				"name": "R16_SPI2_STATR",
+				"address": "0x40003808",
+				"info": "SPI2 status register",
+				"reset_value": "0x0002",
+				"bits_fields": "[]"
+			},
+			"R16_SPI2_DATAR": {
+				"name": "R16_SPI2_DATAR",
+				"address": "0x4000380C",
+				"info": "SPI2 data register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_SPI2_CRCR": {
+				"name": "R16_SPI2_CRCR",
+				"address": "0x40003810",
+				"info": "SPI2 polynomial register",
+				"reset_value": "0x0007",
+				"bits_fields": "[]"
+			},
+			"R16_SPI2_RCRCR": {
+				"name": "R16_SPI2_RCRCR",
+				"address": "0x40003814",
+				"info": "SPI2 receive CRC register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_SPI2_TCRCR": {
+				"name": "R16_SPI2_TCRCR",
+				"address": "0x40003818",
+				"info": "SPI2 transmit CRC register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_SPI2_I2S_CFGR": {
+				"name": "R16_SPI2_I2S_CFGR",
+				"address": "0x4000381C",
+				"info": "SPI2 I2S configuration register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_SPI2_I2SPR": {
+				"name": "R16_SPI2_I2SPR",
+				"address": "0x40003820",
+				"info": "SPI2 I2S prescaler register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_SPI2_HSCR": {
+				"name": "R16_SPI2_HSCR",
+				"address": "0x40003824",
+				"info": "SPI2 high-speed control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"SPI3": {
+		"info": "SPI3-related registers list",
+		"table": "20-3",
+
+		"registers": {
+			"R16_SPI3_CTLR1": {
+				"name": "R16_SPI3_CTLR1",
+				"address": "0x40003C00",
+				"info": "SPI3 control register1",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_SPI3_CTLR2": {
+				"name": "R16_SPI3_CTLR2",
+				"address": "0x40003C04",
+				"info": "SPI3 control register2",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_SPI3_STATR": {
+				"name": "R16_SPI3_STATR",
+				"address": "0x40003C08",
+				"info": "SPI3 status register",
+				"reset_value": "0x0002",
+				"bits_fields": "[]"
+			},
+			"R16_SPI3_DATAR": {
+				"name": "R16_SPI3_DATAR",
+				"address": "0x40003C0C",
+				"info": "SPI3 data register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_SPI3_CRCR": {
+				"name": "R16_SPI3_CRCR",
+				"address": "0x40003C10",
+				"info": "SPI3 polynomial register",
+				"reset_value": "0x0007",
+				"bits_fields": "[]"
+			},
+			"R16_SPI3_RCRCR": {
+				"name": "R16_SPI3_RCRCR",
+				"address": "0x40003C14",
+				"info": "SPI3 receive CRC register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_SPI3_TCRCR": {
+				"name": "R16_SPI3_TCRCR",
+				"address": "0x40003C18",
+				"info": "SPI3 transmit CRC register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_SPI3_I2S_CFGR": {
+				"name": "R16_SPI3_I2S_CFGR",
+				"address": "0x40003C1C",
+				"info": "SPI3 I2S configuration register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_SPI3_I2SPR": {
+				"name": "R16_SPI3_I2SPR",
+				"address": "0x40003C20",
+				"info": "SPI3 I2S prescaler register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_SPI3_HSCR": {
+				"name": "R16_SPI3_HSCR",
+				"address": "0x40003C24",
+				"info": "SPI3 high-speed control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"OPA": {
+		"info": "OPA-related registers list",
+		"table": "15-1",
+
+		"registers": {
+
+        }
+	},
+
+	"USBFS": {
+		"info": "USBFS-related registers list",
+		"table": "15-1",
+
+		"registers": {
+
+        }
+	},
+
+	"USBEP": {
+		"info": "USB Endpoint-related registers list",
+		"table": "18-1",
+
+		"registers": {
+		}
+	},
+
+	"USBHS": {
+		"info": "USB Host-related registers list",
+		"table": "18-1",
+
+		"registers": {
+		}
+	},
+
+	"USBPD": {
+		"info": "USBPD-related registers list",
+		"table": "18-1",
+
+		"registers": {
+		}
+	},
+
+	"CAN": {
+		"info": "CAN-related registers list",
+		"table": "15-1",
+
+		"registers": {
+
+        }
+	},
+
+	"ESIGN": {
+		"info": "ESIG-related registers list",
+		"table": "15-1",
+
+		"registers": {
+
+        }
+	},
+
+	"FLASH": {
+		"info": "FLASH-related registers list",
+		"table": "16-2",
+
+		"registers": {
+            
+        }
+	}
+}

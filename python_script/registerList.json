@@ -1,65 +1,72 @@
 {
-  "R32_FLASH_ACTLR": {
-    "name": "R32_FLASH_ACTLR",
-    "address": "0x40022000",
-    "info": "Access control register",
-    "reset_value": "0x00000030",
+  "R16_SPI3_CTLR1": {
+    "name": "R16_SPI3_CTLR1",
+    "address": "0x40003C00",
+    "info": "SPI3 control register1",
+    "reset_value": "0x0000",
     "bits_fields": "[]"
   },
-  "R32_FLASH_KEYR": {
-    "name": "R32_FLASH_KEYR",
-    "address": "0x40022004",
-    "info": "FPEC key register",
-    "reset_value": "X",
+  "R16_SPI3_CTLR2": {
+    "name": "R16_SPI3_CTLR2",
+    "address": "0x40003C04",
+    "info": "SPI3 control register2",
+    "reset_value": "0x0000",
     "bits_fields": "[]"
   },
-  "R32_FLASH_OBKEYR": {
-    "name": "R32_FLASH_OBKEYR",
-    "address": "0x40022008",
-    "info": "OBKEY register",
-    "reset_value": "X",
+  "R16_SPI3_STATR": {
+    "name": "R16_SPI3_STATR",
+    "address": "0x40003C08",
+    "info": "SPI3 status register",
+    "reset_value": "0x0002",
     "bits_fields": "[]"
   },
-  "R32_FLASH_STATR": {
-    "name": "R32_FLASH_STATR",
-    "address": "0x4002200C",
-    "info": "Status register",
-    "reset_value": "0x00000000",
+  "R16_SPI3_DATAR": {
+    "name": "R16_SPI3_DATAR",
+    "address": "0x40003C0C",
+    "info": "SPI3 data register",
+    "reset_value": "0x0000",
     "bits_fields": "[]"
   },
-  "R32_FLASH_CTLR": {
-    "name": "R32_FLASH_CTLR",
-    "address": "0x40022010",
-    "info": "Configuration register",
-    "reset_value": "0x00000080",
+  "R16_SPI3_CRCR": {
+    "name": "R16_SPI3_CRCR",
+    "address": "0x40003C10",
+    "info": "SPI3 polynomial register",
+    "reset_value": "0x0007",
     "bits_fields": "[]"
   },
-  "R32_FLASH_ADDR": {
-    "name": "R32_FLASH_ADDR",
-    "address": "0x40022014",
-    "info": "Address register",
-    "reset_value": "X",
+  "R16_SPI3_RCRCR": {
+    "name": "R16_SPI3_RCRCR",
+    "address": "0x40003C14",
+    "info": "SPI3 receive CRC register",
+    "reset_value": "0x0000",
     "bits_fields": "[]"
   },
-  "R32_FLASH_OBR": {
-    "name": "R32_FLASH_OBR",
-    "address": "0x4002201C",
-    "info": "Selection word register",
-    "reset_value": "0x03FFFFFC",
+  "R16_SPI3_TCRCR": {
+    "name": "R16_SPI3_TCRCR",
+    "address": "0x40003C18",
+    "info": "SPI3 transmit CRC register",
+    "reset_value": "0x0000",
     "bits_fields": "[]"
   },
-  "R32_FLASH_WPR": {
-    "name": "R32_FLASH_WPR",
-    "address": "0x40022020",
-    "info": "Write protection register",
-    "reset_value": "0xFFFFFFF",
+  "R16_SPI3_I2S_CFGR": {
+    "name": "R16_SPI3_I2S_CFGR",
+    "address": "0x40003C1C",
+    "info": "SPI3 I2S configuration register",
+    "reset_value": "0x00",
     "bits_fields": "[]"
   },
-  "R32_FLASH_MODEKEYR": {
-    "name": "R32_FLASH_MODEKEYR",
-    "address": "0x40022024",
-    "info": "Extension key register",
-    "reset_value": "X",
+  "R16_SPI3_I2SPR": {
+    "name": "R16_SPI3_I2SPR",
+    "address": "0x40003C20",
+    "info": "SPI3 I2S prescaler register",
+    "reset_value": "0x00",
+    "bits_fields": "[]"
+  },
+  "R16_SPI3_HSCR": {
+    "name": "R16_SPI3_HSCR",
+    "address": "0x40003C24",
+    "info": "SPI3 high-speed control register",
+    "reset_value": "0x00",
     "bits_fields": "[]"
   }
 }
