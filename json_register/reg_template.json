@@ -1,0 +1,286 @@
+{
+	"PWR": {
+		"info": "Power related registers",
+		"table": "2-2",
+		
+		"registers": {
+
+		}
+	},
+
+	"RCC": {
+		"info": "Reset and Clock Control",
+		"table": "2-2",
+		
+		"registers": {
+
+		}
+	},
+
+	"RTC": {
+		"info": "RTC-related registers list",
+		"table": "2-2",
+		
+		"registers": {
+
+		}
+	},
+
+	"IWDG": {
+		"info": "IWDG-related registers list",
+		"table": "4-1",
+		
+		"registers": {
+
+		}		
+	},
+
+	"WWDG": {
+		"info": "WWDG-related registers list",
+		"table": "5-1",
+
+		"registers": {
+		
+		}
+	},
+
+	"EXTI": {
+		"info": "EXTI-related registers list",
+		"table": "6-3",
+
+		"registers": {
+
+		}
+	},
+
+	"PFIC": {
+		"info": "List of PFIC-related registers",
+		"table": "6-4",
+
+        "registers": {
+            
+        }	
+	},
+
+	"GPIO": {
+		"info": "GPIO-related registers list",
+		"table": "6-4",
+
+		"registers": {
+
+        }	
+	},
+
+	"AFIO": {
+		"info": "List of AFIO-related registers",
+		"table": "7-16",
+
+		"registers": {
+
+        }
+	},
+
+	"DMA": {
+		"info": "DMA-related registers list",
+		"table": "8-3",
+
+		"registers": {
+
+        }
+	},
+
+	"ADC": {
+		"info": "ADC-related registers list",
+		"table": "9-7",
+
+		"registers": {
+
+        }
+	},
+
+	"TKEY": {
+		"info": "TKEY-related registers list",
+		"table": "10-3",
+
+		"registers": {
+
+        }
+	},
+
+	"TIM1": {
+		"info": "TIM1-related registers list",
+		"table": "10-3",
+
+		"registers": {
+
+        }
+	},
+
+	"TIM2": {
+		"info": "TIM2-related registers list",
+		"table": "11-3",
+
+		"registers": {
+
+        }
+	},
+
+	"TIM3": {
+		"info": "TIM3-related registers list",
+		"table": "11-3",
+
+		"registers": {
+
+        }
+	},
+
+	"TIM4": {
+		"info": "TIM4-related registers list",
+		"table": "11-3",
+
+		"registers": {
+
+        }
+	},
+
+	"DAC": {
+		"info": "DAC-related registers list",
+		"table": "11-3",
+
+		"registers": {
+
+        }
+	},
+
+	"UART": {
+		"info": "USART-related registers list",
+		"table": "12-2",
+
+		"registers": {
+
+        }
+	},
+
+	"UART2": {
+		"info": "USART2-related registers list",
+		"table": "12-2",
+
+		"registers": {
+
+        }
+	},
+
+	"UART3": {
+		"info": "UART3-related registers list",
+		"table": "12-2",
+
+		"registers": {
+
+        }
+	},
+
+	"I2C": {
+		"info": "I2C-related registers list",
+		"table": "13-1",
+
+		"registers": {
+
+        }
+	},
+
+	"I2C2": {
+		"info": "I2C2-related registers list",
+		"table": "13-1",
+
+		"registers": {
+
+        }
+	},
+
+	"SPI": {
+		"info": "SPI-related registers list",
+		"table": "14-2",
+
+		"registers": {
+
+        }
+	},
+
+	"SPI2": {
+		"info": "SPI2-related registers list",
+		"table": "14-2",
+
+		"registers": {
+
+        }
+	},
+
+	"OPA": {
+		"info": "OPA-related registers list",
+		"table": "15-1",
+
+		"registers": {
+
+        }
+	},
+
+	"USBFS": {
+		"info": "USBFS-related registers list",
+		"table": "15-1",
+
+		"registers": {
+
+        }
+	},
+
+	"USBEP": {
+		"info": "USB Endpoint-related registers list",
+		"table": "18-1",
+
+		"registers": {
+		}
+	},
+
+	"USBHS": {
+		"info": "USB Host-related registers list",
+		"table": "18-1",
+
+		"registers": {
+		}
+	},
+
+	"USBPD": {
+		"info": "USBPD-related registers list",
+		"table": "18-1",
+
+		"registers": {
+		}
+	},
+
+	"CAN": {
+		"info": "CAN-related registers list",
+		"table": "15-1",
+
+		"registers": {
+
+        }
+	},
+
+	"ESIGN": {
+		"info": "ESIG-related registers list",
+		"table": "15-1",
+
+		"registers": {
+
+        }
+	},
+
+	"FLASH": {
+		"info": "FLASH-related registers list",
+		"table": "16-2",
+
+		"registers": {
+            
+        }
+	}
+}

@@ -1,7 +1,3 @@
-
-let selected_page = "main_page"
-
-
 const webPages = {
 	"main_page": {
 		name: "Main Page",
@@ -51,7 +47,6 @@ const webPages = {
 		name: "Register Table",
 		content: /*html*/
 			`
-			<div>Register Table Page</div>
 			<div id="registers_container"></div>
 			`
 	},
@@ -429,8 +424,8 @@ async function onSwitch_tab(event, target_str) {
 							${mcu.sram_K}K RAM, ${mcu.package })`
 
 		// return each of the mcu in the list
-		return /*html*/
-			`<div style="height: 35px; display: flex; align-items: center; gap: 10px;">
+		/*html*/
+		return `<div style="height: 35px; display: flex; align-items: center; gap: 10px;">
 				<input type="checkbox" style="width: 22px; height: 22px;"
 					id="${ inputId }"
 					name="${ target_str }_nameId"

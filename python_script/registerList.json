@@ -2,8 +2,8 @@
   "R32_FLASH_ACTLR": {
     "name": "R32_FLASH_ACTLR",
     "address": "0x40022000",
-    "info": "Control register",
-    "reset_value": "0x00000000",
+    "info": "Access control register",
+    "reset_value": "0x00000030",
     "bits_fields": "[]"
   },
   "R32_FLASH_KEYR": {
@@ -24,14 +24,14 @@
     "name": "R32_FLASH_STATR",
     "address": "0x4002200C",
     "info": "Status register",
-    "reset_value": "0x00008000",
+    "reset_value": "0x00000000",
     "bits_fields": "[]"
   },
   "R32_FLASH_CTLR": {
     "name": "R32_FLASH_CTLR",
     "address": "0x40022010",
     "info": "Configuration register",
-    "reset_value": "0x00008080",
+    "reset_value": "0x00000080",
     "bits_fields": "[]"
   },
   "R32_FLASH_ADDR": {
@@ -44,8 +44,8 @@
   "R32_FLASH_OBR": {
     "name": "R32_FLASH_OBR",
     "address": "0x4002201C",
-    "info": "Option byte register",
-    "reset_value": "0x0XXXXXXX",
+    "info": "Selection word register",
+    "reset_value": "0x03FFFFFC",
     "bits_fields": "[]"
   },
   "R32_FLASH_WPR": {
@@ -58,14 +58,7 @@
   "R32_FLASH_MODEKEYR": {
     "name": "R32_FLASH_MODEKEYR",
     "address": "0x40022024",
-    "info": "Extended key register",
-    "reset_value": "X",
-    "bits_fields": "[]"
-  },
-  "R32_FLASH_BOOT_MODEKEYR": {
-    "name": "R32_FLASH_BOOT_MODEKEYR",
-    "address": "0x40022028",
-    "info": "Unlock BOOT key register",
+    "info": "Extension key register",
     "reset_value": "X",
     "bits_fields": "[]"
   }

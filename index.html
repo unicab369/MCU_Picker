@@ -33,6 +33,9 @@
 	<!--# Javascript -->
     <script src="script.js"></script>
     <script>
+		let selected_page = "register_table"
+		let selected_regTable = "CH32V003";
+
 		function w3_open() {
 			document.getElementById("mySidebar").style.display = "block"
 			document.getElementById("myOverlay").style.display = "block"
@@ -45,8 +48,7 @@
 
 		//! START_POINT: Initialize when the page loads
 		document.addEventListener('DOMContentLoaded', async function() {
-			reload_page("main_page")
-
+			reload_page(selected_page)
 			sidebarHTML = ''
 			
 			for (const [key, value] of Object.entries(webPages)) {
@@ -57,9 +59,60 @@
 			document.getElementById('sidebar_container').innerHTML = sidebarHTML
 		})
 
+		async function handle_regTableSelect(key) {
+			// Remove active class from all items
+			document.querySelectorAll('#register-tables-list li a').forEach(item => {
+				item.classList.remove('active');
+			})
+			
+			// Add active class to clicked item
+			const matchingItem = document.querySelector(`#register-tables-list [data-table="${key}"]`);
+			if (matchingItem) {
+				matchingItem.classList.add('active')
+			}
+
+			const reg_headerKeys = ["Name", "Access Addr.", "Description", "Reset Value"]
+			const ch32_regs = await fetch(`json_register/reg_${key}.json`).then(response => response.json())
+			let regTableHTML = ''
+
+			for (const [key, value] of Object.entries(ch32_regs)) {
+				regTableHTML += /*html*/
+					`<br>
+					<div style="overflow-x: auto;">
+						<table>
+							<thead>
+								<tr>${ reg_headerKeys.map(e => 
+									`<th style="background-color: lightgray !important;">${e}</th>`).join('') 
+								}</tr>
+							</thead>
+							<tbody>
+								${ Object.entries(value.registers).map(([subkey, value]) => `
+									<tr>
+										<td>
+											<a style="color: blue;" onclick="handle_regClick('${ key }', '${ subkey }')">
+												${ subkey }
+											</a>
+										</td>
+										<td>${ value.address }</td>
+										<td>${ value.info }</td>
+										<td>${ value.reset_value }</td>
+									</tr>`).join('')
+								}
+							</tbody>
+						</table>
+					</div>
+
+					<div id="${key}_reg_container"></div>
+					`
+			}
+
+			document.getElementById('registers_table_container').innerHTML = regTableHTML
+		}
+
 		async function reload_page(page) {
 			// Load page
 			console.log("page: ", page);
+			selected_page = page
 			document.getElementById('content_container').innerHTML = webPages[page].content
 
 			// Load main page				
@@ -74,42 +127,24 @@
 				console.log("tabItems: ", tabs_items)
 
 				if (page === 'register_table') {
-					const reg_headerKeys = ["Name", "Access Addr.", "Description", "Reset Value"]
-					ch32_regs = await fetch('json_register/reg_CH32V003.json').then(response => response.json())
-					let regTableHTML = ''
+					const tables = await fetch('json_register/reg_all.json').then(response => response.json())
 
-					for (const [key, value] of Object.entries(ch32_regs)) {
-						regTableHTML += /*html*/
-							`<br>
-							<div style="overflow-x: auto;">
-								<table>
-									<thead>
-										<tr>${ reg_headerKeys.map(e => 
-											`<th style="background-color: lightgray !important;">${e}</th>`).join('') 
-										}</tr>
-									</thead>
-									<tbody>
-										${ Object.entries(value.registers).map(([subkey, value]) => `
-											<tr>
-												<td>
-													<a style="color: blue;" onclick="handle_regClick('${ key }', '${ subkey }')">
-														${ subkey }
-													</a>
-												</td>
-												<td>${ value.address }</td>
-												<td>${ value.info }</td>
-												<td>${ value.reset_value }</td>
-											</tr>`).join('')
-										}
-									</tbody>
-								</table>
-							</div>
-							
-							<div id="${key}_reg_container"></div>
-							`
-					}
+					document.getElementById('registers_container').innerHTML = /*html*/ `
+						<div>Select register table</div>
 
-					document.getElementById('registers_container').innerHTML = regTableHTML
+						<ul class="menu menu-nav selecting-list" 
+							id="register-tables-list" style="height: 300px; overflow-y: auto;">
+							${
+								Object.entries(tables).map(([key, value]) => `
+									<li><a data-table="${key}" onclick="handle_regTableSelect('${key}')">${key}</a></li>
+								`).join('')
+							}
+						</ul>
+
+						<div id="registers_table_container"></div>
+						`
+
+					handle_regTableSelect(selected_regTable)
 				}
 
 				else if (page === 'part_table') {
@@ -130,7 +165,6 @@
 					document.getElementById('mcuTabs').innerHTML = mcuTabsHTML
 
 					await reload_MCUsContainer()
-
 
 					// Set first tab as active manually
 					tabs_items()[0].classList.add('active')

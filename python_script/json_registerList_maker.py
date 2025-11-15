@@ -4,16 +4,15 @@ import re
 def main():
 	# Input data
 	input_data = """
-R32_FLASH_ACTLR 0x40022000 Control register 0x00000000 
+R32_FLASH_ACTLR 0x40022000 Access control register 0x00000030 
 R32_FLASH_KEYR 0x40022004 FPEC key register X 
 R32_FLASH_OBKEYR 0x40022008 OBKEY register X 
-R32_FLASH_STATR 0x4002200C Status register 0x00008000 
-R32_FLASH_CTLR 0x40022010 Configuration register 0x00008080 
+R32_FLASH_STATR 0x4002200C Status register 0x00000000 
+R32_FLASH_CTLR 0x40022010 Configuration register 0x00000080 
 R32_FLASH_ADDR 0x40022014 Address register X 
-R32_FLASH_OBR 0x4002201C Option byte register 0x0XXXXXXX 
+R32_FLASH_OBR 0x4002201C Selection word register 0x03FFFFFC 
 R32_FLASH_WPR 0x40022020 Write protection register 0xFFFFFFF 
-R32_FLASH_MODEKEYR 0x40022024 Extended key register X 
-R32_FLASH_BOOT_MODEKEYR 0x40022028 Unlock BOOT key register X
+R32_FLASH_MODEKEYR 0x40022024 Extension key register X
 	"""
 
 

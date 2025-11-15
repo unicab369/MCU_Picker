@@ -128,3 +128,22 @@ table th, table td {
 		background: inherit;
 	}
 }
+
+
+.selecting-list {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    
+    & li a {
+        padding: 2px 0.5rem;
+        display: block;
+        text-decoration: none;
+        color: #333;
+    }
+    
+    & li a.active {
+        background-color: #007bff;
+        color: white;
+        border-radius: 4px;
+    }
+}

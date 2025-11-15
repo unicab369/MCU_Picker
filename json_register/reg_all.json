@@ -1,0 +1,42 @@
+{
+    "CH32V003": {
+		"ref": "reg_CH32V003.json",
+		"info": "Registers list for CH32V003"
+	},
+	"CH32V00X": {
+		"ref": "reg_CH32V00X.json",
+		"info": "Registers list for CH32V002, CH32V004, CH32V005, CH32V006, and CH32V007"
+	},
+	"CH32X035": {
+		"ref": "reg_CH32X035.json",
+		"info": "Registers list for CH32X033 and CH32X035"
+	},
+	"CH32X103": {
+		"ref": "reg_CH32X103.json",
+		"info": "Registers list for CH32X103"
+	},
+	"CH32V2X_3X": {
+		"ref": "reg_CH32V2X_3X.json",
+		"info": "Registers list for CH32V20x, CH32V30x, and CH32V31x"
+	},
+	"CH570_572": {
+		"ref": "reg_CH570_572.json",
+		"info": "Registers list for CH570 and CH572"
+	},
+	"CH571_573": {
+		"ref": "reg_CH571_573.json",
+		"info": "Registers list for CH571 and CH573"
+	},
+	"CH582_583": {
+		"ref": "reg_CH582_583.json",
+		"info": "Registers list for CH582 and CH583"
+	},
+	"CH584_585": {
+		"ref": "reg_CH584_585.json",
+		"info": "Registers list for CH584 and CH585"
+	},
+	"CH591_592": {
+		"ref": "reg_CH591_592.json",
+		"info": "Registers list for CH591 and CH592"
+	}
+}
