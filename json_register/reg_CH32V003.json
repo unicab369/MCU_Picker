@@ -340,7 +340,7 @@
 						"reset_value": "0"
 					},
 					{
-						"bit": 16,
+						"range": 16,
 						"name": "PLLSRC",
 						"access": "RW",
 						"info": "Input clock source for PLL (write only when PLL is off).\n1: HSE is fed into PLL without dividing the frequency.\n0: HSI is not divided and sent to PLL.",
@@ -398,7 +398,7 @@
 						"reset_value": "0"
 					},
 					{
-						"bit": 23,
+						"range": 23,
 						"name": "CSSC",
 						"access": "WO",
 						"info": "Clear the clock security system interrupt flag bit (CSSF).\n1: Clear the CSSF interrupt flag.\n0: No action.",
@@ -412,35 +412,35 @@
 						"reset_value": "0"
 					},
 					{
-						"bit": 20,
+						"range": 20,
 						"name": "PLLRDYC",
 						"access": "WO",
 						"info": "Clear the PLL-ready interrupt flag bit.\n1: Clear the PLLRDYF interrupt flag.\n0: No action.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 19,
+						"range": 19,
 						"name": "HSERDYC",
 						"access": "WO",
 						"info": "Clear the HSE oscillator ready interrupt flag bit.\n1: Clear the HSERDYF interrupt flag.\n0: No action.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 18,
+						"range": 18,
 						"name": "HSIRDYC",
 						"access": "WO",
 						"info": "Clear the HSI oscillator ready interrupt flag bit.\n1: Clear the HSIRDYF interrupt flag.\n0: No action.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 17,
+						"range": 17,
 						"name": "Reserved",
 						"access": "RO",
 						"info": "Reserved",
 						"reset_value": "0"
 					},
 					{
-						"bit": 16,
+						"range": 16,
 						"name": "LSIRDYC",
 						"access": "WO",
 						"info": "Clear the LSI oscillator ready interrupt flag bit.\n1: Clear the LSIRDYF interrupt flag.\n0: No action.",
@@ -454,42 +454,42 @@
 						"reset_value": "0"
 					},
 					{
-						"bit": 12,
+						"range": 12,
 						"name": "PLLRDYIE",
 						"access": "RW",
 						"info": "PLL-ready interrupt enable bit.\n1: Enable the PLL-ready interrupt.\n0: Disable the PLL-ready interrupt.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 11,
+						"range": 11,
 						"name": "HSERDYIE",
 						"access": "RW",
 						"info": "HSE-ready interrupt enable bit.\n1: Enable HSE-ready interrupt.\n0: Disable HSE-ready interrupt.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 10,
+						"range": 10,
 						"name": "HSIRDYIE",
 						"access": "RW",
 						"info": "HSI-ready interrupt enable bit.\n1: Enable HSI-ready interrupt.\n0: Disable HSI-ready interrupt.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 9,
+						"range": 9,
 						"name": "Reserved",
 						"access": "RO",
 						"info": "Reserved",
 						"reset_value": "0"
 					},
 					{
-						"bit": 8,
+						"range": 8,
 						"name": "LSIRDYIE",
 						"access": "RW",
 						"info": "LSI-ready interrupt enable bit.\n1: Enable LSI-ready interrupt.\n0: Disable LSI-ready interrupt.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 7,
+						"range": 7,
 						"name": "CSSF",
 						"access": "RO",
 						"info": "Clock security system interrupt flag bit.\n1: HSE clock failure, which generates a clock safety interrupt CSSI.\n0: No clock security system interrupt. Hardware set, software write CSSC bit 1 cleared.",
@@ -503,35 +503,35 @@
 						"reset_value": "0"
 					},
 					{
-						"bit": 4,
+						"range": 4,
 						"name": "PLLRDYF",
 						"access": "RO",
 						"info": "PLL clock-ready lockout interrupt flag.\n1: PLL clock lock generating interrupt.\n0: No PLL clock lock interrupt. Hardware set, software write PLLRDYC bit 1 cleared.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 3,
+						"range": 3,
 						"name": "HSERDYF",
 						"access": "RO",
 						"info": "HSE clock-ready interrupt flag.\n1: HSE clock-ready interrupt generation.\n0: No HSE clock-ready interrupt. Hardware set, software write HSERDYC bit 1 cleared.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 2,
+						"range": 2,
 						"name": "HSIRDYF",
 						"access": "RO",
 						"info": "HSI clock-ready interrupt flag.\n1: HSI clock-ready interrupt generation.\n0: No HSI clock-ready interrupt. Hardware set, software write HSIRDYC bit 1 cleared.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 1,
+						"range": 1,
 						"name": "Reserved",
 						"access": "RO",
 						"info": "Reserved",
 						"reset_value": "0"
 					},
 					{
-						"bit": 0,
+						"range": 0,
 						"name": "LSIRDYF",
 						"access": "RO",
 						"info": "LSI clock-ready interrupt flag.\n1: LSI clock-ready interrupt generation.\n0: No LSI clock-ready interrupt. Hardware set, software write LSIRDYC bit 1 cleared.",
@@ -554,42 +554,42 @@
 						"reset_value": "0"
 					},
 					{
-						"bit": 14,
+						"range": 14,
 						"name": "USART1RST",
 						"access": "RW",
 						"info": "USART1 interface reset control.\n1: Reset module; 0: No effect.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 13,
+						"range": 13,
 						"name": "Reserved",
 						"access": "RO",
 						"info": "Reserved",
 						"reset_value": "0"
 					},
 					{
-						"bit": 12,
+						"range": 12,
 						"name": "SPI1RST",
 						"access": "RW",
 						"info": "SPI1 interface reset control.\n1: Reset module; 0: No effect.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 11,
+						"range": 11,
 						"name": "TIM1RST",
 						"access": "RW",
 						"info": "TIM1 module reset control.\n1: Reset module; 0: No effect.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 10,
+						"range": 10,
 						"name": "Reserved",
 						"access": "RO",
 						"info": "Reserved",
 						"reset_value": "0"
 					},
 					{
-						"bit": 9,
+						"range": 9,
 						"name": "ADC1RST",
 						"access": "RW",
 						"info": "ADC1 module reset control.\n1: Reset module; 0: No effect.",
@@ -603,42 +603,42 @@
 						"reset_value": "0"
 					},
 					{
-						"bit": 5,
+						"range": 5,
 						"name": "IOPDRST",
 						"access": "RW",
 						"info": "PD port module reset control for I/O.\n1: Reset module; 0: No effect.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 4,
+						"range": 4,
 						"name": "IOPCRST",
 						"access": "RW",
 						"info": "PC port module reset control for I/O.\n1: Reset module; 0: No effect.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 3,
+						"range": 3,
 						"name": "Reserved",
 						"access": "RO",
 						"info": "Reserved",
 						"reset_value": "0"
 					},
 					{
-						"bit": 2,
+						"range": 2,
 						"name": "IOPARST",
 						"access": "RW",
 						"info": "PA port module reset control for I/O.\n1: Reset module; 0: No effect.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 1,
+						"range": 1,
 						"name": "Reserved",
 						"access": "RO",
 						"info": "Reserved",
 						"reset_value": "0"
 					},
 					{
-						"bit": 0,
+						"range": 0,
 						"name": "AFIORST",
 						"access": "RW",
 						"info": "I/O auxiliary function module reset control.\n1: Reset module; 0: No effect.",
@@ -925,56 +925,56 @@
 				"reset_value": "0x0C000000", 
 				"bits_fields": [
 					{
-						"bit": 31,
+						"range": 31,
 						"name": "LPWRRSTF",
 						"access": "RO",
 						"info": "Low-power reset flag.\n1: Occurrence of low-power resets.\n0: No low-power reset occurs.\nSet to 1 by hardware when a low-power management reset occurs; cleared by software writing of the RMVF bit.",
 						"reset_value": "Reset value"
 					},
 					{
-						"bit": 30,
+						"range": 30,
 						"name": "WWDGRSTF",
 						"access": "RO",
 						"info": "Window watchdog reset flag.\n1: Occurrence of a window watchdog reset.\n0: No window watchdog reset occurs.\nSet to 1 by hardware when a window watchdog reset occurs; cleared by software writing of the RMVF bit.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 29,
+						"range": 29,
 						"name": "IWDGRSTF",
 						"access": "RO",
 						"info": "Independent watchdog reset flag.\n1: Occurrence of an independent watchdog reset.\n0: No independent watchdog reset occurs.\nSet to 1 by hardware when an independent watchdog reset occurs; cleared by software writing of the RMVF bit.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 28,
+						"range": 28,
 						"name": "SFTRSTF",
 						"access": "RO",
 						"info": "Software reset flag.\n1: Software reset occurs.\n0: No software reset occurs.\nSet to 1 by hardware when a software reset occurs; software write RMVF bit cleared.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 27,
+						"range": 27,
 						"name": "PORRSTF",
 						"access": "RO",
 						"info": "Power-up/power-down reset flag.\n1: Power-up/power-down reset occurs.\n0: No power-up/power-down reset occurs.\nSet to 1 by hardware when power-up/power-down reset occurs; cleared by software writing of RMVF bit.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 26,
+						"range": 26,
 						"name": "PINRSTF",
 						"access": "RO",
 						"info": "External manual reset (NRST pin) flag.\n1: Occurrence of NRST pin reset.\n0: No NRST pin reset occurs.\nSet to 1 by hardware when NRST pin reset occurs; cleared by software writing of RMVF bit.",
 						"reset_value": "1"
 					},
 					{
-						"bit": 25,
+						"range": 25,
 						"name": "Reserved",
 						"access": "RO",
 						"info": "Reserved",
 						"reset_value": "0"
 					},
 					{
-						"bit": 24,
+						"range": 24,
 						"name": "RMVF",
 						"access": "RW",
 						"info": "Clear reset flag control.\n1: Clear the reset flag.\n0: No effect.",
@@ -988,14 +988,14 @@
 						"reset_value": "0"
 					},
 					{
-						"bit": 1,
+						"range": 1,
 						"name": "LSIRDY",
 						"access": "RO",
 						"info": "Internal Low Speed Clock (LSI) Stable Ready flag bit (set by hardware).\n1: Stable internal low-speed clock (128kHz).\n0: The internal low-speed clock (128kHz) is not stable.\nNote: After the LSION bit is cleared to 0, the bit requires 3 LSI cycles to clear 0.",
 						"reset_value": "0"
 					},
 					{
-						"bit": 0,
+						"range": 0,
 						"name": "LSION",
 						"access": "RW",
 						"info": "Internal low-speed clock (LSI) enable control bit.\n1: Enable the LSI (128kHz) oscillator.\n0: Disable the LSI (128kHz) oscillator.\nNote: The Write Clear Reset flag can be cleared except for BIT1 which is cleared by a power-on reset.",
@@ -1003,6 +1003,2008 @@
 					}
 				]
 			}
+		}
+	},
+
+	"IWDG": {
+		"info": "IWDG-related registers list",
+		"table": "4-1",
+		
+		"registers": {
+			"R16_IWDG_CTLR": {
+				"name": "R16_IWDG_CTLR",
+				"address": "0x40003000",
+				"info": "Control register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:0]",
+						"name": "KEY",
+						"access": "WO",
+						"reset_value": "0",
+						"info": "Operate the key value lock. \n00xAAAA: Feed the dog. Loading of the IWDG_RLDR register value into the independent watchdog counter. \n0x5555: Allows modification of the R16_IWDG_PSCR and R16_IWDG_ RLDR registers. \n0xCCCC: Start the watchdog, but not if the hardware watchdog is enabled (user-option bytes configuration)."
+					}
+				]
+			},
+			"R16_IWDG_PSCR": {
+				"name": "R16_IWDG_PSCR",
+				"address": "0x40003004",
+				"info": "Prescaler register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:3]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					},
+					{
+						"range": "[2:0]",
+						"name": "PR[2:0]",
+						"access": "RW",
+						"info": "before modifying this field. \n000: Divided by 4; 001: Divided by 8. \n010: Divided by 16; 011: Divided by 32. \n100: Divided by 64; 101: Divided by 128. \n110: Divided by 256; 111: Divided by 256.  \nIWDG counting time base = LSI/divide factor. \nNote: Before reading the value of this field, make \nsure the PVU bit in the IWDG_STATR register is \n0, otherwise the read value is invalid.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:12]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					},
+					{
+						"range": "[11:0]",
+						"name": "RL[11:0]",
+						"access": "RW",
+						"info": "Counter reload value. Write 0x5555 to the KEY before modifying this field. When 0xAAAA is written to the KEY, the value of this field will be loaded into the counter by hardware, and the counter will then count decreasingly from this value. \nNote: Before reading or writing the value of this field, make sure the RVU bit in the IWDG_STATR register is 0, otherwise reading or writing this field is invalid.",
+						"reset_value": "0xFFF"
+					}					
+				]
+			},
+			"R16_IWDG_RLDR": {
+				"name": "R16_IWDG_RLDR",
+				"address": "0x40003008",
+				"info": "Reload register",
+				"reset_value": "0x0FFF",
+				"bits_fields": [
+					{
+						"range": "[15:12]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					},
+					{
+						"range": "[11:0]",
+						"name": "RL[11:0]",
+						"access": "RW",
+						"reset_value": "0xFFF",
+						"info": "Counter reload value. Write 0x5555 to the KEY before modifying this field. \nWhen 0xAAAA is written to the KEY, the value of this field will be loaded into the counter by hardware, and the counter will then count decreasingly from this value. \nNote: Before reading or writing the value of this field, make sure the RVU bit in the IWDG_STATR register is 0, otherwise reading or writing this field is invalid. "
+					}
+				]
+			},
+			"R16_IWDG_STATR": {
+				"name": "R16_IWDG_STATR",
+				"address": "0x4000300C",
+				"info": "Status register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:12]",
+						"name": "Reserved",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Reserved"
+					},					
+					{
+						"range": "0",
+						"name": "PVU",
+						"access": "RO",
+						"reset_value": "0",
+						"info": "Clock division factor update flag bit. Hardware set or clear 0. \n1: Clock division value update is in progress. \n0: End of clock division value update (up to 5 LSI cycles). \nNote: The crossover factor register IWDG_PSCR can only be accessed read or write after the PVU bit is cleared to 0."
+					}					
+				]
+			}
+		}		
+	},
+
+	"WWDG": {
+		"info": "WWDG-related registers list",
+		"table": "5-1",
+
+		"registers": {
+			"R16_WWDG_CTLR": {
+				"name": "R16_WWDG_CTLR",
+				"address": "0x40002C00",
+				"info": "Control Register",
+				"reset_value": "0x007F",
+				"bits_fields": [
+					{
+						"range": "[15:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "WDGA",
+						"access": "RW1",
+						"info": "Window watchdog reset enable bit. 1: Turn on the watchdog function (which generates a reset signal). 0: Disable the watchdog function. Software write 1 is on, but only allows hardware to clear 0 after reset.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[6:0]",
+						"name": "T[6:0]",
+						"access": "RW",
+						"info": "The 7-bit self-decrement counter decrements by 1 every 4096*2WDGTB HCLK cycles. A watchdog reset is generated when the counter decrements from 0x40 to 0x3F, i.e., when T6 jumps to 0.",
+						"reset_value": "0x7F"
+					}
+				]
+			},
+			"R16_WWDG_CFGR": {
+				"name": "R16_WWDG_CFGR",
+				"address": "0x40002C04",
+				"info": "Configuration Register",
+				"reset_value": "0x007F",
+				"bits_fields": [
+					{
+						"range": "[15:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved 0 9 EWI RW1 Early wakeup interrupt enable bit. If this position is 1, an interrupt is generated when the counter value reaches 0x40. This bit can only be invited to 0 by hardware after a reset.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[8:7]",
+						"name": "WDGTB[1:0]",
+						"access": "RW",
+						"info": "Window watchdog clock division selection. 00: Divided by 1, counting time base = HCLK/4096. 01: Divided by 2, counting time base = HCLK /4096/2. 0 10: Divided by 4, counting time base = HCLK /4096/4. 11: Divided by 8, counting time base = HCLK",
+						"reset_value": "/4096/8."
+					},
+					{
+						"range": "[6:0]",
+						"name": "W[6:0]",
+						"access": "RW",
+						"info": "Window watchdog 7-bit window value. Used to compare with the counter value. The feed dog operation can only be performed when the counter value is less than the window value and greater than 0x3F.",
+						"reset_value": "0x7F"
+					}
+				]
+			},
+			"R16_WWDG_STATR": {
+				"name": "R16_WWDG_STATR",
+				"address": "0x40002C08",
+				"info": "Status Register",
+				"reset_value": "0x0000",
+				"bits_fields": [
+					{
+						"range": "[15:1]",
+						"name": "Reserved",
+						"access": "WO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "EWIF",
+						"access": "RW",
+						"info": "Wake up the interrupt flag bit early. When the counter reaches 0x40, this bit is set in hardware and must be cleared to 0 by software; the user setting is invalid. Even if the EWI is not set, this bit will still be set as usual when the event occurs.",
+						"reset_value": "0"
+					}
+				]
+			}			
+		}
+	},
+
+	"EXTI": {
+		"info": "EXTI-related registers list",
+		"table": "6-3",
+
+		"registers": {
+			"R32_EXTI_INTENR":{
+				"name": "R32_EXTI_INTENR",
+				"address": "0x40010400",
+				"info": "Interrupt enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[9:0]",
+						"name": "MRx",
+						"access": "RW",
+						"info": "Enable the event request signal for external interrupt channel x. 1: Event enabling this channel. 0: Block the events of this channel.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_EXTI_EVENR":{
+				"name": "R32_EXTI_EVENR",
+				"address": "0x40010404",
+				"info": "Event enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[9:0]",
+						"name": "MRx",
+						"access": "RW",
+						"info": "Enable the event request signal for external interrupt channel x. 1: Event enabling this channel. 0: Block the events of this channel.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_EXTI_RTENR":{
+				"name": "R32_EXTI_RTENR",
+				"address": "0x40010408",
+				"info": "Rising edge trigger enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[9:0]",
+						"name": "TRx",
+						"access": "RW",
+						"info": "Enable rising edge triggering of external interrupt channel x. 1: Enable rising edge triggering of this channel. 0: Disable rising edge triggering for this channel.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_EXTI_FTENR":{
+				"name": "R32_EXTI_FTENR",
+				"address": "0x4001040C",
+				"info": "Falling edge trigger enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[9:0]",
+						"name": "TRx",
+						"access": "RW",
+						"info": "Enable falling edge triggering of external interrupt channel x. 1: Enable falling edge triggering for this channel; 0: Disable falling edge triggering for this channel.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_EXTI_SWIEVR":{
+				"name": "R32_EXTI_SWIEVR",
+				"address": "0x40010410",
+				"info": "Soft interrupt event register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[9:0]",
+						"name": "SWIERx",
+						"access": "RW",
+						"info": "A software interrupt is set on the corresponding externally triggered interrupt channel. Setting it here causes the interrupt flag bit (EXTI_INTFR) to correspond to the position bit, and if interrupt enable (EXTI_INTENR) or event enable (EXTI_EVENR) is on, then an interrupt or event will be generated.",   
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_EXTI_INTFR":{
+				"name": "R32_EXTI_INTFR",
+				"address": "0x40010414",
+				"info": "Interrupt flag register",
+				"reset_value": "0x0000XXXX",
+				"bits_fields": [
+					{
+						"range": "[31:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[9:0]",
+						"name": "IFx",
+						"access": "W1",
+						"info": "The interrupt flag bit, this location bit flag indicates that the corresponding external interrupt has occurred. A write of 1 clears this bit.",
+						"reset_value": "X"
+					}
+				]
+			}
+		}
+	},
+
+	"PFIC": {
+		"info": "List of PFIC-related registers",
+		"table": "6-4",
+
+		"registers": {
+			"R32_PFIC_ISR1": {
+				"name": "R32_PFIC_ISR1",
+				"address": "0xE000E000",
+				"info": "PFIC interrupt enable status register 1",
+				"reset_value": "0x0000000C",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "INTENSTA",
+						"access": "RO",
+						"info": "16#-31# Interrupt current enable status. 1: The current numbered interrupt is enabled. 0: The current numbered interrupt is not enabled.",
+						"reset_value": "0"
+					},
+					{
+						"range": "15",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "INTENSTA",
+						"access": "RO",
+						"info": "14# Interrupt current enable status. 1: The current numbered interrupt is enabled. 0: The current numbered interrupt is not enabled.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "12",
+						"name": "INTENSTA",
+						"access": "RO",
+						"info": "12# Interrupt current enable status. 1: The current numbered interrupt is enabled. 0 0: The current numbered interrupt is not",
+						"reset_value": "enabled."
+					},
+					{
+						"range": "[11:4]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[3:2]",
+						"name": "INTENSTA",
+						"access": "RO",
+						"info": "2#-3# interrupt current enable status. 1: The current numbered interrupt is enabled. 0: The current numbered interrupt is not enabled.",
+						"reset_value": "0x3"
+					},
+					{
+						"range": "[1:0]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_ISR2": {
+				"name": "R32_PFIC_ISR2",
+				"address": "0xE000E004",
+				"info": "PFIC interrupt enable status register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:7]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[6:0]",
+						"name": "INTENSTA",
+						"access": "RO",
+						"info": "32#-38# interrupt current enable status. 1: The current numbered interrupt is enabled. 0: The current numbered interrupt is not enabled.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_IPR1": {
+				"name": "R32_PFIC_IPR1",
+				"address": "0xE000E020",
+				"info": "PFIC interrupt pending status register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "PENDSTA",
+						"access": "RO",
+						"info": "1216#-31# interrupt current pending status. 1: The current number interrupt is pending. 0: The current number interrupt is not pending.",
+						"reset_value": "0"
+					},
+					{
+						"range": "15",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "PENDSTA",
+						"access": "RO",
+						"info": "14# interrupt current pending status. 1: The current number interrupt is pending. 0: The current number interrupt is not pending.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "12",
+						"name": "PENDSTA",
+						"access": "RO",
+						"info": "12# interrupt current pending status. 1: The current number interrupt is pending. 0: The current number interrupt is not pending.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[11:4]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[3:2]",
+						"name": "PENDSTA",
+						"access": "RO",
+						"info": "2#-3# interrupt current pending status. 1: The current number interrupt is pending. 0 0: The current number interrupt is not",
+						"reset_value": "pending."
+					},
+					{
+						"range": "[1:0]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_IPR2": {
+				"name": "R32_PFIC_IPR2",
+				"address": "0xE000E024",
+				"info": "PFIC interrupt pending status register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:7]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[6:0]",
+						"name": "PENDSTA",
+						"access": "RO",
+						"info": "32#-38# Interrupt current pending status. 1: The current number break is pending. 0: The current number break is not pending.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_ITHRESDR": {
+				"name": "R32_PFIC_ITHRESDR",
+				"address": "0xE000E040",
+				"info": "PFIC interrupt priority threshold configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:0]",
+						"name": "THRESHOLD[7:0]",
+						"access": "RW",
+						"info": "Interrupt priority threshold setting value. The interrupt priority value lower than the current setting value, when hung, does not perform interrupt service; this register is 0 means the threshold register function is",
+						"reset_value": "invalid."
+					},
+					{
+						"range": "[5:0]",
+						"name": ":",
+						"access": "reserved,",
+						"info": "fixed to 0, write invalid.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_CFGR": {
+				"name": "R32_PFIC_CFGR",
+				"address": "0xE000E048",
+				"info": "PFIC interrupt configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "KEYCODE[15:0]",
+						"access": "WO",
+						"info": "Corresponding to different target control bits, the corresponding security access identification data needs to be written simultaneously in order to be modified, and the readout data is fixed to",
+						"reset_value": "0."
+					},
+					{
+						"range": "[15:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "7",
+						"name": "RESETSYS",
+						"access": "WO",
+						"info": "System reset (simultaneous writing to KEY3). Auto clear 0. Writing 1 is valid, writing 0 is invalid. Note : Same function as the PFIC_SCTLR register SYSRESET bit.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[6:0]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_GISR": {
+				"name": "R32_PFIC_GISR",
+				"address": "0xE000E04C",
+				"info": "PFIC interrupt global status register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "9",
+						"name": "GPENDSTA",
+						"access": "RO",
+						"info": "Are there any interrupts currently on hold. 1: Yes; 0: No.",
+						"reset_value": "0"
+					},
+					{
+						"range": "8",
+						"name": "GACTSTA",
+						"access": "RO",
+						"info": "Are there any interrupts currently being executed. 1: Yes; 0: No.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:0]",
+						"name": "NESTSTA[7:0]",
+						"access": "RO",
+						"info": "Current interrupt nesting status, currently supports a maximum of 2 levels of nesting and a maximum hardware stack depth of 2 levels. 0x 03: Level 2 interrupt in progress. 0x 01: Level 1 interrupt in progress. Other : no interrupt occurred.", 
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_VTFIDR": {
+				"name": "R32_PFIC_VTFIDR",
+				"address": "0xE000E050",
+				"info": "PFIC VTF interrupt ID configuration register",     
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:8]",
+						"name": "VTFID1",
+						"access": "RW",
+						"info": "Configure the interrupt number of VTF interrupt 1.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:0]",
+						"name": "VTFID0",
+						"access": "RW",
+						"info": "Configure the interrupt number of VTF interrupt 0.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_VTFADDRR0": {
+				"name": "R32_PFIC_VTFADDRR0",
+				"address": "0xE000E060",
+				"info": "PFIC VTF interrupt 0 offset address register",     
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:1]",
+						"name": "ADDR0[31:1]",
+						"access": "RW",
+						"info": "VTF interrupt 0 service program address bit[31:1], bit0 is 0.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "VTF0EN",
+						"access": "RW",
+						"info": "VTF interrupt 0 enable bit. 1: enable VTF interrupt 0 channel; 0: off.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_VTFADDRR1": {
+				"name": "R32_PFIC_VTFADDRR1",
+				"address": "0xE000E064",
+				"info": "PFIC VTF interrupt 1 offset address register",     
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:1]",
+						"name": "ADDR1[31:1]",
+						"access": "RW",
+						"info": "VTF interrupt 1 service program address bit[31:1], bit0 is 0.",
+						"reset_value": "0"
+					},
+					{
+						"range": "0",
+						"name": "VTF1EN",
+						"access": "RW",
+						"info": "VTF interrupt 1 enable bit. 1: VTF interrupt 1 channel is enabled; 0: Off.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_IENR1": {
+				"name": "R32_PFIC_IENR1",
+				"address": "0xE000E100",
+				"info": "PFIC interrupt enable setting register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "INTEN",
+						"access": "WO",
+						"info": "16#-31# interrupt enable control. 1: Current number interrupt enable. 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "15",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "INTEN",
+						"access": "WO",
+						"info": "14# Interrupt enable control. 1: Current number interrupt enable. 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "12",
+						"name": "INTEN",
+						"access": "WO",
+						"info": "12# Interrupt enable control. 1: Current number interrupt enable. 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[11:0]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_IENR2": {
+				"name": "R32_PFIC_IENR2",
+				"address": "0xE000E104",
+				"info": "PFIC interrupt enable setting register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:7]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[6:0]",
+						"name": "INTEN",
+						"access": "WO",
+						"info": "32#-38# interrupt enable control. 1: current number interrupt enable. 0: No effect.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_IRER1": {
+				"name": "R32_PFIC_IRER1",
+				"address": "0xE000E180",
+				"info": "PFIC interrupt enable clear register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "INTRSET",
+						"access": "WO",
+						"info": "16#-31# interrupt shutdown control. 1: current number interrupt off. 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "15",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "INTRSET",
+						"access": "WO",
+						"info": "14# Interrupt off control. 1: current number interrupt off. 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "12",
+						"name": "INTRSET",
+						"access": "WO",
+						"info": "12# Interrupt off control. 1: current number interrupt off. 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[11:0]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_IRER2": {
+				"name": "R32_PFIC_IRER2",
+				"address": "0xE000E184",
+				"info": "PFIC interrupt enable clear register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:7]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[6:0]",
+						"name": "INTRSET32_38",
+						"access": "WO",
+						"info": "32#-38# interrupt shutdown control. 1: current number interrupt off. 0: No effect.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_IPSR1": {
+				"name": "R32_PFIC_IPSR1",
+				"address": "0xE000E200",
+				"info": "PFIC interrupt pending setting register 1",        
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "PENDSET",
+						"access": "WO",
+						"info": "Reset value 16#-31# interrupt pending setting. 1: Current numbered interrupt hang. 0: No",
+						"reset_value": "effect."
+					},
+					{
+						"range": "15",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved 0",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "PENDSET",
+						"access": "WO",
+						"info": "14# Interrupt hang setting. 1: current numbered interrupt hang. 0: No",
+						"reset_value": "effect."
+					},
+					{
+						"range": "13",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved 0",
+						"reset_value": "0"
+					},
+					{
+						"range": "12",
+						"name": "PENDSET",
+						"access": "WO",
+						"info": "12# Interrupt hang setting. 1: current numbered interrupt hang. 0: No",
+						"reset_value": "effect."
+					},
+					{
+						"range": "[11:4]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved 0",
+						"reset_value": "0"
+					},
+					{
+						"range": "[3:2]",
+						"name": "PENDSET",
+						"access": "WO",
+						"info": "2#-3# interrupt pending setting. 1: current number break hang. 0: No effect. [1:0] Reserved RO Reserved 0",        
+						"reset_value": "0"
+					},
+					{
+						"range": "[1:0]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved 0",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_IPSR2": {
+				"name": "R32_PFIC_IPSR2",
+				"address": "0xE000E204",
+				"info": "PFIC interrupt pending setting register 2",        
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:7]",
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					},
+					{
+						"range": "[6:0]",
+						"name": "PENDSET",
+						"access": "WO",
+						"description": "32#-38# interrupt pending setting.\n1: current number break hang.\n0: No effect.",
+						"resetValue": "0"
+					}
+				]
+			},
+			"R32_PFIC_IPRR1": {
+				"name": "R32_PFIC_IPRR1",
+				"address": "0xE000E280",
+				"info": "PFIC interrupt pending clear register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "PENDRST",
+						"access": "WO",
+						"description": "16#-31# interrupt hang clear.\n1: The current numbered interrupt clears the pending state.\n0: No effect.",
+						"resetValue": "0"
+					},
+					{
+						"bit": 15,
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					},
+					{
+						"bit": 14,
+						"name": "PENDRST",
+						"access": "WO",
+						"description": "14# Interrupt hang clear.\n1: The current numbered interrupt clears the pending state.\n0: No effect.",
+						"resetValue": "0"
+					},
+					{
+						"bit": 13,
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					},
+					{
+						"bit": 12,
+						"name": "PENDRST",
+						"access": "WO",
+						"description": "12# Interrupt hang clear.\n1: The current numbered interrupt clears the pending state.\n0: No effect.",
+						"resetValue": "0"
+					},
+					{
+						"range": "[11:4]",
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					},
+					{
+						"range": "[3:2]",
+						"name": "PENDRST",
+						"access": "WO",
+						"description": "2#-3# interrupt hang clear.\n1: The current numbered interrupt clears the pending state.\n0: No effect.",
+						"resetValue": "0"
+					},
+					{
+						"range": "[1:0]",
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					}
+				]
+			},
+			"R32_PFIC_IPRR2": {
+				"name": "R32_PFIC_IPRR2",
+				"address": "0xE000E284",
+				"info": "PFIC interrupt pending clear register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:7]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[6:0]",
+						"name": "PENDRST",
+						"access": "WO",
+						"info": "32#-38# interrupt hang clear. 1: The current numbered interrupt clears the pending state. 0: No effect.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_IACTR1": {
+				"name": "R32_PFIC_IACTR1",
+				"address": "0xE000E300",
+				"info": "PFIC interrupt activation status register 1",      
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "IACTS",
+						"access": "RO",
+						"info": "16#-31# Interrupt execution status. 1: Current number interrupt in execution. 0: Current number interrupt is not executed.",
+						"reset_value": "0"
+					},
+					{
+						"range": "15",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "IACTS",
+						"access": "RO",
+						"info": "14# Interrupt execution status. 1: Current number interrupt in execution. 0: Current number interrupt is not executed.",
+						"reset_value": "0"
+					},
+					{
+						"range": "13",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "12",
+						"name": "IACTS",
+						"access": "RO",
+						"info": "12# Interrupt execution status. 1: Current number interrupt in execution. 0: Current number interrupt is not executed.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[11:4]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[3:2]",
+						"name": "IACTS",
+						"access": "RO",
+						"info": "2#-3# interrupt execution status. 1: Current number interruption in execution. 0: Current number interrupt is not executed.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[1:0]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_IACTR2": {
+				"name": "R32_PFIC_IACTR2",
+				"address": "0xE000E304",
+				"info": "PFIC interrupt activation status register 2",      
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:7]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[6:0]",
+						"name": "IACTS",
+						"access": "RO",
+						"info": "32#-38# Interrupt execution status. 1: Current number interruption in execution. 0: The current number interrupt is not executed.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_PFIC_IPRIORx": {
+				"name": "R32_PFIC_IPRIORx",
+				"address": "0xE000E400",
+				"info": "PFIC interrupt priority configuration register",   
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_PFIC_SCTLR": {
+				"name": "R32_PFIC_SCTLR",
+				"address": "0xE000ED10",
+				"info": "PFIC system control register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			}
+		}		
+	},
+
+	"GPIO": {
+		"info": "List of PFIC-related registers",
+		"table": "6-4",
+
+		"registers_map": {
+			"R32_GPIOx_CFGLR": {
+				"name": "R32_GPIOA_CFGLR",
+				"address": "0x40010800",
+				"info": "PA port configuration register low",
+				"reset_value": "0x44444444",
+				"bits_fields": [
+					{
+						"range": "[31:30]\n[27:26]\n[23:22]\n[19:18]\n[15:14]\n[11:10]\n[7:6]\n[3:2]",
+						"name": "CNFy[1:0]",
+						"access": "RW",
+						"info": "(y=0-7), the configuration bits for port x, by which the corresponding port is configured. \n\nWhen in input mode (MODE=00b). \n00: Analog input mode. \n01: Floating input mode. \n10: With pull-up and pull-down mode. \n11: Reserved. \n\nIn output mode (MODE>00b). \n00: Universal push-pull output mode. \n01: Universal open-drain output mode. \n10: Multiplexed function push-pull output mode. \n11: Multiplexing function open-drain output mode.",
+						"reset_value": "01b"
+					},
+					{
+						"range": "[29:28]\n[25:24]\n[21:20]\n[17:16]\n[13:12]\n[9:8]\n[5:4]\n[1:0]",
+						"name": "MODEy[1:0]",
+						"access": "RW",
+						"info": "(y=0-7), port x mode selection, configure the corresponding port by these bits. \n00: Input mode. \n01: Output mode, maximum speed 10MHz; \n10: Output mode, maximum speed 2MHz. \n11: Output mode, maximum speed 30MHz.",
+						"reset_value": "00b"
+					}					
+				]			
+			},
+			"R32_GPIOx_INDR": {
+				"name": "R32_GPIOA_INDR",
+				"address": "0x40010808",
+				"info": "PA port input data register",
+				"reset_value": "0x000000XX",
+				"bits_fields": [
+					{
+						"range": "[31:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:0]",
+						"name": "IDRy",
+						"access": "RO",
+						"info": "(y=0-7), the port input data. These bits are readonly and can only be read out in 16-bit form. The value read is the high and low state of the corresponding bit.",
+						"reset_value": "X"
+					}
+				]
+			},
+			"R32_GPIOx_OUTDR": {
+				"name": "R32_GPIOA_OUTDR",
+				"address": "0x4001080C",
+				"info": "PA port output data register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:0]",
+						"name": "ODRy",
+						"access": "RW",
+						"info": "For output modes. (y=0-7), the data output by the port. These data can only be operated in 16-bit form. the I/O port outputs the values of these registers externally. For modes with drop-down inputs. 1: Pull-up input; 0: Pull-down input.",    
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_GPIOx_BSHR": {
+				"name": "R32_GPIOA_BSHR",
+				"address": "0x40010810",
+				"info": "PA port set/reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:24]",
+						"name": "Reserved",
+						"access": "R0",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[23:16]",
+						"name": "BRy",
+						"access": "WO",
+						"info": "(y=0-7), the corresponding OUTDR bits are 0 cleared for these location bits, and writing 0 has no effect. These bits can only be accessed in 16-bit form. If both BR and BS bits are set, the BS bit takes effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:0]",
+						"name": "BSy",
+						"access": "WO",
+						"info": "(y=0-7), for which the location bits will make the corresponding OUTDR location bits, writing 0 has no effect. These bits can only be accessed in 16-bit form. If both BR and BS bits are set, the BS bit takes effect.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_GPIOx_BCR": {
+				"name": "R32_GPIOA_BCR",
+				"address": "0x40010814",
+				"info": "PA port reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[7:0]",
+						"name": "BRy",
+						"access": "WO",
+						"info": "(y=0-7), the corresponding OUTDR bits are cleared for these location bits, and writing 0 has no effect. These bits can only be accessed in 16-bit form.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_GPIOx_LCKR": {
+				"name": "R32_GPIOA_LCKR",
+				"address": "0x40010818",
+				"info": "PA port configuration lock register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:17]",
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					},
+					{
+						"bit": 16,
+						"name": "LCKK",
+						"access": "RW",
+						"description": "The lock key, which can be written in a specific sequence to achieve locking, but which can be read out at any time. It reads 0 to indicate that no locking is in effect, and reads 1 to indicate that locking is in effect.\nThe write sequence for the lock key is: write 1 - write 0 - write 1 - read 0 - read 1. The last step is not necessary, but can be used to confirm that the lock key is active.\nAny error while writing the sequence will not enable the activation of the lock and the value of LCK[7:0] cannot be changed while the sequence is being written. After the lock is in effect, the port configuration can only be changed after the next reset.",
+						"resetValue": "0"
+					},
+					{
+						"range": "[15:8]",
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					},
+					{
+						"range": "[7:0]",
+						"name": "LCKy",
+						"access": "RW",
+						"description": "(y=0-7), these bits are 1 to indicate locking the configuration of the corresponding port. These bits can only be changed before the LCKK is unlocked. The locked configuration refers to the configuration registers GPIOx_CFGLR.",
+						"resetValue": "0"
+					}
+				]
+			}
+		},
+
+		"registers": {
+			"R32_GPIOA_CFGLR": {
+				"name": "R32_GPIOA_CFGLR",
+				"address": "0x40010800",
+				"info": "PA port configuration register low",
+				"reset_value": "0x44444444",
+				"bits_fields": []
+			},
+			"R32_GPIOC_CFGLR": {
+				"name": "R32_GPIOC_CFGLR",
+				"address": "0x40011000",
+				"info": "PC port configuration register low",
+				"reset_value": "0x44444444",
+				"bits_fields": []
+			},
+			"R32_GPIOD_CFGLR": {
+				"name": "R32_GPIOD_CFGLR",
+				"address": "0x40011400",
+				"info": "PD port configuration register low",
+				"reset_value": "0x44444444",
+				"bits_fields": []
+			},
+			"R32_GPIOA_INDR": {
+				"name": "R32_GPIOA_INDR",
+				"address": "0x40010808",
+				"info": "PA port input data register",
+				"reset_value": "0x000000XX",
+				"bits_fields": []
+			},
+			"R32_GPIOC_INDR": {
+				"name": "R32_GPIOC_INDR",
+				"address": "0x40011008",
+				"info": "PC port input data register",
+				"reset_value": "0x000000XX",
+				"bits_fields": []
+			},
+			"R32_GPIOD_INDR": {
+				"name": "R32_GPIOD_INDR",
+				"address": "0x40011408",
+				"info": "PD port input data register",
+				"reset_value": "0x000000XX",
+				"bits_fields": []
+			},
+			"R32_GPIOA_OUTDR": {
+				"name": "R32_GPIOA_OUTDR",
+				"address": "0x4001080C",
+				"info": "PA port output data register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_GPIOC_OUTDR": {
+				"name": "R32_GPIOC_OUTDR",
+				"address": "0x4001100C",
+				"info": "PC port output data register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_GPIOD_OUTDR": {
+				"name": "R32_GPIOD_OUTDR",
+				"address": "0x4001140C",
+				"info": "PD port output data register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_GPIOA_BSHR": {
+				"name": "R32_GPIOA_BSHR",
+				"address": "0x40010810",
+				"info": "PA port set/reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_GPIOC_BSHR": {
+				"name": "R32_GPIOC_BSHR",
+				"address": "0x40011010",
+				"info": "PC port set/reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_GPIOD_BSHR": {
+				"name": "R32_GPIOD_BSHR",
+				"address": "0x40011410",
+				"info": "PD port set/reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_GPIOA_BCR": {
+				"name": "R32_GPIOA_BCR",
+				"address": "0x40010814",
+				"info": "PA port reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_GPIOC_BCR": {
+				"name": "R32_GPIOC_BCR",
+				"address": "0x40011014",
+				"info": "PC port reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_GPIOD_BCR": {
+				"name": "R32_GPIOD_BCR",
+				"address": "0x40011414",
+				"info": "PD port reset register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_GPIOA_LCKR": {
+				"name": "R32_GPIOA_LCKR",
+				"address": "0x40010818",
+				"info": "PA port configuration lock register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_GPIOC_LCKR": {
+				"name": "R32_GPIOC_LCKR",
+				"address": "0x40011018",
+				"info": "PC port configuration lock register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_GPIOD_LCKR": {
+				"name": "R32_GPIOD_LCKR",
+				"address": "0x40011418",
+				"info": "PD port configuration lock register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			}
+		}		
+	},
+
+	"AFIO": {
+		"info": "List of AFIO-related registers",
+		"table": "7-16",
+
+		"registers": {
+			"R32_AFIO_PCFR1": {
+				"name": "R32_AFIO_PCFR1",
+				"address": "0x40010004",
+				"info": "Remap Register 1",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:27]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[26:24]",
+						"name": "SWCFG[2:0]",
+						"access": "RW",
+						"info": "These bits are used to configure the I/O ports for SW function and trace function. SWD (SDI) is the debug interface to access the core. It is always used as a SWD port after system reset.",
+						"reset_value": "0"
+					},
+					{
+						"range": "23",
+						"name": "TIM1_IREMAP",
+						"access": "RW",
+						"info": "Control timer 1 channel 1 selection \n1: Select internal LSI clock; \n0: Select external pins.",
+						"reset_value": "0"
+					},
+					{
+						"range": "22",
+						"name": "I2C1REMAP1",
+						"access": "RW",
+						"info": "I2C1 remapping high bit (used in conjunction with AFIO_PCFR1 register bit1 I2C1_RM [22,1]). \n00: default mapping (SCL/PC2, SDA/PC1). \n01: Remapping (SCL/ PD1, SDA/PD0). \n1X: Remapping (SCL/PC5, SDA/PC6)",
+						"reset_value": "PD0)."
+					},
+					{
+						"range": "21",
+						"name": "USART1_RM1",
+						"access": "RW",
+						"info": "USART1 mapping configuration high (used in conjunction with AFIO PCFR1 register bit2 USART1RM [21,2]). \n00: default mapping (CK/PD4, TX/PD5, RX/PD6, CTS/PD3, RTS/PC2). \n01: Remapping (CK/PD7, TX/PD0, RX/PD1, CTS/PC3, RTS/PC2, SW_RX/PD0). \n10: Remapping (CK/PD7, TX/PD6, RX/PD5, CTS/PC6, RTS/PC7, SW_RX/PD6). \n11: Remapping (CK/PC5, TX/PC0, RX/PC1, CTS/PC6, RTS/PC7, SW_RX/PC0). \n10: Remapping (CK/PD7, TX/PD6, RX/PD5, CTS/PC6, RTS/PC7, SW_RX/PD6). \n11: Remapping (CK/PC5, TX/PC0, RX/PC1, CTS/PC6, RTS/PC7, SW_RX/PC0).",
+						"reset_value": "0"
+					},
+					{
+						"range": "[20:19]",
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					},
+					{
+						"bit": 18,
+						"name": "ADC_ETRGREG_RM",
+						"access": "RW",
+						"description": "Remap bit for ADC external trigger rule conversion.\n1: ADC external trigger rule conversion connected to PC2;\n0: ADC external trigger rule conversion connected to PD3.",
+						"resetValue": "0"
+					},
+					{
+						"bit": 17,
+						"name": "ADC_ETRGINJ_RM",
+						"access": "RW",
+						"description": "Remap bit for ADC external trigger rule conversion.\n1: ADC external trigger rule conversion connected to PC2;\n0: ADC external trigger rule conversion connected to PD3.",
+						"resetValue": "0"
+					},
+					{
+						"bit": 16,
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					},
+					{
+						"bit": 15,
+						"name": "PA1PA2_RM",
+						"access": "RW",
+						"description": "Pin PA1 & PA2 remapping bit, this bit can be read or written by user. It controls the proper function of PA1 and PA2 (set to 1 when connected to an external crystal pin)\n1: No functional role for pins;\n0: Pin is used as GPIO and multiplexed function.",
+						"resetValue": "0"
+					},
+					{
+						"range": "[14:10]",
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					},
+					{
+						"range": "[9:8]",
+						"name": "TIM2_RM[1:0]",
+						"access": "RW",
+						"description": "Remap bits for timer 2. These bits can be read and written by the user. It controls the mapping of Timer 2's channels 1 through 4 and external trigger (ETR) on the GPIO ports.\n00: Default mapping (CH1/ETR/PD4, CH2/PD3, CH3/PC0, CH4/PD7).\n01: Partial mapping (CH1/ETR/PC5, CH2/PC2, CH3/PD2, CH4/PC1).\n10: Partial mapping (CH1/ETR/PC1, CH2/PD3, CH3/PC0, CH4/PD7).\n11: Complete mapping (CH1/ETR/PC1, CH2/PC7, CH3/PD6, CH4/PD5).",
+						"resetValue": "0"
+					},
+					{
+						"range": "[7:6]",
+						"name": "TIM1_RM[1:0]",
+						"access": "RW",
+						"description": "Remap bits for timer 1. These bits can be read and written by the user. It controls the mapping of channels 1 to 4, 1N to 3N, external trigger (ETR) and brake input (BKIN) of timer 1 to the GPIO ports.\n00: Default mapping (ETR/PC5, CH1/PD2, CH2/PA1, CH3/PC3, CH4/PC4, BKIN/PC2, CH1N/PD0, CH2N/PA2, CH3N/PD1).\n01: Partial mapping (ETR/PC5, CH1/PC6, CH2/PC7, CH3/PC0, CH4/PD3, BKIN/PC1, CH1N/PC3, CH2N/PC4, CH3N/PD1).\n10: Partial mapping (ETR/PD4, CH1/PD2, CH2/PA1, CH3/PC3, CH4/PC4, BKIN/PC2, CH1N/PD0, CH2N/PA2, CH3N/PD1).\n11: Complete mapping (ETR/PC2, CH1/PC4, CH2/PC7, CH3/PC5, CH4/PD4, BKIN/PC1, CH1N/PC3, CH2N/PD2, CH3N/PC6).",
+						"resetValue": "0"
+					},
+					{
+						"range": "[5:3]",
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					},
+					{
+						"bit": 2,
+						"name": "USART1_RM",
+						"access": "RW",
+						"description": "USART1 mapping configuration low bit (used in conjunction with AFIO PCFR1 register bit21 USART1REMAP1 [21,2]).\n00: Default mapping (CK/PD4, TX/PD5, RX/PD6, CTS/PD3, RTS/PC2).\n01: Remapping (CK/PD7, TX/PD0, RX/PD1, CTS/PC3, RTS/PC2, SW_RX/PD0).\n10: Remapping (CK/PD7, TX/PD6, RX/PD5, CTS/PC6, RTS/PC7, SW_RX/PD6).\n11: Remapping (CK/PC5, TX/PC0, RX/PC1, CTS/PC6, RTS/PC7, SW_RX/PC0).",
+						"resetValue": "0"
+					},
+					{
+						"bit": 1,
+						"name": "I2C1_RM",
+						"access": "RW",
+						"description": "I2C1 remapping low bit (used in conjunction with AFIO_PCFR1 register bit22 I2C1_RM1 [22,1]).\n00: Default mapping (SCL/PC2, SDA/PC1).\n01: Remapping (SCL/ PD1, SDA/ PD0).\n1X: Remapping (SCL/PC5, SDA/PC6)",
+						"resetValue": "0"
+					},
+					{
+						"bit": 0,
+						"name": "SPI1_RM",
+						"access": "RW",
+						"description": "Remapping of SPI1. This bit can be read or written by the user. It controls the mapping of SPI1's NSS, SCK, MISO, and MOSI multiplexing functions to the GPIO ports.\n0: Default mapping (NSS/PC1, CK/PC5, MISO/PC7, MOSI/PC6).\n1: Remapping (NSS/PC0, CK/PC5, MISO/PC7, MOSI/PC6).",
+						"resetValue": "0"
+					}
+				]
+			},
+			"R32_AFIO_EXTICR": {
+				"name": "R32_AFIO_EXTICR",
+				"address": "0x40010008",
+				"info": "External interrupt configuration register 1",      
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:14]\n[13:12]\n[11:10]\n[9:8]\n[7:6]\n[5:4]\n[3:2]\n[1:0]",
+						"name": "EXTIx[1:0]",
+						"access": "RO",
+						"info": "(x=0-7), external interrupt input pin configuration bit. Used to determine to which port pins the external interrupt pins are mapped. \n00: xth pin of the PA pin. \n10: xth pin of the PC pin. \n11: xth pin of the PD pin.",
+						"reset_value": "0"
+					}
+				]
+			}			
+		}
+	},
+
+	"DMA": {
+		"info": "DMA-related registers list",
+		"table": "8-3",
+
+		"registers_map": {
+			"R32_DMA_CFGRx": {
+				"name": "R32_DMA_CFGRx",
+				"address": "0x00000000",
+				"info": "0x40020008 DMA channel 1 configuration",
+				"reset_value": "register",
+				"bits_fields": [
+					{
+						"range": "[31:15]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "14",
+						"name": "MEM2MEM",
+						"access": "RW",
+						"info": "Memory-to-memory mode enable. 1: Enable memory-to-memory data transfer mode. 0: Disable memory-to-memory data transfer mode.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[13:12]",
+						"name": "PL",
+						"access": "RW",
+						"info": "Channel priority setting. 00: low; 01: medium. 10: High; 11:Very high.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[11:10]",
+						"name": "MSIZE",
+						"access": "RW",
+						"info": "Memory address data width setting. 00: 8 bits; 01: 16 bits. 10: 32 bits; 11: Reserved.",
+						"reset_value": "0"
+					},
+					{
+						"range": "[9:8]",
+						"name": "PSIZE",
+						"access": "RW",
+						"info": "Peripheral address data width setting. 00: 8 bits; 01: 16 bits. 10: 32 bits; 11: Reserved.",
+						"reset_value": "0"
+					},
+					{
+						"bit": 7,
+						"name": "MINC",
+						"access": "RW",
+						"description": "Memory address incremental mode enable.\n1: Enable incremental memory address increment operation.\n0: Memory address remains unchanged operation.",
+						"resetValue": "0"
+					},
+					{
+						"bit": 6,
+						"name": "PINC",
+						"access": "RW",
+						"description": "Peripheral address incremental mode enable.\n1: Enable incremental operation of the peripheral address.\n0: Peripheral address remains unchanged operation.",
+						"resetValue": "0"
+					},
+					{
+						"bit": 5,
+						"name": "CIRC",
+						"access": "RW",
+						"description": "DMA channel cyclic mode enable.\n1: Enables cyclic operation.\n0: Perform a single operation.",
+						"resetValue": "0"
+					},
+					{
+						"bit": 4,
+						"name": "DIR",
+						"access": "RW",
+						"description": "Data transfer direction.\n1: Read from memory.\n0: Read from peripheral.",
+						"resetValue": "0"
+					},
+					{
+						"bit": 3,
+						"name": "TEIE",
+						"access": "RW",
+						"description": "Transmission error interrupt enable control.\n1: Enable transmission error interrupt.\n0: Disable transmission error interrupt.",
+						"resetValue": "0"
+					},
+					{
+						"bit": 2,
+						"name": "HTIE",
+						"access": "RW",
+						"description": "Transmission over half interrupt enable control.\n1: Enable the transmission over half interrupt.\n0: Disable the transmission over half interrupt.",
+						"resetValue": "0"
+					},
+					{
+						"bit": 1,
+						"name": "TCIE",
+						"access": "RW",
+						"description": "Transmission completion interrupt enable control.\n1: Enable the transmission completion interrupt.\n0: Disable the transmission completion interrupt.",
+						"resetValue": "0"
+					},
+					{
+						"bit": 0,
+						"name": "EN",
+						"access": "RW",
+						"description": "Channel enable control.\n1: Channel on; 0: Channel off.\nWhen a DMA transfer error occurs, the hardware automatically clears this bit to 0 and shuts down the channel.",
+						"resetValue": "0"
+					}
+				]
+			},
+
+			"R32_DMA_CNTRx": {
+				"name": "R32_DMA_CNTR1",
+				"address": "0x00000000",
+				"info": "0x4002000C DMA channel 1 number of data register", 
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:16]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "[15:0]",
+						"name": "NDT[15:0]",
+						"access": "RW",
+						"info": "Number of data transfers, range 0-65535. \nThis register can only be written when the channel is not operating (EN=0 for DMA_CFGRx). After the channel is turned on this register becomes read-only and indicates the number of remaining pending transfer (the register content is decremented after each DMA transfer). \nWhen the channel is in cyclic mode, the contents of the register will be automatically reloaded to the previously configured value.",
+						"reset_value": "0"
+					}					
+				]
+			},
+
+			"R32_DMA_PADDRx": {
+				"name": "R32_DMA_PADDR1",
+				"address": "0x40020010",
+				"info": "DMA channel 1 peripheral address register",        
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:0]",
+						"name": "PA[31:0]",
+						"access": "RW",
+						"info": "Peripheral base address, which serves as the source or destination address for peripheral data transfer. \nWhen PSIZE[1:0]='01' (16 bits), the module automatically ignores bit0 and the operation address is automatically 2byte aligned; when PSIZE[1:0]='10' (32 bits), the module automatically ignores bit[1:0] and the operation address is automatically 4-byte aligned.",
+						"reset_value": "0"
+					}					
+				]
+			},
+
+			"R32_DMA_MADDRx": {
+				"name": "R32_DMA_MADDR1",
+				"address": "0x40020014",
+				"info": "DMA channel 1 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": [
+					{
+						"range": "[31:0]",
+						"name": "MA[31:0]",
+						"access": "RW",
+						"info": "The memory data address, which serves as the source or destination address for data transfers. \nWhen MSIZE[1:0]='01' (16 bits), the module automatically ignores bit0, and the operation address is automatically 2-byte aligned; when MSIZE[1:0]='10' (32 bits), the module automatically ignores bit[1:0], and the operation address is automatically 4-byte aligned.",
+						"reset_value": "0"
+					}	
+				]
+			}
+		},
+
+		"registers": {
+			"R32_DMA_INTFR": {
+				"name": "R32_DMA_INTFR",
+				"address": "0x40020000",
+				"info": "DMA interrupt status",
+				"reset_value": "register",
+				"bits_fields": [
+					{
+						"range": "[31:28]",
+						"name": "Reserved",
+						"access": "RO",
+						"description": "Reserved",
+						"resetValue": "0"
+					},
+					{
+						"bits": [27, 23, 19, 15, 11, 7, 3],
+						"name": "TEIFx",
+						"access": "RO",
+						"description": "Transmission error flag for channel x (x=1/2/3/4/5/6/7).\n1: A transmission error occurred on channel x.\n0: No transmission error on channel x.\nHardware set, software write CTEIFx bit to clear this flag.",
+						"resetValue": "0"
+					},
+					{
+						"bits": [26, 22, 18, 14, 10, 6, 2],
+						"name": "HTIFx",
+						"access": "RO",
+						"description": "Transmission halfway flag for channel x (x=1/2/3/4/5/6/7).\n1: a transmission over half event is generated on channel x.\n0: No transmission over half on channel x.\nHardware set, software write CHTIFx bit to clear this flag.",
+						"resetValue": "0"
+					},
+					{
+						"bits": [25, 21, 17, 13, 9, 5, 1],
+						"name": "TCIFx",
+						"access": "RO",
+						"description": "Transmission completion flag for channel x (x=1/2/3/4/5/6/7).\n1: a transmission completion event is generated on channel x.\n0: No transmission completion event on channel x.\nHardware set, software write CTCIFx bit to clear this flag.",
+						"resetValue": "0"
+					},
+					{
+						"bits": [24, 20, 16, 12, 8, 4, 0],
+						"name": "GIFx",
+						"access": "RO",
+						"description": "Global interrupt flag for channel x (x=1/2/3/4/5/6/7).\n1: TEIFx or HTIFx or TCIFx is generated on channel x.\n0: No TEIFx or HTIFx or TCIFx occurred on channel x.\nHardware set, software write CGIFx bit to clear this flag.",
+						"resetValue": "0"
+					}
+				]
+			},
+			"R32_DMA_INTFCR": {
+				"name": "R32_DMA_INTFCR",
+				"address": "0x00000000",
+				"info": "0x40020004 DMA interrupt flag clear",
+				"reset_value": "register",
+				"bits_fields": [
+					{
+						"range": "[31:28]",
+						"name": "Reserved",
+						"access": "RO",
+						"info": "Reserved",
+						"reset_value": "0"
+					},
+					{
+						"range": "27/23/19/1\n5/11/7/3",
+						"name": "CTEIFx",
+						"access": "WO",
+						"info": "Clear the transmission error flag for channel x (x=1/2/3/4/5/6/7). 1: Clear the TEIFx flag in the DMA_INTFR register. 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "26/22/18/1\n4/10/6/2",
+						"name": "CHTIFx",
+						"access": "WO",
+						"info": "Clear the transmission halfway flag for channel x (x=1/2/3/4/5/6/7). 1: Clear the HTIFx flag in the DMA_INTFR register. 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "25/21/17/1\n3/9/5/1",
+						"name": "CTCIFx",
+						"access": "WO",
+						"info": "Clear the transmission completion flag for channel x (x=1/2/3/4/5/6/7). 1: Clear the TCIFx flag in the DMA_INTFR register. 0: No effect.",
+						"reset_value": "0"
+					},
+					{
+						"range": "24/20/16/1\n2/8/4/0",
+						"name": "CGIFx",
+						"access": "WO",
+						"info": "Clear the global interrupt flag for channel x (x=1/2/3/4/5/6/7). 1: Clear the TEIFx/HTIFx/TCIFx/ GIFx flags in the DMA_INTFR register. 0: No effect.",
+						"reset_value": "0"
+					}
+				]
+			},
+			"R32_DMA_CFGR1": {
+				"name": "R32_DMA_CFGR1",
+				"address": "0x00000000",
+				"info": "0x40020008 DMA channel 1 configuration",
+				"reset_value": "register",
+				"bits_fields": []
+			},
+			"R32_DMA_CNTR1": {
+				"name": "R32_DMA_CNTR1",
+				"address": "0x00000000",
+				"info": "0x4002000C DMA channel 1 number of data register", 
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_PADDR1": {
+				"name": "R32_DMA_PADDR1",
+				"address": "0x40020010",
+				"info": "DMA channel 1 peripheral address register",        
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_MADDR1": {
+				"name": "R32_DMA_MADDR1",
+				"address": "0x40020014",
+				"info": "DMA channel 1 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CFGR2": {
+				"name": "R32_DMA_CFGR2",
+				"address": "0x4002001C",
+				"info": "DMA channel 2 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CNTR2": {
+				"name": "R32_DMA_CNTR2",
+				"address": "0x40020020",
+				"info": "DMA channel 2 number of data register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_PADDR2": {
+				"name": "R32_DMA_PADDR2",
+				"address": "0x40020024",
+				"info": "DMA channel 2 peripheral address register",        
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_MADDR2": {
+				"name": "R32_DMA_MADDR2",
+				"address": "0x40020028",
+				"info": "DMA channel 2 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CFGR3": {
+				"name": "R32_DMA_CFGR3",
+				"address": "0x40020030",
+				"info": "DMA channel 3 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CNTR3": {
+				"name": "R32_DMA_CNTR3",
+				"address": "0x40020034",
+				"info": "DMA channel 3 number of data register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_PADDR3": {
+				"name": "R32_DMA_PADDR3",
+				"address": "0x40020038",
+				"info": "DMA channel 3 peripheral address register",        
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_MADDR3": {
+				"name": "R32_DMA_MADDR3",
+				"address": "0x4002003C",
+				"info": "DMA channel 3 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CFGR4": {
+				"name": "R32_DMA_CFGR4",
+				"address": "0x40020044",
+				"info": "DMA channel 4 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CNTR4": {
+				"name": "R32_DMA_CNTR4",
+				"address": "0x40020048",
+				"info": "DMA channel 4 number of data register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_PADDR4": {
+				"name": "R32_DMA_PADDR4",
+				"address": "0x4002004C",
+				"info": "DMA channel 4 peripheral address register",        
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_MADDR4": {
+				"name": "R32_DMA_MADDR4",
+				"address": "0x40020050",
+				"info": "DMA channel 4 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CFGR5": {
+				"name": "R32_DMA_CFGR5",
+				"address": "0x40020058",
+				"info": "DMA channel 5 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CNTR5": {
+				"name": "R32_DMA_CNTR5",
+				"address": "0x4002005C",
+				"info": "DMA channel 5 number of data register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_PADDR5": {
+				"name": "R32_DMA_PADDR5",
+				"address": "0x40020060",
+				"info": "DMA channel 5 peripheral address register",        
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_MADDR5": {
+				"name": "R32_DMA_MADDR5",
+				"address": "0x40020064",
+				"info": "DMA channel 5 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CFGR6": {
+				"name": "R32_DMA_CFGR6",
+				"address": "0x4002006C",
+				"info": "DMA channel 6 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CNTR6": {
+				"name": "R32_DMA_CNTR6",
+				"address": "0x40020070",
+				"info": "DMA channel 6 number of data register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_PADDR6": {
+				"name": "R32_DMA_PADDR6",
+				"address": "0x40020074",
+				"info": "DMA channel 6 peripheral address register",        
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_MADDR6": {
+				"name": "R32_DMA_MADDR6",
+				"address": "0x40020078",
+				"info": "DMA channel 6 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CFGR7": {
+				"name": "R32_DMA_CFGR7",
+				"address": "0x40020080",
+				"info": "DMA channel 7 configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_CNTR7": {
+				"name": "R32_DMA_CNTR7",
+				"address": "0x40020084",
+				"info": "DMA channel 7 number of data register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_PADDR7": {
+				"name": "R32_DMA_PADDR7",
+				"address": "0x40020088",
+				"info": "DMA channel 7 peripheral address register",        
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			},
+			"R32_DMA_MADDR7": {
+				"name": "R32_DMA_MADDR7",
+				"address": "0x4002008C",
+				"info": "DMA channel 7 memory address register",
+				"reset_value": "0x00000000",
+				"bits_fields": []
+			}		
 		}
 	}
 }

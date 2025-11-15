@@ -4,6 +4,16 @@ import json
 
 
 def process_string(input_text):
+	def replace_optionNewLine(match):
+		cleaned = match.group().lstrip()
+		return f" {cleaned}"  # replacement
+	
+	# `(\s*)(\d*: )` - replace matching pattern: prefix string | integer | ': '. eg: "  0: ", "  1: ", "  0100: "
+	pattern = r'\s*\d*: '
+	input_text = re.sub(pattern, replace_optionNewLine, input_text, flags=re.MULTILINE)
+	print("=" * 10)
+	print("first filter: \n", input_text)
+
 	def replace_optionValues(match):
 		full_match = match.group()
 
@@ -13,9 +23,9 @@ def process_string(input_text):
 			cleaned = full_match.lstrip()
 			return f" {cleaned}"  # replacement
 	
-	# `(\s*)(\d*: )` - replace matching pattern: prefix string | integer | ': '. eg: "  0: ", "  1: ", "  0100: "
+	
 	# `(\s+RO Reserved)` - replace matching pattern: prefix string | "RO Reserved"
-	pattern = r'(\s*)(\d*: )|(\s+RO Reserved)'
+	pattern = r'\s+RO Reserved'
 	input_text = re.sub(pattern, replace_optionValues, input_text, flags=re.MULTILINE)
 
 	def move_zero(match):
