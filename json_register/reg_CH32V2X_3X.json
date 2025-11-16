@@ -4411,72 +4411,3486 @@
         }
 	},
 
-	"OPA": {
-		"info": "OPA-related registers list",
-		"table": "15-1",
+	"USBPD": {
+		"info": "USBPD-related registers list",
+		"table": "21-5",
 
 		"registers": {
-
-        }
-	},
-
-	"USBFS": {
-		"info": "USBFS-related registers list",
-		"table": "15-1",
-
-		"registers": {
-
-        }
+			"R16_USBD_CNTR": {
+				"name": "R16_USBD_CNTR",
+				"address": "0x40005C40",
+				"info": "USB control register",
+				"reset_value": "0x0003"
+			},
+			"R16_USBD_ISTR": {
+				"name": "R16_USBD_ISTR",
+				"address": "0x40005C44",
+				"info": "USB interrupt status register",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_FNR": {
+				"name": "R16_USBD_FNR",
+				"address": "0x40005C48",
+				"info": "USB frame number register",
+				"reset_value": "0x0XXX"
+			},
+			"R16_USBD_DADDR": {
+				"name": "R16_USBD_DADDR",
+				"address": "0x40005C4C",
+				"info": "USB device address register",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_BTABLE": {
+				"name": "R16_USBD_BTABLE",
+				"address": "0x40005C50",
+				"info": "USB packet buffer description table address register",
+				"reset_value": "0x0000"
+			}
+		}
 	},
 
 	"USBEP": {
 		"info": "USB Endpoint-related registers list",
-		"table": "18-1",
+		"table": "21-6",
 
 		"registers": {
+			"R16_USBD_EPR0": {
+				"name": "R16_USBD_EPR0",
+				"address": "0x40005C00",
+				"info": "USB endpoint configuration register0",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_EPR1": {
+				"name": "R16_USBD_EPR1",
+				"address": "0x40005C04",
+				"info": "USB endpoint configuration register1",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_EPR2": {
+				"name": "R16_USBD_EPR2",
+				"address": "0x40005C08",
+				"info": "USB endpoint configuration register2",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_EPR3": {
+				"name": "R16_USBD_EPR3",
+				"address": "0x40005C0C",
+				"info": "USB endpoint configuration register3",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_EPR4": {
+				"name": "R16_USBD_EPR4",
+				"address": "0x40005C10",
+				"info": "USB endpoint configuration register4",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_EPR5": {
+				"name": "R16_USBD_EPR5",
+				"address": "0x40005C14",
+				"info": "USB endpoint configuration register5",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_EPR6": {
+				"name": "R16_USBD_EPR6",
+				"address": "0x40005C18",
+				"info": "USB endpoint configuration register6",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_EPR7": {
+				"name": "R16_USBD_EPR7",
+				"address": "0x40005C1C",
+				"info": "USB endpoint configuration register7",
+				"reset_value": "0x0000"
+			}
+		}
+	},
+
+	"USB_BUF": {
+		"info": "USB_BUF-related registers list",
+		"table": "21-7",
+
+		"registers": {
+			"R16_USBD_ADDR0_TX": {
+				"name": "R16_USBD_ADDR0_TX",
+				"address": "0x40006000+[USBD_BTABLE]",
+				"info": "Endpoint transmit buffer address register 0",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT0_TX": {
+				"name": "R16_USBD_COUNT0_TX",
+				"address": "0x40006004+[USBD_BTABLE]",
+				"info": "Endpoint transmit byte count register0",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR0_RX": {
+				"name": "R16_USBD_ADDR0_RX",
+				"address": "0x40006008+[USBD_BTABLE]",
+				"info": "Endpoint receive buffer address register0",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT0_RX": {
+				"name": "R16_USBD_COUNT0_RX",
+				"address": "0x4000600C+[USBD_BTABLE]",
+				"info": "Endpoint Received Data Bytes Register 0",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR1_TX": {
+				"name": "R16_USBD_ADDR1_TX",
+				"address": "0x40006010+[USBD_BTABLE]",
+				"info": "Endpoint transmit buffer address register1",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT1_TX": {
+				"name": "R16_USBD_COUNT1_TX",
+				"address": "0x40006014+[USBD_BTABLE]",
+				"info": "Endpoint transmit byte count register1",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR1_RX": {
+				"name": "R16_USBD_ADDR1_RX",
+				"address": "0x40006018+[USBD_BTABLE]",
+				"info": "Endpoint receive buffer address register1",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT1_RX": {
+				"name": "R16_USBD_COUNT1_RX",
+				"address": "0x4000601C+[USBD_BTABLE]",
+				"info": "Endpoint receive byte count register1",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR2_TX": {
+				"name": "R16_USBD_ADDR2_TX",
+				"address": "0x40006020+[USBD_BTABLE]",
+				"info": "Endpoint transmit buffer address register2",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT2_TX": {
+				"name": "R16_USBD_COUNT2_TX",
+				"address": "0x40006024+[USBD_BTABLE]",
+				"info": "Endpoint transmit byte count register2",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR2_RX": {
+				"name": "R16_USBD_ADDR2_RX",
+				"address": "0x40006028+[USBD_BTABLE]",
+				"info": "Endpoint receive buffer address register2",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT2_RX": {
+				"name": "R16_USBD_COUNT2_RX",
+				"address": "0x4000602C+[USBD_BTABLE]",
+				"info": "Endpoint receive byte count register2",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR3_TX": {
+				"name": "R16_USBD_ADDR3_TX",
+				"address": "0x40006030+[USBD_BTABLE]",
+				"info": "Endpoint transmit buffer address register3",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT3_TX": {
+				"name": "R16_USBD_COUNT3_TX",
+				"address": "0x40006034+[USBD_BTABLE]",
+				"info": "Endpoint transmit byte count register3",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR3_RX": {
+				"name": "R16_USBD_ADDR3_RX",
+				"address": "0x40006038+[USBD_BTABLE]",
+				"info": "Endpoint receive buffer address register3",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT3_RX": {
+				"name": "R16_USBD_COUNT3_RX",
+				"address": "0x4000603C+[USBD_BTABLE]",
+				"info": "Endpoint receive byte count register3",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR4_TX": {
+				"name": "R16_USBD_ADDR4_TX",
+				"address": "0x40006040+[USBD_BTABLE]",
+				"info": "Endpoint transmit buffer address register4",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT4_TX": {
+				"name": "R16_USBD_COUNT4_TX",
+				"address": "0x40006044+[USBD_BTABLE]",
+				"info": "Endpoint transmit byte count register4",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR4_RX": {
+				"name": "R16_USBD_ADDR4_RX",
+				"address": "0x40006048+[USBD_BTABLE]",
+				"info": "Endpoint receive buffer address register4",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT4_RX": {
+				"name": "R16_USBD_COUNT4_RX",
+				"address": "0x4000604C+[USBD_BTABLE]",
+				"info": "Endpoint receive byte count register4",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR5_TX": {
+				"name": "R16_USBD_ADDR5_TX",
+				"address": "0x40006050+[USBD_BTABLE]",
+				"info": "Endpoint transmit buffer address register5",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT5_TX": {
+				"name": "R16_USBD_COUNT5_TX",
+				"address": "0x40006054+[USBD_BTABLE]",
+				"info": "Endpoint transmit byte count register 5",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR5_RX": {
+				"name": "R16_USBD_ADDR5_RX",
+				"address": "0x40006058+[USBD_BTABLE]",
+				"info": "Endpoint receive buffer address register5",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT5_RX": {
+				"name": "R16_USBD_COUNT5_RX",
+				"address": "0x4000605C+[USBD_BTABLE]",
+				"info": "Endpoint receive byte count register5",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR6_TX": {
+				"name": "R16_USBD_ADDR6_TX",
+				"address": "0x40006060+[USBD_BTABLE]",
+				"info": "Endpoint transmit buffer address register6",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT6_TX": {
+				"name": "R16_USBD_COUNT6_TX",
+				"address": "0x40006064+[USBD_BTABLE]",
+				"info": "Endpoint transmit byte count register6",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR6_RX": {
+				"name": "R16_USBD_ADDR6_RX",
+				"address": "0x40006068+[USBD_BTABLE]",
+				"info": "Endpoint receive buffer address register6",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT6_RX": {
+				"name": "R16_USBD_COUNT6_RX",
+				"address": "0x4000606C+[USBD_BTABLE]",
+				"info": "Endpoint receive byte count register6",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR7_TX": {
+				"name": "R16_USBD_ADDR7_TX",
+				"address": "0x40006070+[USBD_BTABLE]",
+				"info": "Endpoint transmit buffer address register7",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT7_TX": {
+				"name": "R16_USBD_COUNT7_TX",
+				"address": "0x40006074+[USBD_BTABLE]",
+				"info": "Endpoint transmit byte count register7",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_ADDR7_RX": {
+				"name": "R16_USBD_ADDR7_RX",
+				"address": "0x40006078+[USBD_BTABLE]",
+				"info": "Endpoint receive buffer address register7",
+				"reset_value": "0x0000"
+			},
+			"R16_USBD_COUNT7_RX": {
+				"name": "R16_USBD_COUNT7_RX",
+				"address": "0x4000607C+[USBD_BTABLE]",
+				"info": "Endpoint receive byte count register7",
+				"reset_value": "0x0000"
+			}
+		}
+	},
+
+
+	"USBHD": {
+		"info": "USBHD-related registers list",
+		"table": "22-1",
+
+		"registers": {
+			"R8_USB_CTRL": {
+				"name": "R8_USB_CTRL",
+				"address": "0x40023400",
+				"info": "USB control register",
+				"reset_value": "0x06"
+			},
+			"R8_USB_INT_EN": {
+				"name": "R8_USB_INT_EN",
+				"address": "0x40023402",
+				"info": "USB interrupt enable register",
+				"reset_value": "0x00"
+			},
+			"R8_USB_DEV_AD": {
+				"name": "R8_USB_DEV_AD",
+				"address": "0x40023403",
+				"info": "USB device address register",
+				"reset_value": "0x00"
+			},
+			"R16_USB_FRAME_NO": {
+				"name": "R16_USB_FRAME_NO",
+				"address": "0x40023404",
+				"info": "USB frame number register",
+				"reset_value": "0x0000"
+			},
+			"R8_USB_SUSPEND": {
+				"name": "R8_USB_SUSPEND",
+				"address": "0x40023406",
+				"info": "USB suspend register",
+				"reset_value": "0x00"
+			},
+			"R8_USB_SPPED_TYPE": {
+				"name": "R8_USB_SPPED_TYPE",
+				"address": "0x40023408",
+				"info": "USB current speed type register",
+				"reset_value": "0x00"
+			},
+			"R8_USB_MIS_ST": {
+				"name": "R8_USB_MIS_ST",
+				"address": "0x40023409",
+				"info": "USB miscellaneous status register",
+				"reset_value": "0xX8"
+			},
+			"R8_USB_INT_FG": {
+				"name": "R8_USB_INT_FG",
+				"address": "0x4002340A",
+				"info": "USB interrupt flag register",
+				"reset_value": "0x00"
+			},
+			"R8_USB_INT_ST": {
+				"name": "R8_USB_INT_ST",
+				"address": "0x4002340B",
+				"info": "USB interrupt status register",
+				"reset_value": "0xXX"
+			},
+			"R16_USB_RX_LEN": {
+				"name": "R16_USB_RX_LEN",
+				"address": "0x4002340C",
+				"info": "USB receive length register",
+				"reset_value": "0xXXXX"
+			}
+		}
+	},
+
+
+	"USB_DEV": {
+		"info": "USB_DEV-related registers list",
+		"table": "22-2",
+
+		"registers": {
+			"R32_UEP_CONFIG": {
+				"name": "R32_UEP_CONFIG",
+				"address": "0x40023410",
+				"info": "Endpoint enable configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_UEP_TYPE": {
+				"name": "R32_UEP_TYPE",
+				"address": "0x40023414",
+				"info": "Endpoint type configuration register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_UEP_BUF_MOD": {
+				"name": "R32_UEP_BUF_MOD",
+				"address": "0x40023418",
+				"info": "Endpoint buffer mode register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_UEP0_DMA": {
+				"name": "R32_UEP0_DMA",
+				"address": "0x4002341C",
+				"info": "Endpoint0 buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP1_RX_DMA": {
+				"name": "R32_UEP1_RX_DMA",
+				"address": "0x40023420",
+				"info": "Endpoint1 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP2_RX_DMA": {
+				"name": "R32_UEP2_RX_DMA",
+				"address": "0x40023424",
+				"info": "Endpoint2 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP3_RX_DMA": {
+				"name": "R32_UEP3_RX_DMA",
+				"address": "0x40023428",
+				"info": "Endpoint3 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP4_RX_DMA": {
+				"name": "R32_UEP4_RX_DMA",
+				"address": "0x4002342C",
+				"info": "Endpoint4 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP5_RX_DMA": {
+				"name": "R32_UEP5_RX_DMA",
+				"address": "0x40023430",
+				"info": "Endpoint5 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP6_RX_DMA": {
+				"name": "R32_UEP6_RX_DMA",
+				"address": "0x40023434",
+				"info": "Endpoint6 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP7_RX_DMA": {
+				"name": "R32_UEP7_RX_DMA",
+				"address": "0x40023438",
+				"info": "Endpoint7 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP8_RX_DMA": {
+				"name": "R32_UEP8_RX_DMA",
+				"address": "0x4002343C",
+				"info": "Endpoint8 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP9_RX_DMA": {
+				"name": "R32_UEP9_RX_DMA",
+				"address": "0x40023440",
+				"info": "Endpoint9 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP10_RX_DMA": {
+				"name": "R32_UEP10_RX_DMA",
+				"address": "0x40023444",
+				"info": "Endpoint10 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP11_RX_DMA": {
+				"name": "R32_UEP11_RX_DMA",
+				"address": "0x40023448",
+				"info": "Endpoint11 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP12_RX_DMA": {
+				"name": "R32_UEP12_RX_DMA",
+				"address": "0x4002344C",
+				"info": "Endpoint12 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP13_RX_DMA": {
+				"name": "R32_UEP13_RX_DMA",
+				"address": "0x40023450",
+				"info": "Endpoint13 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP14_RX_DMA": {
+				"name": "R32_UEP14_RX_DMA",
+				"address": "0x40023454",
+				"info": "Endpoint14 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP15_RX_DMA": {
+				"name": "R32_UEP15_RX_DMA",
+				"address": "0x40023458",
+				"info": "Endpoint15 receive buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP1_TX_DMA": {
+				"name": "R32_UEP1_TX_DMA",
+				"address": "0x4002345C",
+				"info": "Endpoint1 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP2_TX_DMA": {
+				"name": "R32_UEP2_TX_DMA",
+				"address": "0x40023460",
+				"info": "Endpoint2 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP3_TX_DMA": {
+				"name": "R32_UEP3_TX_DMA",
+				"address": "0x40023464",
+				"info": "Endpoint3 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP4_TX_DMA": {
+				"name": "R32_UEP4_TX_DMA",
+				"address": "0x40023468",
+				"info": "Endpoint4 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP5_TX_DMA": {
+				"name": "R32_UEP5_TX_DMA",
+				"address": "0x4002346C",
+				"info": "Endpoint5 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP6_TX_DMA": {
+				"name": "R32_UEP6_TX_DMA",
+				"address": "0x40023470",
+				"info": "Endpoint6 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP7_TX_DMA": {
+				"name": "R32_UEP7_TX_DMA",
+				"address": "0x40023474",
+				"info": "Endpoint7 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP8_TX_DMA": {
+				"name": "R32_UEP8_TX_DMA",
+				"address": "0x40023478",
+				"info": "Endpoint8 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP9_TX_DMA": {
+				"name": "R32_UEP9_TX_DMA",
+				"address": "0x4002347C",
+				"info": "Endpoint9 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP10_TX_DMA": {
+				"name": "R32_UEP10_TX_DMA",
+				"address": "0x40023480",
+				"info": "Endpoint10 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP11_TX_DMA": {
+				"name": "R32_UEP11_TX_DMA",
+				"address": "0x40023484",
+				"info": "Endpoint11 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP12_TX_DMA": {
+				"name": "R32_UEP12_TX_DMA",
+				"address": "0x40023488",
+				"info": "Endpoint12 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP13_TX_DMA": {
+				"name": "R32_UEP13_TX_DMA",
+				"address": "0x4002348C",
+				"info": "Endpoint13 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP14_TX_DMA": {
+				"name": "R32_UEP14_TX_DMA",
+				"address": "0x40023490",
+				"info": "Endpoint14 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP15_TX_DMA": {
+				"name": "R32_UEP15_TX_DMA",
+				"address": "0x40023494",
+				"info": "Endpoint15 transmit buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP0_MAX_LEN": {
+				"name": "R16_UEP0_MAX_LEN",
+				"address": "0x40023498",
+				"info": "Endpoint0 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP1_MAX_LEN": {
+				"name": "R16_UEP1_MAX_LEN",
+				"address": "0x4002349C",
+				"info": "Endpoint1 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP2_MAX_LEN": {
+				"name": "R16_UEP2_MAX_LEN",
+				"address": "0x400234A0",
+				"info": "Endpoint2 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP3_MAX_LEN": {
+				"name": "R16_UEP3_MAX_LEN",
+				"address": "0x400234A4",
+				"info": "Endpoint3 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP4_MAX_LEN": {
+				"name": "R16_UEP4_MAX_LEN",
+				"address": "0x400234A8",
+				"info": "Endpoint4 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP5_MAX_LEN": {
+				"name": "R16_UEP5_MAX_LEN",
+				"address": "0x400234AC",
+				"info": "Endpoint5 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP6_MAX_LEN": {
+				"name": "R16_UEP6_MAX_LEN",
+				"address": "0x400234B0",
+				"info": "Endpoint6 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP7_MAX_LEN": {
+				"name": "R16_UEP7_MAX_LEN",
+				"address": "0x400234B4",
+				"info": "Endpoint7 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP8_MAX_LEN": {
+				"name": "R16_UEP8_MAX_LEN",
+				"address": "0x400234B8",
+				"info": "Endpoint8 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP9_MAX_LEN": {
+				"name": "R16_UEP9_MAX_LEN",
+				"address": "0x400234BC",
+				"info": "Endpoint9 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP10_MAX_LEN": {
+				"name": "R16_UEP10_MAX_LEN",
+				"address": "0x400234C0",
+				"info": "Endpoint10 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP11_MAX_LEN": {
+				"name": "R16_UEP11_MAX_LEN",
+				"address": "0x400234C4",
+				"info": "Endpoint11 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP12_MAX_LEN": {
+				"name": "R16_UEP12_MAX_LEN",
+				"address": "0x400234C8",
+				"info": "Endpoint12 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP13_MAX_LEN": {
+				"name": "R16_UEP13_MAX_LEN",
+				"address": "0x400234CC",
+				"info": "Endpoint13 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP14_MAX_LEN": {
+				"name": "R16_UEP14_MAX_LEN",
+				"address": "0x400234D0",
+				"info": "Endpoint14 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP15_MAX_LEN": {
+				"name": "R16_UEP15_MAX_LEN",
+				"address": "0x400234D4",
+				"info": "Endpoint15 maximum length packet register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_UEP0_T_LEN": {
+				"name": "R16_UEP0_T_LEN",
+				"address": "0x400234D8",
+				"info": "Endpoint0 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP0_TX_CTRL": {
+				"name": "R8_UEP0_TX_CTRL",
+				"address": "0x400234DA",
+				"info": "Endpoint0 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP0_RX_CTRL": {
+				"name": "R8_UEP0_RX_CTRL",
+				"address": "0x400234DB",
+				"info": "Endpoint0 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP1_T_LEN": {
+				"name": "R16_UEP1_T_LEN",
+				"address": "0x400234DC",
+				"info": "Endpoint1 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP1_TX_CTRL": {
+				"name": "R8_UEP1_TX_CTRL",
+				"address": "0x400234DE",
+				"info": "Endpoint1 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP1_RX_CTRL": {
+				"name": "R8_UEP1_RX_CTRL",
+				"address": "0x400234DF",
+				"info": "Endpoint1 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP2_T_LEN": {
+				"name": "R16_UEP2_T_LEN",
+				"address": "0x400234E0",
+				"info": "Endpoint2 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP2_TX_CTRL": {
+				"name": "R8_UEP2_TX_CTRL",
+				"address": "0x400234E2",
+				"info": "Endpoint2 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP2_RX_CTRL": {
+				"name": "R8_UEP2_RX_CTRL",
+				"address": "0x400234E3",
+				"info": "Endpoint2 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP3_T_LEN": {
+				"name": "R16_UEP3_T_LEN",
+				"address": "0x400234E4",
+				"info": "Endpoint3 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP3_TX_CTRL": {
+				"name": "R8_UEP3_TX_CTRL",
+				"address": "0x400234E6",
+				"info": "Endpoint3 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP3_RX_CTRL": {
+				"name": "R8_UEP3_RX_CTRL",
+				"address": "0x400234E7",
+				"info": "Endpoint3 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP4_T_LEN": {
+				"name": "R16_UEP4_T_LEN",
+				"address": "0x400234E8",
+				"info": "Endpoint4 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP4_TX_CTRL": {
+				"name": "R8_UEP4_TX_CTRL",
+				"address": "0x400234EA",
+				"info": "Endpoint4 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP4_RX_CTRL": {
+				"name": "R8_UEP4_RX_CTRL",
+				"address": "0x400234EB",
+				"info": "Endpoint4 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP5_T_LEN": {
+				"name": "R16_UEP5_T_LEN",
+				"address": "0x400234EC",
+				"info": "Endpoint5 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP5_TX_CTRL": {
+				"name": "R8_UEP5_TX_CTRL",
+				"address": "0x400234EE",
+				"info": "Endpoint5 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP5_RX_CTRL": {
+				"name": "R8_UEP5_RX_CTRL",
+				"address": "0x400234EF",
+				"info": "Endpoint5 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP6_T_LEN": {
+				"name": "R16_UEP6_T_LEN",
+				"address": "0x400234F0",
+				"info": "Endpoint6 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP6_TX_CTRL": {
+				"name": "R8_UEP6_TX_CTRL",
+				"address": "0x400234F2",
+				"info": "Endpoint6 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP6_RX_CTRL": {
+				"name": "R8_UEP6_RX_CTRL",
+				"address": "0x400234F3",
+				"info": "Endpoint6 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP7_T_LEN": {
+				"name": "R16_UEP7_T_LEN",
+				"address": "0x400234F4",
+				"info": "Endpoint7 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP7_TX_CTRL": {
+				"name": "R8_UEP7_TX_CTRL",
+				"address": "0x400234F6",
+				"info": "Endpoint7 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP7_RX_CTRL": {
+				"name": "R8_UEP7_RX_CTRL",
+				"address": "0x400234F7",
+				"info": "Endpoint7 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP8_T_LEN": {
+				"name": "R16_UEP8_T_LEN",
+				"address": "0x400234F8",
+				"info": "Endpoint8 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP8_TX_CTRL": {
+				"name": "R8_UEP8_TX_CTRL",
+				"address": "0x400234FA",
+				"info": "Endpoint8 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP8_RX_CTRL": {
+				"name": "R8_UEP8_RX_CTRL",
+				"address": "0x400234FB",
+				"info": "Endpoint8 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP9_T_LEN": {
+				"name": "R16_UEP9_T_LEN",
+				"address": "0x400234FC",
+				"info": "Endpoint9 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP9_TX_CTRL": {
+				"name": "R8_UEP9_TX_CTRL",
+				"address": "0x400234FE",
+				"info": "Endpoint9 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP9_RX_CTRL": {
+				"name": "R8_UEP9_RX_CTRL",
+				"address": "0x400234FF",
+				"info": "Endpoint9 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP10_T_LEN": {
+				"name": "R16_UEP10_T_LEN",
+				"address": "0x40023500",
+				"info": "Endpoint10 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP10_TX_CTRL": {
+				"name": "R8_UEP10_TX_CTRL",
+				"address": "0x40023502",
+				"info": "Endpoint10 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP10_RX_CTRL": {
+				"name": "R8_UEP10_RX_CTRL",
+				"address": "0x40023503",
+				"info": "Endpoint10 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP11_T_LEN": {
+				"name": "R16_UEP11_T_LEN",
+				"address": "0x40023504",
+				"info": "Endpoint11 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP11_TX_CTRL": {
+				"name": "R8_UEP11_TX_CTRL",
+				"address": "0x40023506",
+				"info": "Endpoint11 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP11_RX_CTRL": {
+				"name": "R8_UEP11_RX_CTRL",
+				"address": "0x40023507",
+				"info": "Endpoint11 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP12_T_LEN": {
+				"name": "R16_UEP12_T_LEN",
+				"address": "0x40023508",
+				"info": "Endpoint12 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP12_TX_CTRL": {
+				"name": "R8_UEP12_TX_CTRL",
+				"address": "0x4002350A",
+				"info": "Endpoint12 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP12_RX_CTRL": {
+				"name": "R8_UEP12_RX_CTRL",
+				"address": "0x4002350B",
+				"info": "Endpoint12 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP13_T_LEN": {
+				"name": "R16_UEP13_T_LEN",
+				"address": "0x4002350C",
+				"info": "Endpoint13 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP13_TX_CTRL": {
+				"name": "R8_UEP13_TX_CTRL",
+				"address": "0x4002350E",
+				"info": "Endpoint13 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP13_RX_CTRL": {
+				"name": "R8_UEP13_RX_CTRL",
+				"address": "0x4002350F",
+				"info": "Endpoint13 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP14_T_LEN": {
+				"name": "R16_UEP14_T_LEN",
+				"address": "0x40023510",
+				"info": "Endpoint14 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP14_TX_CTRL": {
+				"name": "R8_UEP14_TX_CTRL",
+				"address": "0x40023512",
+				"info": "Endpoint14 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP14_RX_CTRL": {
+				"name": "R8_UEP14_RX_CTRL",
+				"address": "0x40023513",
+				"info": "Endpoint14 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R16_UEP15_T_LEN": {
+				"name": "R16_UEP15_T_LEN",
+				"address": "0x40023514",
+				"info": "Endpoint15 transmit length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP15_TX_CTRL": {
+				"name": "R8_UEP15_TX_CTRL",
+				"address": "0x40023516",
+				"info": "Endpoint15 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP15_RX_CTRL": {
+				"name": "R8_UEP15_RX_CTRL",
+				"address": "0x40023517",
+				"info": "Endpoint15 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			}
 		}
 	},
 
 	"USBHS": {
 		"info": "USB Host-related registers list",
-		"table": "18-1",
+		"table": "22-3",
 
 		"registers": {
+			"R8_UHOST_CTRL": {
+				"name": "R8_UHOST_CTRL",
+				"address": "0x40023401",
+				"info": "USB host control register",
+				"reset_value": "0x00"
+			},
+			"R32_UH_CONFIG": {
+				"name": "R32_UH_CONFIG",
+				"address": "0x40023410",
+				"info": "USB host endpoint configuration register",
+				"reset_value": "0x00000000"
+			},
+			"R32_UH_EP_TYPE": {
+				"name": "R32_UH_EP_TYPE",
+				"address": "0x40023414",
+				"info": "USB host endpoint type register",
+				"reset_value": "0x00000000"
+			},
+			"R32_UH_RX_DMA": {
+				"name": "R32_UH_RX_DMA",
+				"address": "0x40023424",
+				"info": "USB host receive buffer start address",
+				"reset_value": "0x0000XXXX"
+			},
+			"R32_UH_TX_DMA": {
+				"name": "R32_UH_TX_DMA",
+				"address": "0x40023464",
+				"info": "USB host transmit buffer start address",
+				"reset_value": "0x0000XXXX"
+			},
+			"R16_UH_RX_MAX_LEN": {
+				"name": "R16_UH_RX_MAX_LEN",
+				"address": "0x400234A0",
+				"info": "USB host receive maximum length packet register",
+				"reset_value": "0xXXXX"
+			},
+			"R8_UH_EP_PID": {
+				"name": "R8_UH_EP_PID",
+				"address": "0x400234E0",
+				"info": "USB host token setup register",
+				"reset_value": "0x00"
+			},
+			"R8_UH_RX_CTRL": {
+				"name": "R8_UH_RX_CTRL",
+				"address": "0x400234E3",
+				"info": "USB host receive endpoint control register",
+				"reset_value": "0x00"
+			},
+			"R16_UH_TX_LEN": {
+				"name": "R16_UH_TX_LEN",
+				"address": "0x400234E4",
+				"info": "USB host transmit length register",
+				"reset_value": "0xXXXX"
+			},
+			"R8_UH_TX_CTRL": {
+				"name": "R8_UH_TX_CTRL",
+				"address": "0x400234E6",
+				"info": "USB host transmit endpoint control Register",
+				"reset_value": "0x00"
+			},
+			"R16_UH_SPLIT_DATA": {
+				"name": "R16_UH_SPLIT_DATA",
+				"address": "0x400234E8",
+				"info": "USB host transmit data of the SPLIT packet",
+				"reset_value": "0xXXXX"
+			}
 		}
 	},
 
-	"USBPD": {
-		"info": "USBPD-related registers list",
-		"table": "18-1",
+	"USB_OTG": {
+		"info": "USB_OTG-related registers list",
+		"table": "23-1",
 
 		"registers": {
+			"R8_USB_CTRL": {
+				"name": "R8_USB_CTRL",
+				"address": "0x50000000",
+				"info": "USB control register",
+				"reset_value": "0x06"
+			},
+			"R8_USB_INT_EN": {
+				"name": "R8_USB_INT_EN",
+				"address": "0x50000002",
+				"info": "USB interrupt enable register",
+				"reset_value": "0x00"
+			},
+			"R8_USB_DEV_AD": {
+				"name": "R8_USB_DEV_AD",
+				"address": "0x50000003",
+				"info": "USB Device address register",
+				"reset_value": "0x00"
+			},
+			"R8_USB_MIS_ST": {
+				"name": "R8_USB_MIS_ST",
+				"address": "0x50000005",
+				"info": "USB miscellaneous status register",
+				"reset_value": "0xXX"
+			},
+			"R8_USB_INT_FG": {
+				"name": "R8_USB_INT_FG",
+				"address": "0x50000006",
+				"info": "USB interrupt flag register",
+				"reset_value": "0x20"
+			},
+			"R8_USB_INT_ST": {
+				"name": "R8_USB_INT_ST",
+				"address": "0x50000007",
+				"info": "USB interrupt status register",
+				"reset_value": "0xXX"
+			},
+			"R16_USB_RX_LEN": {
+				"name": "R16_USB_RX_LEN",
+				"address": "0x50000008",
+				"info": "USB receive length register",
+				"reset_value": "0x0XXX"
+			},
+			"R32_USB_OTG_CR": {
+				"name": "R32_USB_OTG_CR",
+				"address": "0x50000054",
+				"info": "USB OTG control register",
+				"reset_value": "0x00000000"
+			},
+			"R32_USB_OTG_SR": {
+				"name": "R32_USB_OTG_SR",
+				"address": "0x50000058",
+				"info": "USB OTG status register",
+				"reset_value": "0x0000000X"
+			}
 		}
 	},
 
-	"CAN": {
-		"info": "CAN-related registers list",
-		"table": "15-1",
+	"USB_DEV2": {
+		"info": "USB_DEV2-related registers list",
+		"table": "23-3",
 
 		"registers": {
-
+			"R8_UDEV_CTRL": {
+				"name": "R8_UDEV_CTRL",
+				"address": "0x50000001",
+				"info": "USB device physical port control register",
+				"reset_value": "0xX0",
+				"bits_fields": "[]"
+			},
+			"R8_UEP4_1_MOD": {
+				"name": "R8_UEP4_1_MOD",
+				"address": "0x5000000C",
+				"info": "Endpoint 1(9)/4(8/12) mode control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP2_3_MOD": {
+				"name": "R8_UEP2_3_MOD",
+				"address": "0x5000000D",
+				"info": "Endpoint 2(10)/3(11) mode control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP5_6_MOD": {
+				"name": "R8_UEP5_6_MOD",
+				"address": "0x5000000E",
+				"info": "Endpoint 5(13)/6(14) mode control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP7_MOD": {
+				"name": "R8_UEP7_MOD",
+				"address": "0x5000000F",
+				"info": "Endpoint 7(15) mode control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R32_UEP0_DMA": {
+				"name": "R32_UEP0_DMA",
+				"address": "0x50000010",
+				"info": "Endpoint 0 buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP1_DMA": {
+				"name": "R32_UEP1_DMA",
+				"address": "0x50000014",
+				"info": "Endpoint 1(9) buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP2_DMA": {
+				"name": "R32_UEP2_DMA",
+				"address": "0x50000018",
+				"info": "Endpoint 2 (10) buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP3_DMA": {
+				"name": "R32_UEP3_DMA",
+				"address": "0x5000001C",
+				"info": "Endpoint 3 (11) buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP4_DMA": {
+				"name": "R32_UEP4_DMA",
+				"address": "0x50000020",
+				"info": "Endpoint 4 (8/12) buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP5_DMA": {
+				"name": "R32_UEP5_DMA",
+				"address": "0x50000024",
+				"info": "Endpoint 5(13) buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP6_DMA": {
+				"name": "R32_UEP6_DMA",
+				"address": "0x50000028",
+				"info": "Endpoint 6(14) buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_UEP7_DMA": {
+				"name": "R32_UEP7_DMA",
+				"address": "0x5000002C",
+				"info": "Endpoint 7(15) buffer start address",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP0_T_LEN": {
+				"name": "R8_UEP0_T_LEN",
+				"address": "0x50000030",
+				"info": "Endpoint 0 transmit length register",
+				"reset_value": "0xXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP0_TX_CTRL": {
+				"name": "R8_UEP0_TX_CTRL",
+				"address": "0x50000032",
+				"info": "Endpoint 0 transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP0_RX_CTRL": {
+				"name": "R8_UEP0_RX_CTRL",
+				"address": "0x50000033",
+				"info": "Endpoint 0 receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP1_T_LEN": {
+				"name": "R8_UEP1_T_LEN",
+				"address": "0x50000034",
+				"info": "Endpoint 1(9) transmit length register",
+				"reset_value": "0xXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP1_TX_CTRL": {
+				"name": "R8_UEP1_TX_CTRL",
+				"address": "0x50000036",
+				"info": "Endpoint 1(9) transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP1_RX_CTRL": {
+				"name": "R8_UEP1_RX_CTRL",
+				"address": "0x50000037",
+				"info": "Endpoint 1(9) receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP2_T_LEN": {
+				"name": "R8_UEP2_T_LEN",
+				"address": "0x50000038",
+				"info": "Endpoint 2(10) transmit length register",
+				"reset_value": "0xXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP2_TX_CTRL": {
+				"name": "R8_UEP2_TX_CTRL",
+				"address": "0x5000003A",
+				"info": "Endpoint 2(10) transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP2_RX_CTRL": {
+				"name": "R8_UEP2_RX_CTRL",
+				"address": "0x5000003B",
+				"info": "Endpoint 2(10) receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP3_T_LEN": {
+				"name": "R8_UEP3_T_LEN",
+				"address": "0x5000003C",
+				"info": "Endpoint 3(11) transmit length register",
+				"reset_value": "0xXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP3_TX_CTRL": {
+				"name": "R8_UEP3_TX_CTRL",
+				"address": "0x500003E",
+				"info": "Endpoint 3(11) transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP3_RX_CTRL": {
+				"name": "R8_UEP3_RX_CTRL",
+				"address": "0x500003F",
+				"info": "Endpoint 3(11) receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP4_T_LEN": {
+				"name": "R8_UEP4_T_LEN",
+				"address": "0x50000040",
+				"info": "Endpoint 4 (8/12) transmit length register",
+				"reset_value": "0xXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP4_TX_CTRL": {
+				"name": "R8_UEP4_TX_CTRL",
+				"address": "0x50000042",
+				"info": "Endpoint 4 (8/12) transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP4_RX_CTRL": {
+				"name": "R8_UEP4_RX_CTRL",
+				"address": "0x50000043",
+				"info": "Endpoint 4 (8/12) receive control Register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP5_T_LEN": {
+				"name": "R8_UEP5_T_LEN",
+				"address": "0x50000044",
+				"info": "Endpoint 5(13) transmit length register",
+				"reset_value": "0xXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP5_TX_CTRL": {
+				"name": "R8_UEP5_TX_CTRL",
+				"address": "0x50000046",
+				"info": "Endpoint 5(13) transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP5_RX_CTRL": {
+				"name": "R8_UEP5_RX_CTRL",
+				"address": "0x50000047",
+				"info": "Endpoint 5(13) receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP6_T_LEN": {
+				"name": "R8_UEP6_T_LEN",
+				"address": "0x50000048",
+				"info": "Endpoint 6(14) transmit length register",
+				"reset_value": "0xXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP6_TX_CTRL": {
+				"name": "R8_UEP6_TX_CTRL",
+				"address": "0x5000004A",
+				"info": "Endpoint 6(14) transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP6_RX_CTRL": {
+				"name": "R8_UEP6_RX_CTRL",
+				"address": "0x5000004B",
+				"info": "Endpoint 6(14) receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP7_T_LEN": {
+				"name": "R8_UEP7_T_LEN",
+				"address": "0x5000004C",
+				"info": "Endpoint 7(15) transmit length register",
+				"reset_value": "0xXX",
+				"bits_fields": "[]"
+			},
+			"R8_UEP7_TX_CTRL": {
+				"name": "R8_UEP7_TX_CTRL",
+				"address": "0x5000004E",
+				"info": "Endpoint 7(15) transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_UEP7_RX_CTRL": {
+				"name": "R8_UEP7_RX_CTRL",
+				"address": "0x5000004F",
+				"info": "Endpoint 7(15) receive control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			}
         }
 	},
 
-	"ESIGN": {
-		"info": "ESIG-related registers list",
-		"table": "15-1",
+	"USB_HOST2": {
+		"info": "USB_HOST2-related registers list",
+		"table": "23-5",
 
 		"registers": {
+			"R8_UHOST_CTRL": {
+				"name": "R8_UHOST_CTRL",
+				"address": "0x50000001",
+				"info": "USB host physical port control register",
+				"reset_value": "0xX0"
+			},
+			"R32_UH_EP_MOD": {
+				"name": "R32_UH_EP_MOD",
+				"address": "0x5000000D",
+				"info": "USB host endpoint mode control register",
+				"reset_value": "0x00"
+			},
+			"R16_UH_RX_DMA": {
+				"name": "R16_UH_RX_DMA",
+				"address": "0x50000018",
+				"info": "USB host receive buffer start address",
+				"reset_value": "0xXXXX"
+			},
+			"R16_UH_TX_DMA": {
+				"name": "R16_UH_TX_DMA",
+				"address": "0x5000001C",
+				"info": "USB host transmit buffer start address",
+				"reset_value": "0xXXXX"
+			},
+			"R16_UH_SETUP": {
+				"name": "R16_UH_SETUP",
+				"address": "0x50000036",
+				"info": "USB host auxiliary setup register",
+				"reset_value": "0x00"
+			},
+			"R8_UH_EP_PID": {
+				"name": "R8_UH_EP_PID",
+				"address": "0x50000038",
+				"info": "USB host token setup register",
+				"reset_value": "0x00"
+			},
+			"R8_UH_RX_CTRL": {
+				"name": "R8_UH_RX_CTRL",
+				"address": "0x5000003B",
+				"info": "USB host receive endpoint control register",
+				"reset_value": "0x00"
+			},
+			"R16_UH_TX_LEN": {
+				"name": "R16_UH_TX_LEN",
+				"address": "0x5000003C",
+				"info": "USB host transmit length register",
+				"reset_value": "0xXXXX"
+			},
+			"R8_UH_TX_CTRL": {
+				"name": "R8_UH_TX_CTRL",
+				"address": "0x5000003E",
+				"info": "USB host transmit endpoint control register",
+				"reset_value": "0x00"
+			}
+		}
+	},
 
+	"CAN1": {
+		"info": "CAN1-related registers list",
+		"table": "24-5",
+
+		"registers": {
+			"R32_CAN1_CTLR": {
+				"name": "R32_CAN1_CTLR",
+				"address": "0x40006400",
+				"info": "CAN1 master control register",
+				"reset_value": "0x00010002",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_STATR": {
+				"name": "R32_CAN1_STATR",
+				"address": "0x40006404",
+				"info": "CAN1 master status register",
+				"reset_value": "0x00000X02",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TSTATR": {
+				"name": "R32_CAN1_TSTATR",
+				"address": "0x40006408",
+				"info": "CAN1 transmit status register",
+				"reset_value": "0x1C000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_RFIFO0": {
+				"name": "R32_CAN1_RFIFO0",
+				"address": "0x4000640C",
+				"info": "CAN1 receive FIFO0 control and status register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_RFIFO1": {
+				"name": "R32_CAN1_RFIFO1",
+				"address": "0x40006410",
+				"info": "CAN1 receive FIFO1 control and status register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_INTENR": {
+				"name": "R32_CAN1_INTENR",
+				"address": "0x40006414",
+				"info": "CAN1 interrupt enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_ERRSR": {
+				"name": "R32_CAN1_ERRSR",
+				"address": "0x40006418",
+				"info": "CAN1 error status register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_BTIMR": {
+				"name": "R32_CAN1_BTIMR",
+				"address": "0x4000641C",
+				"info": "CAN1 bit timing register",
+				"reset_value": "0x01230000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TTCTLR": {
+				"name": "R32_CAN1_TTCTLR",
+				"address": "0x40006420",
+				"info": "CAN1 time trigger control register",
+				"reset_value": "0x0000FFFF",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TTCNT": {
+				"name": "R32_CAN1_TTCNT",
+				"address": "0x40006424",
+				"info": "CAN1 time trigger count value register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}
+        }
+	},
+
+	"CAN2": {
+		"info": "CAN2-related registers list",
+		"table": "24-6",
+
+		"registers": {
+			"R32_CAN2_CTLR": {
+				"name": "R32_CAN2_CTLR",
+				"address": "0x40006800",
+				"info": "CAN2 master control register",
+				"reset_value": "0x00010002",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_STATR": {
+				"name": "R32_CAN2_STATR",
+				"address": "0x40006804",
+				"info": "CAN2 master status register",
+				"reset_value": "0x00000X02",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TSTATR": {
+				"name": "R32_CAN2_TSTATR",
+				"address": "0x40006808",
+				"info": "CAN2 transmit status register",
+				"reset_value": "0x1C000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_RFIFO0": {
+				"name": "R32_CAN2_RFIFO0",
+				"address": "0x4000680C",
+				"info": "CAN2 receive FIFO0 control and status register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_RFIFO1": {
+				"name": "R32_CAN2_RFIFO1",
+				"address": "0x40006810",
+				"info": "CAN2 receive FIFO1 control and status register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_INTENR": {
+				"name": "R32_CAN2_INTENR",
+				"address": "0x40006814",
+				"info": "CAN2 interrupt enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_ERRSR": {
+				"name": "R32_CAN2_ERRSR",
+				"address": "0x40006818",
+				"info": "CAN2 error status register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_BTIMR": {
+				"name": "R32_CAN2_BTIMR",
+				"address": "0x4000681C",
+				"info": "CAN2 bit timing register",
+				"reset_value": "0x01230000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TTCTLR": {
+				"name": "R32_CAN2_TTCTLR",
+				"address": "0x40006820",
+				"info": "CAN2 time trigger control register",
+				"reset_value": "0x0000FFFF",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TTCNT": {
+				"name": "R32_CAN2_TTCNT",
+				"address": "0x40006824",
+				"info": "CAN2 time trigger count value register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"CAN1_MB": {
+		"info": "CAN1_MB-related registers list",
+		"table": "24-7",
+
+		"registers": {
+			"R32_CAN1_TXMIR0": {
+				"name": "R32_CAN1_TXMIR0",
+				"address": "0x40006580",
+				"info": "CAN1 Tx mailbox0 identifier register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TXMDTR0": {
+				"name": "R32_CAN1_TXMDTR0",
+				"address": "0x40006584",
+				"info": "CAN1 Tx mailbox0 data length and timestamp register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TXMDLR0": {
+				"name": "R32_CAN1_TXMDLR0",
+				"address": "0x40006588",
+				"info": "CAN1 Tx mailbox0 data low register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TXMDHR0": {
+				"name": "R32_CAN1_TXMDHR0",
+				"address": "0x4000658C",
+				"info": "CAN1 Tx mailbox0 data high register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TXMDTR1": {
+				"name": "R32_CAN1_TXMDTR1",
+				"address": "0x40006594",
+				"info": "CAN1 Tx mailbox1 data length and timestamp register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TXMDLR1": {
+				"name": "R32_CAN1_TXMDLR1",
+				"address": "0x40006598",
+				"info": "CAN1 Tx mailbox1 data low register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TXMDHR1": {
+				"name": "R32_CAN1_TXMDHR1",
+				"address": "0x4000659C",
+				"info": "CAN1 Tx mailbox1 data high register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TXMIR2": {
+				"name": "R32_CAN1_TXMIR2",
+				"address": "0x400065A0",
+				"info": "CAN1 Tx mailbox2 identifier register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TXMDTR2": {
+				"name": "R32_CAN1_TXMDTR2",
+				"address": "0x400065A4",
+				"info": "CAN1 Tx mailbox2 data length and timestamp register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TXMDLR2": {
+				"name": "R32_CAN1_TXMDLR2",
+				"address": "0x400065A8",
+				"info": "CAN1 Tx mailbox2 data low register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_TXMDHR2": {
+				"name": "R32_CAN1_TXMDHR2",
+				"address": "0x400065AC",
+				"info": "CAN1 Tx mailbox2 data high register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_RXMIR0": {
+				"name": "R32_CAN1_RXMIR0",
+				"address": "0x400065B0",
+				"info": "CAN1 Rx FIFO0 mailbox identifier register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_RXMDTR0": {
+				"name": "R32_CAN1_RXMDTR0",
+				"address": "0x400065B4",
+				"info": "CAN1 Rx FIFO0 mailbox data length and timestamp register",     
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_RXMDLR0": {
+				"name": "R32_CAN1_RXMDLR0",
+				"address": "0x400065B8",
+				"info": "CAN1 Rx FIFO0 mailbox data low register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_RXMDHR0": {
+				"name": "R32_CAN1_RXMDHR0",
+				"address": "0x400065BC",
+				"info": "CAN1 Rx FIFO0 mailbox data high register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_RXMIR1": {
+				"name": "R32_CAN1_RXMIR1",
+				"address": "0x400065C0",
+				"info": "CAN1 Rx FIFO1 mailbox identifier register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_RXMDTR1": {
+				"name": "R32_CAN1_RXMDTR1",
+				"address": "0x400065C4",
+				"info": "CAN1 Rx FIFO1 mailbox data length and timestamp register",     
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_RXMDLR1": {
+				"name": "R32_CAN1_RXMDLR1",
+				"address": "0x400065C8",
+				"info": "CAN1 Rx FIFO1 mailbox data low register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_RXMDHR1": {
+				"name": "R32_CAN1_RXMDHR1",
+				"address": "0x400065CC",
+				"info": "CAN1 Rx FIFO1 mailbox data high register XR32_CAN1_TXMIR1 0x40006590 CAN1 Tx mailbox1 identifier register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"CAN2_MB": {
+		"info": "CAN2_MB-related registers list",
+		"table": "24-8",
+
+		"registers": {
+			"R32_CAN2_TXMIR0": {
+				"name": "R32_CAN2_TXMIR0",
+				"address": "0x40006980",
+				"info": "CAN2 Tx mailbox0 identifier register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TXMDTR0": {
+				"name": "R32_CAN2_TXMDTR0",
+				"address": "0x40006984",
+				"info": "CAN2 Tx mailbox0 data length and timestamp register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TXMDLR0": {
+				"name": "R32_CAN2_TXMDLR0",
+				"address": "0x40006988",
+				"info": "CAN2 Tx mailbox0 data low register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TXMDHR0": {
+				"name": "R32_CAN2_TXMDHR0",
+				"address": "0x4000698C",
+				"info": "CAN2 Tx mailbox0 data high register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TXMIR1": {
+				"name": "R32_CAN2_TXMIR1",
+				"address": "0x40006990",
+				"info": "CAN2 Tx mailbox1 identifier register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TXMDTR1": {
+				"name": "R32_CAN2_TXMDTR1",
+				"address": "0x40006994",
+				"info": "CAN2 Tx mailbox1 data length and timestamp register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TXMDLR1": {
+				"name": "R32_CAN2_TXMDLR1",
+				"address": "0x40006998",
+				"info": "CAN2 Tx mailbox1 data low register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TXMDHR1": {
+				"name": "R32_CAN2_TXMDHR1",
+				"address": "0x4000699C",
+				"info": "CAN2 Tx mailbox1 data high register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TXMIR2": {
+				"name": "R32_CAN2_TXMIR2",
+				"address": "0x400069A0",
+				"info": "CAN2 Tx mailbox2 identifier register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TXMDTR2": {
+				"name": "R32_CAN2_TXMDTR2",
+				"address": "0x400069A4",
+				"info": "CAN2 Tx mailbox2 data length and timestamp register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TXMDLR2": {
+				"name": "R32_CAN2_TXMDLR2",
+				"address": "0x400069A8",
+				"info": "CAN2 Tx mailbox2 data low register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_TXMDHR2": {
+				"name": "R32_CAN2_TXMDHR2",
+				"address": "0x400069AC",
+				"info": "CAN2 Tx mailbox2 data high register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_RXMIR0": {
+				"name": "R32_CAN2_RXMIR0",
+				"address": "0x400069B0",
+				"info": "CAN2 Rx FIFO0 mailbox identifier register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_RXMDTR0": {
+				"name": "R32_CAN2_RXMDTR0",
+				"address": "0x400069B4",
+				"info": "CAN2 Rx FIFO0 mailbox data length and timestamp register",     
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_RXMDLR0": {
+				"name": "R32_CAN2_RXMDLR0",
+				"address": "0x400069B8",
+				"info": "CAN2 Rx FIFO0 mailbox data low register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_RXMDHR0": {
+				"name": "R32_CAN2_RXMDHR0",
+				"address": "0x400069BC",
+				"info": "CAN2 Rx FIFO0 mailbox data high register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_RXMIR1": {
+				"name": "R32_CAN2_RXMIR1",
+				"address": "0x400069C0",
+				"info": "CAN2 Rx FIFO1 mailbox identifier register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_RXMDTR1": {
+				"name": "R32_CAN2_RXMDTR1",
+				"address": "0x400069C4",
+				"info": "CAN2 Rx FIFO1 mailbox data length and timestamp register",     
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_RXMDLR1": {
+				"name": "R32_CAN2_RXMDLR1",
+				"address": "0x400069C8",
+				"info": "CAN2 Rx FIFO1 mailbox data low register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN2_RXMDHR1": {
+				"name": "R32_CAN2_RXMDHR1",
+				"address": "0x400069CC",
+				"info": "CAN2 Rx FIFO1 mailbox data high register",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"CAN1_F": {
+		"info": "CAN1_F-related registers list",
+		"table": "24-9",
+
+		"registers": {
+			"R32_CAN1_FCTLR": {
+				"name": "R32_CAN1_FCTLR",
+				"address": "0x40006600",
+				"info": "CAN1 filter master control register",
+				"reset_value": "0x2A1C0E01",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_FMCFGR": {
+				"name": "R32_CAN1_FMCFGR",
+				"address": "0x40006604",
+				"info": "CAN1 filter mode register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_FSCFGR": {
+				"name": "R32_CAN1_FSCFGR",
+				"address": "0x4000660C",
+				"info": "CAN1 filter bit width register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_FAFIFOR": {
+				"name": "R32_CAN1_FAFIFOR",
+				"address": "0x40006614",
+				"info": "CAN1 filter FIFO association register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_FWR": {
+				"name": "R32_CAN1_FWR",
+				"address": "0x4000661C",
+				"info": "CAN1 filter activation register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F0R1": {
+				"name": "R32_CAN1_F0R1",
+				"address": "0x40006640",
+				"info": "CAN1 filter Bank0 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F0R2": {
+				"name": "R32_CAN1_F0R2",
+				"address": "0x40006644",
+				"info": "CAN1 filter Bank0 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F1R1": {
+				"name": "R32_CAN1_F1R1",
+				"address": "0x40006648",
+				"info": "CAN1 filter Bank1 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F1R2": {
+				"name": "R32_CAN1_F1R2",
+				"address": "0x4000664C",
+				"info": "CAN1 filter Bank1 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F2R1": {
+				"name": "R32_CAN1_F2R1",
+				"address": "0x40006650",
+				"info": "CAN1 filter Bank2 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F2R2": {
+				"name": "R32_CAN1_F2R2",
+				"address": "0x40006654",
+				"info": "CAN1 filter Bank2 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F3R1": {
+				"name": "R32_CAN1_F3R1",
+				"address": "0x40006658",
+				"info": "CAN1 filter Bank3 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F3R2": {
+				"name": "R32_CAN1_F3R2",
+				"address": "0x4000665C",
+				"info": "CAN1 filter Bank3 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F4R1": {
+				"name": "R32_CAN1_F4R1",
+				"address": "0x40006660",
+				"info": "CAN1 filter Bank4 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F4R2": {
+				"name": "R32_CAN1_F4R2",
+				"address": "0x40006664",
+				"info": "CAN1 filter Bank4 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F5R1": {
+				"name": "R32_CAN1_F5R1",
+				"address": "0x40006668",
+				"info": "CAN1 filter Bank5 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F5R2": {
+				"name": "R32_CAN1_F5R2",
+				"address": "0x4000666C",
+				"info": "CAN1 filter Bank5 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F6R1": {
+				"name": "R32_CAN1_F6R1",
+				"address": "0x40006670",
+				"info": "CAN1 filter Bank6 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F6R2": {
+				"name": "R32_CAN1_F6R2",
+				"address": "0x40006674",
+				"info": "CAN1 filter Bank6 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F7R1": {
+				"name": "R32_CAN1_F7R1",
+				"address": "0x40006678",
+				"info": "CAN1 filter Bank7 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F7R2": {
+				"name": "R32_CAN1_F7R2",
+				"address": "0x4000667C",
+				"info": "CAN1 filter Bank7 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F8R1": {
+				"name": "R32_CAN1_F8R1",
+				"address": "0x40006680",
+				"info": "CAN1 filter Bank8 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F8R2": {
+				"name": "R32_CAN1_F8R2",
+				"address": "0x40006684",
+				"info": "CAN1 filter Bank8 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F9R1": {
+				"name": "R32_CAN1_F9R1",
+				"address": "0x40006688",
+				"info": "CAN1 filter Bank9 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F9R2": {
+				"name": "R32_CAN1_F9R2",
+				"address": "0x4000668C",
+				"info": "CAN1 filter Bank9 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F10R1": {
+				"name": "R32_CAN1_F10R1",
+				"address": "0x40006690",
+				"info": "CAN1 filter Bank10 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F10R2": {
+				"name": "R32_CAN1_F10R2",
+				"address": "0x40006694",
+				"info": "CAN1 filter Bank10 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F11R1": {
+				"name": "R32_CAN1_F11R1",
+				"address": "0x40006698",
+				"info": "CAN1 filter Bank11 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F11R2": {
+				"name": "R32_CAN1_F11R2",
+				"address": "0x4000669C",
+				"info": "CAN1 filter Bank11 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F12R1": {
+				"name": "R32_CAN1_F12R1",
+				"address": "0x400066A0",
+				"info": "CAN1 filter Bank12 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F12R2": {
+				"name": "R32_CAN1_F12R2",
+				"address": "0x400066A4",
+				"info": "CAN1 filter Bank12 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F13R1": {
+				"name": "R32_CAN1_F13R1",
+				"address": "0x400066A8",
+				"info": "CAN1 filter Bank13 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F13R2": {
+				"name": "R32_CAN1_F13R2",
+				"address": "0x400066AC",
+				"info": "CAN1 filter Bank13 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F14R1": {
+				"name": "R32_CAN1_F14R1",
+				"address": "0x400066B0",
+				"info": "CAN1 filter Bank14 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F14R2": {
+				"name": "R32_CAN1_F14R2",
+				"address": "0x400066B4",
+				"info": "CAN1 filter Bank14 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F15R1": {
+				"name": "R32_CAN1_F15R1",
+				"address": "0x400066B8",
+				"info": "CAN1 filter Bank15 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F15R2": {
+				"name": "R32_CAN1_F15R2",
+				"address": "0x400066BC",
+				"info": "CAN1 filter Bank15 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F16R1": {
+				"name": "R32_CAN1_F16R1",
+				"address": "0x400066C0",
+				"info": "CAN1 filter Bank16 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F16R2": {
+				"name": "R32_CAN1_F16R2",
+				"address": "0x400066C4",
+				"info": "CAN1 filter Bank16 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F17R1": {
+				"name": "R32_CAN1_F17R1",
+				"address": "0x400066C8",
+				"info": "CAN1 filter Bank17 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F17R2": {
+				"name": "R32_CAN1_F17R2",
+				"address": "0x400066CC",
+				"info": "CAN1 filter Bank17 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F18R1": {
+				"name": "R32_CAN1_F18R1",
+				"address": "0x400066D0",
+				"info": "CAN1 filter Bank18 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F18R2": {
+				"name": "R32_CAN1_F18R2",
+				"address": "0x400066D4",
+				"info": "CAN1 filter Bank18 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F19R1": {
+				"name": "R32_CAN1_F19R1",
+				"address": "0x400066D8",
+				"info": "CAN1 filter Bank19 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F19R2": {
+				"name": "R32_CAN1_F19R2",
+				"address": "0x400066DC",
+				"info": "CAN1 filter Bank19 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F20R1": {
+				"name": "R32_CAN1_F20R1",
+				"address": "0x400066E0",
+				"info": "CAN1 filter Bank20 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F20R2": {
+				"name": "R32_CAN1_F20R2",
+				"address": "0x400066E4",
+				"info": "CAN1 filter Bank20 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F21R1": {
+				"name": "R32_CAN1_F21R1",
+				"address": "0x400066E8",
+				"info": "CAN1 filter Bank21 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F21R2": {
+				"name": "R32_CAN1_F21R2",
+				"address": "0x400066EC",
+				"info": "CAN1 filter Bank21 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F22R1": {
+				"name": "R32_CAN1_F22R1",
+				"address": "0x400066F0",
+				"info": "CAN1 filter Bank22 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F22R2": {
+				"name": "R32_CAN1_F22R2",
+				"address": "0x400066F4",
+				"info": "CAN1 filter Bank22 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F23R1": {
+				"name": "R32_CAN1_F23R1",
+				"address": "0x400066F8",
+				"info": "CAN1 filter Bank23 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F23R2": {
+				"name": "R32_CAN1_F23R2",
+				"address": "0x400066FC",
+				"info": "CAN1 filter Bank23 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F24R1": {
+				"name": "R32_CAN1_F24R1",
+				"address": "0x40006700",
+				"info": "CAN1 filter Bank24 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F24R2": {
+				"name": "R32_CAN1_F24R2",
+				"address": "0x40006704",
+				"info": "CAN1 filter Bank24 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F25R1": {
+				"name": "R32_CAN1_F25R1",
+				"address": "0x40006708",
+				"info": "CAN1 filter Bank25 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F25R2": {
+				"name": "R32_CAN1_F25R2",
+				"address": "0x4000670C",
+				"info": "CAN1 filter Bank25 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F26R1": {
+				"name": "R32_CAN1_F26R1",
+				"address": "0x40006710",
+				"info": "CAN1 filter Bank26 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F26R2": {
+				"name": "R32_CAN1_F26R2",
+				"address": "0x40006714",
+				"info": "CAN1 filter Bank26 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F27R1": {
+				"name": "R32_CAN1_F27R1",
+				"address": "0x40006718",
+				"info": "CAN1 filter Bank27 register 1",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			},
+			"R32_CAN1_F27R2": {
+				"name": "R32_CAN1_F27R2",
+				"address": "0x4000671C",
+				"info": "CAN1 filter Bank27 register 2",
+				"reset_value": "X",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"DVP": {
+		"info": "DVP-related registers list",
+		"table": "25-2",
+
+		"registers": {
+			"R8_DVP_CR0": {
+				"name": "R8_DVP_CR0",
+				"address": "0x50050000",
+				"info": "DVP control register0",
+				"reset_value": "0x00"
+			},
+			"R8_DVP_CR1": {
+				"name": "R8_DVP_CR1",
+				"address": "0x50050001",
+				"info": "DVP control register1",
+				"reset_value": "0x06"
+			},
+			"R8_DVP_IER": {
+				"name": "R8_DVP_IER",
+				"address": "0x50050002",
+				"info": "DVP interrupt enable register",
+				"reset_value": "0x00"
+			},
+			"R16_DVP_ROW_NUM": {
+				"name": "R16_DVP_ROW_NUM",
+				"address": "0x50050004",
+				"info": "DVP row number configuration register",
+				"reset_value": "0x0000"
+			},
+			"R16_DVP_COL_NUM": {
+				"name": "R16_DVP_COL_NUM",
+				"address": "0x50050006",
+				"info": "DVP column number configuration register",
+				"reset_value": "0x0000"
+			},
+			"R32_DVP_DMA_BUF0": {
+				"name": "R32_DVP_DMA_BUF0",
+				"address": "0x50050008",
+				"info": "DVP DMA address0 register",
+				"reset_value": "0x00000000"
+			},
+			"R32_DVP_DMA_BUF1": {
+				"name": "R32_DVP_DMA_BUF1",
+				"address": "0x5005000C",
+				"info": "DVP DMA address1 register",
+				"reset_value": "0x00000000"
+			},
+			"R8_DVP_IFR": {
+				"name": "R8_DVP_IFR",
+				"address": "0x50050010",
+				"info": "DVP interrupt flag register",
+				"reset_value": "0x00"
+			},
+			"R8_DVP_STATUS": {
+				"name": "R8_DVP_STATUS",
+				"address": "0x50050011",
+				"info": "DVP receive FIFO status register",
+				"reset_value": "0x00"
+			},
+			"R16_DVP_ROW_CNT": {
+				"name": "R16_DVP_ROW_CNT",
+				"address": "0x50050014",
+				"info": "DVP row count register",
+				"reset_value": "0x0000"
+			},
+			"R16_DVP_HOFFCNT": {
+				"name": "R16_DVP_HOFFCNT",
+				"address": "0x50050018",
+				"info": "Horizontal displacement register for the start of the window",
+				"reset_value": "0x0000"
+			},
+			"R16_DVP_VST": {
+				"name": "R16_DVP_VST",
+				"address": "0x5005001A",
+				"info": "Window start line number register",
+				"reset_value": "0x0000"
+			},
+			"R16_DVP_CAPCNT": {
+				"name": "R16_DVP_CAPCNT",
+				"address": "0x5005001C",
+				"info": "DVP capture count register",
+				"reset_value": "0x0000"
+			},
+			"R16_DVP_VLINE": {
+				"name": "R16_DVP_VLINE",
+				"address": "0x5005001E",
+				"info": "DVP vertical line count register",
+				"reset_value": "0x0000"
+			},
+			"R32_DVP_DR": {
+				"name": "R32_DVP_DR",
+				"address": "0x50050020",
+				"info": "DVP data register",
+				"reset_value": "0x00000000"
+			}
+		}
+	},
+
+	"FSMC": {
+		"info": "FSMC-related registers list",
+		"table": "26-31",
+
+		"registers": {
+			"R32_FSMC_BCR1": {
+				"name": "R32_FSMC_BCR1",
+				"address": "0xA0000000",
+				"info": "SRAM/NOR-Flash chip select control register 1",
+				"reset_value": "0x000030DX",
+				"bits_fields": "[]"
+			},
+			"R32_FSMC_BTR1": {
+				"name": "R32_FSMC_BTR1",
+				"address": "0xA0000004",
+				"info": "SRAM/NOR-Flash chip select timing register 1",
+				"reset_value": "0x0FFFFFFF",
+				"bits_fields": "[]"
+			},
+			"R32_FSMC_PCR2": {
+				"name": "R32_FSMC_PCR2",
+				"address": "0xA0000060",
+				"info": "NAND-Flash control register 2",
+				"reset_value": "0x00000018",
+				"bits_fields": "[]"
+			},
+			"R32_FSMC_SR2": {
+				"name": "R32_FSMC_SR2",
+				"address": "0xA0000064",
+				"info": "FIFO status and interrupt register 2",
+				"reset_value": "0x00000040",
+				"bits_fields": "[]"
+			},
+			"R32_FSMC_PMEM2": {
+				"name": "R32_FSMC_PMEM2",
+				"address": "0xA0000068",
+				"info": "General purpose memory timing register 2",
+				"reset_value": "0xFCFCFCFC",
+				"bits_fields": "[]"
+			},
+			"R32_FSMC_PATT2": {
+				"name": "R32_FSMC_PATT2",
+				"address": "0xA000006C",
+				"info": "Attribute memory timing register 2",
+				"reset_value": "0xFCFCFCFC",
+				"bits_fields": "[]"
+			},
+			"R32_FSMC_ECCR2": {
+				"name": "R32_FSMC_ECCR2",
+				"address": "0xA0000074",
+				"info": "ECC result register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_FSMC_BWTR1": {
+				"name": "R32_FSMC_BWTR1",
+				"address": "0xA0000104",
+				"info": "SRAM/NOR-Flash write timing register 1",
+				"reset_value": "0x0FFFFFFF",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"ETH_MAC": {
+		"info": "ETH_MAC-related registers list",
+		"table": "27-22",
+
+		"registers": {
+			"R32_ETH_MACCR": {
+				"name": "R32_ETH_MACCR",
+				"address": "0x40028000",
+				"info": "MAC control register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACFFR": {
+				"name": "R32_ETH_MACFFR",
+				"address": "0x40028004",
+				"info": "Frame filter register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACHTHR": {
+				"name": "R32_ETH_MACHTHR",
+				"address": "0x40028008",
+				"info": "Hash value list register high",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACHTLR": {
+				"name": "R32_ETH_MACHTLR",
+				"address": "0x4002800C",
+				"info": "Hash value list register low",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACMIIAR": {
+				"name": "R32_ETH_MACMIIAR",
+				"address": "0x40028010",
+				"info": "MII address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACMIIDR": {
+				"name": "R32_ETH_MACMIIDR",
+				"address": "0x40028014",
+				"info": "MII data register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACFCR": {
+				"name": "R32_ETH_MACFCR",
+				"address": "0x40028018",
+				"info": "MAC flow control register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACVLAN": {
+				"name": "R32_ETH_MACVLAN",
+				"address": "0x4002801C",
+				"info": "VLAN tag register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACRWUFFR": {
+				"name": "R32_ETH_MACRWUFFR",
+				"address": "0x40028028",
+				"info": "Wake-up frame filter register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACPMTCSR": {
+				"name": "R32_ETH_MACPMTCSR",
+				"address": "0x4002802C",
+				"info": "PMT control and status Register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACSR": {
+				"name": "R32_ETH_MACSR",
+				"address": "0x40028038",
+				"info": "MAC interrupt status register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACIMR": {
+				"name": "R32_ETH_MACIMR",
+				"address": "0x4002803C",
+				"info": "MAC interrupt mask register",
+				"reset_value": "0x00000000"
+			},
+			"R32_ETH_MACA0HR": {
+				"name": "R32_ETH_MACA0HR",
+				"address": "0x40028040",
+				"info": "MAC address register 0 high 32 bits",
+				"reset_value": "0x8000FFFF"
+			},
+			"R32_ETH_MACA0LR": {
+				"name": "R32_ETH_MACA0LR",
+				"address": "0x40028044",
+				"info": "MAC address register 0 low 32 bits",
+				"reset_value": "0xFFFFFFFF"
+			},
+			"R32_ETH_MACA1HR": {
+				"name": "R32_ETH_MACA1HR",
+				"address": "0x40028048",
+				"info": "MAC address register 1 high 32 bits",
+				"reset_value": "0x0000FFFF"
+			},
+			"R32_ETH_MACA1LR": {
+				"name": "R32_ETH_MACA1LR",
+				"address": "0x4002804C",
+				"info": "MAC address register 1 low 32 bits",
+				"reset_value": "0xFFFFFFFF"
+			},
+			"R32_ETH_MACA2HR": {
+				"name": "R32_ETH_MACA2HR",
+				"address": "0x40028050",
+				"info": "MAC address register 2 high 32 bits",
+				"reset_value": "0x0000FFFF"
+			},
+			"R32_ETH_MACA2LR": {
+				"name": "R32_ETH_MACA2LR",
+				"address": "0x40028054",
+				"info": "MAC address register 2 low 32 bits",
+				"reset_value": "0xFFFFFFFF"
+			},
+			"R32_ETH_MACA3HR": {
+				"name": "R32_ETH_MACA3HR",
+				"address": "0x40028058",
+				"info": "MAC address register 3 high 32 bits",
+				"reset_value": "0x0000FFFF"
+			},
+			"R32_ETH_MACA3LR": {
+				"name": "R32_ETH_MACA3LR",
+				"address": "0x4002805C",
+				"info": "MAC address register 3 low 32 bits",
+				"reset_value": "0xFFFFFFFF"
+			},
+			"R32_ETH_MACCFG0": {
+				"name": "R32_ETH_MACCFG0",
+				"address": "0x40028098",
+				"info": "MAC software reset control register 0",
+				"reset_value": "0x00000000"
+			}
+		}
+	},
+
+	"ETH_MMC": {
+		"info": "ETH_MMC-related registers list",
+		"table": "27-22",
+
+		"registers": {
+			"R32_ETH_MMCCR": {
+				"name": "R32_ETH_MMCCR",
+				"address": "0x40028100",
+				"info": "MMC control register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MMCRIR": {
+				"name": "R32_ETH_MMCRIR",
+				"address": "0x40028104",
+				"info": "MMC receive register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MMCTIR": {
+				"name": "R32_ETH_MMCTIR",
+				"address": "0x40028108",
+				"info": "MMC transmit interrupt register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MMCRIMR": {
+				"name": "R32_ETH_MMCRIMR",
+				"address": "0x4002810C",
+				"info": "MMC receive interrupt mask register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MMCTIMR": {
+				"name": "R32_ETH_MMCTIMR",
+				"address": "0x40028110",
+				"info": "MMC transmit interrupt mask register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MMCTGFSCCR": {
+				"name": "R32_ETH_MMCTGFSCCR",
+				"address": "0x4002814C",
+				"info": "MMC transmit good frame counter after single conflict",        
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MMCTGFMSCCR": {
+				"name": "R32_ETH_MMCTGFMSCCR",
+				"address": "0x40028150",
+				"info": "MMC transmit good frame counter after multiple conflicts",     
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MMCTGFCR": {
+				"name": "R32_ETH_MMCTGFCR",
+				"address": "0x40028168",
+				"info": "MMC transmit good frame count register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MMCRFCECR": {
+				"name": "R32_ETH_MMCRFCECR",
+				"address": "0x40028194",
+				"info": "MMC receive CRC error frame count register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MMCRFAECR": {
+				"name": "R32_ETH_MMCRFAECR",
+				"address": "0x40028198",
+				"info": "MMC receive alignment error frame counter register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MMCRGUFCR": {
+				"name": "R32_ETH_MMCRGUFCR",
+				"address": "0x400281C4",
+				"info": "MMC receive good unicast frame count register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"ETH_IEEE1588": {
+		"info": "ETH_IEEE1588-related registers list",
+		"table": "27-22",
+
+		"registers": {
+			"R32_ETH_PTPTSCR": {
+				"name": "R32_ETH_PTPTSCR",
+				"address": "0x40028700",
+				"info": "PTP timestamp control register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_PTPSSIR": {
+				"name": "R32_ETH_PTPSSIR",
+				"address": "0x40028704",
+				"info": "PTP subsecond increment register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_PTPTSHR": {
+				"name": "R32_ETH_PTPTSHR",
+				"address": "0x40028708",
+				"info": "PTP timestamp register high",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_PTPTSLR": {
+				"name": "R32_ETH_PTPTSLR",
+				"address": "0x4002870C",
+				"info": "PTP timestamp register low",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_PTPTSHUR": {
+				"name": "R32_ETH_PTPTSHUR",
+				"address": "0x40028710",
+				"info": "PTP timestamp update register high",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_PTPTSLUR": {
+				"name": "R32_ETH_PTPTSLUR",
+				"address": "0x40028714",
+				"info": "PTP timestamp update register low",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_PTPTSAR": {
+				"name": "R32_ETH_PTPTSAR",
+				"address": "0x40028718",
+				"info": "PTP timestamp adder register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_PTPTTHR": {
+				"name": "R32_ETH_PTPTTHR",
+				"address": "0x4002871C",
+				"info": "PTP target register high",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_PTPTTLR": {
+				"name": "R32_ETH_PTPTTLR",
+				"address": "0x40028720",
+				"info": "PTP target register low",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}          
+        }
+	},
+
+	"ETH_DMA": {
+		"info": "ETH_DMA-related registers list",
+		"table": "27-22",
+
+		"registers": {
+			"R32_ETH_DMABMR": {
+				"name": "R32_ETH_DMABMR",
+				"address": "0x40029000",
+				"info": "DMA bus mode register",
+				"reset_value": "0x00000001",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMATPDR": {
+				"name": "R32_ETH_DMATPDR",
+				"address": "0x40029004",
+				"info": "DMA transmit query register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMARPTR": {
+				"name": "R32_ETH_DMARPTR",
+				"address": "0x40029008",
+				"info": "DMA receive query register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMARDLAR": {
+				"name": "R32_ETH_DMARDLAR",
+				"address": "0x4002900C",
+				"info": "DMA receive descriptor address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMATDLAR": {
+				"name": "R32_ETH_DMATDLAR",
+				"address": "0x40029010",
+				"info": "DMA transmit descriptor address register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMASR": {
+				"name": "R32_ETH_DMASR",
+				"address": "0x40029014",
+				"info": "DMA status register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMAOMR": {
+				"name": "R32_ETH_DMAOMR",
+				"address": "0x40029018",
+				"info": "DMA operation mode register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMAIER": {
+				"name": "R32_ETH_DMAIER",
+				"address": "0x4002901C",
+				"info": "DMA interrupt enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMAMFBOCR": {
+				"name": "R32_ETH_DMAMFBOCR",
+				"address": "0x40029020",
+				"info": "DMA lost frame register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMACHTDR": {
+				"name": "R32_ETH_DMACHTDR",
+				"address": "0x40029048",
+				"info": "DMA current transmit descriptor register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMACHRDR": {
+				"name": "R32_ETH_DMACHRDR",
+				"address": "0x4002904C",
+				"info": "DMA current receive descriptor register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMACHTBAR": {
+				"name": "R32_ETH_DMACHTBAR",
+				"address": "0x40029050",
+				"info": "DMA current transmit buffer register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_DMACHRBAR": {
+				"name": "R32_ETH_DMACHRBAR",
+				"address": "0x40029054",
+				"info": "DMA current receive buffer register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"ETH_10M": {
+		"info": "ETH_10M-related registers list",
+		"table": "27-22",
+
+		"registers": {
+			"BMCR": {
+				"name": "BMCR",
+				"address": "0x00",
+				"info": "Basic control register",
+				"reset_value": "0x2100",
+				"bits_fields": "[]"
+			},
+			"BMSR": {
+				"name": "BMSR",
+				"address": "0x01",
+				"info": "Basic status register",
+				"reset_value": "0x1809",
+				"bits_fields": "[]"
+			},
+			"ETH_ANLPAR": {
+				"name": "ETH_ANLPAR",
+				"address": "0x05",
+				"info": "Auto-negotiation linker capability register",
+				"reset_value": "0x0001",
+				"bits_fields": "[]"
+			},
+			"PHY_SR": {
+				"name": "PHY_SR",
+				"address": "0x10",
+				"info": "Physical layer status register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"PHY_MDIX": {
+				"name": "PHY_MDIX",
+				"address": "0x1E",
+				"info": "Auto-flip register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"ETH_CTRL": {
+		"info": "FLASH-related registers list",
+		"table": "27-22",
+
+		"registers": {
+			"R8_ETH_EIE": {
+				"name": "R8_ETH_EIE",
+				"address": "0x40028003",
+				"info": "Interrupt enable register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_ETH_EIR": {
+				"name": "R8_ETH_EIR",
+				"address": "0x40028004",
+				"info": "Interrupt flag register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_ETH_ESTAT": {
+				"name": "R8_ETH_ESTAT",
+				"address": "0x40028005",
+				"info": "Status register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_ETH_ECON2": {
+				"name": "R8_ETH_ECON2",
+				"address": "0x40028006",
+				"info": "PHY analog parameter setting register",
+				"reset_value": "0x0A",
+				"bits_fields": "[]"
+			},
+			"R8_ETH_ECON1": {
+				"name": "R8_ETH_ECON1",
+				"address": "0x40028007",
+				"info": "Receive/transmit control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_TX": {
+				"name": "R32_ETH_TX",
+				"address": "0x40028008",
+				"info": "Transmit DMA control register",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_ETH_ETXST": {
+				"name": "R16_ETH_ETXST",
+				"address": "0x40028008",
+				"info": "Transmit DMA buffer start address register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R16_ETH_ETXLN": {
+				"name": "R16_ETH_ETXLN",
+				"address": "0x4002800A",
+				"info": "Transmission length register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_RX": {
+				"name": "R32_ETH_RX",
+				"address": "0x4002800C",
+				"info": "Receive DMA control register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R16_ETH_ERXST": {
+				"name": "R16_ETH_ERXST",
+				"address": "0x4002800C",
+				"info": "Receive DMA buffer start address register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R16_ETH_ERXLN": {
+				"name": "R16_ETH_ERXLN",
+				"address": "0x4002800E",
+				"info": "Reception length register",
+				"reset_value": "0x0000",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_HTL": {
+				"name": "R32_ETH_HTL",
+				"address": "0x40028010",
+				"info": "Hash table low register",
+				"reset_value": "0x484EA033",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_HTH": {
+				"name": "R32_ETH_HTH",
+				"address": "0x40028014",
+				"info": "Hash table high register",
+				"reset_value": "0x5000EF97",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MACON": {
+				"name": "R32_ETH_MACON",
+				"address": "0x40028018",
+				"info": "Receive filter control register",
+				"reset_value": "0x10000000",
+				"bits_fields": "[]"
+			},
+			"R8_ETH_ERXFCON": {
+				"name": "R8_ETH_ERXFCON",
+				"address": "0x40028018",
+				"info": "Receive packet filter control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_ETH_MACON1": {
+				"name": "R8_ETH_MACON1",
+				"address": "0x40028019",
+				"info": "Mac layer flow control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_ETH_MACON2": {
+				"name": "R8_ETH_MACON2",
+				"address": "0x4002801A",
+				"info": "Mac layer packet control register",
+				"reset_value": "0x00",
+				"bits_fields": "[]"
+			},
+			"R8_ETH_MABBIPG": {
+				"name": "R8_ETH_MABBIPG",
+				"address": "0x4002801B",
+				"info": "Minimum packet interval",
+				"reset_value": "register",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_TIM": {
+				"name": "R32_ETH_TIM",
+				"address": "0x10",
+				"info": "0x4002801C Flow control pause frame time",
+				"reset_value": "register",
+				"bits_fields": "[]"
+			},
+			"R16_ETH_EPAUS": {
+				"name": "R16_ETH_EPAUS",
+				"address": "0xXXXXXXXX",
+				"info": "0x4002801C Flow control pause frame time",
+				"reset_value": "register",
+				"bits_fields": "[]"
+			},
+			"R16_ETH_MAMXFL": {
+				"name": "R16_ETH_MAMXFL",
+				"address": "0xXXXX",
+				"info": "0x4002801E Maximum receive packet length",
+				"reset_value": "register",
+				"bits_fields": "[]"
+			},
+			"R16_ETH_MIRD": {
+				"name": "R16_ETH_MIRD",
+				"address": "0x0000",
+				"info": "0x40028020 MII read",
+				"reset_value": "register",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MIWR": {
+				"name": "R32_ETH_MIWR",
+				"address": "0x1100",
+				"info": "0x40028024 MII write",
+				"reset_value": "register",
+				"bits_fields": "[]"
+			},
+			"R8_ETH_MIREGADR": {
+				"name": "R8_ETH_MIREGADR",
+				"address": "0x00000000",
+				"info": "0x40028024 MII address",
+				"reset_value": "register",
+				"bits_fields": "[]"
+			},
+			"R8_ETH_MISTAT": {
+				"name": "R8_ETH_MISTAT",
+				"address": "0x00",
+				"info": "0x40028025 MII status",
+				"reset_value": "register",
+				"bits_fields": "[]"
+			},
+			"R16_ETH_MIWR": {
+				"name": "R16_ETH_MIWR",
+				"address": "0x00",
+				"info": "0x40028026 MII write",
+				"reset_value": "register",
+				"bits_fields": "[]"
+			},
+			"R32_ETH_MAADRL": {
+				"name": "R32_ETH_MAADRL",
+				"address": "0x0000",
+				"info": "0x40028028 MAC address low",
+				"reset_value": "register",
+				"bits_fields": "[]"
+			},
+			"R16_ETH_MAADRH": {
+				"name": "R16_ETH_MAADRH",
+				"address": "0xXXXXXXXX",
+				"info": "0x4002802C MAC address high",
+				"reset_value": "register",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"SDIO": {
+		"info": "FLASH-related registers list",
+		"table": "28-17",
+
+		"registers": {
+			"R32_SDIO_POWER": {
+				"name": "R32_SDIO_POWER",
+				"address": "0x40018000",
+				"info": "Power register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_CLKCR": {
+				"name": "R32_SDIO_CLKCR",
+				"address": "0x40018004",
+				"info": "Clock register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_ARG": {
+				"name": "R32_SDIO_ARG",
+				"address": "0x40018008",
+				"info": "Command parameter register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_CMD": {
+				"name": "R32_SDIO_CMD",
+				"address": "0x4001800C",
+				"info": "Command register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_RESPCMD": {
+				"name": "R32_SDIO_RESPCMD",
+				"address": "0x40018010",
+				"info": "Response register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R128_SDIO_RESPX": {
+				"name": "R128_SDIO_RESPX",
+				"address": "0x40018014",
+				"info": "Response parameter register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_DTIMER": {
+				"name": "R32_SDIO_DTIMER",
+				"address": "0x40018024",
+				"info": "Data timing register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_DLEN": {
+				"name": "R32_SDIO_DLEN",
+				"address": "0x40018028",
+				"info": "Data length register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_DCTLR": {
+				"name": "R32_SDIO_DCTLR",
+				"address": "0x4001802C",
+				"info": "Data control register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_DCOUNT": {
+				"name": "R32_SDIO_DCOUNT",
+				"address": "0x40018030",
+				"info": "Data count register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_STA": {
+				"name": "R32_SDIO_STA",
+				"address": "0x40018034",
+				"info": "Status register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_ICR": {
+				"name": "R32_SDIO_ICR",
+				"address": "0x40018038",
+				"info": "Interrupt clear register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_MASK": {
+				"name": "R32_SDIO_MASK",
+				"address": "0x4001803C",
+				"info": "Interrupt enable register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_": {
+				"name": "R32_SDIO_",
+				"address": "FIFOCNT",
+				"info": "0x40018048 FIFO counter",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_DCTRL2": {
+				"name": "R32_SDIO_DCTRL2",
+				"address": "0x40018060",
+				"info": "Data control register 2",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_SDIO_FIFO": {
+				"name": "R32_SDIO_FIFO",
+				"address": "0x40018080",
+				"info": "FIFO register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"RNG": {
+		"info": "RNG-related registers list",
+		"table": "29-1",
+
+		"registers": {
+			"R32_RNG_CR": {
+				"name": "R32_RNG_CR",
+				"address": "0x40023C00",
+				"info": "RNG control register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_RNG_SR": {
+				"name": "R32_RNG_SR",
+				"address": "0x40023C04",
+				"info": "RNG status register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			},
+			"R32_RNG_DR": {
+				"name": "R32_RNG_DR",
+				"address": "0x40023C08",
+				"info": "RNG data register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"OPA": {
+		"info": "OPA-related registers list",
+		"table": "30-1",
+
+		"registers": {
+			"R32_OPA_CTLR": {
+				"name": "R32_OPA_CTLR",
+				"address": "0x40023804",
+				"info": "OPA control register",
+				"reset_value": "0x00000000",
+				"bits_fields": "[]"
+			}            
+        }
+	},
+
+	"ESIG": {
+		"info": "ESIG-related registers list",
+		"table": "31-1",
+
+		"registers": {
+			"R16_ESIG_FLACAP": {
+				"name": "R16_ESIG_FLACAP",
+				"address": "0x1FFFF7E0",
+				"info": "Flash capacity register",
+				"reset_value": "0xXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_ESIG_UNIID1": {
+				"name": "R32_ESIG_UNIID1",
+				"address": "0x1FFFF7E8",
+				"info": "UID register 1",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_ESIG_UNIID2": {
+				"name": "R32_ESIG_UNIID2",
+				"address": "0x1FFFF7EC",
+				"info": "UID register 2",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			},
+			"R32_ESIG_UNIID3": {
+				"name": "R32_ESIG_UNIID3",
+				"address": "0x1FFFF7F0",
+				"info": "UID register 3",
+				"reset_value": "0xXXXXXXXX",
+				"bits_fields": "[]"
+			}            
         }
 	},
 
 	"FLASH": {
 		"info": "FLASH-related registers list",
-		"table": "16-2",
+		"table": "32-2",
 
 		"registers": {
-            
-        }
+			"R32_FLASH_KEYR": {
+				"name": "R32_FLASH_KEYR",
+				"address": "0x40022004",
+				"info": "FPEC key register",
+				"reset_value": "0xXXXXXXXX"
+			},
+			"R32_FLASH_OBKEYR": {
+				"name": "R32_FLASH_OBKEYR",
+				"address": "0x40022008",
+				"info": "OBKEY register",
+				"reset_value": "0xXXXXXXXX"
+			},
+			"R32_FLASH_STATR": {
+				"name": "R32_FLASH_STATR",
+				"address": "0x4002200C",
+				"info": "Status register",
+				"reset_value": "0x00000000"
+			},
+			"R32_FLASH_CTLR": {
+				"name": "R32_FLASH_CTLR",
+				"address": "0x40022010",
+				"info": "Control register",
+				"reset_value": "0x00000080"
+			},
+			"R32_FLASH_ADDR": {
+				"name": "R32_FLASH_ADDR",
+				"address": "0x40022014",
+				"info": "Address register",
+				"reset_value": "0x00000000"
+			},
+			"R32_FLASH_OBR": {
+				"name": "R32_FLASH_OBR",
+				"address": "0x4002201C",
+				"info": "Selection word register",
+				"reset_value": "0x03FFFFFC"
+			},
+			"R32_FLASH_WPR": {
+				"name": "R32_FLASH_WPR",
+				"address": "0x40022020",
+				"info": "Write protection register",
+				"reset_value": "0xFFFFFFFF"
+			},
+			"R32_FLASH_MODEKEYR": {
+				"name": "R32_FLASH_MODEKEYR",
+				"address": "0x40022024",
+				"info": "Extension key register",
+				"reset_value": "0xXXXXXXXX"
+			}
+		}
+	},
+
+	"EXTEN": {
+		"info": "EXTEN-related registers list",
+		"table": "33-1",
+
+		"registers": {
+			"R32_EXTEN_CTR": {
+				"name": "R32_EXTEN_CTR",
+				"address": "0x40023800",
+				"info": "Configuration extend control register",
+				"reset_value": "0x00000A40"
+			},
+			"R32_EXTEN_CTR2": {
+				"name": "R32_EXTEN_CTR2",
+				"address": "0x40023808",
+				"info": "Configuration extend control register 2",
+				"reset_value": "0x00000000"
+			},
+			"R32_FEATURE_SIGN": {
+				"name": "R32_FEATURE_SIGN",
+				"address": "0x1FFFF7D0",
+				"info": "Feature information sign register",
+				"reset_value": "0xE339XXXX"
+			}
+		}
 	}
 }

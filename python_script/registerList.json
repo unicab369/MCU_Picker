@@ -1,72 +1,198 @@
 {
-  "R16_SPI3_CTLR1": {
-    "name": "R16_SPI3_CTLR1",
-    "address": "0x40003C00",
-    "info": "SPI3 control register1",
-    "reset_value": "0x0000",
+  "R8_UDEV_CTRL": {
+    "name": "R8_UDEV_CTRL",
+    "address": "0x40008001",
+    "info": "USB device physical port control register",
+    "reset_value": "0xX0",
     "bits_fields": "[]"
   },
-  "R16_SPI3_CTLR2": {
-    "name": "R16_SPI3_CTLR2",
-    "address": "0x40003C04",
-    "info": "SPI3 control register2",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_SPI3_STATR": {
-    "name": "R16_SPI3_STATR",
-    "address": "0x40003C08",
-    "info": "SPI3 status register",
-    "reset_value": "0x0002",
-    "bits_fields": "[]"
-  },
-  "R16_SPI3_DATAR": {
-    "name": "R16_SPI3_DATAR",
-    "address": "0x40003C0C",
-    "info": "SPI3 data register",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_SPI3_CRCR": {
-    "name": "R16_SPI3_CRCR",
-    "address": "0x40003C10",
-    "info": "SPI3 polynomial register",
-    "reset_value": "0x0007",
-    "bits_fields": "[]"
-  },
-  "R16_SPI3_RCRCR": {
-    "name": "R16_SPI3_RCRCR",
-    "address": "0x40003C14",
-    "info": "SPI3 receive CRC register",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_SPI3_TCRCR": {
-    "name": "R16_SPI3_TCRCR",
-    "address": "0x40003C18",
-    "info": "SPI3 transmit CRC register",
-    "reset_value": "0x0000",
-    "bits_fields": "[]"
-  },
-  "R16_SPI3_I2S_CFGR": {
-    "name": "R16_SPI3_I2S_CFGR",
-    "address": "0x40003C1C",
-    "info": "SPI3 I2S configuration register",
+  "R8_UEP4_1_MOD": {
+    "name": "R8_UEP4_1_MOD",
+    "address": "0x4000800c",
+    "info": "Endpoint 1/4 mode control register",
     "reset_value": "0x00",
     "bits_fields": "[]"
   },
-  "R16_SPI3_I2SPR": {
-    "name": "R16_SPI3_I2SPR",
-    "address": "0x40003C20",
-    "info": "SPI3 I2S prescaler register",
+  "R8_UEP2_3_MOD": {
+    "name": "R8_UEP2_3_MOD",
+    "address": "0x4000800d",
+    "info": "Endpoint 2/3 mode control register",
     "reset_value": "0x00",
     "bits_fields": "[]"
   },
-  "R16_SPI3_HSCR": {
-    "name": "R16_SPI3_HSCR",
-    "address": "0x40003C24",
-    "info": "SPI3 high-speed control register",
+  "R8_UEP567_MOD": {
+    "name": "R8_UEP567_MOD",
+    "address": "0x4000800e",
+    "info": "Endpoint 5/6/7 mode control register",
     "reset_value": "0x00",
+    "bits_fields": "[]"
+  },
+  "R16_UEP0_DMA": {
+    "name": "R16_UEP0_DMA",
+    "address": "0x40008010",
+    "info": "Start address of endpoint0 buffer",
+    "reset_value": "0xXXXX",
+    "bits_fields": "[]"
+  },
+  "R16_UEP1_DMA": {
+    "name": "R16_UEP1_DMA",
+    "address": "0x40008014",
+    "info": "Start address of endpoint1 buffer",
+    "reset_value": "0xXXXX",
+    "bits_fields": "[]"
+  },
+  "R16_UEP2_DMA": {
+    "name": "R16_UEP2_DMA",
+    "address": "0x40008018",
+    "info": "Start address of endpoint2 buffer",
+    "reset_value": "0xXXXX",
+    "bits_fields": "[]"
+  },
+  "R16_UEP3_DMA": {
+    "name": "R16_UEP3_DMA",
+    "address": "0x4000801c",
+    "info": "Start address of endpoint3 buffer",
+    "reset_value": "0xXXXX",
+    "bits_fields": "[]"
+  },
+  "R8_UEP0_T_LEN": {
+    "name": "R8_UEP0_T_LEN",
+    "address": "0x40008020",
+    "info": "Endpoint0 transmission length register",
+    "reset_value": "0xXX",
+    "bits_fields": "[]"
+  },
+  "R8_UEP0_CTRL": {
+    "name": "R8_UEP0_CTRL",
+    "address": "0x40008022",
+    "info": "Endpoint0 control register",
+    "reset_value": "0x00",
+    "bits_fields": "[]"
+  },
+  "R8_UEP1_T_LEN": {
+    "name": "R8_UEP1_T_LEN",
+    "address": "0x40008024",
+    "info": "Endpoint1 transmission length register",
+    "reset_value": "0xXX",
+    "bits_fields": "[]"
+  },
+  "R8_UEP1_CTRL": {
+    "name": "R8_UEP1_CTRL",
+    "address": "0x40008026",
+    "info": "Endpoint1 control register",
+    "reset_value": "0x00",
+    "bits_fields": "[]"
+  },
+  "R8_UEP2_T_LEN": {
+    "name": "R8_UEP2_T_LEN",
+    "address": "0x40008028",
+    "info": "Endpoint2 transmission length register",
+    "reset_value": "0xXX",
+    "bits_fields": "[]"
+  },
+  "R8_UEP2_CTRL": {
+    "name": "R8_UEP2_CTRL",
+    "address": "0x4000802a",
+    "info": "Endpoint2 control register",
+    "reset_value": "0x00",
+    "bits_fields": "[]"
+  },
+  "R8_UEP3_T_LEN": {
+    "name": "R8_UEP3_T_LEN",
+    "address": "0x4000802c",
+    "info": "Endpoint3 transmission length register",
+    "reset_value": "0xXX",
+    "bits_fields": "[]"
+  },
+  "R8_UEP3_CTRL": {
+    "name": "R8_UEP3_CTRL",
+    "address": "0x4000802e",
+    "info": "Endpoint3 control register",
+    "reset_value": "0x00",
+    "bits_fields": "[]"
+  },
+  "R8_UEP4_T_LEN": {
+    "name": "R8_UEP4_T_LEN",
+    "address": "0x40008030",
+    "info": "Endpoint4 transmission length register",
+    "reset_value": "0xXX",
+    "bits_fields": "[]"
+  },
+  "R8_UEP4_CTRL": {
+    "name": "R8_UEP4_CTRL",
+    "address": "0x40008032",
+    "info": "Endpoint4 control register",
+    "reset_value": "0x00",
+    "bits_fields": "[]"
+  },
+  "R16_UEP5_DMA": {
+    "name": "R16_UEP5_DMA",
+    "address": "0x40008054",
+    "info": "Start address of endpoint5 buffer",
+    "reset_value": "0xXXXX",
+    "bits_fields": "[]"
+  },
+  "R16_UEP6_DMA": {
+    "name": "R16_UEP6_DMA",
+    "address": "0x40008058",
+    "info": "Start address of endpoint6 buffer",
+    "reset_value": "0xXXXX",
+    "bits_fields": "[]"
+  },
+  "R16_UEP7_DMA": {
+    "name": "R16_UEP7_DMA",
+    "address": "0x4000805c",
+    "info": "Start address of endpoint7 buffer",
+    "reset_value": "0xXXXX",
+    "bits_fields": "[]"
+  },
+  "R8_UEP5_T_LEN": {
+    "name": "R8_UEP5_T_LEN",
+    "address": "0x40008064",
+    "info": "Endpoint5 transmission length register",
+    "reset_value": "0xXX",
+    "bits_fields": "[]"
+  },
+  "R8_UEP5_CTRL": {
+    "name": "R8_UEP5_CTRL",
+    "address": "0x40008066",
+    "info": "Endpoint5 control register",
+    "reset_value": "0x00",
+    "bits_fields": "[]"
+  },
+  "R8_UEP6_T_LEN": {
+    "name": "R8_UEP6_T_LEN",
+    "address": "0x40008068",
+    "info": "Endpoint6 transmission length register",
+    "reset_value": "0xXX",
+    "bits_fields": "[]"
+  },
+  "R8_UEP6_CTRL": {
+    "name": "R8_UEP6_CTRL",
+    "address": "0x4000806a",
+    "info": "Endpoint6 control register",
+    "reset_value": "0x00",
+    "bits_fields": "[]"
+  },
+  "R8_UEP7_T_LEN": {
+    "name": "R8_UEP7_T_LEN",
+    "address": "0x4000806c",
+    "info": "Endpoint7 transmission length register",
+    "reset_value": "0xXX",
+    "bits_fields": "[]"
+  },
+  "R8_UEP7_CTRL": {
+    "name": "R8_UEP7_CTRL",
+    "address": "0x4000806e",
+    "info": "Endpoint7 control register",
+    "reset_value": "0x00",
+    "bits_fields": "[]"
+  },
+  "R32_EPX_MODE": {
+    "name": "R32_EPX_MODE",
+    "address": "0x40008070",
+    "info": "Endpoint8-15 control register",
+    "reset_value": "0x00000000",
     "bits_fields": "[]"
   }
 }
