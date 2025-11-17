@@ -9,175 +9,175 @@
 				"address": "0x00",
 				"info": "PFIC interrupt enable status register 1",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_ISR2": {
 				"name": "R32_PFIC_ISR2",
 				"address": "0x04",
 				"info": "PFIC interrupt enable status register 2",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IPR1": {
 				"name": "R32_PFIC_IPR1",
 				"address": "0x20",
 				"info": "PFIC interrupt suspension status register 1",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IPR2": {
 				"name": "R32_PFIC_IPR2",
 				"address": "0x24",
 				"info": "PFIC interrupt suspension status register 2",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_ITHRESDR": {
 				"name": "R32_PFIC_ITHRESDR",
 				"address": "0x40",
 				"info": "PFIC interrupt priority threshold configuration register",	 
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_FIBADDRR": {
 				"name": "R32_PFIC_FIBADDRR",
 				"address": "0x44",
 				"info": "PFIC fast interrupt service base address register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_CFGR": {
 				"name": "R32_PFIC_CFGR",
 				"address": "0x48",
 				"info": "PFIC interrupt configuration register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_GISR": {
 				"name": "R32_PFIC_GISR",
 				"address": "0x4C",
 				"info": "PFIC interrupt global status register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_FIOFADDRR0": {
 				"name": "R32_PFIC_FIOFADDRR0",
 				"address": "0x60",
 				"info": "PFIC fast interrupt 0 offset address register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_FIOFADDRR1": {
 				"name": "R32_PFIC_FIOFADDRR1",
 				"address": "0x64",
 				"info": "PFIC fast interrupt 1 offset address register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_FIOFADDRR2": {
 				"name": "R32_PFIC_FIOFADDRR2",
 				"address": "0x68",
 				"info": "PFIC fast interrupt 2 offset address register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_FIOFADDRR3": {
 				"name": "R32_PFIC_FIOFADDRR3",
 				"address": "0x6C",
 				"info": "PFIC fast interrupt 3 offset address register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IENR1": {
 				"name": "R32_PFIC_IENR1",
 				"address": "0x100",
 				"info": "PFIC interrupt enable setting register 1",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IENR2": {
 				"name": "R32_PFIC_IENR2",
 				"address": "0x104",
 				"info": "PFIC interrupt enable setting register 2",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IRER1": {
 				"name": "R32_PFIC_IRER1",
 				"address": "0x180",
 				"info": "PFIC interrupt enable clearing register 1",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IRER2": {
 				"name": "R32_PFIC_IRER2",
 				"address": "0x184",
 				"info": "PFIC interrupt enable clearing register 2",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IPSR1": {
 				"name": "R32_PFIC_IPSR1",
 				"address": "0x200",
 				"info": "PFIC interrupt suspension setting register 1",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IPSR2": {
 				"name": "R32_PFIC_IPSR2",
 				"address": "0x204",
 				"info": "PFIC interrupt suspension setting register 2",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IPRR1": {
 				"name": "R32_PFIC_IPRR1",
 				"address": "0x280",
 				"info": "PFIC interrupt suspension clearing register 1",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IPRR2": {
 				"name": "R32_PFIC_IPRR2",
 				"address": "0x284",
 				"info": "PFIC interrupt suspension clearing register 2",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IACTR1": {
 				"name": "R32_PFIC_IACTR1",
 				"address": "0x300",
 				"info": "PFIC interrupt activation status register 1",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IACTR2": {
 				"name": "R32_PFIC_IACTR2",
 				"address": "0x304",
 				"info": "PFIC interrupt activation status register 2",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_IPRIORx": {
 				"name": "R32_PFIC_IPRIORx",
 				"address": "0x400",
 				"info": "PFIC interrupt priority configuration register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_SCTLR": {
 				"name": "R32_PFIC_SCTLR",
 				"address": "0xD10",
 				"info": "PFIC system control register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PFIC_VTCTLR": {
 				"name": "R32_PFIC_VTCTLR",
 				"address": "0xD14",
 				"info": "PFIC vector table control register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}			
 		}	
 	},
@@ -192,42 +192,42 @@
 				"address": "0x00",
 				"info": "System count control register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_STK_CNTL": {
 				"name": "R32_STK_CNTL",
 				"address": "0x04",
 				"info": "System counter low-bit register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_STK_CNTH": {
 				"name": "R32_STK_CNTH",
 				"address": "0x08",
 				"info": "System counter high-bit register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_STK_CMPLR": {
 				"name": "R32_STK_CMPLR",
 				"address": "0x0C",
 				"info": "Count reload low-bit register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_STK_CMPHR": {
 				"name": "R32_STK_CMPHR",
 				"address": "0x10",
 				"info": "Count reload high-bit register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_STK_CNTFG": {
 				"name": "R32_STK_CNTFG",
 				"address": "0x14",
 				"info": "Counter count flag register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}	
 	},
@@ -242,98 +242,98 @@
 				"address": "0x40001040",
 				"info": "Security access flag register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_CHIP_ID": {
 				"name": "R8_CHIP_ID",
 				"address": "0x40001041",
 				"info": "Chip ID register",
 				"reset_value": "0x73",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SAFE_ACCESS_ID": {
 				"name": "R8_SAFE_ACCESS_ID",
 				"address": "0x40001042",
 				"info": "Safe access ID register",
 				"reset_value": "0x04",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_WDOG_COUNT": {
 				"name": "R8_WDOG_COUNT",
 				"address": "0x40001043",
 				"info": "Watchdog counter register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_RESET_STATUS": {
 				"name": "R8_RESET_STATUS",
 				"address": "0x40001044",
 				"info": "Reset status register",
 				"reset_value": "0x01",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_GLOB_ROM_CFG": {
 				"name": "R8_GLOB_ROM_CFG",
 				"address": "0x40001044",
 				"info": "FlashROM application configuration register",
 				"reset_value": "0x01",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_GLOB_CFG_INFO": {
 				"name": "R8_GLOB_CFG_INFO",
 				"address": "0x40001045",
 				"info": "Global configuration information status register",
 				"reset_value": "0xEX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_RST_WDOG_CTRL": {
 				"name": "R8_RST_WDOG_CTRL",
 				"address": "0x40001046",
 				"info": "Watchdog and reset configuration register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_GLOB_RESET_KEEP": {
 				"name": "R8_GLOB_RESET_KEEP",
 				"address": "0x40001047",
 				"info": "Reset hold register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_FLASH_DATA": {
 				"name": "R32_FLASH_DATA",
 				"address": "0x40001800",
 				"info": "FlashROM word data register",
 				"reset_value": "0xXXXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_FLASH_CONTROL": {
 				"name": "R32_FLASH_CONTROL",
 				"address": "0x40001804",
 				"info": "FlashROM control register",
 				"reset_value": "0x074000XX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_FLASH_DATA": {
 				"name": "R8_FLASH_DATA",
 				"address": "0x40001804",
 				"info": "FlashROM byte data register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_FLASH_CTRL": {
 				"name": "R8_FLASH_CTRL",
 				"address": "0x40001806",
 				"info": "FlashROM access control register",
 				"reset_value": "0x40",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_FLASH_CFG": {
 				"name": "R8_FLASH_CFG",
 				"address": "0x40001807",
 				"info": "FlashROM access configuration register",
 				"reset_value": "0x07",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -348,70 +348,70 @@
 				"address": "0x4000100C",
 				"info": "Sleep clock control register",
 				"reset_value": "0x0000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SLP_CLK_OFF0": {
 				"name": "R8_SLP_CLK_OFF0",
 				"address": "0x4000100C",
 				"info": "Sleep clock control register 0",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SLP_CLK_OFF1": {
 				"name": "R8_SLP_CLK_OFF1",
 				"address": "0x4000100D",
 				"info": "Sleep clock control register 1",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SLP_WAKE_CTRL": {
 				"name": "R8_SLP_WAKE_CTRL",
 				"address": "0x4000100E",
 				"info": "Wake-up event configuration register",
 				"reset_value": "0x20",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SLP_POWER_CTRL": {
 				"name": "R8_SLP_POWER_CTRL",
 				"address": "0x4000100F",
 				"info": "Peripheral sleep power control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_POWER_PLAN": {
 				"name": "R16_POWER_PLAN",
 				"address": "0x40001020",
 				"info": "Sleep power management register",
 				"reset_value": "0x11DF",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_AUX_POWER_ADJ": {
 				"name": "R16_AUX_POWER_ADJ",
 				"address": "0x40001022",
 				"info": "Auxiliary power adjustment control register",
 				"reset_value": "0x0XXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_BAT_DET_CTRL": {
 				"name": "R8_BAT_DET_CTRL",
 				"address": "0x40001024",
 				"info": "Battery voltage detection control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_BAT_DET_CFG": {
 				"name": "R8_BAT_DET_CFG",
 				"address": "0x40001025",
 				"info": "Battery voltage detection configuration register",
 				"reset_value": "0x02",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_BAT_STATUS": {
 				"name": "R8_BAT_STATUS",
 				"address": "0x40001026",
 				"info": "Battery status register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -524,140 +524,140 @@
 				"address": "0x40001018",
 				"info": "Function pin remapping register",
 				"reset_value": "0x0000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_PIN_ANALOG_IE": {
 				"name": "R16_PIN_ANALOG_IE",
 				"address": "0x4000101A",
 				"info": "Peripheral analog pin configuration register",
 				"reset_value": "0x0000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_PA_INT_EN": {
 				"name": "R16_PA_INT_EN",
 				"address": "0x40001090",
 				"info": "PA port interrupt enable register",
 				"reset_value": "0x0000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_PB_INT_EN": {
 				"name": "R16_PB_INT_EN",
 				"address": "0x40001092",
 				"info": "PB port interrupt enable register",
 				"reset_value": "0x0000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_PA_INT_MODE": {
 				"name": "R16_PA_INT_MODE",
 				"address": "0x40001094",
 				"info": "PA port interrupt mode configuration register",
 				"reset_value": "0x0000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_PB_INT_MODE": {
 				"name": "R16_PB_INT_MODE",
 				"address": "0x40001096",
 				"info": "PB port interrupt mode configuration register",
 				"reset_value": "0x0000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_PA_INT_IF": {
 				"name": "R16_PA_INT_IF",
 				"address": "0x4000109C",
 				"info": "PA port interrupt flag register",
 				"reset_value": "0x0000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_PB_INT_IF": {
 				"name": "R16_PB_INT_IF",
 				"address": "0x4000109E",
 				"info": "PB port interrupt flag register",
 				"reset_value": "0x0000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PA_DIR": {
 				"name": "R32_PA_DIR",
 				"address": "0x400010A0",
 				"info": "PA port direction configuration register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PA_PIN": {
 				"name": "R32_PA_PIN",
 				"address": "0x400010A4",
 				"info": "PA port pin input register",
 				"reset_value": "0x0000XXX0",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PA_OUT": {
 				"name": "R32_PA_OUT",
 				"address": "0x400010A8",
 				"info": "PA port data output register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PA_CLR": {
 				"name": "R32_PA_CLR",
 				"address": "0x400010AC",
 				"info": "PA port data reset register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PA_PU": {
 				"name": "R32_PA_PU",
 				"address": "0x400010B0",
 				"info": "PA port pull-up resistor configuration register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PA_PD_DRV": {
 				"name": "R32_PA_PD_DRV",
 				"address": "0x400010B4",
 				"info": "PA port pull-down/drive configuration register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PB_DIR": {
 				"name": "R32_PB_DIR",
 				"address": "0x400010C0",
 				"info": "PB port direction configuration register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PB_PIN": {
 				"name": "R32_PB_PIN",
 				"address": "0x400010C4",
 				"info": "PB port pin input register",
 				"reset_value": "0x00X0XXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PB_OUT": {
 				"name": "R32_PB_OUT",
 				"address": "0x400010C8",
 				"info": "PB port data output register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PB_CLR": {
 				"name": "R32_PB_CLR",
 				"address": "0x400010CC",
 				"info": "PB port data reset register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PB_PU": {
 				"name": "R32_PB_PU",
 				"address": "0x400010D0",
 				"info": "PB port pull-up resistor configuration register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_PB_PD_DRV": {
 				"name": "R32_PB_PD_DRV",
 				"address": "0x400010D4",
 				"info": "PB port pull-down/drive configuration register",
 				"reset_value": "0x00000000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -672,49 +672,49 @@
 				"address": "0x40002000",
 				"info": "Mode set register",
 				"reset_value": "0x02",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR0_INTER_EN": {
 				"name": "R8_TMR0_INTER_EN",
 				"address": "0x40002002",
 				"info": "Interrupt enable register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR0_INT_FLAG": {
 				"name": "R8_TMR0_INT_FLAG",
 				"address": "0x40002006",
 				"info": "Interrupt flag register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR0_FIFO_COUNT": {
 				"name": "R8_TMR0_FIFO_COUNT",
 				"address": "0x40002007",
 				"info": "FIFO count register",
 				"reset_value": "0x0X",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR0_COUNT": {
 				"name": "R32_TMR0_COUNT",
 				"address": "0x40002008",
 				"info": "Current count value register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR0_CNT_END": {
 				"name": "R32_TMR0_CNT_END",
 				"address": "0x4000200C",
 				"info": "Final count value set register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR0_FIFO": {
 				"name": "R32_TMR0_FIFO",
 				"address": "0x40002010",
 				"info": "FIFO register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -729,77 +729,77 @@
 				"address": "0x40002400",
 				"info": "Mode set register",
 				"reset_value": "0x02",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR1_CTRL_DMA": {
 				"name": "R8_TMR1_CTRL_DMA",
 				"address": "0x40002401",
 				"info": "DMA control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR1_INTER_EN": {
 				"name": "R8_TMR1_INTER_EN",
 				"address": "0x40002402",
 				"info": "Interrupt enable register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR1_INT_FLAG": {
 				"name": "R8_TMR1_INT_FLAG",
 				"address": "0x40002406",
 				"info": "Interrupt flag register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR1_FIFO_COUNT": {
 				"name": "R8_TMR1_FIFO_COUNT",
 				"address": "0x40002407",
 				"info": "FIFO count register",
 				"reset_value": "0x0X",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR1_COUNT": {
 				"name": "R32_TMR1_COUNT",
 				"address": "0x40002408",
 				"info": "Current count value register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR1_CNT_END": {
 				"name": "R32_TMR1_CNT_END",
 				"address": "0x4000240C",
 				"info": "Final count value register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR1_FIFO": {
 				"name": "R32_TMR1_FIFO",
 				"address": "0x40002410",
 				"info": "FIFO register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_TMR1_DMA_NOW": {
 				"name": "R16_TMR1_DMA_NOW",
 				"address": "0x40002414",
 				"info": "Current address of DMA buffer",
 				"reset_value": "0x0000XXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_TMR1_DMA_BEG": {
 				"name": "R16_TMR1_DMA_BEG",
 				"address": "0x40002418",
 				"info": "Start address of DMA buffer",
 				"reset_value": "0x0000XXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_TMR1_DMA_END": {
 				"name": "R16_TMR1_DMA_END",
 				"address": "0x4000241C",
 				"info": "End address of DMA buffer",
 				"reset_value": "0x0000XXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -814,77 +814,77 @@
 				"address": "0x40002800",
 				"info": "Mode set register",
 				"reset_value": "0x02",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR2_CTRL_DMA": {
 				"name": "R8_TMR2_CTRL_DMA",
 				"address": "0x40002801",
 				"info": "DMA control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR2_INTER_EN": {
 				"name": "R8_TMR2_INTER_EN",
 				"address": "0x40002802",
 				"info": "Interrupt enable register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR2_INT_FLAG": {
 				"name": "R8_TMR2_INT_FLAG",
 				"address": "0x40002806",
 				"info": "Interrupt flag register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR2_FIFO_COUNT": {
 				"name": "R8_TMR2_FIFO_COUNT",
 				"address": "0x40002807",
 				"info": "FIFO count register",
 				"reset_value": "0x0X",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR2_COUNT": {
 				"name": "R32_TMR2_COUNT",
 				"address": "0x40002808",
 				"info": "Current count value register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR2_CNT_END": {
 				"name": "R32_TMR2_CNT_END",
 				"address": "0x4000280C",
 				"info": "Final count value register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR2_FIFO": {
 				"name": "R32_TMR2_FIFO",
 				"address": "0x40002810",
 				"info": "FIFO register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_TMR2_DMA_NOW": {
 				"name": "R16_TMR2_DMA_NOW",
 				"address": "0x40002814",
 				"info": "Current address of DMA buffer",
 				"reset_value": "0x0000XXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_TMR2_DMA_BEG": {
 				"name": "R16_TMR2_DMA_BEG",
 				"address": "0x40002818",
 				"info": "Start address of DMA buffer",
 				"reset_value": "0x0000XXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_TMR2_DMA_END": {
 				"name": "R16_TMR2_DMA_END",
 				"address": "0x4000281C",
 				"info": "End address of DMA buffer",
 				"reset_value": "0x0000XXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -899,49 +899,49 @@
 				"address": "0x40002C00",
 				"info": "Mode set register",
 				"reset_value": "0x02",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR3_INTER_EN": {
 				"name": "R8_TMR3_INTER_EN",
 				"address": "0x40002C02",
 				"info": "Interrupt enable register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR3_INT_FLAG": {
 				"name": "R8_TMR3_INT_FLAG",
 				"address": "0x40002C06",
 				"info": "Interrupt flag register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TMR3_FIFO_COUNT": {
 				"name": "R8_TMR3_FIFO_COUNT",
 				"address": "0x40002C07",
 				"info": "FIFO count register",
 				"reset_value": "0x0X",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR3_COUNT": {
 				"name": "R32_TMR3_COUNT",
 				"address": "0x40002C08",
 				"info": "Current count value register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR3_CNT_END": {
 				"name": "R32_TMR3_CNT_END",
 				"address": "0x40002C0C",
 				"info": "Final count value set register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_TMR3_FIFO": {
 				"name": "R32_TMR3_FIFO",
 				"address": "0x40002C10",
 				"info": "FIFO register",
 				"reset_value": "0x0XXXXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -956,98 +956,98 @@
 				"address": "0x40003000",
 				"info": "MODEM control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_IER": {
 				"name": "R8_UART0_IER",
 				"address": "0x40003001",
 				"info": "Interrupt enable register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_FCR": {
 				"name": "R8_UART0_FCR",
 				"address": "0x40003002",
 				"info": "FIFO control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_LCR": {
 				"name": "R8_UART0_LCR",
 				"address": "0x40003003",
 				"info": "Line control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_IIR": {
 				"name": "R8_UART0_IIR",
 				"address": "0x40003004",
 				"info": "Interrupt identification register",
 				"reset_value": "0x01",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_LSR": {
 				"name": "R8_UART0_LSR",
 				"address": "0x40003005",
 				"info": "Line status register",
 				"reset_value": "0x60",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_MSR": {
 				"name": "R8_UART0_MSR",
 				"address": "0x40003006",
 				"info": "MODEM status register",
 				"reset_value": "0xX0",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_RBR": {
 				"name": "R8_UART0_RBR",
 				"address": "0x40003008",
 				"info": "Receive buffer register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_THR": {
 				"name": "R8_UART0_THR",
 				"address": "0x40003008",
 				"info": "Transmit hold register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_RFC": {
 				"name": "R8_UART0_RFC",
 				"address": "0x4000300A",
 				"info": "Receive FIFO count register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_TFC": {
 				"name": "R8_UART0_TFC",
 				"address": "0x4000300B",
 				"info": "Transmit FIFO count register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_UART0_DL": {
 				"name": "R16_UART0_DL",
 				"address": "0x4000300C",
 				"info": "Baud rate divisor latch",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_DIV": {
 				"name": "R8_UART0_DIV",
 				"address": "0x4000300E",
 				"info": "Prescaler divisor register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART0_ADR": {
 				"name": "R8_UART0_ADR",
 				"address": "0x4000300F",
 				"info": "Slave address register",
 				"reset_value": "0xFF",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -1062,84 +1062,84 @@
 				"address": "0x40003400",
 				"info": "MODEM control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART1_IER": {
 				"name": "R8_UART1_IER",
 				"address": "0x40003401",
 				"info": "Interrupt enable register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART1_FCR": {
 				"name": "R8_UART1_FCR",
 				"address": "0x40003402",
 				"info": "FIFO control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART1_LCR": {
 				"name": "R8_UART1_LCR",
 				"address": "0x40003403",
 				"info": "Line control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART1_IIR": {
 				"name": "R8_UART1_IIR",
 				"address": "0x40003404",
 				"info": "Interrupt identification register",
 				"reset_value": "0x01",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART1_LSR": {
 				"name": "R8_UART1_LSR",
 				"address": "0x40003405",
 				"info": "Line status register",
 				"reset_value": "0x60",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART1_RBR": {
 				"name": "R8_UART1_RBR",
 				"address": "0x40003408",
 				"info": "Receive buffer register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART1_THR": {
 				"name": "R8_UART1_THR",
 				"address": "0x40003408",
 				"info": "Transmit hold register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART1_RFC": {
 				"name": "R8_UART1_RFC",
 				"address": "0x4000340A",
 				"info": "Receive FIFO count register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART1_TFC": {
 				"name": "R8_UART1_TFC",
 				"address": "0x4000340B",
 				"info": "Transmit FIFO count register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_UART1_DL": {
 				"name": "R16_UART1_DL",
 				"address": "0x4000340C",
 				"info": "Baud rate divisor latch",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART1_DIV": {
 				"name": "R8_UART1_DIV",
 				"address": "0x4000340E",
 				"info": "Prescaler divisor register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -1154,84 +1154,84 @@
 				"address": "0x40003800",
 				"info": "MODEM control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART2_IER": {
 				"name": "R8_UART2_IER",
 				"address": "0x40003801",
 				"info": "Interrupt enable register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART2_FCR": {
 				"name": "R8_UART2_FCR",
 				"address": "0x40003802",
 				"info": "FIFO control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART2_LCR": {
 				"name": "R8_UART2_LCR",
 				"address": "0x40003803",
 				"info": "Line control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART2_IIR": {
 				"name": "R8_UART2_IIR",
 				"address": "0x40003804",
 				"info": "Interrupt identification register",
 				"reset_value": "0x01",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART2_LSR": {
 				"name": "R8_UART2_LSR",
 				"address": "0x40003805",
 				"info": "Line status register",
 				"reset_value": "0x60",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART2_RBR": {
 				"name": "R8_UART2_RBR",
 				"address": "0x40003808",
 				"info": "Receive buffer register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART2_THR": {
 				"name": "R8_UART2_THR",
 				"address": "0x40003808",
 				"info": "Transmit hold register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART2_RFC": {
 				"name": "R8_UART2_RFC",
 				"address": "0x4000380A",
 				"info": "Receive FIFO count register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART2_TFC": {
 				"name": "R8_UART2_TFC",
 				"address": "0x4000380B",
 				"info": "Transmit FIFO count register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_UART2_DL": {
 				"name": "R16_UART2_DL",
 				"address": "0x4000380C",
 				"info": "Baud rate divisor latch",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART2_DIV": {
 				"name": "R8_UART2_DIV",
 				"address": "0x4000380E",
 				"info": "Prescaler divisor register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -1246,84 +1246,84 @@
 				"address": "0x40003C00",
 				"info": "MODEM control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART3_IER": {
 				"name": "R8_UART3_IER",
 				"address": "0x40003C01",
 				"info": "Interrupt enabling register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART3_FCR": {
 				"name": "R8_UART3_FCR",
 				"address": "0x40003C02",
 				"info": "FIFO control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART3_LCR": {
 				"name": "R8_UART3_LCR",
 				"address": "0x40003C03",
 				"info": "Line control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART3_IIR": {
 				"name": "R8_UART3_IIR",
 				"address": "0x40003C04",
 				"info": "Interrupt identification register",
 				"reset_value": "0x01",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART3_LSR": {
 				"name": "R8_UART3_LSR",
 				"address": "0x40003C05",
 				"info": "Line status register",
 				"reset_value": "0x60",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART3_RBR": {
 				"name": "R8_UART3_RBR",
 				"address": "0x40003C08",
 				"info": "Receive buffer register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART3_THR": {
 				"name": "R8_UART3_THR",
 				"address": "0x40003C08",
 				"info": "Transmit hold register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART3_RFC": {
 				"name": "R8_UART3_RFC",
 				"address": "0x40003C0A",
 				"info": "Receive FIFO count register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART3_TFC": {
 				"name": "R8_UART3_TFC",
 				"address": "0x40003C0B",
 				"info": "Transmit FIFO count register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_UART3_DL": {
 				"name": "R16_UART3_DL",
 				"address": "0x40003C0C",
 				"info": "Baud rate divisor latch",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UART3_DIV": {
 				"name": "R8_UART3_DIV",
 				"address": "0x40003C0E",
 				"info": "Prescaler divisor register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -1338,98 +1338,98 @@
 				"address": "0x40004000",
 				"info": "SPI0 mode control register",
 				"reset_value": "0x02",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SPI0_CTRL_CFG": {
 				"name": "R8_SPI0_CTRL_CFG",
 				"address": "0x40004001",
 				"info": "SPI0 configuration register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SPI0_INTER_EN": {
 				"name": "R8_SPI0_INTER_EN",
 				"address": "0x40004002",
 				"info": "SPI0 interrupt enable register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SPI0_SLAVE_PRE": {
 				"name": "R8_SPI0_SLAVE_PRE",
 				"address": "0x40004003",
 				"info": "SPI0 clock divider register in master mode SPI0 preset data register in slave mode",
 				"reset_value": "0x10",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SPI0_BUFFER": {
 				"name": "R8_SPI0_BUFFER",
 				"address": "0x40004004",
 				"info": "SPI0 data buffer",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SPI0_RUN_FLAG": {
 				"name": "R8_SPI0_RUN_FLAG",
 				"address": "0x40004005",
 				"info": "SPI0 working status register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SPI0_INT_FLAG": {
 				"name": "R8_SPI0_INT_FLAG",
 				"address": "0x40004006",
 				"info": "SPI0 interrupt flag register",
 				"reset_value": "0x40",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SPI0_FIFO_COUNT": {
 				"name": "R8_SPI0_FIFO_COUNT",
 				"address": "0x40004007",
 				"info": "SPI0 transceiver FIFO count register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_SPI0_TOTAL_CNT": {
 				"name": "R16_SPI0_TOTAL_CNT",
 				"address": "0x4000400C",
 				"info": "SPI0 data transceive data total length register",
 				"reset_value": "0x0000",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SPI0_FIFO": {
 				"name": "R8_SPI0_FIFO",
 				"address": "0x40004010",
 				"info": "SPI0 data FIFO register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_SPI0_FIFO_COUNT1": {
 				"name": "R8_SPI0_FIFO_COUNT1",
 				"address": "0x40004013",
 				"info": "SPI0 transceiver FIFO count register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_SPI0_DMA_NOW": {
 				"name": "R16_SPI0_DMA_NOW",
 				"address": "0x40004014",
 				"info": "Current address of SPI0 DMA buffer",
 				"reset_value": "0xXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_SPI0_DMA_BEG": {
 				"name": "R16_SPI0_DMA_BEG",
 				"address": "0x40004018",
 				"info": "Start address of SPI0 DMA buffer",
 				"reset_value": "0xXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_SPI0_DMA_END": {
 				"name": "R16_SPI0_DMA_END",
 				"address": "0x4000401C",
 				"info": "End address of SPI0 DMA buffer",
 				"reset_value": "0xXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -1542,91 +1542,91 @@
 				"address": "0x40001058",
 				"info": "ADC input channel select register",
 				"reset_value": "0x0F",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_ADC_CFG": {
 				"name": "R8_ADC_CFG",
 				"address": "0x40001059",
 				"info": "ADC configuration register",
 				"reset_value": "0xA0",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_ADC_CONVERT": {
 				"name": "R8_ADC_CONVERT",
 				"address": "0x4000105A",
 				"info": "ADC conversion control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TEM_SENSOR": {
 				"name": "R8_TEM_SENSOR",
 				"address": "0x4000105B",
 				"info": "Temperature sensor control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_ADC_DATA": {
 				"name": "R16_ADC_DATA",
 				"address": "0x4000105C",
 				"info": "ADC data register",
 				"reset_value": "0x0XXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_ADC_INT_FLAG": {
 				"name": "R8_ADC_INT_FLAG",
 				"address": "0x4000105E",
 				"info": "ADC interrupt flag register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R32_ADC_DMA_CTRL": {
 				"name": "R32_ADC_DMA_CTRL",
 				"address": "0x40001060",
 				"info": "DMA control and status register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_ADC_CTRL_DMA": {
 				"name": "R8_ADC_CTRL_DMA",
 				"address": "0x40001061",
 				"info": "DMA and interrupt control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_ADC_DMA_IF": {
 				"name": "R8_ADC_DMA_IF",
 				"address": "0x40001062",
 				"info": "ADC and DMA interrupt flag register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_ADC_AUTO_CYCLE": {
 				"name": "R8_ADC_AUTO_CYCLE",
 				"address": "0x40001063",
 				"info": "Continuous ADC timing cycle register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_ADC_DMA_NOW": {
 				"name": "R16_ADC_DMA_NOW",
 				"address": "0x40001064",
 				"info": "Current buffer address of DMA",
 				"reset_value": "0x0000XXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_ADC_DMA_BEG": {
 				"name": "R16_ADC_DMA_BEG",
 				"address": "0x40001068",
 				"info": "Start buffer address of DMA",
 				"reset_value": "0x0000XXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_ADC_DMA_END": {
 				"name": "R16_ADC_DMA_END",
 				"address": "0x4000106C",
 				"info": "End buffer address of DMA",
 				"reset_value": "0x0000XXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -1641,21 +1641,21 @@
 				"address": "0x40001054",
 				"info": "TouchKey charge/discharge time register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TKEY_CONVERT": {
 				"name": "R8_TKEY_CONVERT",
 				"address": "0x40001056",
 				"info": "TouchKey detection control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_TKEY_CFG": {
 				"name": "R8_TKEY_CFG",
 				"address": "0x40001057",
 				"info": "TouchKey configuration register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
@@ -1726,119 +1726,119 @@
 				"address": "0x40008001",
 				"info": "USB device physical port control register",
 				"reset_value": "0xX0",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP4_1_MOD": {
 				"name": "R8_UEP4_1_MOD",
 				"address": "0x4000800c",
 				"info": "Endpoint 1/4 mode control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP2_3_MOD": {
 				"name": "R8_UEP2_3_MOD",
 				"address": "0x4000800d",
 				"info": "Endpoint 2/3 mode control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_UEP0_DMA": {
 				"name": "R16_UEP0_DMA",
 				"address": "0x40008010",
 				"info": "Start address of endpoint0 buffer",
 				"reset_value": "0xXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_UEP1_DMA": {
 				"name": "R16_UEP1_DMA",
 				"address": "0x40008014",
 				"info": "Start address of endpoint1 buffer",
 				"reset_value": "0xXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_UEP2_DMA": {
 				"name": "R16_UEP2_DMA",
 				"address": "0x40008018",
 				"info": "Start address of endpoint2 buffer",
 				"reset_value": "0xXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R16_UEP3_DMA": {
 				"name": "R16_UEP3_DMA",
 				"address": "0x4000801c",
 				"info": "Start address of endpoint3 buffer",
 				"reset_value": "0xXXXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP0_T_LEN": {
 				"name": "R8_UEP0_T_LEN",
 				"address": "0x40008020",
 				"info": "Endpoint0 transmission length register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP0_CTRL": {
 				"name": "R8_UEP0_CTRL",
 				"address": "0x40008022",
 				"info": "Endpoint0 control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP1_T_LEN": {
 				"name": "R8_UEP1_T_LEN",
 				"address": "0x40008024",
 				"info": "Endpoint1 transmission length register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP1_CTRL": {
 				"name": "R8_UEP1_CTRL",
 				"address": "0x40008026",
 				"info": "Endpoint1 control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP2_T_LEN": {
 				"name": "R8_UEP2_T_LEN",
 				"address": "0x40008028",
 				"info": "Endpoint2 transmission length register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP2_CTRL": {
 				"name": "R8_UEP2_CTRL",
 				"address": "0x4000802a",
 				"info": "Endpoint2 control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP3_T_LEN": {
 				"name": "R8_UEP3_T_LEN",
 				"address": "0x4000802c",
 				"info": "Endpoint3 transmission length register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP3_CTRL": {
 				"name": "R8_UEP3_CTRL",
 				"address": "0x4000802e",
 				"info": "Endpoint3 control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP4_T_LEN": {
 				"name": "R8_UEP4_T_LEN",
 				"address": "0x40008030",
 				"info": "Endpoint4 transmission length register",
 				"reset_value": "0xXX",
-				"bits_fields": "[]"
+				"bits_fields": []
 			},
 			"R8_UEP4_CTRL": {
 				"name": "R8_UEP4_CTRL",
 				"address": "0x40008032",
 				"info": "Endpoint4 control register",
 				"reset_value": "0x00",
-				"bits_fields": "[]"
+				"bits_fields": []
 			}
 		}
 	},
