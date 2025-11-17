@@ -59,56 +59,6 @@
 			document.getElementById('sidebar_container').innerHTML = sidebarHTML
 		})
 
-		async function handle_regTableSelect(key) {
-			// Remove active class from all items
-			document.querySelectorAll('#register-tables-list li a').forEach(item => {
-				item.classList.remove('active');
-			})
-			
-			// Add active class to clicked item
-			const matchingItem = document.querySelector(`#register-tables-list [data-table="${key}"]`);
-			if (matchingItem) {
-				matchingItem.classList.add('active')
-			}
-
-			const reg_headerKeys = ["Name", "Access Addr.", "Description", "Reset Value"]
-			const ch32_regs = await fetch(`json_register/reg_${key}.json`).then(response => response.json())
-			let regTableHTML = ''
-
-			for (const [key, value] of Object.entries(ch32_regs)) {
-				regTableHTML += /*html*/
-					`<br>
-					<div style="overflow-x: auto;">
-						<table>
-							<thead>
-								<tr>${ reg_headerKeys.map(e => 
-									`<th style="background-color: lightgray !important;">${e}</th>`).join('') 
-								}</tr>
-							</thead>
-							<tbody>
-								${ Object.entries(value.registers).map(([subkey, value]) => `
-									<tr>
-										<td>
-											<a style="color: blue;" onclick="handle_regClick('${ key }', '${ subkey }')">
-												${ subkey }
-											</a>
-										</td>
-										<td>${ value.address }</td>
-										<td>${ value.info }</td>
-										<td>${ value.reset_value }</td>
-									</tr>`).join('')
-								}
-							</tbody>
-						</table>
-					</div>
-
-					<div id="${key}_reg_container"></div>
-					`
-			}
-
-			document.getElementById('registers_table_container').innerHTML = regTableHTML
-		}
-
 		async function reload_page(page) {
 			// Load page
 			console.log("page: ", page);

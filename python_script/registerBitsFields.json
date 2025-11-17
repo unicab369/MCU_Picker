@@ -1,9 +1,16 @@
 [
   {
-    "range": "[31:0]",
-    "name": "BOOTKEYR[31:0]",
-    "access": "WO",
-    "info": "Enter the following sequence to unlock the BOOT area KEY1 = 0x45670123. KEY2 = 0xCDEF89AB.",
-    "reset_value": "X"
+    "range": "[31:24]",
+    "name": "Reserved",
+    "access": "RO",
+    "info": "Reserved",
+    "reset_value": "00h"
+  },
+  {
+    "range": "[23:16]",
+    "name": "R8_PB_CLR_2",
+    "access": "WZ",
+    "info": "PB data register reset control :  1: The corresponding bit data of R32_PB_OUT is cleared to 0; 0: No effect.",
+    "reset_value": "00h"
   }
 ]

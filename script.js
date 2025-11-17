@@ -369,28 +369,80 @@ function handle_regClick(key, subkey) {
 			let style = (idx === 0) ? 'text-align: center;' : ''
 			if(key === 'info') style = 'white-space: normal; word-wrap: break-word;'
 			return `<td style="${style}">${row[key]}</td>`;
-		}).join('')}</tr>`;
+		}).join('')}</tr>`
 
 	document.getElementById(`${key}_reg_container`).innerHTML = /*html*/
 		`<br>
-		<input type="checkbox" style="width: 22px; height: 22px;" id="aa" name="aa_nameId" value="aa">
-		<label for="aa" style="cursor: pointer;">View All</label>
-		
-		<br>
 		<div style="font-weight: bold; font-size: 25px;">${reg.name}</div>
 
-		<div style="overflow-x: auto;">
+		<div style="overflow-x: auto; width: 900px;">
 			<table style="border-collapse: collapse;">
 				<thead><tr>${
 					headers.map(h => `<th style="background-color: lightgray !important;">
-										${h}
+										${ h }
 									</th>`).join('')
 				}</tr></thead>
 				<tbody>${
 					reg.bits_fields.map(generateRow).join('')
 				}</tbody>
 			</table>
-		</div>`;
+		</div>`
+}
+
+async function handle_regTableSelect(key) {
+	// Remove active class from all items
+	document.querySelectorAll('#register-tables-list li a').forEach(item => {
+		item.classList.remove('active');
+	})
+	
+	// Add active class to clicked item
+	const matchingItem = document.querySelector(`#register-tables-list [data-table="${key}"]`);
+	if (matchingItem) {
+		matchingItem.classList.add('active')
+	}
+
+	const reg_headerKeys = ["Name", "Access Addr.", "Description", "Reset Value"]
+	ch32_regs = await fetch(`json_register/reg_${key}.json`).then(response => response.json())
+	let regTableHTML =
+			`<br>
+			<input type="checkbox" style="width: 22px; height: 22px;" id="aa" name="aa_nameId" value="aa">
+			<label for="aa" style="cursor: pointer;">View All Bits Fields (keep unchecked to view one at a time)</label>
+			<br>
+			`
+
+	for (const [key, value] of Object.entries(ch32_regs)) {
+		regTableHTML += /*html*/
+			`<br>
+			<div style="overflow-x: auto;">
+				<div style="font-weight: bold;">${ value.info }</div>
+				<table>
+					<thead>
+						<tr>${ reg_headerKeys.map(e => 
+							`<th style="background-color: lightgray !important;">${e}</th>`).join('') 
+						}</tr>
+					</thead>
+					<tbody>
+						${ Object.entries(value.registers).map(([subkey, value]) => `
+							<tr>
+								<td>
+									<a style="color: blue;" onclick="handle_regClick('${ key }', '${ subkey }')">
+										${ subkey }
+									</a>
+								</td>
+								<td>${ value.address }</td>
+								<td>${ value.info }</td>
+								<td>${ value.reset_value }</td>
+							</tr>`).join('')
+						}
+					</tbody>
+				</table>
+			</div>
+
+			<div id="${key}_reg_container"></div>
+			`
+	}
+
+	document.getElementById('registers_table_container').innerHTML = regTableHTML
 }
 
 async function onApply_mcuSelections() {
