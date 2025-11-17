@@ -9,8 +9,6 @@ def main():
 [7:0] R8_PB_CLR_0 WZ 00h 
 	"""
 
-
-
 	# Parse the data
 	headers = ['range', 'name', 'access', 'info', 'reset_value']
 	relative_path = '/python_script/registerBitsFields.json'
